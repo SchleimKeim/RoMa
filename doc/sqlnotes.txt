@@ -1,0 +1,24 @@
+Grundsätzliches
+===============
+Server:
+    localhost
+    user: roho
+    pw: rohoadmin
+    Database: roho
+
+Tabellen:
+    Adresses
+    Entity_Adresses |-> Relationstabelle
+
+    Books
+    Book_Entities   |-> Relationstabelle
+
+    EntityTypes     | 0 = Author, 1 = Translator, 2 = Agencies
+    Entities
+
+    Sales
+    SaleTypes       | 0 = CH, 1 = EU, 2 = WEB
+    Book_Sales      |-> Relationstabelle
+
+    Reports         |-> Blob Tabelle für generierte Reports
+    Entity_Reports  |-> Relationstabelle

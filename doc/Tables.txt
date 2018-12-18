@@ -1,0 +1,68 @@
+Adresses
+    Id          bigint auto_increment primary key,
+    Greeting    varchar(128) charset utf8,
+    FirstName   varchar(128) charset utf8,
+    LastName    varchar(128) charset utf8,
+    Street1     varchar(128) charset utf8,
+    Street2     varchar(128) charset utf8,
+    Street3     varchar(128) charset utf8,
+    ZipCode     varchar(128) charset utf8,
+    City        varchar(128) charset utf8,
+    Country     varchar(128) charset utf8,
+    ISOCountry  varchar(2)   charset utf8,
+    Website     varchar(128) charset utf8,
+    Email       varchar(128) charset utf8,
+    PhoneHome   varchar(128) charset utf8,
+    PhoneWork   varchar(128) charset utf8,
+    PhoneMobile varchar(128) charset utf8,
+
+EntityTypes
+    Id          bigint auto_increment primary key,
+    Name        varchar(128) charset utf8, -- Author, Translator, Agency
+
+Entities
+    Id          bigint auto_increment primary key,
+    AdressId    bigint, -- fk zu Adresses.Id,
+    EntityType  bigint, -- fk zu EntityTypes.Id
+
+Entity_Adresses
+    Id          bigint auto_increment primary key,
+    EntityId    bigint, -- fk zu Entities.Id
+    AdressId    bigint, -- fk zu Adresses.Id
+    
+Books
+    Id          bigint auto_increment primary key,
+    ISBNNumber  varchar(128) charset utf8,
+    Title       varchar(128) charset utf8,
+    Description varchar(128) charset utf8,
+    ReleaseDate DateTime null,
+
+Book_Entities
+    Id          bigint auto_increment primary key,
+    BookId      bigint, --fk
+    EntityId    bigint, --fk
+
+Book_Sales
+    Id          bigint auto_increment primary key,
+    SaleId      bigint, -- fk zu Sales.Id
+
+Sales
+    Id          bigint auto_increment primary key,
+    TypeId      int, -- fk zu SaleTypes.Id
+    Amount      double, -- Betrag
+    Date        DateTime, -- weiss noch nicht, erfasst am vielleicht?
+    BillingDate DateTime, -- Verrechnet am:
+
+SaleTypes        
+    Id          int auto_increment primary key,
+    Name        varchar(128) -- CH, DEAU, WEB
+
+Reports
+    Id          bigint auto_increment primary key,
+    Data        MEDIUMBLOB, -- max 16mb sollte reichen für PDFs
+    ReportDate  DateTime,
+
+Entity_Reports
+    Id          bigint auto_increment primary key,
+    ReportId    bigint, -- fk zu Reports.Id
+    EntityId    bigint, -- fk zu Entities.Id
