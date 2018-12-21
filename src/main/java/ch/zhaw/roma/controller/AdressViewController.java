@@ -1,5 +1,7 @@
 package ch.zhaw.roma.controller;
 
+import ch.zhaw.roma.model.Author;
+import ch.zhaw.roma.viewmodel.AdressViewModel;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -24,6 +26,9 @@ public class AdressViewController implements Initializable {
     @FXML private Button save;
     @FXML private Button apply;
     @FXML private Button cancel;
+
+    @FXML private AdressViewModel viewModel = new AdressViewModel();
+
     //endregion
 
     //region Construction
