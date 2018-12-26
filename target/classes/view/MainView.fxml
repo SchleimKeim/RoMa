@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<SplitPane dividerPositions="0.2045929018789144" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.zhaw.roma.controller.MainViewController">
+<SplitPane dividerPositions="0.2045929018789144" prefHeight="600.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.zhaw.roma.controller.MainViewController">
     <items>
         <AnchorPane prefHeight="600.0" prefWidth="950.0">
             <children>

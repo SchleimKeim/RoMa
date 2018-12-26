@@ -20,7 +20,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="RoMa" target="1.5" />
+      <module name="RoMa" target="7" />
     </bytecodeTargetLevel>
   </component>
 </project>
