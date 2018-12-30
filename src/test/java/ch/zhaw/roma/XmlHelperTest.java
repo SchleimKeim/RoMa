@@ -17,15 +17,17 @@ import java.nio.file.Paths;
 * @version 1.0 
 */ 
 public class XmlHelperTest {
-    private final Path testPath = Paths.get(System.getProperty("user.dir"), "TestSettings.xml");
+    private final Path savePath = Paths.get(System.getProperty("user.dir"), "TestSettings.xml");
+    private final Path loadPath = Paths.get("src/test/resources/TestSettings.xml");
 
     @Before
     public void before() throws Exception {
+        Assert.assertTrue(loadPath.toFile().isFile());
     }
 
     @After
     public void after() throws Exception {
-        testPath.toFile().delete();
+        savePath.toFile().delete();
     }
 
     /**
@@ -33,7 +35,10 @@ public class XmlHelperTest {
      */
     @Test
     public void testDeserialize() throws Exception {
-        //TODO: Test goes here...
+        RoMaSettings s = RoMaSettings.load(loadPath.toString());
+        Assert.assertTrue(s != null);
+        Assert.assertTrue(s.getUser() == "roma");
+        Assert.assertTrue(s.getHost() == "localhost");
     }
 
     /**
@@ -44,8 +49,8 @@ public class XmlHelperTest {
         try {
             RoMaSettings s = RoMaSettings.getDefaultSettings();
             Assert.assertTrue(s != null);
-            s.save(testPath.toString());
-            Assert.assertTrue(testPath.toFile().isFile());
+            s.save(savePath.toString());
+            Assert.assertTrue(savePath.toFile().isFile());
 
         } catch (Exception e) {
             e.printStackTrace();
