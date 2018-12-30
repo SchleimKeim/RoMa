@@ -5,12 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RoMa.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RoMa.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/OptionsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/OptionsViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/Options.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,7 +65,17 @@
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ch/zhaw/roma/XmlHelperTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -83,6 +88,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>j</find>
+      <find>System.getProperty(</find>
+      <find>GetSttream</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -98,7 +105,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/Main.java" />
         <option value="$PROJECT_DIR$/RoMa.iml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/ch/zhaw/roma/viewmodel/AdressViewModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/viewmodel/asdf.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/Adress.java" />
@@ -116,6 +122,9 @@
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/OptionsViewController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/RoMaSettings.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/helpers/XmlHelper.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/test/ch/zhaw/roma/helpers/XmlHelperTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ch/zhaw/roma/XmlHelperTest.java" />
       </list>
     </option>
   </component>
@@ -156,8 +165,8 @@
     <option name="delegateBuildToMaven" value="true" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="721" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="1" />
     <option name="y" value="1" />
     <option name="width" value="718" />
     <option name="height" value="865" />
@@ -167,9 +176,12 @@
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
+      <showExcludedFiles Scope="false" ProjectPane="false" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -207,58 +219,16 @@
               <item name="RoMa" type="b2602c69:ProjectViewProjectNode" />
               <item name="RoMa" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="roma" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RoMa" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RoMa" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="roma" type="462c0819:PsiDirectoryNode" />
-              <item name="helpers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RoMa" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RoMa" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="roma" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RoMa" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RoMa" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RoMa" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RoMa" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RoMa" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RoMa" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -270,21 +240,25 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
-    <property name="Repository.Attach.Annotations" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="true" />
-    <property name="Repository.Attach.Sources" value="false" />
+    <property name="Repository.Attach.Sources" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545942826609" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546187384292" />
     <property name="dynamic.classpath" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="project.scopes" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/java/ch/zhaw/roma" />
+      <recent name="$PROJECT_DIR$/src/test" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ch.zhaw.roma.helpers" />
     </key>
@@ -396,7 +370,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="870" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.27618363" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.2804878" />
       <window_info id="Structure" order="1" weight="0.24964131" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -405,7 +379,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3297587" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3994638" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3994638" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -416,7 +390,7 @@
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" weight="0.328877" />
-      <window_info active="true" anchor="bottom" id="Messages" order="13" visible="true" weight="0.26407507" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.26407507" />
       <window_info anchor="bottom" id="Terminal" order="14" />
       <window_info anchor="right" id="Maven" order="0" visible="true" weight="0.12553802" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
@@ -590,13 +564,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -700,21 +667,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/RoMaSettings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="12" column="112" selection-start-line="12" selection-start-column="112" selection-end-line="12" selection-end-column="112" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="n#!!doc;n#getHost#0;n#RoMaSettings#0" />
-            <element signature="n#!!doc;n#save#0;n#RoMaSettings#0" />
-            <element signature="n#!!doc;n#serialize#0;n#RoMaSettings#0" />
-            <element signature="method#serialize#0;class#RoMaSettings#0" />
-            <element signature="method#deserialize#0;class#RoMaSettings#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/OptionsViewController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -725,13 +677,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/RoMaSettings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1945#1946#0" expanded="true" />
+            <element signature="e#2019#2020#0" expanded="true" />
+            <element signature="method#serialize#0;class#RoMaSettings#0" />
+            <element signature="method#deserialize#0;class#RoMaSettings#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/jdk1.8.0_192/src.zip!/java/nio/file/Paths.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="69" column="5" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
+          <folding>
+            <element signature="e#2673#2674#0" expanded="true" />
+            <element signature="e#2741#2742#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/helpers/XmlHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+        <state relative-caret-position="216">
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ch/zhaw/roma/XmlHelperTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
@@ -794,6 +784,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
