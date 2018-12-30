@@ -63,13 +63,10 @@ public class RoMaSettings {
             return;
 
         Path f = Paths.get(path);
-        if(f.toFile().isFile()) {
-            try {
-                serialize(f.toFile().getPath());
-            } catch (Exception e) {
-                // TODO:
-                e.printStackTrace();
-            }
+        try {
+            serialize(f.toFile().getPath());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

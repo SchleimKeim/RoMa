@@ -47,8 +47,8 @@ public class XmlHelperTest {
             s.save(testPath.toString());
             Assert.assertTrue(testPath.toFile().isFile());
 
-        } catch (Exception ex) {
-            System.out.println(ex);
+        } catch (Exception e) {
+            e.printStackTrace();
             Assert.fail();
         }
     }
