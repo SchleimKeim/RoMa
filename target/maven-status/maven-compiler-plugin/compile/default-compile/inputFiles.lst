@@ -15,4 +15,5 @@
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/helpers/XmlHelper.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/Main.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/controller/TranslatorViewController.java
+/home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/helpers/ExcelImporter.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/Sale.java

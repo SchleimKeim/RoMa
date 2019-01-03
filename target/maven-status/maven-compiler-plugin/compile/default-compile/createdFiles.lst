@@ -1,3 +1,4 @@
+ch/zhaw/roma/helpers/ExcelImporter.class
 ch/zhaw/roma/model/Book.class
 ch/zhaw/roma/model/Sale.class
 ch/zhaw/roma/controller/AgencyViewController.class
