@@ -1,8 +1,10 @@
 ch/zhaw/roma/model/excel/ExcelSheet.class
 ch/zhaw/roma/helpers/excel/ExcelImporter$1.class
 ch/zhaw/roma/model/Book.class
+ch/zhaw/roma/model/excel/BookWireFinancialRow.class
 ch/zhaw/roma/model/excel/ExcelSheetType.class
 ch/zhaw/roma/model/Sale.class
+ch/zhaw/roma/model/excel/BookWireTextRow.class
 ch/zhaw/roma/model/excel/SheetType.class
 ch/zhaw/roma/controller/AgencyViewController.class
 ch/zhaw/roma/helpers/excel/ExcelImporter.class
@@ -19,6 +21,7 @@ ch/zhaw/roma/model/RoMaSettings.class
 ch/zhaw/roma/helpers/XmlHelper.class
 ch/zhaw/roma/model/Agency.class
 ch/zhaw/roma/model/Author.class
+ch/zhaw/roma/model/excel/Indexes.class
 ch/zhaw/roma/model/excel/BookWireSheet.class
 ch/zhaw/roma/controller/MainViewController.class
 ch/zhaw/roma/Main.class

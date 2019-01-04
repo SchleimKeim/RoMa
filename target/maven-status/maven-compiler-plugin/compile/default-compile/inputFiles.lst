@@ -6,7 +6,9 @@
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/controller/MainViewController.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/helpers/excel/ExcelImporter.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/RoMaSettings.java
+/home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/BookWireFinancialRow.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/controller/OptionsViewController.java
+/home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/Indexes.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/helpers/XmlHelper.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/ExcelSheet.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/controller/TranslatorViewController.java
@@ -22,4 +24,5 @@
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/Agency.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/viewmodel/AdressViewModel.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/BookWireRow.java
+/home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/BookWireTextRow.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/Main.java

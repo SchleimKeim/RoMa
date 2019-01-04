@@ -1,38 +1,49 @@
 package ch.zhaw.roma.model.excel;
 
-import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
 
-import java.util.Vector;
+import java.util.ArrayList;
 
 public class BookWireSheet extends ExcelSheet {
 
-    private final static int MAX_COLUMNS = 29;
-    private final static int START_ROW = 4;
-
-    private final HSSFWorkbook workbook;
-    private final Vector<BookWireRow> rows = new Vector<>();
+    private final ArrayList<BookWireRow> rows = new ArrayList<>();
+    private String title;
+    private String header1;
+    private String header2;
 
 
     public BookWireSheet(HSSFWorkbook workbook) {
-        this.workbook = workbook;
         Parse(workbook);
     }
 
     private void Parse(HSSFWorkbook workbook) {
+        if (workbook == null)
+            return;
 
-        HSSFSheet defaultSheet = workbook.getSheetAt(0);
+        for (Row cells : workbook.getSheetAt(0)) {
 
-        int bottomRow = defaultSheet.getLastRowNum();
-        int startRow = START_ROW;
-
-        for(int column = defaultSheet.getLeftCol(); column < MAX_COLUMNS; column++) {
-            for(int row = START_ROW; row < bottomRow; row++) {
-                BookWireRow bookWireRow = new BookWireRow(defaultSheet.getRow(row));
-                if(bookWireRow != null) {
-                    rows.add(bookWireRow);
-                }
-            }
+            int rowNum = cells.getRowNum();
+            if (rowNum == Indexes.TITLE.getValue())
+                title = joinToString(cells);
+            else if (rowNum == Indexes.HEADER1.getValue())
+                header1 = joinToString(cells);
+            else if (rowNum == Indexes.HEADER2.getValue())
+                header2 = joinToString(cells);
+            else
+                rows.add(new BookWireFinancialRow(cells));
         }
+    }
+
+    private String joinToString(Row cells) {
+        StringBuilder sb = new StringBuilder();
+        for (Cell cell : cells) {
+            String content = cell.getStringCellValue();
+            if (!content.isEmpty())
+                sb.append(content);
+        }
+
+        return sb.toString();
     }
 }
