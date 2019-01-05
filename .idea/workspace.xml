@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="maven dependency stuff funktioniert tatsächlich...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/.~lock.Skizze von RoyaltyCalculation.java.xls#" beforeDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,7 +63,24 @@
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/view/IntroView.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="22" column="62" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
+              <folding>
+                <element signature="n#Button#0;n#children#0;n#GridPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
+                <element signature="n#Button#1;n#children#0;n#GridPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
+                <element signature="n#Button#2;n#children#0;n#GridPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
+                <element signature="n#Button#3;n#children#0;n#GridPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -78,6 +96,9 @@
       <find>System.getProperty(</find>
       <find>GetSttream</find>
     </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/src/main/java/ch/zhaw/roma</dir>
+    </dirStrings>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -128,8 +149,9 @@
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/BookWireRow.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/BookWireSheetIndexes.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/BookWireSheet.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/view/IntroView.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/customcontrols/ImageButton.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/IntroViewController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/view/IntroView.fxml" />
       </list>
     </option>
   </component>
@@ -170,11 +192,11 @@
     <option name="delegateBuildToMaven" value="true" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="721" />
-    <option name="y" value="1" />
-    <option name="width" value="718" />
-    <option name="height" value="865" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-1" />
+    <option name="y" value="-25" />
+    <option name="width" value="1442" />
+    <option name="height" value="899" />
   </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
@@ -223,9 +245,7 @@
               <item name="RoMa" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="roma" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RoMa" type="b2602c69:ProjectViewProjectNode" />
@@ -233,6 +253,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="icons" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RoMa" type="b2602c69:ProjectViewProjectNode" />
@@ -295,7 +316,7 @@
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546695429756" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546706636299" />
     <property name="dynamic.classpath" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test" />
@@ -550,9 +571,10 @@
     <option name="totallyTimeSpent" value="1302000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-1" width="1442" height="875" extended-state="7" />
+    <frame x="-1" y="-25" width="1442" height="899" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.2876614" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21018651" />
       <window_info id="Structure" order="1" weight="0.24964131" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -574,7 +596,7 @@
       <window_info anchor="bottom" id="Event Log" order="12" weight="0.328877" />
       <window_info active="true" anchor="bottom" id="Messages" order="13" visible="true" weight="0.2629717" />
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.3297587" />
-      <window_info anchor="right" id="Maven" order="0" visible="true" weight="0.2517934" />
+      <window_info anchor="right" id="Maven" order="0" weight="0.11621234" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.24964131" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
@@ -684,22 +706,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/AgencyViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/ch/zhaw/roma/viewmodel/AdressViewModel.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/viewmodel/asdf.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/Author.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/Agency.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -1057,21 +1063,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///usr/lib/jvm/jdk1.8.0_192/javafx-src.zip!/javafx/scene/control/ButtonBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1832">
+          <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/jdk1.8.0_192/javafx-src.zip!/javafx/scene/control/Skin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="39" column="17" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/jdk1.8.0_192/javafx-src.zip!/javafx/scene/control/Button.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="189" column="26" selection-start-line="189" selection-start-column="26" selection-end-line="189" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/customcontrols/ImageButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/IntroViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="36">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/view/IntroView.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="396">
+          <caret line="22" column="62" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
+          <folding>
+            <element signature="n#Button#0;n#children#0;n#GridPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
+            <element signature="n#Button#1;n#children#0;n#GridPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
+            <element signature="n#Button#2;n#children#0;n#GridPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
+            <element signature="n#Button#3;n#children#0;n#GridPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
