@@ -23,6 +23,7 @@ ch/zhaw/roma/model/Agency.class
 ch/zhaw/roma/model/Author.class
 ch/zhaw/roma/model/excel/Indexes.class
 ch/zhaw/roma/model/excel/BookWireSheet.class
+ch/zhaw/roma/controller/IntroViewController.class
 ch/zhaw/roma/controller/MainViewController.class
 ch/zhaw/roma/Main.class
 ch/zhaw/roma/viewmodel/AdressViewModel.class

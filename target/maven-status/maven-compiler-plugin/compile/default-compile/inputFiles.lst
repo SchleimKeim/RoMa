@@ -2,6 +2,7 @@
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/Translator.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/Book.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/Adress.java
+/home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/controller/IntroViewController.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/Author.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/controller/MainViewController.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/helpers/excel/ExcelImporter.java
