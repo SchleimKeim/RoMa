@@ -7,6 +7,7 @@ ch/zhaw/roma/controller/AgencyViewController.class
 ch/zhaw/roma/helpers/excel/ExcelImporter.class
 ch/zhaw/roma/controller/BookViewController.class
 ch/zhaw/roma/model/ISBNNumber.class
+ch/zhaw/roma/controller/SettingsViewController.class
 ch/zhaw/roma/controller/AdressViewController.class
 ch/zhaw/roma/model/Agency.class
 ch/zhaw/roma/model/Author.class
@@ -21,7 +22,6 @@ ch/zhaw/roma/model/Adress.class
 ch/zhaw/roma/model/excel/InhouseSheet.class
 ch/zhaw/roma/model/Translator.class
 ch/zhaw/roma/controller/TranslatorViewController.class
-ch/zhaw/roma/controller/OptionsViewController.class
 ch/zhaw/roma/model/excel/BookWireRow.class
 ch/zhaw/roma/model/RoMaSettings.class
 ch/zhaw/roma/helpers/XmlHelper.class

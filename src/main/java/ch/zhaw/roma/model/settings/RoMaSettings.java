@@ -1,5 +1,5 @@
 
-package ch.zhaw.roma.model;
+package ch.zhaw.roma.model.settings;
 
 import ch.zhaw.roma.helpers.XmlHelper;
 
@@ -95,7 +95,6 @@ public class RoMaSettings {
         try {
             return new XmlHelper<RoMaSettings>().deserialize(path);
         } catch (Exception e) {
-            // TODO: !!
             e.printStackTrace();
             return RoMaSettings.getDefaultSettings();
         }

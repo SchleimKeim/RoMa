@@ -9,7 +9,7 @@ import javafx.scene.control.Button;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class OptionsViewController implements Initializable {
+public class SettingsViewController implements Initializable {
 
     //region Private Fields
     private SimpleObjectProperty<RoMaSettings> settings = new SimpleObjectProperty<>(this, "settings");
