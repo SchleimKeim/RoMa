@@ -1,6 +1,6 @@
 package ch.zhaw.roma.controller;
 
-import ch.zhaw.roma.model.RoMaSettings;
+import ch.zhaw.roma.model.settings.RoMaSettings;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;

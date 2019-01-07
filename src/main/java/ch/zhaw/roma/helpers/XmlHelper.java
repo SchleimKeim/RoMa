@@ -1,6 +1,6 @@
 package ch.zhaw.roma.helpers;
 
-import ch.zhaw.roma.model.RoMaSettings;
+import ch.zhaw.roma.model.settings.RoMaSettings;
 import com.thoughtworks.xstream.XStream;
 
 import java.io.FileOutputStream;
