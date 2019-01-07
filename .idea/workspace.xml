@@ -3,21 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="maven dependency stuff funktioniert tatsächlich...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/helpers/XmlHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/helpers/XmlHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/AdressView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/AgencyView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/AuthorView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/BookView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/MainView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/TranslatorView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-ch.zhaw.roma.XmlHelperTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/ch.zhaw.roma.XmlHelperTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/TestSettings.xml" beforeDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,6 +74,7 @@
       <find>j</find>
       <find>System.getProperty(</find>
       <find>GetSttream</find>
+      <find>ch.zhaw.roma.model.RoMa</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/main/java/ch/zhaw/roma</dir>
@@ -121,7 +107,6 @@
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/Options.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/OptionsViewController.java" />
         <option value="$PROJECT_DIR$/src/main/java/test/ch/zhaw/roma/helpers/XmlHelperTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ch/zhaw/roma/XmlHelperTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/helpers/ExcelImporter.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/SheetType.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/ExcelSheetImpl.java" />
@@ -149,6 +134,7 @@
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/MainViewController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/helpers/XmlHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/SettingsViewController.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ch/zhaw/roma/XmlHelperTest.java" />
       </list>
     </option>
   </component>
@@ -286,7 +272,7 @@
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546892815505" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546892921766" />
     <property name="dynamic.classpath" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test" />
@@ -618,7 +604,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.29490617" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.4262295" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4262295" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3994638" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -629,9 +615,9 @@
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" weight="0.328877" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.2627346" />
+      <window_info active="true" anchor="bottom" id="Messages" order="13" visible="true" weight="0.14123581" />
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.3297587" />
-      <window_info active="true" anchor="right" id="Maven" order="0" visible="true" weight="0.11597222" />
+      <window_info anchor="right" id="Maven" order="0" visible="true" weight="0.11597222" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.24964131" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
@@ -795,16 +781,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="64" selection-start-line="64" selection-end-line="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ch/zhaw/roma/XmlHelperTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="38" column="26" lean-forward="true" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1126,6 +1102,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/SettingsViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ch/zhaw/roma/XmlHelperTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
