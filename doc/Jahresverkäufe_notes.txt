@@ -1,0 +1,35 @@
+Index:  Spalte:     Text:                   Typ
+0       A           Artikel-Nr.	            String
+1       B           Titel	                String
+2       C           Prolit 2017	            Integer
+3       D           AVA 2017	            ....
+4       E           Verlag 2017	
+5       F           Verkäufe ges. 2017	
+6       G           Abverkauf	
+7       H           VerkäufeBisEnde2016
+8       I           Verkäufe kumuliert	
+9       J           Abverkauf kumuliert	
+10      K           Bestand Prolit	
+11      L           Bestand AVA	
+12      M           Bestand Amazon	
+13      N           Bestand Verlag	
+14      O           Bestand gesamt
+
+private String ArticleNr    |_ müssen zusammen als Buch erfasst werden können.
+private String Title        |
+
+private Integer ProlitSales             |
+private Integer AVASales                | müssen ebenfalls als 'Sale' in die DB gespeichert werden können.
+private Integer PublisherSales          |
+private Integer TotalSales              |
+
+private Integer Disposition          // Abverkauf	                | 'Disposition' in DB mit Referenz zu Buch
+private Integer LastYearSales        // Verkäufe vom letzten Jahr   | Roland fragen ob sich die Zahl ergibt.
+private Integer CumulatedSales       // Verkäufe kumuliert => LastYearSales + TotalSales
+private Integer CumulatedDisposition // Abverkauf kumuliert
+
+private Integer ProlitInventory      // Bestand Prolit
+private Integer AVAInventory         // Bestand AVA
+private Integer AmazonInventory	     // Bestand Amazon
+private Integer PublisherInventory   // Bestand Verlag
+private Integer TotalInventory       // Bestand Total
