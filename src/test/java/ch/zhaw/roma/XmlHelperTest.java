@@ -1,6 +1,6 @@
 package ch.zhaw.roma;
 
-import ch.zhaw.roma.model.RoMaSettings;
+import ch.zhaw.roma.model.settings.RoMaSettings;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

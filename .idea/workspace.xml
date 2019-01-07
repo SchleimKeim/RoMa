@@ -3,33 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="maven dependency stuff funktioniert tatsächlich...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/AdressViewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/AgencyViewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/AuthorViewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/BookViewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/MainViewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/OptionsViewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/TranslatorViewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/Adress.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/Agency.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/Author.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/Book.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/ISBNNumber.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/RoMaSettings.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/Sale.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/Translator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/viewmodel/AdressViewModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/AdressView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/AgencyView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/AuthorView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/BookView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/SettingsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/SettingsView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/TranslatorView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/SettingsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/SettingsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/helpers/XmlHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/helpers/XmlHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/AdressView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/AgencyView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/AuthorView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/BookView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/MainView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/TranslatorView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-ch.zhaw.roma.XmlHelperTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-ch.zhaw.roma.XmlHelperTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/ch.zhaw.roma.XmlHelperTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/ch.zhaw.roma.XmlHelperTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-ch.zhaw.roma.XmlHelperTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/ch.zhaw.roma.XmlHelperTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/TestSettings.xml" beforeDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -88,15 +76,6 @@
   <component name="FavoritesManager">
     <favorites_list name="JavaFxApplication" />
   </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/TestSettings.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -141,7 +120,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/view/OptionsView.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/Options.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/OptionsViewController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/helpers/XmlHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/test/ch/zhaw/roma/helpers/XmlHelperTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/ch/zhaw/roma/XmlHelperTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/helpers/ExcelImporter.java" />
@@ -169,6 +147,8 @@
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/RoMaSettings.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/MainViewController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/helpers/XmlHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/SettingsViewController.java" />
       </list>
     </option>
   </component>
@@ -306,7 +286,7 @@
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546892390722" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546892815505" />
     <property name="dynamic.classpath" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test" />
@@ -338,7 +318,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Maven.RoMa [clean,validate,compile]">
+  <component name="RunManager" selected="Maven.RoMa [clean,validate,compile,test]">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -416,6 +396,34 @@
                 <option value="clean" />
                 <option value="validate" />
                 <option value="compile" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="RoMa [clean,validate,compile,test]" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="validate" />
+                <option value="compile" />
+                <option value="test" />
               </list>
             </option>
             <option name="pomFileName" value="pom.xml" />
@@ -531,6 +539,7 @@
       <item itemvalue="Maven.RoMa [validate]" />
       <item itemvalue="Maven.RoMa [compile]" />
       <item itemvalue="Maven.RoMa [test]" />
+      <item itemvalue="Maven.RoMa [clean,validate,compile,test]" />
     </list>
     <recent_temporary>
       <list>
@@ -600,7 +609,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="870" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.22668579" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" weight="0.22668579" />
       <window_info id="Structure" order="1" weight="0.24964131" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -609,20 +618,20 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.29490617" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.42627347" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.4262295" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3994638" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3297587" />
       <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.3297587" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3297587" />
       <window_info anchor="bottom" id="Problems" order="9" />
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" weight="0.328877" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.2627346" />
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.3297587" />
-      <window_info anchor="right" id="Maven" order="0" weight="0.11621234" />
+      <window_info active="true" anchor="right" id="Maven" order="0" visible="true" weight="0.11597222" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.24964131" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
@@ -635,7 +644,7 @@
       <window_info anchor="right" id="Theme Preview" order="10" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21305595" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.22668579" />
       <window_info id="Structure" order="1" weight="0.24964131" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -644,20 +653,20 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.29490617" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.40214476" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.42627347" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3994638" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3297587" />
       <window_info anchor="bottom" id="Application Servers" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3297587" />
       <window_info anchor="bottom" id="Problems" order="9" />
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" weight="0.328877" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.2629717" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.2627346" />
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.3297587" />
-      <window_info anchor="right" id="Maven" order="0" weight="0.11621234" />
+      <window_info anchor="right" id="Maven" order="0" visible="true" weight="0.11621234" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.24964131" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
@@ -807,16 +816,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/helpers/ExcelImporter/cs.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/helpers/XmlHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/SheetType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -1040,16 +1039,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/SettingsViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/view/AdressView.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
@@ -1128,6 +1117,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/TestSettings.xml">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/helpers/XmlHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/SettingsViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
