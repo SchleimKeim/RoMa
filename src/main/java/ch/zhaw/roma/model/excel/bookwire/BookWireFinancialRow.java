@@ -1,9 +1,8 @@
-package ch.zhaw.roma.model.excel;
+package ch.zhaw.roma.model.excel.bookwire;
 
-import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.ss.usermodel.Row;
 
-public class BookWireFinancialRow extends BookWireRow{
+public class BookWireFinancialRow extends BookWireRow {
 
     private String IsbnNumber;
     private String AuthorAndTitle;

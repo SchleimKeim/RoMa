@@ -1,4 +1,4 @@
-package ch.zhaw.roma.model.excel;
+package ch.zhaw.roma.model.excel.bookwire;
 
 import java.util.ArrayList;
 import java.util.List;
