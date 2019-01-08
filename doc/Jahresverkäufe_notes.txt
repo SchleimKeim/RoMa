@@ -1,3 +1,5 @@
+Beginn auf Zeile: 4
+
 Index:  Spalte:     Text:                   Typ
 0       A           Artikel-Nr.	            String
 1       B           Titel	                String

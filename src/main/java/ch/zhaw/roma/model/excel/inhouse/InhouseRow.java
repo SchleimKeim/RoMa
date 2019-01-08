@@ -1,5 +1,8 @@
 package ch.zhaw.roma.model.excel.inhouse;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+
 public class InhouseRow {
 
     //region Private Fields
@@ -21,8 +24,25 @@ public class InhouseRow {
     //endregion
 
     //region Construction
-    public InhouseRow() {
+    public InhouseRow(Row row) {
+        if(row == null)
+            return;
 
+        articleNr = toString(row.getCell(RowIndexes.ARTICLENR));
+        title = toString(row.getCell(RowIndexes.TITLE));
+        prolitSales = toInt(row.getCell(RowIndexes.PROLITSALES));
+        avaSales = toInt(row.getCell(RowIndexes.AVASALES));
+        publisherSales = toInt(row.getCell(RowIndexes.PUBLISHERSALES));
+        totalSales = toInt(row.getCell(RowIndexes.TOTALSALES));
+        disposition = toInt(row.getCell(RowIndexes.DISPOSITION));
+        lastYearSales = toInt(row.getCell(RowIndexes.LASTYEARSALES));
+        cumulatedSales = toInt(row.getCell(RowIndexes.CUMULATEDSALES));
+        cumulatedDisposition = toInt(row.getCell(RowIndexes.CUMULATEDDISPOSITION));
+        prolitInventory = toInt(row.getCell(RowIndexes.PROLITINVENTORY));
+        avaInventory = toInt(row.getCell(RowIndexes.AVAINVENTORY));
+        amazonInventory = toInt(row.getCell(RowIndexes.AMAZONINVENTORY));
+        publisherInventory = toInt(row.getCell(RowIndexes.PUBLISHERINVENTORY));
+        totalInventory = toInt(row.getCell(RowIndexes.TOTALINVENTORY));
     }
     //endregion
 
@@ -145,6 +165,19 @@ public class InhouseRow {
 
     public void setTotalInventory(Integer totalInventory) {
         this.totalInventory = totalInventory;
+    }
+    //endregion
+
+
+    //region private helpers
+    private String toString(Cell cell) {
+        // TODO: toString(Cell cell)
+        return "";
+    }
+
+    private Integer toInt(Cell cell) {
+        // TODO: toInt(Cell cell)
+        return -1;
     }
     //endregion
 }
