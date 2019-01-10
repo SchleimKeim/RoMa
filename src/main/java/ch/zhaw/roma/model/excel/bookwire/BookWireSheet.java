@@ -1,5 +1,9 @@
-package ch.zhaw.roma.model.excel;
+package ch.zhaw.roma.model.excel.bookwire;
 
+import ch.zhaw.roma.model.excel.ExcelSheet;
+import ch.zhaw.roma.model.excel.Indexes;
+import ch.zhaw.roma.model.excel.bookwire.BookWireFinancialRow;
+import ch.zhaw.roma.model.excel.bookwire.BookWireRow;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;

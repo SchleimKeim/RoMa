@@ -1,6 +1,14 @@
 package ch.zhaw.roma.helpers.excel;
 
+<<<<<<< HEAD
 import ch.zhaw.roma.model.excel.*;
+=======
+import ch.zhaw.roma.model.excel.ExcelSheet;
+import ch.zhaw.roma.model.excel.ExcelSheetType;
+import ch.zhaw.roma.model.excel.SheetType;
+import ch.zhaw.roma.model.excel.bookwire.BookWireSheet;
+import ch.zhaw.roma.model.excel.inhouse.InhouseSheet;
+>>>>>>> 0e01005a4654a80404874f5dfc8d854a0666b947
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 

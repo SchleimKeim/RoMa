@@ -1,6 +1,6 @@
 package ch.zhaw.roma.controller;
 
-import ch.zhaw.roma.model.RoMaSettings;
+import ch.zhaw.roma.model.settings.RoMaSettings;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
@@ -9,7 +9,7 @@ import javafx.scene.control.Button;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class OptionsViewController implements Initializable {
+public class SettingsViewController implements Initializable {
 
     //region Private Fields
     private SimpleObjectProperty<RoMaSettings> settings = new SimpleObjectProperty<>(this, "settings");

@@ -1,4 +1,4 @@
-package ch.zhaw.roma.model.excel;
+package ch.zhaw.roma.model.excel.bookwire;
 
 import org.apache.poi.hssf.usermodel.HSSFRow;
 
