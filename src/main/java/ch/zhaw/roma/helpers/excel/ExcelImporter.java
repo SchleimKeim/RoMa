@@ -1,10 +1,8 @@
 package ch.zhaw.roma.helpers.excel;
 
 import ch.zhaw.roma.model.excel.*;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
-import org.apache.poi.ss.util.CellRangeAddress;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -67,7 +65,7 @@ public class ExcelImporter {
     }
 
     private InhouseSheet LoadInhouse(HSSFWorkbook workbook) {
-        return new InhouseSheet(workbook);
+        return InhouseSheet.Load(workbook);
     }
 
     private BookWireSheet LoadBookwire(HSSFWorkbook workbook) {
