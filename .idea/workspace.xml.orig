@@ -1,42 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="maven dependency stuff funktioniert tatsächlich...">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/helpers/excel/ExcelImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/helpers/excel/ExcelImporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/InhouseSheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/InhouseSheet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/css/basic.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/AdressView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/AgencyView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/AuthorView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/BookView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/MainView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/SettingsView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/TranslatorView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-ch.zhaw.roma.XmlHelperTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/ch.zhaw.roma.XmlHelperTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/TestSettings.xml" beforeDir="false" />
-=======
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="save">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/Jahresverkäufe_notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/doc/Jahresverkäufe_notes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/helpers/excel/ExcelImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/helpers/excel/ExcelImporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/ExcelSheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/ExcelSheet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/InhouseSheet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/inhouse/InhouseRow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/inhouse/InhouseRow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/bookwire/BookWireSheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/bookwire/BookWireSheet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-ch.zhaw.roma.XmlHelperTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-ch.zhaw.roma.XmlHelperTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/ch.zhaw.roma.XmlHelperTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/ch.zhaw.roma.XmlHelperTest.txt" afterDir="false" />
->>>>>>> 0e01005a4654a80404874f5dfc8d854a0666b947
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -96,84 +68,12 @@
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
-<<<<<<< HEAD
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/helpers/excel/ExcelImporter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#716#717#0" expanded="true" />
-                <element signature="e#743#744#0" expanded="true" />
-                <element signature="method#ExcelImporter#0;class#ExcelImporter#0" />
-                <element signature="e#1841#1842#0" expanded="true" />
-                <element signature="e#1891#1892#0" expanded="true" />
-                <element signature="e#2051#2052#0" expanded="true" />
-                <element signature="e#2101#2102#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/ExcelSheetType.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ch/zhaw/roma/helpers/excel/ExcelImporterTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="605">
-              <caret line="38" column="82" selection-start-line="38" selection-start-column="82" selection-end-line="38" selection-end-column="82" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#680#681#0" expanded="true" />
-                <element signature="e#718#719#0" expanded="true" />
-                <element signature="e#760#761#0" expanded="true" />
-                <element signature="e#842#843#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ch/zhaw/roma/XmlHelperTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="56" column="12" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/InhouseSheet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-              <folding>
-                <element signature="e#180#181#0" expanded="true" />
-                <element signature="e#203#204#0" expanded="true" />
-                <element signature="e#265#266#0" expanded="true" />
-                <element signature="e#292#293#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ch/zhaw/roma/model/excel/InhouseSheetTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/bookwire/BookWireSheet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+            <state relative-caret-position="289">
+              <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -182,16 +82,12 @@
         </entry>
       </file>
     </leaf>
-=======
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
->>>>>>> 0e01005a4654a80404874f5dfc8d854a0666b947
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
         <option value="Class" />
-        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -200,11 +96,7 @@
       <find>j</find>
       <find>System.getProperty(</find>
       <find>GetSttream</find>
-<<<<<<< HEAD
-      <find>assert.Fail</find>
-=======
       <find>ch.zhaw.roma.model.RoMa</find>
->>>>>>> 0e01005a4654a80404874f5dfc8d854a0666b947
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/main/java/ch/zhaw/roma</dir>
@@ -238,6 +130,7 @@
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/OptionsViewController.java" />
         <option value="$PROJECT_DIR$/src/main/java/test/ch/zhaw/roma/helpers/XmlHelperTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/helpers/ExcelImporter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/SheetType.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/ExcelSheetImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/view/SettingsView.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/ExcelSheetType.java" />
@@ -252,13 +145,6 @@
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/BookWireSheet.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/customcontrols/ImageButton.java" />
         <option value="$PROJECT_DIR$/src/main/resources/view/IntroView.fxml" />
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/helpers/excel/ExcelImporter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/InhouseSheet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/SheetType.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ch/zhaw/roma/helpers/excel/ExcelImporterTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ch/zhaw/roma/model/excel/InhouseSheetTest.java" />
-=======
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/ImportExcelViewController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/view/ImportExcelView.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/IntroViewController.java" />
@@ -277,7 +163,7 @@
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/inhouse/InhouseSheetConstants.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/inhouse/RowIndexes.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/inhouse/InhouseRow.java" />
->>>>>>> 0e01005a4654a80404874f5dfc8d854a0666b947
+        <option value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/bookwire/BookWireSheet.java" />
       </list>
     </option>
   </component>
@@ -328,9 +214,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-<<<<<<< HEAD
-    <navigator currentView="PackagesPane" proportions="" version="1">
-      <showExcludedFiles Scope="false" ProjectPane="false" />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -374,34 +258,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="roma" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RoMa" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RoMa" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="roma" type="462c0819:PsiDirectoryNode" />
-              <item name="helpers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RoMa" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RoMa" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="roma" type="462c0819:PsiDirectoryNode" />
-              <item name="helpers" type="462c0819:PsiDirectoryNode" />
-              <item name="excel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RoMa" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RoMa" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="roma" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -419,60 +275,19 @@
               <item name="RoMa" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RoMa" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RoMa" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RoMa" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RoMa" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RoMa" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RoMa" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RoMa" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RoMa" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="roma" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="excel" type="462c0819:PsiDirectoryNode" />
+              <item name="bookwire" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="RoMa" type="58d84e3e:PackageViewProjectNode" />
-              <item name="RoMa" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
-=======
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes />
->>>>>>> 0e01005a4654a80404874f5dfc8d854a0666b947
   </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
@@ -487,13 +302,7 @@
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-<<<<<<< HEAD
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547152689320" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-=======
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546977247388" />
->>>>>>> 0e01005a4654a80404874f5dfc8d854a0666b947
     <property name="dynamic.classpath" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model" />
@@ -502,27 +311,16 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-<<<<<<< HEAD
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
-=======
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gant" />
->>>>>>> 0e01005a4654a80404874f5dfc8d854a0666b947
   </component>
   <component name="RecentsManager">
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="ch.zhaw.roma.helpers.excel" />
+    <key name="CreateClassDialog.RecentsKey">
       <recent name="ch.zhaw.roma.model.excel" />
+      <recent name="ch.zhaw.roma.helpers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/java/ch/zhaw/roma" />
       <recent name="$PROJECT_DIR$/src/test" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="ch.zhaw.roma.model.excel" />
-      <recent name="ch.zhaw.roma.helpers" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -537,11 +335,7 @@
       </list>
     </option>
   </component>
-<<<<<<< HEAD
-  <component name="RunManager" selected="Application.RoMa (Win)">
-=======
   <component name="RunManager" selected="Maven.RoMa [clean,validate,compile,test]">
->>>>>>> 0e01005a4654a80404874f5dfc8d854a0666b947
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -560,9 +354,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RoMa (Win)" type="Application" factoryName="Application">
+    <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="ch.zhaw.roma.Main" />
       <module name="RoMa" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sample.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -598,8 +400,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-<<<<<<< HEAD
-=======
     <configuration name="RoMa [clean,validate,compile]" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -627,7 +427,6 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
->>>>>>> 0e01005a4654a80404874f5dfc8d854a0666b947
     <configuration name="RoMa [clean,validate,compile,test]" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -752,15 +551,10 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.RoMa (Win)" />
+      <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.test in RoMa" />
-<<<<<<< HEAD
-      <item itemvalue="Maven.RoMa [clean,validate,compile,test]" />
-      <item itemvalue="Maven.RoMa [validate]" />
-=======
       <item itemvalue="Maven.RoMa [clean,validate,compile]" />
       <item itemvalue="Maven.RoMa [clean,validate,compile,test]" />
->>>>>>> 0e01005a4654a80404874f5dfc8d854a0666b947
       <item itemvalue="Maven.RoMa [compile]" />
       <item itemvalue="Maven.RoMa [test]" />
       <item itemvalue="Maven.RoMa [validate]" />
@@ -838,15 +632,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-<<<<<<< HEAD
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.29400977" />
-=======
-    <frame x="-1" y="-1" width="1442" height="875" extended-state="6" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" weight="0.48511904" />
->>>>>>> 0e01005a4654a80404874f5dfc8d854a0666b947
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.48471883" />
       <window_info id="Structure" order="1" weight="0.24964131" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -854,13 +642,8 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
-<<<<<<< HEAD
-      <window_info anchor="bottom" id="Find" order="1" weight="0.29599056" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4020157" />
-=======
       <window_info anchor="bottom" id="Find" order="1" weight="0.29392624" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.45614034" />
->>>>>>> 0e01005a4654a80404874f5dfc8d854a0666b947
+      <window_info anchor="bottom" id="Run" order="2" weight="0.45576707" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3994638" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -870,21 +653,12 @@
       <window_info anchor="bottom" id="Problems" order="9" />
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
-<<<<<<< HEAD
-      <window_info anchor="bottom" id="Event Log" order="12" weight="0.3281075" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.2629717" />
-      <window_info anchor="bottom" id="Terminal" order="14" weight="0.3297587" />
-      <window_info anchor="right" id="Maven" order="0" visible="true" weight="0.116136916" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.24964131" />
-=======
       <window_info anchor="bottom" id="Event Log" order="12" weight="0.328877" />
       <window_info active="true" anchor="bottom" id="Messages" order="13" visible="true" weight="0.14123581" />
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.3297587" />
       <window_info anchor="right" id="Maven" order="0" weight="0.24851191" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24964131" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
->>>>>>> 0e01005a4654a80404874f5dfc8d854a0666b947
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" id="JetGradle" order="4" />
       <window_info anchor="right" id="Database" order="5" />
@@ -1000,87 +774,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/AdressViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view/TranslatorView.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view/AuthorView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view/AdressView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view/BookView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view/AgencyView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/MainViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view/MainView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="37" selection-start-column="37" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/css/basic.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/Adress.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/jdk1.8.0_192/src.zip!/java/io/File.java" />
-=======
->>>>>>> 0e01005a4654a80404874f5dfc8d854a0666b947
     <entry file="jar:///usr/lib/jvm/jdk1.8.0_192/src.zip!/java/nio/file/Paths.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/thoughtworks/xstream/xstream/1.4.11.1/xstream-1.4.11.1.jar!/com/thoughtworks/xstream/XStream.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -1103,16 +796,6 @@
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-=======
->>>>>>> 0e01005a4654a80404874f5dfc8d854a0666b947
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/maven/lib/maven.jar!/schemas/maven-4.0.0.xsd">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="239">
@@ -1121,20 +804,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/helpers/ExcelImporter/cs.java" />
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/helpers/XmlHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-=======
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/SheetType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
->>>>>>> 0e01005a4654a80404874f5dfc8d854a0666b947
         </state>
       </provider>
     </entry>
@@ -1179,9 +852,6 @@
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi/4.0.1/poi-4.0.1.jar!/org/apache/poi/ss/util/CellRangeAddress.class">
-=======
     <entry file="file://$PROJECT_DIR$/src/main/resources/view/SettingsView.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1525" />
@@ -1197,7 +867,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/IntroViewController.java">
->>>>>>> 0e01005a4654a80404874f5dfc8d854a0666b947
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
@@ -1213,10 +882,6 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-<<<<<<< HEAD
-    <entry file="jar:///usr/lib/jvm/jdk1.8.0_192/src.zip!/java/util/Vector.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi/4.0.1/poi-4.0.1.jar!/org/apache/poi/ss/usermodel/Row.class">
-=======
     <entry file="file://$PROJECT_DIR$/src/main/resources/view/ImportExcelView.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
@@ -1241,7 +906,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/helpers/XmlHelper.java">
->>>>>>> 0e01005a4654a80404874f5dfc8d854a0666b947
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
@@ -1262,13 +926,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/bookwire/BookWireSheet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ch/zhaw/roma/XmlHelperTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -1286,41 +943,6 @@
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="jar:///usr/lib/jvm/jdk1.8.0_192/src.zip!/java/util/stream/Stream.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi/4.0.1/poi-4.0.1-sources.jar!/org/apache/poi/ss/usermodel/Row.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/BookWireSheet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/jdk1.8.0_192/javafx-src.zip!/javafx/scene/control/ButtonBase.java" />
-    <entry file="jar:///usr/lib/jvm/jdk1.8.0_192/javafx-src.zip!/javafx/scene/control/Skin.java" />
-    <entry file="jar:///usr/lib/jvm/jdk1.8.0_192/javafx-src.zip!/javafx/scene/control/Button.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/customcontrols/ImageButton.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/IntroViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view/IntroView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="62" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
-          <folding>
-            <element signature="n#Button#0;n#children#0;n#GridPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#Button#1;n#children#0;n#GridPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#Button#2;n#children#0;n#GridPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#Button#3;n#children#0;n#GridPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-=======
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/bookwire/BookWireTextRow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -1343,67 +965,10 @@
             <element signature="imports" expanded="true" />
             <element signature="e#2051#2052#0" expanded="true" />
             <element signature="e#2100#2101#0" expanded="true" />
->>>>>>> 0e01005a4654a80404874f5dfc8d854a0666b947
           </folding>
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/InhouseSheet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding>
-            <element signature="e#180#181#0" expanded="true" />
-            <element signature="e#203#204#0" expanded="true" />
-            <element signature="e#265#266#0" expanded="true" />
-            <element signature="e#292#293#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/helpers/excel/ExcelImporter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#716#717#0" expanded="true" />
-            <element signature="e#743#744#0" expanded="true" />
-            <element signature="method#ExcelImporter#0;class#ExcelImporter#0" />
-            <element signature="e#1841#1842#0" expanded="true" />
-            <element signature="e#1891#1892#0" expanded="true" />
-            <element signature="e#2051#2052#0" expanded="true" />
-            <element signature="e#2101#2102#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/ExcelSheetType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/SheetType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ch/zhaw/roma/helpers/excel/ExcelImporterTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="38" column="82" selection-start-line="38" selection-start-column="82" selection-end-line="38" selection-end-column="82" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#718#719#0" expanded="true" />
-            <element signature="e#760#761#0" expanded="true" />
-            <element signature="e#842#843#0" expanded="true" />
-=======
     <entry file="file://$PROJECT_DIR$/doc/Jahresverkäufe_notes.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -1424,36 +989,26 @@
           <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
->>>>>>> 0e01005a4654a80404874f5dfc8d854a0666b947
           </folding>
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/test/java/ch/zhaw/roma/XmlHelperTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="56" column="12" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ch/zhaw/roma/model/excel/InhouseSheetTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-=======
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/inhouse/InhouseRow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
           <caret line="44" column="70" selection-start-line="44" selection-start-column="70" selection-end-line="44" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
->>>>>>> 0e01005a4654a80404874f5dfc8d854a0666b947
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/bookwire/BookWireSheet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
