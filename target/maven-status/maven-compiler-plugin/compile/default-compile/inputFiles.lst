@@ -1,5 +1,6 @@
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/inhouse/InhouseSheet.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/SheetType.java
+/home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/inhouse/RowIndexes.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/bookwire/BookWireRow.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/bookwire/BookWireSheet.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/inhouse/InhouseRow.java
