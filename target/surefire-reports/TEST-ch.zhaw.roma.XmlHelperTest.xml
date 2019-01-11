@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<<<<<<< HEAD
 <testsuite tests="2" failures="0" name="ch.zhaw.roma.XmlHelperTest" time="0.225" errors="0" skipped="0">
+=======
+<testsuite tests="2" failures="0" name="ch.zhaw.roma.XmlHelperTest" time="0.402" errors="0" skipped="0">
+>>>>>>> reverting
   <properties>
     <property name="idea.version" value="2018.3.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -62,7 +66,13 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+<<<<<<< HEAD
   <testcase classname="ch.zhaw.roma.XmlHelperTest" name="testSerialize" time="0.211"/>
   <testcase classname="ch.zhaw.roma.XmlHelperTest" name="testDeserialize" time="0.014"/>
 >>>>>>> IReallyMessedUp
 </testsuite>
+=======
+  <testcase classname="ch.zhaw.roma.XmlHelperTest" name="testSerialize" time="0.374"/>
+  <testcase classname="ch.zhaw.roma.XmlHelperTest" name="testDeserialize" time="0.028"/>
+</testsuite>
+>>>>>>> reverting
