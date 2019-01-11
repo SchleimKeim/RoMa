@@ -12,9 +12,13 @@ public class InhouseSheet extends ExcelSheet {
     private static final int FIRST_INHOUSE_SHEET_ROW = 4;
     private InhouseRow[] rows;
 
-    public InhouseSheet(HSSFWorkbook workbook) {
+    protected InhouseSheet(HSSFWorkbook workbook) {
         super(workbook);
         rows = GetRows();
+    }
+
+    public static InhouseSheet Load(HSSFWorkbook workbook) {
+        return new InhouseSheet(workbook);
     }
 
     private InhouseRow[] GetRows() {

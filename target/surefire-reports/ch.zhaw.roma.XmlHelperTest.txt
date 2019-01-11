@@ -1,9 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: ch.zhaw.roma.XmlHelperTest
 -------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.284 sec
->>>>>>> IReallyMessedUp
-=======
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.466 sec
->>>>>>> reverting
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.427 sec
