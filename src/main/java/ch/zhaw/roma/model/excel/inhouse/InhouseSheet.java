@@ -50,4 +50,10 @@ public class InhouseSheet extends ExcelSheet {
         rows = result.toArray(new InhouseRow[0]);
     }
     //endregion
+
+    //region Getters And Setters
+    public InhouseRow[] getRows() {
+        return rows;
+    }
+    //endregion
 }

@@ -9,12 +9,12 @@ import org.junit.Test;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 
 public class ExcelImporterTest {
 
     //region Private Fields
     private final Path testFile = Paths.get("src/test/resources/Verkäufe2017_offizielle_Zahlen.dev.xlsx");
-    private final SheetType expectedType = new ExcelSheetType(SheetType.Verlagsabrechnung).getType();
     //endregion
 
     //region Tests
@@ -27,7 +27,7 @@ public class ExcelImporterTest {
 
     @Test
     public void getType() {
-        Assert.assertTrue(getTestInstance().getType().equals(expectedType));
+        Assert.assertTrue(getTestInstance().getType().equals(SheetType.Verlagsabrechnung));
     }
 
     @Test
@@ -37,7 +37,8 @@ public class ExcelImporterTest {
         Assert.assertNotNull(excelSheet);
 
         InhouseSheet testSheet = excelSheet.asInhouse();
-        Assert.assertTrue(testSheet.getRowCount() > 1);
+        Assert.assertTrue(testSheet.getRowCount() > 10);
+        Assert.assertTrue(Arrays.stream(testSheet.getRows()).noneMatch(r -> r.getAmazonInventory().toString().isEmpty()));
     }
     //endregion
 
@@ -45,7 +46,7 @@ public class ExcelImporterTest {
     private ExcelImporter getTestInstance() {
         ExcelImporter imp = new ExcelImporter(testFile.toString(), SheetType.Verlagsabrechnung);
         Assert.assertNotNull(imp);
-        return  imp;
+        return imp;
     }
     //endregion
 }
