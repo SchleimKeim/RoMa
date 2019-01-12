@@ -7,7 +7,6 @@ public class ExcelSheet {
     protected final HSSFWorkbook workbook;
 
     public ExcelSheet(HSSFWorkbook workbook) {
-
         this.workbook = workbook;
     }
 }
