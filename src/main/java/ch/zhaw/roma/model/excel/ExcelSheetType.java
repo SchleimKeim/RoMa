@@ -18,6 +18,19 @@ public class ExcelSheetType {
         return type.toString();
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if(obj == null && this == null)
+            return true;
+        if(obj != null && this == null)
+            return false;
+        if(this != null && obj == null)
+            return false;
+
+        ExcelSheetType s = (ExcelSheetType) obj;
+        return (s.getType().compareTo(this.type) == 0);
+    }
+
     public SheetType getType() {
         return type;
     }

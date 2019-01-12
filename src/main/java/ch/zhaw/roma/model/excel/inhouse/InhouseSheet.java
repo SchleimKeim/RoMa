@@ -14,14 +14,14 @@ public class InhouseSheet extends ExcelSheet {
 
     protected InhouseSheet(HSSFWorkbook workbook) {
         super(workbook);
-        rows = GetRows();
+        rows = getRows();
     }
 
     public static InhouseSheet Load(HSSFWorkbook workbook) {
         return new InhouseSheet(workbook);
     }
 
-    private InhouseRow[] GetRows() {
+    private InhouseRow[] getRows() {
 
         int rowCounter = 0;
         ArrayList<InhouseRow> result = new ArrayList<>();
