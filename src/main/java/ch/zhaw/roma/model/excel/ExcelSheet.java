@@ -3,32 +3,60 @@ package ch.zhaw.roma.model.excel;
 import ch.zhaw.roma.model.excel.bookwire.BookWireSheet;
 import ch.zhaw.roma.model.excel.inhouse.InhouseSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class ExcelSheet {
+import java.lang.reflect.Type;
 
-    protected final HSSFWorkbook hssfWorkbook;
-    protected final XSSFWorkbook xssfWorkbook;
+public abstract class ExcelSheet {
 
-    public ExcelSheet(XSSFWorkbook xssfWorkbook) {
+    //region Fields
+    protected Workbook _workbook;
+    protected Type _type;
+    //endregion
 
-        this.hssfWorkbook = null;
-        this.xssfWorkbook = xssfWorkbook;
+    //region Construction
+    protected ExcelSheet(Workbook workbook, Type type)
+    {
+        _workbook = workbook;
+        _type = type;
     }
 
-    public ExcelSheet(HSSFWorkbook hssfWorkbook) {
-        this.hssfWorkbook = hssfWorkbook;
-        this.xssfWorkbook = null;
+    protected ExcelSheet(HSSFWorkbook hssfWorkbook) {
+        this(hssfWorkbook, HSSFWorkbook.class);
     }
 
+    protected ExcelSheet(XSSFWorkbook xssfWorkbook) {
+        this(xssfWorkbook, XSSFWorkbook.class);
+    }
+    //endregion
+
+    //region Abstracts
+    abstract public int getRowCount();
+    //endregion
+
+    //region Public Members
     public BookWireSheet asBookwire() {
-        return (this.getClass().getTypeName() == BookWireSheet.class.getTypeName())
-                ?(BookWireSheet)this
-                : null;
+        return (isBookWireSheet())
+            ? (BookWireSheet)this
+            : null;
     }
+
     public InhouseSheet asInhouse() {
-        return (this.getClass().getTypeName() == InhouseSheet.class.getTypeName())
-                ? (InhouseSheet)this
-                : null;
+        return (isInhouseSheet())
+            ? (InhouseSheet)this
+            : null;
     }
+    //endregion
+
+
+    //region Private Helpers
+    private boolean isInhouseSheet() {
+        return _type.getTypeName().contains("XSSF");
+    }
+
+    private boolean isBookWireSheet() {
+        return _type.getTypeName().contains("HSSF");
+    }
+    //endregion
 }

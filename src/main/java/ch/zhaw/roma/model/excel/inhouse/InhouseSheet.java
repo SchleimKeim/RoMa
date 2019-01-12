@@ -34,13 +34,19 @@ public class InhouseSheet extends ExcelSheet {
     }
     //endregion
 
-    //region Private Helpers
-    private void loadRows() {
+    //region Getters And Setters
+    public InhouseRow[] getRows() {
+        return rows;
+    }
+    //endregion
 
+
+    //region Overrides
+    protected void loadRows() {
         int rowCounter = 0;
         ArrayList<InhouseRow> result = new ArrayList<>();
-        for (Sheet sheet : xssfWorkbook) {
-            for (Row row : sheet) {
+        for (Sheet s : _workbook) {
+            for (Row row : s) {
                 rowCounter++;
                 if (rowCounter >= FIRST_INHOUSE_SHEET_ROW) {
                     result.add(new InhouseRow(row));
@@ -48,12 +54,6 @@ public class InhouseSheet extends ExcelSheet {
             }
         }
         rows = result.toArray(new InhouseRow[0]);
-    }
-    //endregion
-
-    //region Getters And Setters
-    public InhouseRow[] getRows() {
-        return rows;
     }
     //endregion
 }

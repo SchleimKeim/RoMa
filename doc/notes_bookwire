@@ -1,0 +1,30 @@
+0 ISBN                                  String
+1 Autor, Titel                          String
+2 Jan-17		    Anzahl              integer
+3 Jan-17		    Betrag              double
+4 Feb-17		    Anzahl
+5 Feb-17		    Betrag
+6 Mar-17		    Anzahl
+7 Mar-17		    Betrag
+8 Apr-17		    Anzahl
+9 Apr-17		    Betrag
+10 May-17		    Anzahl
+11 May-17		    Betrag
+12 Jun-17		    Anzahl
+13 Jun-17		    Betrag
+14 Jul-17		    ...
+15 Jul-17		    ...
+16 Aug-17
+17 Aug-17
+18 Sep-17
+19 Sep-17
+20 Oct-17
+21 Oct-17
+22 Nov-17
+23 Nov-17
+24 Dec-17
+25 Dec-17
+26 Gesamt 2017		Summe(Anzahl) Summe(Betrag) integer double
+27 Autorenhonorar  25 Prozent
+
+978-3-908778-61-5	al-Azzawi, Der Letzte der Engel	0	0.00 €																					0	0.00 €	0	0.00 €	0.00 €
