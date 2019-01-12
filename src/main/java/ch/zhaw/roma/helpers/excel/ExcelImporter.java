@@ -6,10 +6,9 @@ import ch.zhaw.roma.model.excel.SheetType;
 import ch.zhaw.roma.model.excel.bookwire.BookWireSheet;
 import ch.zhaw.roma.model.excel.inhouse.InhouseSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.poifs.filesystem.POIFSFileSystem;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -50,29 +49,37 @@ public class ExcelImporter {
 
     //region Public Members
     public ExcelSheet Import() {
+        switch (type.getType()) {
+            case Bookwire:
+                return LoadBookwire();
+            case Verlagsabrechnung:
+                return LoadInhouse();
+            default:
+                return null;
+        }
+    }
+    //endregion
 
-        try (HSSFWorkbook workbook = new HSSFWorkbook(
-            new POIFSFileSystem(
-                new FileInputStream(file.toFile().getPath())))) {
-            switch (type.getType()) {
-                case Bookwire: return LoadBookwire(workbook);
-                case Verlagsabrechnung: return LoadInhouse(workbook);
-                default: return null;
-            }
-        } catch (FileNotFoundException e) {
+
+    //region Private Helpers
+    private InhouseSheet LoadInhouse() {
+        return InhouseSheet.Load(getWorkbook());
+    }
+
+    private XSSFWorkbook getWorkbook() {
+        try {
+            return new XSSFWorkbook(new java.io.File(String.valueOf(file.toAbsolutePath())));
+        } catch (IOException e) {
             e.printStackTrace();
             return null;
-        } catch (IOException e) {
+        } catch (InvalidFormatException e) {
             e.printStackTrace();
             return null;
         }
     }
 
-    private InhouseSheet LoadInhouse(HSSFWorkbook workbook) {
-        return InhouseSheet.Load(workbook);
-    }
-
-    private BookWireSheet LoadBookwire(HSSFWorkbook workbook) {
+    private BookWireSheet LoadBookwire() {
+        HSSFWorkbook workbook = null;
         return new BookWireSheet(workbook);
     }
     //endregion

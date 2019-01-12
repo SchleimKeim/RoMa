@@ -1,6 +1,6 @@
 <romaSettings>
-    <port>3306</port>
-    <host>localhost</host>
-    <user>roma</user>
-    <password>roma</password>
+  <port>3306</port>
+  <host>localhost</host>
+  <user>roma</user>
+  <password>roma</password>
 </romaSettings>

@@ -1,39 +1,53 @@
 package ch.zhaw.roma.model.excel.inhouse;
 
 import ch.zhaw.roma.model.excel.ExcelSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.util.ArrayList;
 
 public class InhouseSheet extends ExcelSheet {
 
+    //region Private Fields
     private static final int FIRST_INHOUSE_SHEET_ROW = 4;
-    private InhouseRow[] rows;
+    private InhouseRow[] rows = new InhouseRow[0];
+    //endregion
 
-    protected InhouseSheet(HSSFWorkbook workbook) {
+    //region Construction
+    protected InhouseSheet(XSSFWorkbook workbook) {
         super(workbook);
-        rows = getRows();
+        loadRows();
     }
+    //endregion
 
-    public static InhouseSheet Load(HSSFWorkbook workbook) {
+    //region Public Members
+    public static InhouseSheet Load(XSSFWorkbook workbook) {
         return new InhouseSheet(workbook);
     }
 
-    private InhouseRow[] getRows() {
+    public int getRowCount() {
+        if(rows != null)
+            return  rows.length;
+        else
+            return 0;
+    }
+    //endregion
+
+    //region Private Helpers
+    private void loadRows() {
 
         int rowCounter = 0;
         ArrayList<InhouseRow> result = new ArrayList<>();
-
-        for (Sheet sheet: workbook) {
-            for(Row row: sheet) {
+        for (Sheet sheet : xssfWorkbook) {
+            for (Row row : sheet) {
                 rowCounter++;
-                if(rowCounter == FIRST_INHOUSE_SHEET_ROW) {
+                if (rowCounter >= FIRST_INHOUSE_SHEET_ROW) {
                     result.add(new InhouseRow(row));
                 }
             }
         }
-        return (InhouseRow[]) result.toArray();
+        rows = result.toArray(new InhouseRow[0]);
     }
+    //endregion
 }

@@ -27,8 +27,8 @@ public class ExcelSheetType {
         if(this != null && obj == null)
             return false;
 
-        ExcelSheetType s = (ExcelSheetType) obj;
-        return (s.getType().compareTo(this.type) == 0);
+        SheetType s = (SheetType) obj;
+        return (s.compareTo(this.type) == 0);
     }
 
     public SheetType getType() {
