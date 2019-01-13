@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: ch.zhaw.roma.helpers.excel.ExcelImporterTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.162 sec <<< FAILURE!
-loadBookWireSheetTest(ch.zhaw.roma.helpers.excel.ExcelImporterTest)  Time elapsed: 0.024 sec  <<< FAILURE!
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.259 sec <<< FAILURE!
+loadBookWireSheetTest(ch.zhaw.roma.helpers.excel.ExcelImporterTest)  Time elapsed: 0.027 sec  <<< FAILURE!
 java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:86)
 	at org.junit.Assert.assertTrue(Assert.java:41)

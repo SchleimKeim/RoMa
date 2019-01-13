@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="1" name="ch.zhaw.roma.helpers.excel.ExcelImporterTest" time="1.11" errors="0" skipped="0">
+<testsuite tests="4" failures="1" name="ch.zhaw.roma.helpers.excel.ExcelImporterTest" time="1.206" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2018.3.2"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -60,10 +60,10 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="ch.zhaw.roma.helpers.excel.ExcelImporterTest" name="loadInhouseSheetTest" time="1.086"/>
+  <testcase classname="ch.zhaw.roma.helpers.excel.ExcelImporterTest" name="loadInhouseSheetTest" time="1.179"/>
   <testcase classname="ch.zhaw.roma.helpers.excel.ExcelImporterTest" name="getFile" time="0"/>
   <testcase classname="ch.zhaw.roma.helpers.excel.ExcelImporterTest" name="getType" time="0"/>
-  <testcase classname="ch.zhaw.roma.helpers.excel.ExcelImporterTest" name="loadBookWireSheetTest" time="0.024">
+  <testcase classname="ch.zhaw.roma.helpers.excel.ExcelImporterTest" name="loadBookWireSheetTest" time="0.027">
     <failure type="java.lang.AssertionError">java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:86)
 	at org.junit.Assert.assertTrue(Assert.java:41)
