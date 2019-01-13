@@ -14,8 +14,8 @@ import java.util.Arrays;
 public class ExcelImporterTest {
 
     //region Private Fields
-    private final Path inhouseFile = Paths.get("src/test/resources/Verkäufe2017_offizielle_Zahlen.dev.xlsx");
-    private final Path bookWireFile = Paths.get("GesamtVerkäufeBookwire2017.xlsx");
+    private final Path inhouseFile = Paths.get("src/test/resources/inhouse.xlsx");
+    private final Path bookWireFile = Paths.get("src/test/resources/bookwire.ods");
     //endregion
 
     //region Tests
@@ -56,7 +56,7 @@ public class ExcelImporterTest {
 
     //region Private Helpers
     private ExcelImporter getBookWireInstance() {
-        ExcelImporter imp = new ExcelImporter(bookWireFile.toString(), SheetType.Bookwire);
+        ExcelImporter imp = new ExcelImporter(bookWireFile.toAbsolutePath().toString(), SheetType.Bookwire);
         Assert.assertNotNull(imp);
         return imp;
     }

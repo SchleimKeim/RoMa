@@ -5,6 +5,7 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
 
 import java.util.stream.IntStream;
 
@@ -30,13 +31,15 @@ public class BookWireSheet extends ExcelSheet {
     //region Overrides
     @Override
     public int getRowCount() {
-        return rows.length;
+        return (rows != null)
+           ? rows.length
+           : 0;
     }
     //endregion
 
     //region Public Members
     public BookWireRow[] getRows() {
-        return  (rows != null)
+        return (rows != null)
             ? rows
             : new BookWireRow[0];
     }
@@ -44,10 +47,11 @@ public class BookWireSheet extends ExcelSheet {
 
     //region Private Helpers
     private void parse(HSSFWorkbook workbook) {
-        if (workbook == null)
+        if ((workbook == null) || (workbook.getNumberOfSheets() == 0))
             return;
 
         HSSFSheet firstSheet = workbook.getSheetAt(0);
+
         for (Row row : firstSheet) {
 
             int i = row.getRowNum();
