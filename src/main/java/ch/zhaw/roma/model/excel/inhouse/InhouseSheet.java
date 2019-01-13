@@ -1,10 +1,14 @@
 package ch.zhaw.roma.model.excel.inhouse;
 
 import ch.zhaw.roma.model.excel.ExcelSheet;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.text.ParseException;
 import java.util.ArrayList;
 
 public class InhouseSheet extends ExcelSheet {
@@ -22,7 +26,11 @@ public class InhouseSheet extends ExcelSheet {
     //endregion
 
     //region Public Members
-    public static InhouseSheet Load(XSSFWorkbook workbook) {
+    public static InhouseSheet load(String path) throws Exception {
+        XSSFWorkbook workbook = getWorkbook(path);
+        if(workbook == null)
+            throw new Exception("Die Datei im parameter \'path\' konnte nicht geladen werden!");
+
         return new InhouseSheet(workbook);
     }
 
@@ -40,6 +48,20 @@ public class InhouseSheet extends ExcelSheet {
     }
     //endregion
 
+
+    //region Private Helpers
+    private static XSSFWorkbook getWorkbook(String path) {
+        try {
+            return new XSSFWorkbook(Paths.get(path).toFile());
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        } catch (InvalidFormatException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    //endregion
 
     //region Overrides
     protected void loadRows() {

@@ -5,12 +5,8 @@ import ch.zhaw.roma.model.excel.ExcelSheetType;
 import ch.zhaw.roma.model.excel.SheetType;
 import ch.zhaw.roma.model.excel.bookwire.BookWireSheet;
 import ch.zhaw.roma.model.excel.inhouse.InhouseSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -62,24 +58,23 @@ class ExcelImporter {
 
 
     //region Private Helpers
-    private XSSFWorkbook getWorkbook() {
+
+    private InhouseSheet LoadInhouse() {
         try {
-            return new XSSFWorkbook(new java.io.File(file.getAbsolutePath()));
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        } catch (InvalidFormatException e) {
-            e.printStackTrace();
+            return InhouseSheet.load(file.getAbsolutePath());
+        } catch (Exception e) {
+            e.printStackTrace(); // Typisierte exception schmeissen für korrekten error im UI;
             return null;
         }
     }
 
-    private InhouseSheet LoadInhouse() {
-        return InhouseSheet.Load(getWorkbook());
-    }
-
     private BookWireSheet LoadBookwire() {
-        return new BookWireSheet(new HSSFWorkbook());
+        try {
+            return BookWireSheet.load(file.getAbsolutePath());
+        } catch (Exception e) {
+            e.printStackTrace(); // Typisierte exception schmeissen für korrekten error im UI;
+            return null;
+        }
     }
     //endregion
 }

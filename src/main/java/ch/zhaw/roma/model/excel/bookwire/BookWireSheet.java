@@ -3,10 +3,12 @@ package ch.zhaw.roma.model.excel.bookwire;
 import ch.zhaw.roma.model.excel.ExcelSheet;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
 
+import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.stream.IntStream;
 
 public class BookWireSheet extends ExcelSheet {
@@ -21,10 +23,18 @@ public class BookWireSheet extends ExcelSheet {
     private String header2;
     //endregion
 
-    //region Constructon
+    //region Construction
     public BookWireSheet(HSSFWorkbook workbook) {
         super(workbook);
         parse(workbook);
+    }
+
+    public static BookWireSheet load(String path) throws Exception {
+        HSSFWorkbook workbook = getWorkbook(path);
+        if (workbook == null)
+            throw new Exception("Die Datei im parameter \'path\' konnte nicht geladen werden!");
+
+        return new BookWireSheet(workbook);
     }
     //endregion
 
@@ -32,20 +42,29 @@ public class BookWireSheet extends ExcelSheet {
     @Override
     public int getRowCount() {
         return (rows != null)
-           ? rows.length
-           : 0;
+                   ? rows.length
+                   : 0;
     }
     //endregion
 
     //region Public Members
     public BookWireRow[] getRows() {
         return (rows != null)
-            ? rows
-            : new BookWireRow[0];
+                   ? rows
+                   : new BookWireRow[0];
     }
     //endregion
 
     //region Private Helpers
+    private static HSSFWorkbook getWorkbook(String path) {
+        try {
+            return new HSSFWorkbook(POIFSFileSystem.create(Paths.get(path).toFile()));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     private void parse(HSSFWorkbook workbook) {
         if ((workbook == null) || (workbook.getNumberOfSheets() == 0))
             return;
