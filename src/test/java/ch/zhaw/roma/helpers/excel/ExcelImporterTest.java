@@ -32,8 +32,7 @@ public class ExcelImporterTest {
     }
 
     @Test
-    public void loadInhouseSheetTest()
-    {
+    public void loadInhouseSheetTest() {
         ExcelSheet excelSheet = getInhouseInstance().Import();
         Assert.assertNotNull(excelSheet);
 
@@ -42,9 +41,17 @@ public class ExcelImporterTest {
         Assert.assertTrue(Arrays.stream(testSheet.getRows()).noneMatch(r -> r.getAmazonInventory().toString().isEmpty()));
     }
 
+/*    @Test
+    public void loadWorkBookTest() {
+        Workbook inhouse = ExcelImporter.LoadWorkbook(inhouseFile.toAbsolutePath().toString());
+        Assert.assertNotNull(inhouse);
+        Workbook bookwire = ExcelImporter.LoadWorkbook(bookWireFile.toAbsolutePath().toString());
+        Assert.assertNotNull(bookwire);
+    }
+    */
+
     @Test
-    public void loadBookWireSheetTest()
-    {
+    public void loadBookWireSheetTest() {
         ExcelSheet excelSheet = getBookWireInstance().Import();
         Assert.assertNotNull(excelSheet);
         BookWireSheet testSheet = excelSheet.asBookwire();
@@ -60,6 +67,7 @@ public class ExcelImporterTest {
         Assert.assertNotNull(imp);
         return imp;
     }
+
     private ExcelImporter getInhouseInstance() {
         ExcelImporter imp = new ExcelImporter(inhouseFile.toString(), SheetType.Verlagsabrechnung);
         Assert.assertNotNull(imp);

@@ -8,7 +8,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.IOException;
 import java.nio.file.Paths;
-import java.text.ParseException;
 import java.util.ArrayList;
 
 public class InhouseSheet extends ExcelSheet {
@@ -20,7 +19,7 @@ public class InhouseSheet extends ExcelSheet {
 
     //region Construction
     protected InhouseSheet(XSSFWorkbook workbook) {
-        super(workbook);
+        super(workbook, InhouseSheet.class);
         loadRows();
     }
     //endregion

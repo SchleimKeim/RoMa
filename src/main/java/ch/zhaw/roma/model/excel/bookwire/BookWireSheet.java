@@ -1,14 +1,12 @@
 package ch.zhaw.roma.model.excel.bookwire;
 
 import ch.zhaw.roma.model.excel.ExcelSheet;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.IOException;
-import java.nio.file.Paths;
 import java.util.stream.IntStream;
 
 public class BookWireSheet extends ExcelSheet {
@@ -24,13 +22,13 @@ public class BookWireSheet extends ExcelSheet {
     //endregion
 
     //region Construction
-    public BookWireSheet(HSSFWorkbook workbook) {
-        super(workbook);
+    public BookWireSheet(XSSFWorkbook workbook) {
+        super(workbook, BookWireSheet.class);
         parse(workbook);
     }
 
     public static BookWireSheet load(String path) throws Exception {
-        HSSFWorkbook workbook = getWorkbook(path);
+        XSSFWorkbook workbook = getWorkbook(path);
         if (workbook == null)
             throw new Exception("Die Datei im parameter \'path\' konnte nicht geladen werden!");
 
@@ -56,20 +54,21 @@ public class BookWireSheet extends ExcelSheet {
     //endregion
 
     //region Private Helpers
-    private static HSSFWorkbook getWorkbook(String path) {
+    private static XSSFWorkbook getWorkbook(String path) {
         try {
-            return new HSSFWorkbook(POIFSFileSystem.create(Paths.get(path).toFile()));
+            return new XSSFWorkbook(path);
+            //return new XSSFWorkbook(POIFSFileSystem.create(Paths.get(path).toFile()));
         } catch (IOException e) {
             e.printStackTrace();
             return null;
         }
     }
 
-    private void parse(HSSFWorkbook workbook) {
+    private void parse(XSSFWorkbook workbook) {
         if ((workbook == null) || (workbook.getNumberOfSheets() == 0))
             return;
 
-        HSSFSheet firstSheet = workbook.getSheetAt(0);
+        XSSFSheet firstSheet = workbook.getSheetAt(0);
 
         for (Row row : firstSheet) {
 
@@ -87,7 +86,7 @@ public class BookWireSheet extends ExcelSheet {
         }
     }
 
-    private void loadRows(HSSFSheet sheet, int rowNum) {
+    private void loadRows(XSSFSheet sheet, int rowNum) {
         rows = (BookWireRow[]) IntStream.rangeClosed(rowNum, sheet.getPhysicalNumberOfRows())
                                    .mapToObj(i -> new BookWireRow(sheet.getRow(i)))
                                    .toArray();

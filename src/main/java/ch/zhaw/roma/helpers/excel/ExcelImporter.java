@@ -5,8 +5,11 @@ import ch.zhaw.roma.model.excel.ExcelSheetType;
 import ch.zhaw.roma.model.excel.SheetType;
 import ch.zhaw.roma.model.excel.bookwire.BookWireSheet;
 import ch.zhaw.roma.model.excel.inhouse.InhouseSheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -15,7 +18,6 @@ class ExcelImporter {
     //region Private Fields
     private File file;
     private ExcelSheetType type;
-    private ExcelSheet sheet;
     //endregion
 
     //region Getters and Setters
@@ -44,6 +46,14 @@ class ExcelImporter {
     //endregion
 
     //region Public Members
+    public static Workbook LoadWorkbook(String path, boolean isXssf) {
+        try {
+            return WorkbookFactory.create(Paths.get(path).toFile());
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
     public ExcelSheet Import() {
         switch (type.getType()) {
             case Bookwire:
