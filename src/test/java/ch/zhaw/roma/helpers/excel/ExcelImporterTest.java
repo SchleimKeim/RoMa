@@ -2,6 +2,7 @@ package ch.zhaw.roma.helpers.excel;
 
 import ch.zhaw.roma.model.excel.ExcelSheet;
 import ch.zhaw.roma.model.excel.SheetType;
+import ch.zhaw.roma.model.excel.bookwire.BookWireRow;
 import ch.zhaw.roma.model.excel.bookwire.BookWireSheet;
 import ch.zhaw.roma.model.excel.inhouse.InhouseSheet;
 import org.junit.Assert;
@@ -15,7 +16,7 @@ public class ExcelImporterTest {
 
     //region Private Fields
     private final Path inhouseFile = Paths.get("src/test/resources/inhouse.xlsx");
-    private final Path bookWireFile = Paths.get("src/test/resources/bookwire.ods");
+    private final Path bookWireFile = Paths.get("src/test/resources/bookwire.xlsx");
     //endregion
 
     //region Tests
@@ -41,23 +42,12 @@ public class ExcelImporterTest {
         Assert.assertTrue(Arrays.stream(testSheet.getRows()).noneMatch(r -> r.getAmazonInventory().toString().isEmpty()));
     }
 
-/*    @Test
-    public void loadWorkBookTest() {
-        Workbook inhouse = ExcelImporter.LoadWorkbook(inhouseFile.toAbsolutePath().toString());
-        Assert.assertNotNull(inhouse);
-        Workbook bookwire = ExcelImporter.LoadWorkbook(bookWireFile.toAbsolutePath().toString());
-        Assert.assertNotNull(bookwire);
-    }
-    */
-
     @Test
-    public void loadBookWireSheetTest() {
+    public void basicLoadBookWireSheetTest() {
         ExcelSheet excelSheet = getBookWireInstance().Import();
         Assert.assertNotNull(excelSheet);
         BookWireSheet testSheet = excelSheet.asBookwire();
-        Assert.assertTrue(testSheet.getRowCount() > 10);
-        Assert.assertTrue(Arrays.stream(testSheet.getRows()).count() > 5);
-        Assert.assertTrue(Arrays.stream(testSheet.getRows()).allMatch(r -> r.getAmountTotal() > 1));
+        Assert.assertTrue(testSheet.getRowCount() == 99);
     }
     //endregion
 

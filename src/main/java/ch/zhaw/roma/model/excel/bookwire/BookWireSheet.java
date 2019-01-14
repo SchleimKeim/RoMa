@@ -2,8 +2,8 @@ package ch.zhaw.roma.model.excel.bookwire;
 
 import ch.zhaw.roma.model.excel.ExcelSheet;
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.IOException;
@@ -12,13 +12,10 @@ import java.util.stream.IntStream;
 public class BookWireSheet extends ExcelSheet {
 
     //region Private Fields
-    private static final int TITLE_ROW_INDEX = 0;
-    private static final int HEADER1_ROW_INDEX = 1;
-    private static final int HEADER2_ROW_INDEX = 3;
+    private static final int TITLE_ROW_NUMBER = 0;
+    private static final int FIRST_DATA_ROW_NUMBER = 4;
     private BookWireRow[] rows;
     private String title;
-    private String header1;
-    private String header2;
     //endregion
 
     //region Construction
@@ -68,39 +65,23 @@ public class BookWireSheet extends ExcelSheet {
         if ((workbook == null) || (workbook.getNumberOfSheets() == 0))
             return;
 
-        XSSFSheet firstSheet = workbook.getSheetAt(0);
+        Sheet firstSheet = workbook.getSheetAt(0);
+        Cell titleCell = firstSheet.getRow(TITLE_ROW_NUMBER).getCell(0);
 
-        for (Row row : firstSheet) {
+        title = (titleCell != null) && (titleCell.getCellType() == CellType.STRING)
+            ? titleCell.getStringCellValue()
+            : "";
 
-            int i = row.getRowNum();
-            if (i == TITLE_ROW_INDEX) {
-                title = joinToString(row);
-            } else if (i == HEADER1_ROW_INDEX) {
-                header1 = joinToString(row);
-            } else if (i == HEADER2_ROW_INDEX) {
-                header2 = joinToString(row);
-            } else {
-                loadRows(firstSheet, row.getRowNum());
-                return;
-            }
-        }
+        loadRows(firstSheet);
     }
 
-    private void loadRows(XSSFSheet sheet, int rowNum) {
-        rows = (BookWireRow[]) IntStream.rangeClosed(rowNum, sheet.getPhysicalNumberOfRows())
-                                   .mapToObj(i -> new BookWireRow(sheet.getRow(i)))
-                                   .toArray();
-    }
-
-    private String joinToString(Row cells) {
-        StringBuilder sb = new StringBuilder();
-        for (Cell cell : cells) {
-            String content = cell.getStringCellValue();
-            if (!content.isEmpty())
-                sb.append(content);
-        }
-
-        return sb.toString();
+    private void loadRows(Sheet sheet) {
+        rows = IntStream.rangeClosed(
+            FIRST_DATA_ROW_NUMBER,
+            (sheet.getLastRowNum() - 1) // -1 because the last Row is just a summary.
+        )
+        .mapToObj(i -> new BookWireRow(sheet.getRow(i)))
+        .toArray(BookWireRow[]::new);
     }
     //endregion
 }

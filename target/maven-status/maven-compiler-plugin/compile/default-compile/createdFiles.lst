@@ -10,6 +10,7 @@ ch/zhaw/roma/controller/SettingsViewController.class
 ch/zhaw/roma/model/excel/bookwire/BookWireIndexes.class
 ch/zhaw/roma/model/excel/bookwire/BookWireRow.class
 ch/zhaw/roma/helpers/XmlHelper.class
+ch/zhaw/roma/model/excel/EmptyCell.class
 ch/zhaw/roma/controller/ImportExcelViewController.class
 ch/zhaw/roma/controller/IntroViewController.class
 ch/zhaw/roma/model/excel/inhouse/RowIndexes.class

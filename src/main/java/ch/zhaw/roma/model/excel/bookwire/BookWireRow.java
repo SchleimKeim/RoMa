@@ -1,6 +1,11 @@
 package ch.zhaw.roma.model.excel.bookwire;
 
+import ch.zhaw.roma.model.excel.EmptyCell;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
+
+import java.util.stream.IntStream;
 
 public class BookWireRow {
 
@@ -8,31 +13,31 @@ public class BookWireRow {
     private String IsbnNumber;
     private String AuthorAndTitle;
     private int SoldUnitsJanuary;
-    private Double AmountJanuary;
+    private double AmountJanuary;
     private int SoldUnitsFebruary;
-    private Double AmountFebruary;
+    private double AmountFebruary;
     private int SoldUnitsMarch;
-    private Double AmountMarch;
+    private double AmountMarch;
     private int SoldUnitsApril;
-    private Double AmountApril;
+    private double AmountApril;
     private int SoldUnitsMay;
-    private Double AmountMay;
+    private double AmountMay;
     private int SoldUnitsJune;
-    private Double AmountJune;
+    private double AmountJune;
     private int SoldUnitsJuly;
-    private Double AmountJuly;
+    private double AmountJuly;
     private int SoldUnitsAugust;
-    private Double AmountAugust;
+    private double AmountAugust;
     private int SoldUnitsSeptembre;
-    private Double AmountSeptembre;
+    private double AmountSeptembre;
     private int SoldUnitsOctobre;
-    private Double AmountOctobre;
+    private double AmountOctobre;
     private int SoldUnitsNovember;
-    private Double AmountNovember;
+    private double AmountNovember;
     private int SoldUnitsDecember;
-    private Double AmountDecember;
+    private double AmountDecember;
     private int SoldUnitsTotal;
-    private Double AmountTotal;
+    private double AmountTotal;
     //endregion
 
     //region Construction
@@ -43,59 +48,86 @@ public class BookWireRow {
 
     //region Private Helpers
     private void parse(Row row) {
-        IsbnNumber = row.getCell(BookWireIndexes.ISBN).getStringCellValue();
-        AuthorAndTitle = row.getCell(BookWireIndexes.AUTHOR_AND_TITLE).getStringCellValue();
-        SoldUnitsJanuary = toInt(row.getCell(BookWireIndexes.SALES_JANUARY).getStringCellValue());
-        AmountJanuary = toDouble(row.getCell(BookWireIndexes.AMOUNT_JANUARY).getStringCellValue());
-        SoldUnitsFebruary = toInt(row.getCell(BookWireIndexes.SALES_FEBRUARY).getStringCellValue());
-        AmountFebruary = toDouble(row.getCell(BookWireIndexes.AMOUNT_JANUARY).getStringCellValue());
-        SoldUnitsMarch = toInt(row.getCell(BookWireIndexes.SALES_FEBRUARY).getStringCellValue());
-        AmountMarch = toDouble(row.getCell(BookWireIndexes.AMOUNT_JANUARY).getStringCellValue());
-        SoldUnitsApril = toInt(row.getCell(BookWireIndexes.SALES_FEBRUARY).getStringCellValue());
-        AmountApril = toDouble(row.getCell(BookWireIndexes.AMOUNT_JANUARY).getStringCellValue());
-        SoldUnitsMay = toInt(row.getCell(BookWireIndexes.SALES_FEBRUARY).getStringCellValue());
-        AmountMay = toDouble(row.getCell(BookWireIndexes.AMOUNT_JANUARY).getStringCellValue());
-        SoldUnitsJune = toInt(row.getCell(BookWireIndexes.SALES_FEBRUARY).getStringCellValue());
-        AmountJune = toDouble(row.getCell(BookWireIndexes.AMOUNT_JANUARY).getStringCellValue());
-        SoldUnitsJuly = toInt(row.getCell(BookWireIndexes.SALES_FEBRUARY).getStringCellValue());
-        AmountJuly = toDouble(row.getCell(BookWireIndexes.AMOUNT_JANUARY).getStringCellValue());
-        SoldUnitsAugust = toInt(row.getCell(BookWireIndexes.SALES_FEBRUARY).getStringCellValue());
-        AmountAugust = toDouble(row.getCell(BookWireIndexes.AMOUNT_JANUARY).getStringCellValue());
-        SoldUnitsSeptembre = toInt(row.getCell(BookWireIndexes.SALES_FEBRUARY).getStringCellValue());
-        AmountSeptembre = toDouble(row.getCell(BookWireIndexes.AMOUNT_JANUARY).getStringCellValue());
-        SoldUnitsOctobre = toInt(row.getCell(BookWireIndexes.SALES_FEBRUARY).getStringCellValue());
-        AmountOctobre = toDouble(row.getCell(BookWireIndexes.AMOUNT_JANUARY).getStringCellValue());
-        SoldUnitsNovember = toInt(row.getCell(BookWireIndexes.SALES_FEBRUARY).getStringCellValue());
-        AmountNovember = toDouble(row.getCell(BookWireIndexes.AMOUNT_JANUARY).getStringCellValue());
-        SoldUnitsDecember = toInt(row.getCell(BookWireIndexes.SALES_FEBRUARY).getStringCellValue());
-        AmountDecember = toDouble(row.getCell(BookWireIndexes.AMOUNT_JANUARY).getStringCellValue());
+
+        Cell[] cells = IntStream.range(0, row.getLastCellNum()).mapToObj(i -> {
+            try {
+                return row.getCell(i);
+            }
+            catch (Exception ex) {
+                return new EmptyCell();
+            }
+        }).toArray(Cell[]::new);
+
+        IsbnNumber = asString(cells[BookWireIndexes.ISBN]);
+        AuthorAndTitle = asString(cells[BookWireIndexes.AUTHOR_AND_TITLE]);
+        SoldUnitsJanuary = asInt(cells[BookWireIndexes.SALES_JANUARY]);
+        AmountJanuary = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
+        SoldUnitsFebruary = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
+        AmountFebruary = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
+        SoldUnitsMarch = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
+        AmountMarch = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
+        SoldUnitsApril = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
+        AmountApril = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
+        SoldUnitsMay = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
+        AmountMay = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
+        AmountJune = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
+        SoldUnitsJuly = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
+        AmountJuly = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
+        SoldUnitsAugust = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
+        AmountAugust = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
+        SoldUnitsSeptembre = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
+        AmountSeptembre = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
+        SoldUnitsOctobre = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
+        AmountOctobre = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
+        SoldUnitsNovember = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
+        AmountNovember = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
+        SoldUnitsDecember = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
+        AmountDecember = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
+
         SoldUnitsTotal = calculateTotalUnitsSold();
         AmountTotal = calculateTotalAmount();
     }
 
+    private String asString(Cell cell) {
+        CellType type = cell.getCellType();
+        return ((type != CellType.BLANK)
+            && (type == CellType.STRING))
+                ? cell.getStringCellValue()
+                : "";
+    }
 
-    private Double toDouble(String stringCellValue) {
+
+    private double asDouble(Cell cell) {
+        final double error = -1d;
         try {
-            return Double.parseDouble(stringCellValue);
+        CellType type = cell.getCellType();
+        return ((type != CellType.BLANK)
+            && (type == CellType.NUMERIC))
+                ? cell.getNumericCellValue()
+                : error;
         }
         catch (NumberFormatException ex) {
-            return 0d;
+            return error;
         }
     }
 
-    private int toInt(String stringCellValue) {
+    private int asInt(Cell cell) {
+        final int error = -1;
         try {
-            return Integer.parseInt(stringCellValue);
+        CellType type = cell.getCellType();
+        return ((type != CellType.BLANK)
+            && (type == CellType.NUMERIC))
+                ? Integer.parseInt(Double.toString(cell.getNumericCellValue()))
+                : error;
         }
         catch (NumberFormatException ex) {
-            return -1;
+            return error;
         }
     }
-
     //endregion
 
     //region Public Members
-    public Double calculateTotalAmount() {
+    public double calculateTotalAmount() {
         return AmountTotal = AmountJanuary
             + AmountFebruary
             + AmountMarch
@@ -124,7 +156,7 @@ public class BookWireRow {
             + SoldUnitsNovember
             + SoldUnitsDecember;
     }
-    //
+    //endregion
 
     //region Getters And Setters
     public String getIsbnNumber() {
@@ -139,7 +171,7 @@ public class BookWireRow {
         return SoldUnitsJanuary;
     }
 
-    public Double getAmountJanuary() {
+    public double getAmountJanuary() {
         return AmountJanuary;
     }
 
@@ -147,7 +179,7 @@ public class BookWireRow {
         return SoldUnitsFebruary;
     }
 
-    public Double getAmountFebruary() {
+    public double getAmountFebruary() {
         return AmountFebruary;
     }
 
@@ -155,7 +187,7 @@ public class BookWireRow {
         return SoldUnitsMarch;
     }
 
-    public Double getAmountMarch() {
+    public double getAmountMarch() {
         return AmountMarch;
     }
 
@@ -163,7 +195,7 @@ public class BookWireRow {
         return SoldUnitsApril;
     }
 
-    public Double getAmountApril() {
+    public double getAmountApril() {
         return AmountApril;
     }
 
@@ -171,7 +203,7 @@ public class BookWireRow {
         return SoldUnitsMay;
     }
 
-    public Double getAmountMay() {
+    public double getAmountMay() {
         return AmountMay;
     }
 
@@ -179,7 +211,7 @@ public class BookWireRow {
         return SoldUnitsJune;
     }
 
-    public Double getAmountJune() {
+    public double getAmountJune() {
         return AmountJune;
     }
 
@@ -187,7 +219,7 @@ public class BookWireRow {
         return SoldUnitsJuly;
     }
 
-    public Double getAmountJuly() {
+    public double getAmountJuly() {
         return AmountJuly;
     }
 
@@ -195,7 +227,7 @@ public class BookWireRow {
         return SoldUnitsAugust;
     }
 
-    public Double getAmountAugust() {
+    public double getAmountAugust() {
         return AmountAugust;
     }
 
@@ -203,7 +235,7 @@ public class BookWireRow {
         return SoldUnitsSeptembre;
     }
 
-    public Double getAmountSeptembre() {
+    public double getAmountSeptembre() {
         return AmountSeptembre;
     }
 
@@ -211,7 +243,7 @@ public class BookWireRow {
         return SoldUnitsOctobre;
     }
 
-    public Double getAmountOctobre() {
+    public double getAmountOctobre() {
         return AmountOctobre;
     }
 
@@ -219,7 +251,7 @@ public class BookWireRow {
         return SoldUnitsNovember;
     }
 
-    public Double getAmountNovember() {
+    public double getAmountNovember() {
         return AmountNovember;
     }
 
@@ -227,7 +259,7 @@ public class BookWireRow {
         return SoldUnitsDecember;
     }
 
-    public Double getAmountDecember() {
+    public double getAmountDecember() {
         return AmountDecember;
     }
 
@@ -235,7 +267,7 @@ public class BookWireRow {
         return SoldUnitsTotal;
     }
 
-    public Double getAmountTotal() {
+    public double getAmountTotal() {
         return AmountTotal;
     }
     //endregion
