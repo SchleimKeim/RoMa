@@ -47,7 +47,7 @@ public class ExcelImporterTest {
         ExcelSheet excelSheet = getBookWireInstance().Import();
         Assert.assertNotNull(excelSheet);
         BookWireSheet testSheet = excelSheet.asBookwire();
-        Assert.assertTrue(testSheet.getRowCount() == 99);
+        Assert.assertTrue(testSheet.getRowCount() == 98);
     }
     //endregion
 

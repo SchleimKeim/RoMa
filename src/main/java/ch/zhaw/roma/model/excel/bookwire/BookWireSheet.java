@@ -13,7 +13,7 @@ public class BookWireSheet extends ExcelSheet {
 
     //region Private Fields
     private static final int TITLE_ROW_NUMBER = 0;
-    private static final int FIRST_DATA_ROW_NUMBER = 4;
+    private static final int FIRST_DATA_ROW_NUMBER = 5;
     private BookWireRow[] rows;
     private String title;
     //endregion
