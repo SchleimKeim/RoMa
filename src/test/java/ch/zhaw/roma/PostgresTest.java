@@ -1,11 +1,23 @@
 package ch.zhaw.roma;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.util.List;
+
 public class PostgresTest {
 
-/*	private SessionFactory sessionFactory;
+	private SessionFactory sessionFactory;
 
 	@Before
-	protected void before() throws Exception {
+	public void before() throws Exception {
 		// A SessionFactory is set up once for an application!
 		final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
 				.configure() // configures settings from hibernate.cfg.xml
@@ -21,7 +33,7 @@ public class PostgresTest {
 	}
 
 	@After
-	protected void after() throws Exception {
+	public void after() throws Exception {
 		if ( sessionFactory != null ) {
 			sessionFactory.close();
 		}
@@ -49,6 +61,6 @@ public class PostgresTest {
         session.getTransaction().commit();
         session.close();
 
-        Assert.fail();
-	}*/
+        Assert.assertTrue(true);
+	}
 }
