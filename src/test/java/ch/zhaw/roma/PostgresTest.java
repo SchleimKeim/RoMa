@@ -1,13 +1,8 @@
 package ch.zhaw.roma;
 
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-
 public class PostgresTest {
 
-	private SessionFactory sessionFactory;
+/*	private SessionFactory sessionFactory;
 
 	@Before
 	protected void before() throws Exception {
@@ -55,5 +50,5 @@ public class PostgresTest {
         session.close();
 
         Assert.fail();
-	}
+	}*/
 }

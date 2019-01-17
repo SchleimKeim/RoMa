@@ -8,14 +8,14 @@ import javafx.collections.ObservableList;
 public class Book {
 
 
-    private final IntegerProperty id;
-    private final StringProperty ISBN;
-    private final StringProperty title;
-    private final ObjectProperty<Author> author;
-    private final FloatProperty priceHardcoverEUR;
-    private final FloatProperty priceHardcoverCHF;
-    private final FloatProperty priceEbookEUR;
-    private final FloatProperty royalityQuote;
+    private IntegerProperty id;
+    private StringProperty ISBN;
+    private StringProperty title;
+    private ObjectProperty<Author> author;
+    private FloatProperty priceHardcoverEUR;
+    private FloatProperty priceHardcoverCHF;
+    private FloatProperty priceEbookEUR;
+    private FloatProperty royalityQuote;
 
     public ObservableList<Settlement> getSettlementOverview() {
         return settlementOverview;
