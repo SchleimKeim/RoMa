@@ -1,4 +1,4 @@
-package ch.zhaw.roma.controller;
+package ch.zhaw.roma.view;
 
 import ch.zhaw.roma.view.*;
 import ch.zhaw.roma.model.viewClasses.*;
@@ -61,11 +61,11 @@ public class EditRoMaNoteController {
 
 
 
-
-    //reference to main
-    private Main mainApp;
-
     public EditRoMaNoteController() {
+
+    }
+
+    private void initialize() {
 
     }
 
@@ -73,10 +73,6 @@ public class EditRoMaNoteController {
 
 
 
-
-
-
-
-        }
+}
 
 

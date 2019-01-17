@@ -4,24 +4,51 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javax.persistence.*;
+import javafx.scene.layout.BorderPane;
+//import javax.persistence.*;
+import java.io.IOException;
 
 public class Main extends Application {
 
-
+    private Stage primaryStage;
+    private BorderPane rootLayout;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("view/RootLayout.fxml"));
+            rootLayout = (BorderPane) loader.load();
+            this.primaryStage = primaryStage;
+            this.primaryStage.setTitle("RoHo - Royalty Management System");
+            this.primaryStage.setScene(new Scene(rootLayout));
+            this.primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        Parent root = FXMLLoader.load(getClass().getResource("/view/IntroView.fxml"));
-        primaryStage.setTitle("RoHo - Royalty Management System");
-        primaryStage.setScene(new Scene(root));
-        primaryStage.show();
+        showEditRoMaNote();
     }
+
+
+    public void showEditRoMaNote() {
+
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("view/EditRoMaNote.fxml"));
+            AnchorPane editRoMaNote = (AnchorPane) loader.load();
+            rootLayout.setCenter(editRoMaNote);
+        } catch (IOException e) {
+                e.printStackTrace();
+        }
+    }
+
 
     public static void main(String[] args) {
         launch(args);
     }
-    EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("ch.zhaw.roma.jpa");
+
+    // EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("ch.zhaw.roma.jpa");
 }
