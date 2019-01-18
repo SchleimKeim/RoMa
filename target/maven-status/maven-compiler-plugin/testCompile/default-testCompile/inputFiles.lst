@@ -1,4 +1,5 @@
 /home/skull/code/IdeaProjects/RoMa/src/test/java/ch/zhaw/roma/PostgresTest.java
 /home/skull/code/IdeaProjects/RoMa/src/test/java/ch/zhaw/roma/helpers/excel/ExcelImporterTest.java
 /home/skull/code/IdeaProjects/RoMa/src/test/java/ch/zhaw/roma/model/BookModel.java
+/home/skull/code/IdeaProjects/RoMa/src/test/java/ch/zhaw/roma/model/repositories/TestRepository.java
 /home/skull/code/IdeaProjects/RoMa/src/test/java/ch/zhaw/roma/XmlHelperTest.java

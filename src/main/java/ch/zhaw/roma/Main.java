@@ -1,8 +1,8 @@
 package ch.zhaw.roma;
 
+import ch.zhaw.roma.interfaces.IRepositority;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -14,6 +14,7 @@ public class Main extends Application {
 
     private Stage primaryStage;
     private BorderPane rootLayout;
+    private IRepositority repositority;
 
     @Override
     public void start(Stage primaryStage) throws Exception{

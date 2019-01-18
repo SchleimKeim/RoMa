@@ -1,0 +1,15 @@
+What to do:
+Alle controller müssen einen Konstruktor haben, welcher eine Session entgegennimmt.
+https://vocabhunter.github.io/2016/11/13/JavaFX-Dependency-Injection.html
+https://gluonhq.com/announcing-gluon-ignite-easy-javafx-dependency-injection/
+
+
+
+<dependency>
+  <groupId>com.gluonhq</groupId>
+  <artifactId>ignite-dagger</artifactId>
+  <version>1.0.2</version>
+</dependency>
+
+di framework:
+http://square.github.io/dagger/
