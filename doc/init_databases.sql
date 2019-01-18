@@ -1,0 +1,8 @@
+DROP DATABASE romatest;
+DROP DATABASE roma;
+CREATE DATABASE romatest;
+CREATE DATABASE roma;
+CREATE USER roma WITH PASSWORD 'roma';
+CREATE USER romatest WITH PASSWORD 'romatest';
+GRANT ALL ON DATABASE roma TO roma;
+GRANT ALL ON DATABASE romatest TO romatest
