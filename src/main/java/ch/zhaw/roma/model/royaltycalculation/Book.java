@@ -1,4 +1,4 @@
-package ch.zhaw.roma.model.viewClasses;
+package ch.zhaw.roma.model.royaltycalculation;
 
 import javafx.beans.property.*;
 import javafx.collections.FXCollections;

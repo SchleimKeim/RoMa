@@ -3,15 +3,16 @@
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/SheetType.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/inhouse/RowIndexes.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/bookwire/BookWireRow.java
-/home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/viewClasses/LegacyEntry.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/bookwire/BookWireSheet.java
-/home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/viewClasses/Book.java
-/home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/viewClasses/Author.java
-/home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/viewClasses/SoldBooksYearly.java
+/home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/royaltycalculation/SoldBooksYearly.java
+/home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/royaltycalculation/Author.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/inhouse/InhouseRow.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/ExcelSheetType.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/controller/IntroViewController.java
-/home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/view/EditRoMaNoteController.java
+/home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/royaltycalculation/LegacyEntry.java
+/home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/royaltycalculation/Settlement.java
+/home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/controller/EditRoMaNoteController.java
+/home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/royaltycalculation/Book.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/helpers/excel/ExcelImporter.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/EmptyCell.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/settings/RoMaSettings.java
@@ -20,4 +21,3 @@
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/Main.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/controller/SettingsViewController.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/controller/ImportExcelViewController.java
-/home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/viewClasses/Settlement.java

@@ -32,7 +32,7 @@ Entity_Adresses
     
 Books
     Id          bigint auto_increment primary key,
-    ISBNNumber  varchar(128) charset utf8,
+    isbnNumber  varchar(128) charset utf8,
     Title       varchar(128) charset utf8,
     Description varchar(128) charset utf8,
     ReleaseDate DateTime null,

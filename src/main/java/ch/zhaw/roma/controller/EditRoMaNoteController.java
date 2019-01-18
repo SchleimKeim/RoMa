@@ -1,8 +1,7 @@
-package ch.zhaw.roma.view;
+package ch.zhaw.roma.controller;
 
-import ch.zhaw.roma.view.*;
-import ch.zhaw.roma.model.viewClasses.*;
-import ch.zhaw.roma.Main;
+import ch.zhaw.roma.model.royaltycalculation.Settlement;
+import ch.zhaw.roma.model.royaltycalculation.SoldBooksYearly;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -60,7 +59,6 @@ public class EditRoMaNoteController {
     private Label country;
 
 
-
     public EditRoMaNoteController() {
 
     }
@@ -68,11 +66,6 @@ public class EditRoMaNoteController {
     private void initialize() {
 
     }
-
-
-
-
-
 }
 
 

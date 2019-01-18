@@ -1,5 +1,6 @@
 package ch.zhaw.roma;
 
+import ch.zhaw.roma.model.BookModel;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
@@ -9,6 +10,8 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.List;
 
 public class PostgresTest {
 
@@ -26,6 +29,7 @@ public class PostgresTest {
 		catch (Exception e) {
 			// The registry would be destroyed by the SessionFactory, but we had trouble building the SessionFactory
 			// so destroy it manually.
+			Assert.fail();
 			StandardServiceRegistryBuilder.destroy( registry );
 		}
 	}
@@ -44,24 +48,33 @@ public class PostgresTest {
 		if(sessionFactory == null)
 			Assert.fail();
 
+		BookModel[] books = getTestModels();
+
 		Session session = sessionFactory.openSession();
-//		session.beginTransaction();
-//		session.save( new Event( "Our very first event!", new Date() ) );
-//		session.save( new Event( "A follow up event", new Date() ) );
-//		session.getTransaction().commit();
+		session.beginTransaction();
+		for(BookModel book: books) {
+			session.save(book);
+		}
+		session.getTransaction().commit();
 		session.close();
 
 		// now lets pull events from the database and list them
-//		session = sessionFactory.openSession();
-//  	session.beginTransaction();
-//		List result = session.createQuery( "from Event" ).list();
-//		for ( Event event : (List<Event>) result ) {
-//			System.out.println( "Event (" + event.getDate() + ") : " + event.getTitle() );
-//		}
+		session = sessionFactory.openSession();
+        session.beginTransaction();
 
-//      session.getTransaction().commit();
+		List<BookModel> result = session.createQuery( "from BookModel" ).list();
+		Assert.assertTrue(result.stream().allMatch(r -> r != null));
+      	session.getTransaction().commit();
         session.close();
 
         Assert.assertTrue(true);
+	}
+
+	private BookModel[] getTestModels() {
+		return new BookModel[] {
+			new BookModel("xxxxxxx", "The Dark Tower"),
+			new BookModel("xxxxxxx", "The King in Yellow"),
+			new BookModel("xxxxxxx", "Cthulu")
+		};
 	}
 }

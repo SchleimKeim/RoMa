@@ -13,8 +13,6 @@
 
     <session-factory>
 
-        <!-- SQL dialect -->
-        <!-- <property name="dialect">org.hibernate.dialect.H2Dialect</property> -->
 
         <!-- Database connection settings -->
 
