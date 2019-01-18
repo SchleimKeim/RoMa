@@ -6,6 +6,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.query.Query;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -62,8 +63,11 @@ public class PostgresTest {
 		session = sessionFactory.openSession();
         session.beginTransaction();
 
-		List<BookModel> result = session.createQuery( "from BookModel" ).list();
-		Assert.assertTrue(result.stream().allMatch(r -> r != null));
+		List<BookModel> result = session.createQuery("from BookModel").getResultList();
+		for(BookModel book : result) {
+			Assert.assertTrue(!book.getIsbnNumber().isEmpty());
+		}
+
       	session.getTransaction().commit();
         session.close();
 

@@ -9,10 +9,14 @@ import javax.persistence.Id;
 @Entity
 public class BookModel {
 
-    private long id;
+    private Long id;
     private String isbnNumber;
     private String title;
-    private long authodId;
+    private Long authodId;
+
+    public BookModel() {
+
+    }
 
     public BookModel(String isbnNumber, String title) {
         this.isbnNumber = isbnNumber;
@@ -22,11 +26,11 @@ public class BookModel {
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    private void setId(long id) {
+    private void setId(Long id) {
         this.id = id;
     }
 
@@ -46,11 +50,11 @@ public class BookModel {
         this.isbnNumber = isbnNumber;
     }
 
-    public long getAuthodId() {
+    public Long getAuthodId() {
         return authodId;
     }
 
-    public void setAuthodId(int authodId) {
+    public void setAuthodId(Long authodId) {
         this.authodId = authodId;
     }
 }

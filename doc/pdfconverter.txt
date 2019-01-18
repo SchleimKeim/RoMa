@@ -1,0 +1,12 @@
+class PdfExporter {
+    public static Export(string path, PdfExportData data) {
+        // ...
+    }
+}
+
+class PdfExportData {
+    string Buchtitel;
+    ...
+}
+
+
