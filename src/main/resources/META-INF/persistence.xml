@@ -18,6 +18,14 @@
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
 
+
+            <mapping class="ch.zhaw.roma.model.viewClasses.Book" />
+            <mapping class="ch.zhaw.roma.model.viewClasses.Author"/>
+
+
         </properties>
+
+
+
     </persistence-unit>
 </persistence>

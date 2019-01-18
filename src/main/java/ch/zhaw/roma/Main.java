@@ -2,12 +2,13 @@ package ch.zhaw.roma;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 import javafx.scene.layout.BorderPane;
-//import javax.persistence.*;
+import javafx.stage.Stage;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.io.IOException;
 
 public class Main extends Application {
@@ -50,5 +51,5 @@ public class Main extends Application {
         launch(args);
     }
 
-    // EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("ch.zhaw.roma.jpa");
+     EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("ch.zhaw.roma.jpa");
 }

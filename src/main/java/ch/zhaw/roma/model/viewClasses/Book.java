@@ -1,23 +1,44 @@
 package ch.zhaw.roma.model.viewClasses;
 
-import javafx.beans.property.*;
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import org.hibernate.annotations.GenericGenerator;
 
+import javax.persistence.*;
 
+@Entity
+@Table(name = "books")
 public class Book {
 
+    @Id
+    @GenericGenerator(name = "incrementBooks", strategy="increment")
+    @GeneratedValue(generator = "incrementBooks")
+    private IntegerProperty book_id;
 
-    private IntegerProperty id;
-    private StringProperty ISBN;
-    private StringProperty title;
+    @ManyToOne
+    @JoinColumn(name = "author_id")
     private ObjectProperty<Author> author;
-    private FloatProperty priceHardcoverEUR;
-    private FloatProperty priceHardcoverCHF;
-    private FloatProperty priceEbookEUR;
-    private FloatProperty royalityQuote;
 
+    @Column(name = "ISBN")
+    private StringProperty ISBN;
+    @Column(name = "title")
+    private StringProperty title;
+    @Column(name = "priceHardcoverEUR")
+    private DoubleProperty priceHardcoverEUR;
+    @Column(name = "priceHardcoverCHF")
+    private DoubleProperty priceHardcoverCHF;
+    @Column(name = "priceEbookEUR")
+    private DoubleProperty priceEbookEUR;
+    @Column(name = "royalityQuote")
+    private DoubleProperty royalityQuote;
+
+    //TODO: @OneToMany(mappedBy = "books", cascade = CascadeType.ALL)
     private ObservableList<Settlement> settlementOverview = FXCollections.observableArrayList();
+    //TODO: @OneToMany(mappedBy = "books", cascade = CascadeType.ALL)
     private ObservableList<SoldBooksYearly> soldBooksOverview = FXCollections.observableArrayList();
 
     public Book() {
@@ -69,16 +90,16 @@ public class Book {
         this.ISBN.set(ISBN);
     }
 
-    public int getId() {
-        return id.get();
+    public int getBook_id() {
+        return book_id.get();
     }
 
-    public IntegerProperty idProperty() {
-        return id;
+    public IntegerProperty book_idProperty() {
+        return book_id;
     }
 
-    public void setId(int id) {
-        this.id.set(id);
+    public void setBook_id(int book_id) {
+        this.book_id.set(book_id);
     }
 
     public String getTitle() {
@@ -105,51 +126,51 @@ public class Book {
         this.author.set(author);
     }
 
-    public float getPriceHardcoverEUR() {
+    public double getPriceHardcoverEUR() {
         return priceHardcoverEUR.get();
     }
 
-    public FloatProperty priceHardcoverEURProperty() {
+    public DoubleProperty priceHardcoverEURProperty() {
         return priceHardcoverEUR;
     }
 
-    public void setPriceHardcoverEUR(float priceHardcoverEUR) {
+    public void setPriceHardcoverEUR(double priceHardcoverEUR) {
         this.priceHardcoverEUR.set(priceHardcoverEUR);
     }
 
-    public float getPriceHardcoverCHF() {
+    public double getPriceHardcoverCHF() {
         return priceHardcoverCHF.get();
     }
 
-    public FloatProperty priceHardcoverCHFProperty() {
+    public DoubleProperty priceHardcoverCHFProperty() {
         return priceHardcoverCHF;
     }
 
-    public void setPriceHardcoverCHF(float priceHardcoverCHF) {
+    public void setPriceHardcoverCHF(double priceHardcoverCHF) {
         this.priceHardcoverCHF.set(priceHardcoverCHF);
     }
 
-    public float getPriceEbookEUR() {
+    public double getPriceEbookEUR() {
         return priceEbookEUR.get();
     }
 
-    public FloatProperty priceEbookEURProperty() {
+    public DoubleProperty priceEbookEURProperty() {
         return priceEbookEUR;
     }
 
-    public void setPriceEbookEUR(float priceEbookEUR) {
+    public void setPriceEbookEUR(double priceEbookEUR) {
         this.priceEbookEUR.set(priceEbookEUR);
     }
 
-    public float getRoyalityQuote() {
+    public double getRoyalityQuote() {
         return royalityQuote.get();
     }
 
-    public FloatProperty royalityQuoteProperty() {
+    public DoubleProperty royalityQuoteProperty() {
         return royalityQuote;
     }
 
-    public void setRoyalityQuote(float royalityQuote) {
+    public void setRoyalityQuote(double royalityQuote) {
         this.royalityQuote.set(royalityQuote);
     }
 
