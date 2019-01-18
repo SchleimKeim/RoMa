@@ -20,7 +20,7 @@ public class PostgresTest {
 	public void before() throws Exception {
 		// A SessionFactory is set up once for an application!
 		final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
-				.configure() // configures settings from hibernate.cfg.xml
+				.configure("hibernate.cfg.xml") // configures settings from hibernate.cfg.xml
 				.build();
 		try {
 			sessionFactory = new MetadataSources( registry ).buildMetadata().buildSessionFactory();
@@ -43,22 +43,25 @@ public class PostgresTest {
 	@Test
 	public void testBasicUsage() {
 		// create a couple of events...
+		if(sessionFactory == null)
+			Assert.fail();
+
 		Session session = sessionFactory.openSession();
-		session.beginTransaction();
+//		session.beginTransaction();
 //		session.save( new Event( "Our very first event!", new Date() ) );
 //		session.save( new Event( "A follow up event", new Date() ) );
-		session.getTransaction().commit();
+//		session.getTransaction().commit();
 		session.close();
 
 		// now lets pull events from the database and list them
-		session = sessionFactory.openSession();
-        session.beginTransaction();
-        List result = session.createQuery( "from Event" ).list();
+//		session = sessionFactory.openSession();
+//  	session.beginTransaction();
+//		List result = session.createQuery( "from Event" ).list();
 //		for ( Event event : (List<Event>) result ) {
 //			System.out.println( "Event (" + event.getDate() + ") : " + event.getTitle() );
 //		}
 
-        session.getTransaction().commit();
+//      session.getTransaction().commit();
         session.close();
 
         Assert.assertTrue(true);

@@ -19,13 +19,12 @@
         <!-- Database connection settings -->
 
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <property name="connection.url">jdbc:postgresql://localhost:5432/roma</property>
-        <property name="connection.username">roma</property>
-        <property name="connection.password">roma</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/romatest</property>
+        <property name="connection.username">romatest</property>
+        <property name="connection.password">romatest</property>
 
         <!-- JDBC connection pool (use the built-in) -->
         <property name="connection.pool_size">1</property>
-
 
         <!-- Disable the second-level cache -->
         <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>

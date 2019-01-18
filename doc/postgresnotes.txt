@@ -1,0 +1,7 @@
+sudo -i -u postgres
+createuser --interactive
+
+
+
+GRANT ALL ON DATABASE roma TO roma;
+ALTER ROLE romatest WITH PASSWORD 'romatest';
