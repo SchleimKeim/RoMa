@@ -17,6 +17,14 @@ public class Book {
     private FloatProperty priceEbookEUR;
     private FloatProperty royalityQuote;
 
+    private ObservableList<Settlement> settlementOverview = FXCollections.observableArrayList();
+    private ObservableList<SoldBooksYearly> soldBooksOverview = FXCollections.observableArrayList();
+
+    public Book() {
+    }
+
+
+
     public ObservableList<Settlement> getSettlementOverview() {
         return settlementOverview;
     }
@@ -29,42 +37,23 @@ public class Book {
         settlementOverview.add(settlement);
     }
 
-
-
-    public ObservableList<LegacyEntry> getLegacyEntries() {
-        return legacyEntries;
+    public ObservableList<SoldBooksYearly> getSoldBooksOverview() {
+        return soldBooksOverview;
     }
 
-    public void setLegacyEntries(ObservableList<LegacyEntry> legacyEntries) {
-        this.legacyEntries = legacyEntries;
+    public void setSoldBooksOverview(ObservableList<SoldBooksYearly> soldBooksOverview) {
+        this.soldBooksOverview = soldBooksOverview;
     }
 
-    public void addLegacyEntry(LegacyEntry legacyEntry) {
-        legacyEntries.add(legacyEntry);
-    }
-
-    public ObservableList<SoldBook> getSoldBooks() {
-        return soldBooks;
-    }
-
-    public void setSoldBooks(ObservableList<SoldBook> soldBooks) {
-        this.soldBooks = soldBooks;
-    }
-
-    public void addSoldBook(SoldBook soldBook) {
-        soldBooks.add(soldBook);
+    public void addSoldBook(SoldBooksYearly soldBooksYearly) {
+        soldBooksOverview.add(soldBooksYearly);
     }
 
 
-    private ObservableList<Settlement> settlementOverview = FXCollections.observableArrayList();
-    private ObservableList<LegacyEntry> legacyEntries = FXCollections.observableArrayList();
-    private ObservableList<SoldBook> soldBooks = FXCollections.observableArrayList();
 
 
-    public Book() {
 
 
-    }
 
 
 
