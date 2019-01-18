@@ -2,7 +2,6 @@ package ch.zhaw.roma.helpers.excel;
 
 import ch.zhaw.roma.model.excel.ExcelSheet;
 import ch.zhaw.roma.model.excel.SheetType;
-import ch.zhaw.roma.model.excel.bookwire.BookWireRow;
 import ch.zhaw.roma.model.excel.bookwire.BookWireSheet;
 import ch.zhaw.roma.model.excel.inhouse.InhouseSheet;
 import org.junit.Assert;
@@ -22,19 +21,19 @@ public class ExcelImporterTest {
     //region Tests
     @Test
     public void getFile() {
-        String path1 = getInhouseInstance().getFile().toAbsolutePath().toString();
-        String path2 = inhouseFile.toAbsolutePath().toString();
-        Assert.assertTrue(path2.equalsIgnoreCase(path1));
-    }
+        String inhouse = inhouseFile.toAbsolutePath().toString();
+        System.out.println(inhouse);
+        Assert.assertTrue(inhouse.contains("inhouse"));
 
-    @Test
-    public void getType() {
-        Assert.assertTrue(getInhouseInstance().getType().equals(SheetType.Verlagsabrechnung));
+
+        String bookWire = bookWireFile.toAbsolutePath().toString();
+        System.out.println(bookWire);
+        Assert.assertTrue(bookWire.contains("bookwire"));
     }
 
     @Test
     public void loadInhouseSheetTest() {
-        ExcelSheet excelSheet = getInhouseInstance().Import();
+        ExcelSheet excelSheet = getInhouse().Import();
         Assert.assertNotNull(excelSheet);
 
         InhouseSheet testSheet = excelSheet.asInhouse();
@@ -44,7 +43,7 @@ public class ExcelImporterTest {
 
     @Test
     public void basicLoadBookWireSheetTest() {
-        ExcelSheet excelSheet = getBookWireInstance().Import();
+        ExcelSheet excelSheet = getBookWire().Import();
         Assert.assertNotNull(excelSheet);
         BookWireSheet testSheet = excelSheet.asBookwire();
         Assert.assertTrue(testSheet.getRowCount() == 98);
@@ -52,13 +51,13 @@ public class ExcelImporterTest {
     //endregion
 
     //region Private Helpers
-    private ExcelImporter getBookWireInstance() {
+    private ExcelImporter getBookWire() {
         ExcelImporter imp = new ExcelImporter(bookWireFile.toAbsolutePath().toString(), SheetType.Bookwire);
         Assert.assertNotNull(imp);
         return imp;
     }
 
-    private ExcelImporter getInhouseInstance() {
+    private ExcelImporter getInhouse() {
         ExcelImporter imp = new ExcelImporter(inhouseFile.toString(), SheetType.Verlagsabrechnung);
         Assert.assertNotNull(imp);
         return imp;
