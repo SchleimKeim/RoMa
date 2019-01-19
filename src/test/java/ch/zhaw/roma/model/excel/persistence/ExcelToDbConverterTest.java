@@ -17,10 +17,10 @@ public class ExcelToDbConverterTest {
     }
 
     @Test
-    public void createFrom() {
+    public void createFromInhouse() {
     }
 
     @Test
-    public void createFrom1() {
+    public void createFromBookWire() {
     }
 }

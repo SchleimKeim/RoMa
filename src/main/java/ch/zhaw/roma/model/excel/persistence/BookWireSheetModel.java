@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import java.util.List;
+import java.util.ArrayList;
 
 @Entity
 public class BookWireSheetModel extends SheetModel {
@@ -14,7 +14,7 @@ public class BookWireSheetModel extends SheetModel {
     //region Private Fields
     private Long id;
     @OneToMany(mappedBy = "sheet")
-    private List<BookWireRowModel> rows;
+    private ArrayList<BookWireRowModel> rows;
     //endregion
 
 
@@ -37,11 +37,11 @@ public class BookWireSheetModel extends SheetModel {
         this.id = id;
     }
 
-    public List<BookWireRowModel> getRows() {
+    public ArrayList<BookWireRowModel> getRows() {
         return rows;
     }
 
-    public void setRows(List<BookWireRowModel> rows) {
+    public void setRows(ArrayList<BookWireRowModel> rows) {
         this.rows = rows;
     }
     //endregion

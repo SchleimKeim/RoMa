@@ -5,10 +5,8 @@ import ch.zhaw.roma.model.excel.bookwire.BookWireSheet;
 import ch.zhaw.roma.model.excel.inhouse.InhouseRow;
 import ch.zhaw.roma.model.excel.inhouse.InhouseSheet;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Stream;
 
 public class ExcelToDbConverter {
 
@@ -18,13 +16,12 @@ public class ExcelToDbConverter {
         if (sheet == null)
             return null;
 
-        InhouseRowModel[] rows = Arrays.stream(
-            sheet.getRows())
-                                     .map(ExcelToDbConverter::createRowFrom)
-                                     .toArray(InhouseRowModel[]::new);
+        InhouseRowModel[] rows = Arrays.stream(sheet.getRows())
+            .map(ExcelToDbConverter::createRowFrom)
+            .toArray(InhouseRowModel[]::new);
 
         InhouseSheetModel bws = new InhouseSheetModel();
-        bws.setRows(getSet(rows));
+        bws.setRows(Arrays.asList(rows));
         return bws;
     }
 
@@ -38,20 +35,12 @@ public class ExcelToDbConverter {
             .toArray(BookWireRowModel[]::new);
 
         BookWireSheetModel bws = new BookWireSheetModel();
-        bws.setRows(getSet(rows));
+        bws.setRows((ArrayList<BookWireRowModel>) Arrays.asList(rows));
         return bws;
     }
     //endregion
 
     //region Private Helpers
-    private static Collection<InhouseRowModel> getSet(InhouseRowModel[] rows) {
-        return Arrays.asList(rows);
-    }
-
-    private static Collection<BookWireRowModel> getSet(BookWireRowModel[] rows) {
-        return Arrays.asList(rows);
-    }
-
     private static InhouseRowModel createRowFrom(InhouseRow inhouseRow) {
         InhouseRowModel m = new InhouseRowModel();
 
@@ -109,14 +98,20 @@ public class ExcelToDbConverter {
         r.setAmountAugust(bookWireRow.getAmountAugust());
         r.setSoldUnitsAugust(bookWireRow.getSoldUnitsAugust());
 
-        r.setAmountSeptembre(bookWireRow.getAmountSeptembre());
-        r.setSoldUnitsSeptembre(bookWireRow.getSoldUnitsSeptembre());
+        r.setAmountSeptembre(bookWireRow.getAmountSeptember());
+        r.setSoldUnitsSeptembre(bookWireRow.getSoldUnitsSeptember());
 
-        r.setAmountOctobre(bookWireRow.getAmountOctobre());
-        r.setSoldUnitsOctobre(bookWireRow.getSoldUnitsOctobre());
+        r.setAmountOctobre(bookWireRow.getAmountOctober());
+        r.setSoldUnitsOctobre(bookWireRow.getSoldUnitsOctober());
 
         r.setAmountNovember(bookWireRow.getAmountNovember());
+        r.setSoldUnitsNovember(bookWireRow.getSoldUnitsNovember());
+
+        r.setAmountDecember(bookWireRow.getAmountDecember());
         r.setSoldUnitsDecember(bookWireRow.getSoldUnitsDecember());
+
+        r.setAmountTotal(bookWireRow.getAmountTotal());
+        r.setSoldUnitsTotal(bookWireRow.getSoldUnitsTotal());
 
         return r;
     }

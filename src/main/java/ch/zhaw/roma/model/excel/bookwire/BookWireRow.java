@@ -28,10 +28,10 @@ public class BookWireRow {
     private double amountJuly;
     private int soldUnitsAugust;
     private double amountAugust;
-    private int soldUnitsSeptembre;
-    private double amountSeptembre;
-    private int soldUnitsOctobre;
-    private double amountOctobre;
+    private int soldUnitsSeptember;
+    private double amountSeptember;
+    private int soldUnitsOctober;
+    private double amountOctober;
     private int soldUnitsNovember;
     private double amountNovember;
     private int soldUnitsDecember;
@@ -75,10 +75,10 @@ public class BookWireRow {
         amountJuly = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
         soldUnitsAugust = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
         amountAugust = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
-        soldUnitsSeptembre = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
-        amountSeptembre = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
-        soldUnitsOctobre = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
-        amountOctobre = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
+        soldUnitsSeptember = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
+        amountSeptember = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
+        soldUnitsOctober = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
+        amountOctober = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
         soldUnitsNovember = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
         amountNovember = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
         soldUnitsDecember = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
@@ -136,8 +136,8 @@ public class BookWireRow {
             + amountJune
             + amountJuly
             + amountAugust
-            + amountSeptembre
-            + amountOctobre
+            + amountSeptember
+            + amountOctober
             + amountNovember
             + amountDecember;
     }
@@ -151,8 +151,8 @@ public class BookWireRow {
             + soldUnitsJune
             + soldUnitsJuly
             + soldUnitsAugust
-            + soldUnitsSeptembre
-            + soldUnitsOctobre
+            + soldUnitsSeptember
+            + soldUnitsOctober
             + soldUnitsNovember
             + soldUnitsDecember;
     }
@@ -231,20 +231,20 @@ public class BookWireRow {
         return amountAugust;
     }
 
-    public int getSoldUnitsSeptembre() {
-        return soldUnitsSeptembre;
+    public int getSoldUnitsSeptember() {
+        return soldUnitsSeptember;
     }
 
-    public double getAmountSeptembre() {
-        return amountSeptembre;
+    public double getAmountSeptember() {
+        return amountSeptember;
     }
 
-    public int getSoldUnitsOctobre() {
-        return soldUnitsOctobre;
+    public int getSoldUnitsOctober() {
+        return soldUnitsOctober;
     }
 
-    public double getAmountOctobre() {
-        return amountOctobre;
+    public double getAmountOctober() {
+        return amountOctober;
     }
 
     public int getSoldUnitsNovember() {
@@ -269,6 +269,10 @@ public class BookWireRow {
 
     public double getAmountTotal() {
         return amountTotal;
+    }
+
+    public void setSoldUnitsJune(int soldUnitsJune) {
+        this.soldUnitsJune = soldUnitsJune;
     }
     //endregion
 
