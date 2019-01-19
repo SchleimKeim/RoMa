@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="hibernate.cfg.xml/Hibernate" uuid="6b45afcc-7093-464e-aae6-60e870d140d6">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+/home/rackham/Dokumente/zhaw/2.3 Progreammiersprachen - Vertiefung Java/Gruppenarbeit/RoMa/src/main/resources/hibernate.cfg.xml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/roma</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="ch.zhaw.roma.jpa/Hibernate" uuid="f6b992d1-2b0d-48ae-974d-b80aa1c3c42f">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+/home/rackham/Dokumente/zhaw/2.3 Progreammiersprachen - Vertiefung Java/Gruppenarbeit/RoMa/doc/hibernate.xml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/roma</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="hibernate.cfg.xml/Hibernate" uuid="dbbc4a2b-0a5d-4c43-9820-b65da647e9f9">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+/home/rackham/Dokumente/zhaw/2.3 Progreammiersprachen - Vertiefung Java/Gruppenarbeit/RoMa/target/classes/hibernate.cfg.xml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/roma</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="hibernate.cfg.xml/Hibernate" uuid="dbb46ca1-b23b-4725-aa5c-38fed1ff81fc">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+/home/rackham/Dokumente/zhaw/2.3 Progreammiersprachen - Vertiefung Java/Gruppenarbeit/RoMa/target/test-classes/hibernate.cfg.xml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/romatest</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="hibernate.cfg.xml/Hibernate" uuid="a7d0163c-d676-4a42-8d6c-9f57d8bed3db">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+/home/rackham/Dokumente/zhaw/2.3 Progreammiersprachen - Vertiefung Java/Gruppenarbeit/RoMa/src/test/resources/hibernate.cfg.xml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/romatest</jdbc-url>
+    </data-source>
+  </component>
+</project>

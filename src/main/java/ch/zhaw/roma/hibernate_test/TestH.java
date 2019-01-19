@@ -38,6 +38,7 @@ public class TestH {
         b1.setPriceHardcoverCHF(49.45);
         b1.setPriceHardcoverEUR(45.55);
         b1.setRoyalityQuote(7);
+        b1.setAuthor(a1);
 
 
         b2 = new Book();
@@ -47,6 +48,7 @@ public class TestH {
         b2.setPriceHardcoverCHF(39.40);
         b2.setPriceHardcoverEUR(33.35);
         b2.setRoyalityQuote(7);
+        b2.setAuthor(a1);
 
 
         a1 = new Author();

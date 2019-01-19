@@ -17,14 +17,16 @@ public class Book {
     @Id
     @GenericGenerator(name = "incrementBooks", strategy="increment")
     @GeneratedValue(generator = "incrementBooks")
-    private IntegerProperty book_id;
+    private int book_id;
+
+
 
     @ManyToOne
-    @JoinColumn(name = "author_id")
-    private ObjectProperty<Author> author;
+    @JoinColumn
+    private Author author;
 
     @Column(name = "ISBN")
-    private StringProperty ISBN;
+    private StringPropSerty ISBN;
     @Column(name = "title")
     private StringProperty title;
     @Column(name = "priceHardcoverEUR")
@@ -42,6 +44,15 @@ public class Book {
     private ObservableList<SoldBooksYearly> soldBooksOverview = FXCollections.observableArrayList();
 
     public Book() {
+    }
+
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 
 
@@ -114,18 +125,6 @@ public class Book {
         this.title.set(title);
     }
 
-    public Author getAuthor() {
-        return author.get();
-    }
-
-    public ObjectProperty<Author> authorProperty() {
-        return author;
-    }
-
-    public void setAuthor(Author author) {
-        this.author.set(author);
-    }
-
     public double getPriceHardcoverEUR() {
         return priceHardcoverEUR.get();
     }
@@ -174,9 +173,5 @@ public class Book {
         this.royalityQuote.set(royalityQuote);
     }
 
-
-
-
-
-
 }
+

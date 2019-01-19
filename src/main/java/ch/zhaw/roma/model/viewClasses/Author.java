@@ -52,7 +52,7 @@ public class Author {
 
 
 
-    @OneToMany(mappedBy = "authors", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
     private List<Book> bookList = new ArrayList<>();
 
     private ObservableList<Book> books;
