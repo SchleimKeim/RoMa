@@ -1,7 +1,9 @@
 package ch.zhaw.roma.interfaces;
 
-import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
 public interface IRepositority {
-    Session getSession();
+
+    SessionFactory getSessionFactory();
+
 }

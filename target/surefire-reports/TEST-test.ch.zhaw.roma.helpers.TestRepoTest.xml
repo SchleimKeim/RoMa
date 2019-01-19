@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="ch.zhaw.roma.PostgresTest" time="0.539" errors="0" skipped="0">
+<testsuite tests="2" failures="0" name="test.ch.zhaw.roma.helpers.TestRepoTest" time="2.659" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2018.3.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -60,5 +60,6 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="ch.zhaw.roma.PostgresTest" name="testBasicUsage" time="0.539"/>
+  <testcase classname="test.ch.zhaw.roma.helpers.TestRepoTest" name="testGetSessionFactory" time="2.659"/>
+  <testcase classname="test.ch.zhaw.roma.helpers.TestRepoTest" name="testBuildSessionFactory" time="0"/>
 </testsuite>
