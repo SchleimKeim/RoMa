@@ -2,12 +2,10 @@ package ch.zhaw.roma.interfaces;
 
 import ch.zhaw.roma.model.excel.persistence.BookWireSheetModel;
 
-import java.util.UUID;
-
 public interface IBookWireRowModel {
-     UUID getId();
+     Long getId();
 
-     void setId(UUID id);
+     void setId(Long id);
 
      String getIsbnNumber();
 

@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: ch.zhaw.roma.helpers.TestRepoTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.293 sec <<< FAILURE!
-testGetSessionFactory(ch.zhaw.roma.helpers.TestRepoTest)  Time elapsed: 0.292 sec  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.95 sec <<< FAILURE!
+testGetSessionFactory(ch.zhaw.roma.helpers.TestRepoTest)  Time elapsed: 0.95 sec  <<< ERROR!
 java.lang.NullPointerException
 	at ch.zhaw.roma.helpers.TestRepoTest.testGetSessionFactory(TestRepoTest.java:30)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)

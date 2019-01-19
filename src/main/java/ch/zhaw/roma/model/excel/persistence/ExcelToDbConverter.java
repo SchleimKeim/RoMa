@@ -5,7 +5,6 @@ import ch.zhaw.roma.model.excel.bookwire.BookWireSheet;
 import ch.zhaw.roma.model.excel.inhouse.InhouseRow;
 import ch.zhaw.roma.model.excel.inhouse.InhouseSheet;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ExcelToDbConverter {

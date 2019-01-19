@@ -2,19 +2,16 @@ package ch.zhaw.roma.model.excel.persistence;
 import ch.zhaw.roma.interfaces.IBookWireRowModel;
 import ch.zhaw.roma.model.excel.bookwire.BookWireSheet;
 
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import java.util.UUID;
+import javax.persistence.*;
 
 @Entity
+@Access(AccessType.FIELD)
 public class BookWireRowModel implements IBookWireRowModel {
 
     //region Private Fields
     @Id
-    private UUID id;
+    private Long id;
     private BookWireSheetModel sheet;
-
     private String isbnNumber;
     private String authorAndTitle;
     private int soldUnitsJanuary;
@@ -55,11 +52,11 @@ public class BookWireRowModel implements IBookWireRowModel {
     //endregion
 
     //region Getters and Setters
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

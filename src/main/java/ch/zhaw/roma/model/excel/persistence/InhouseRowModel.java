@@ -1,13 +1,16 @@
 package ch.zhaw.roma.model.excel.persistence;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.util.UUID;
 
-//@Entity
+@Entity
+@Access(AccessType.FIELD)
 public class InhouseRowModel {
     //region Private Fields
-    private UUID id;
+    @Id
+    private Long id;
     private InhouseSheetModel sheet;
     private String articleNr;
     private String title;
@@ -33,12 +36,11 @@ public class InhouseRowModel {
     //endregion
 
     //region Getters and Setters
-//    @Id
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

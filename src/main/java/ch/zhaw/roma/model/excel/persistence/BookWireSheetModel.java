@@ -1,25 +1,19 @@
 package ch.zhaw.roma.model.excel.persistence;
 
-import org.hibernate.cfg.AccessType;
-
-import javax.persistence.Access;
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.UUID;
+import javax.persistence.*;
+import java.util.*;
 
 @Entity
-@Access()
+@Access(AccessType.FIELD)
 public class BookWireSheetModel extends SheetModel {
 
     //region Private Fields
     @Id
-    private UUID id;
+    private Long id;
+
+
     @ElementCollection(targetClass = BookWireRowModel.class)
-    private Set<BookWireRowModel> rows = new HashSet<>();
+    private Collection<BookWireRowModel> rows = new HashSet<>();
     //endregion
 
 
@@ -31,22 +25,20 @@ public class BookWireSheetModel extends SheetModel {
 
 
     //region Getters and Setters
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public Set<BookWireRowModel> getRows() {
+    public Collection<BookWireRowModel> getRows() {
         return rows;
     }
 
-    public void setRows(Set<BookWireRowModel> rows) {
+    public void setRows(Collection<BookWireRowModel> rows) {
         this.rows = rows;
     }
     //endregion
-
-
 }

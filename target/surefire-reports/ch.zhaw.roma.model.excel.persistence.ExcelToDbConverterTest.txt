@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: ch.zhaw.roma.model.excel.persistence.ExcelToDbConverterTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.603 sec <<< FAILURE!
-createFromInhouse(ch.zhaw.roma.model.excel.persistence.ExcelToDbConverterTest)  Time elapsed: 0.315 sec  <<< FAILURE!
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.283 sec <<< FAILURE!
+createFromInhouse(ch.zhaw.roma.model.excel.persistence.ExcelToDbConverterTest)  Time elapsed: 0.131 sec  <<< FAILURE!
 java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:86)
 	at ch.zhaw.roma.model.excel.persistence.ExcelToDbConverterTest.setUp(ExcelToDbConverterTest.java:31)
@@ -37,7 +37,7 @@ java.lang.AssertionError
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-createFromBookWire(ch.zhaw.roma.model.excel.persistence.ExcelToDbConverterTest)  Time elapsed: 0.285 sec  <<< FAILURE!
+createFromBookWire(ch.zhaw.roma.model.excel.persistence.ExcelToDbConverterTest)  Time elapsed: 0.152 sec  <<< FAILURE!
 java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:86)
 	at ch.zhaw.roma.model.excel.persistence.ExcelToDbConverterTest.setUp(ExcelToDbConverterTest.java:31)
