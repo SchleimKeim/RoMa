@@ -7,14 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 public class InhouseSheetModel extends SheetModel{
 
     //region Private Fields
     private Long id;
-    private Set<InhouseRowModel> rows;
+    private List<InhouseRowModel> rows;
     //endregion
 
     //region Construction
@@ -42,11 +42,11 @@ public class InhouseSheetModel extends SheetModel{
     }
 
     @OneToMany(mappedBy = "sheet")
-    public Set<InhouseRowModel> getRows() {
+    public List<InhouseRowModel> getRows() {
         return rows;
     }
 
-    public void setRows(Set<InhouseRowModel> rows) {
+    public void setRows(List<InhouseRowModel> rows) {
         this.rows = rows;
     }
     //endregion

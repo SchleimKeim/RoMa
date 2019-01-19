@@ -1,17 +1,12 @@
 package ch.zhaw.roma.model.excel.persistence;
 
-import ch.zhaw.roma.model.excel.bookwire.BookWireRow;
-import ch.zhaw.roma.model.excel.bookwire.BookWireSheet;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.stream.Stream;
+import java.util.List;
 
 @Entity
 public class BookWireSheetModel extends SheetModel {
@@ -19,7 +14,7 @@ public class BookWireSheetModel extends SheetModel {
     //region Private Fields
     private Long id;
     @OneToMany(mappedBy = "sheet")
-    private Set<BookWireRowModel> rows;
+    private List<BookWireRowModel> rows;
     //endregion
 
 
@@ -42,11 +37,11 @@ public class BookWireSheetModel extends SheetModel {
         this.id = id;
     }
 
-    public Set<BookWireRowModel> getRows() {
+    public List<BookWireRowModel> getRows() {
         return rows;
     }
 
-    public void setRows(Set<BookWireRowModel> rows) {
+    public void setRows(List<BookWireRowModel> rows) {
         this.rows = rows;
     }
     //endregion

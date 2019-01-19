@@ -6,7 +6,9 @@ import ch.zhaw.roma.model.excel.inhouse.InhouseRow;
 import ch.zhaw.roma.model.excel.inhouse.InhouseSheet;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 
 public class ExcelToDbConverter {
 
@@ -42,16 +44,12 @@ public class ExcelToDbConverter {
     //endregion
 
     //region Private Helpers
-    private static HashSet<InhouseRowModel> getSet(InhouseRowModel[] rows) {
-        HashSet<InhouseRowModel> set = new HashSet<>();
-        set.addAll(Arrays.asList(rows));
-        return set;
+    private static Collection<InhouseRowModel> getSet(InhouseRowModel[] rows) {
+        return Arrays.asList(rows);
     }
 
-    private static HashSet<BookWireRowModel> getSet(BookWireRowModel[] rows) {
-        HashSet<BookWireRowModel> set = new HashSet<>();
-        set.addAll(Arrays.asList(rows));
-        return set;
+    private static Collection<BookWireRowModel> getSet(BookWireRowModel[] rows) {
+        return Arrays.asList(rows);
     }
 
     private static InhouseRowModel createRowFrom(InhouseRow inhouseRow) {
