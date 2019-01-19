@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-class ExcelImporter {
+public class ExcelImporter {
 
     //region Private Fields
     private File file;

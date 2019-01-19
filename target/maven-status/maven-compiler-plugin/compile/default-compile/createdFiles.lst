@@ -5,6 +5,7 @@ ch/zhaw/roma/model/royaltycalculation/LegacyEntry.class
 ch/zhaw/roma/interfaces/IRepositority.class
 ch/zhaw/roma/model/excel/ExcelSheet.class
 ch/zhaw/roma/helpers/excel/ExcelImporter$1.class
+ch/zhaw/roma/model/excel/persistence/ExcelToDbConverter.class
 ch/zhaw/roma/model/excel/inhouse/InhouseSheet.class
 ch/zhaw/roma/controller/EditRoMaNoteController.class
 ch/zhaw/roma/model/excel/ExcelSheetType.class
@@ -12,8 +13,8 @@ ch/zhaw/roma/model/excel/SheetType.class
 ch/zhaw/roma/helpers/excel/ExcelImporter.class
 ch/zhaw/roma/model/excel/persistence/InhouseRowModel.class
 ch/zhaw/roma/model/excel/persistence/BookWireSheetModel.class
-ch/zhaw/roma/model/excel/persistence/ExcelDbAdapter.class
 ch/zhaw/roma/model/royaltycalculation/Book.class
+ch/zhaw/roma/interfaces/IBookWireRowModel.class
 ch/zhaw/roma/model/excel/persistence/SheetModel.class
 ch/zhaw/roma/controller/SettingsViewController.class
 ch/zhaw/roma/model/excel/persistence/InhouseSheetModel.class

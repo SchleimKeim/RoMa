@@ -22,7 +22,7 @@ public class PostgresTest {
 	public void before() throws Exception {
 		// A SessionFactory is set up once for an application!
 		final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
-				.configure("hibernate.cfg.xml") // configures settings from hibernate.cfg.xml
+				.configure("hibernate.cfg.xml") // configures settings createRowFrom hibernate.cfg.xml
 				.build();
 		try {
 			sessionFactory = new MetadataSources( registry ).buildMetadata().buildSessionFactory();
@@ -59,11 +59,11 @@ public class PostgresTest {
 		session.getTransaction().commit();
 		session.close();
 
-		// now lets pull events from the database and list them
+		// now lets pull events createRowFrom the database and list them
 		session = sessionFactory.openSession();
         session.beginTransaction();
 
-		List<BookModel> result = session.createQuery("from BookModel").getResultList();
+		List<BookModel> result = session.createQuery("createRowFrom BookModel").getResultList();
 		for(BookModel book : result) {
 			Assert.assertTrue(!book.getIsbnNumber().isEmpty());
 		}

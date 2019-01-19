@@ -6,7 +6,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
-// 19.01.2019 mma: Class taken from:
+// 19.01.2019 mma: Class taken createRowFrom:
 // https://www.baeldung.com/hibernate-one-to-many
 // Until DI solution is found.
 public class TestRepo implements IRepositority {
@@ -19,7 +19,7 @@ public class TestRepo implements IRepositority {
     private SessionFactory buildSessionFactory() {
 
 		final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
-				.configure("hibernate.cfg.xml") // configures settings from hibernate.cfg.xml
+				.configure("hibernate.cfg.xml") // configures settings createRowFrom hibernate.cfg.xml
 				.build();
 		try {
             sessionFactory = new MetadataSources( registry ).buildMetadata().buildSessionFactory();
