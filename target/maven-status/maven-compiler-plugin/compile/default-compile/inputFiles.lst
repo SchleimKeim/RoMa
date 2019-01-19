@@ -9,12 +9,15 @@
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/helpers/excel/ExcelImporter.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/helpers/XmlHelper.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/ExcelSheet.java
+/home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/persistence/SheetModel.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/persistence/ExcelDbAdapter.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/inhouse/RowIndexes.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/persistence/BookWireRowModel.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/bookwire/BookWireRow.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/bookwire/BookWireSheet.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/royaltycalculation/SoldBooksYearly.java
+/home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/persistence/InhouseSheetModel.java
+/home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/persistence/InhouseRowModel.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/helpers/ApplicationRepo.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/ExcelSheetType.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/royaltycalculation/LegacyEntry.java

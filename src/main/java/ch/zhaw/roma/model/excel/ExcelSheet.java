@@ -37,15 +37,12 @@ public abstract class ExcelSheet {
             ? (InhouseSheet)this
             : null;
     }
-    //endregion
 
-
-    //region Private Helpers
-    private boolean isInhouseSheet() {
+    public boolean isInhouseSheet() {
         return (_type.getTypeName() == InhouseSheet.class.getTypeName());
     }
 
-    private boolean isBookWireSheet() {
+    public boolean isBookWireSheet() {
         return (_type.getTypeName() == BookWireSheet.class.getTypeName());
     }
     //endregion

@@ -54,7 +54,6 @@ public class BookWireSheet extends ExcelSheet {
     private static XSSFWorkbook getWorkbook(String path) {
         try {
             return new XSSFWorkbook(path);
-            //return new XSSFWorkbook(POIFSFileSystem.create(Paths.get(path).toFile()));
         } catch (IOException e) {
             e.printStackTrace();
             return null;

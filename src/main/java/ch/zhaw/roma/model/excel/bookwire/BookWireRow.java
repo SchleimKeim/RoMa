@@ -10,34 +10,34 @@ import java.util.stream.IntStream;
 public class BookWireRow {
 
     //region Private Fields
-    private String IsbnNumber;
-    private String AuthorAndTitle;
-    private int SoldUnitsJanuary;
-    private double AmountJanuary;
-    private int SoldUnitsFebruary;
-    private double AmountFebruary;
-    private int SoldUnitsMarch;
-    private double AmountMarch;
-    private int SoldUnitsApril;
-    private double AmountApril;
-    private int SoldUnitsMay;
-    private double AmountMay;
-    private int SoldUnitsJune;
-    private double AmountJune;
-    private int SoldUnitsJuly;
-    private double AmountJuly;
-    private int SoldUnitsAugust;
-    private double AmountAugust;
-    private int SoldUnitsSeptembre;
-    private double AmountSeptembre;
-    private int SoldUnitsOctobre;
-    private double AmountOctobre;
-    private int SoldUnitsNovember;
-    private double AmountNovember;
-    private int SoldUnitsDecember;
-    private double AmountDecember;
-    private int SoldUnitsTotal;
-    private double AmountTotal;
+    private String isbnNumber;
+    private String authorAndTitle;
+    private int soldUnitsJanuary;
+    private double amountJanuary;
+    private int soldUnitsFebruary;
+    private double amountFebruary;
+    private int soldUnitsMarch;
+    private double amountMarch;
+    private int soldUnitsApril;
+    private double amountApril;
+    private int soldUnitsMay;
+    private double amountMay;
+    private int soldUnitsJune;
+    private double amountJune;
+    private int soldUnitsJuly;
+    private double amountJuly;
+    private int soldUnitsAugust;
+    private double amountAugust;
+    private int soldUnitsSeptembre;
+    private double amountSeptembre;
+    private int soldUnitsOctobre;
+    private double amountOctobre;
+    private int soldUnitsNovember;
+    private double amountNovember;
+    private int soldUnitsDecember;
+    private double amountDecember;
+    private int soldUnitsTotal;
+    private double amountTotal;
     //endregion
 
     //region Construction
@@ -58,34 +58,34 @@ public class BookWireRow {
             }
         }).toArray(Cell[]::new);
 
-        IsbnNumber = asString(cells[BookWireIndexes.ISBN]);
-        AuthorAndTitle = asString(cells[BookWireIndexes.AUTHOR_AND_TITLE]);
-        SoldUnitsJanuary = asInt(cells[BookWireIndexes.SALES_JANUARY]);
-        AmountJanuary = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
-        SoldUnitsFebruary = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
-        AmountFebruary = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
-        SoldUnitsMarch = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
-        AmountMarch = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
-        SoldUnitsApril = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
-        AmountApril = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
-        SoldUnitsMay = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
-        AmountMay = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
-        AmountJune = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
-        SoldUnitsJuly = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
-        AmountJuly = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
-        SoldUnitsAugust = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
-        AmountAugust = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
-        SoldUnitsSeptembre = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
-        AmountSeptembre = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
-        SoldUnitsOctobre = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
-        AmountOctobre = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
-        SoldUnitsNovember = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
-        AmountNovember = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
-        SoldUnitsDecember = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
-        AmountDecember = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
+        isbnNumber = asString(cells[BookWireIndexes.ISBN]);
+        authorAndTitle = asString(cells[BookWireIndexes.AUTHOR_AND_TITLE]);
+        soldUnitsJanuary = asInt(cells[BookWireIndexes.SALES_JANUARY]);
+        amountJanuary = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
+        soldUnitsFebruary = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
+        amountFebruary = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
+        soldUnitsMarch = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
+        amountMarch = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
+        soldUnitsApril = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
+        amountApril = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
+        soldUnitsMay = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
+        amountMay = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
+        amountJune = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
+        soldUnitsJuly = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
+        amountJuly = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
+        soldUnitsAugust = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
+        amountAugust = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
+        soldUnitsSeptembre = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
+        amountSeptembre = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
+        soldUnitsOctobre = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
+        amountOctobre = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
+        soldUnitsNovember = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
+        amountNovember = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
+        soldUnitsDecember = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
+        amountDecember = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
 
-        SoldUnitsTotal = calculateTotalUnitsSold();
-        AmountTotal = calculateTotalAmount();
+        soldUnitsTotal = calculateTotalUnitsSold();
+        amountTotal = calculateTotalAmount();
     }
 
     private String asString(Cell cell) {
@@ -128,147 +128,147 @@ public class BookWireRow {
 
     //region Public Members
     public double calculateTotalAmount() {
-        return AmountTotal = AmountJanuary
-            + AmountFebruary
-            + AmountMarch
-            + AmountApril
-            + AmountMay
-            + AmountJune
-            + AmountJuly
-            + AmountAugust
-            + AmountSeptembre
-            + AmountOctobre
-            + AmountNovember
-            + AmountDecember;
+        return amountTotal = amountJanuary
+            + amountFebruary
+            + amountMarch
+            + amountApril
+            + amountMay
+            + amountJune
+            + amountJuly
+            + amountAugust
+            + amountSeptembre
+            + amountOctobre
+            + amountNovember
+            + amountDecember;
     }
 
     public int calculateTotalUnitsSold() {
-        return SoldUnitsTotal = SoldUnitsJanuary
-            + SoldUnitsFebruary
-            + SoldUnitsMarch
-            + SoldUnitsApril
-            + SoldUnitsMay
-            + SoldUnitsJune
-            + SoldUnitsJuly
-            + SoldUnitsAugust
-            + SoldUnitsSeptembre
-            + SoldUnitsOctobre
-            + SoldUnitsNovember
-            + SoldUnitsDecember;
+        return soldUnitsTotal = soldUnitsJanuary
+            + soldUnitsFebruary
+            + soldUnitsMarch
+            + soldUnitsApril
+            + soldUnitsMay
+            + soldUnitsJune
+            + soldUnitsJuly
+            + soldUnitsAugust
+            + soldUnitsSeptembre
+            + soldUnitsOctobre
+            + soldUnitsNovember
+            + soldUnitsDecember;
     }
     //endregion
 
     //region Getters And Setters
     public String getIsbnNumber() {
-        return IsbnNumber;
+        return isbnNumber;
     }
 
     public String getAuthorAndTitle() {
-        return AuthorAndTitle;
+        return authorAndTitle;
     }
 
     public int getSoldUnitsJanuary() {
-        return SoldUnitsJanuary;
+        return soldUnitsJanuary;
     }
 
     public double getAmountJanuary() {
-        return AmountJanuary;
+        return amountJanuary;
     }
 
     public int getSoldUnitsFebruary() {
-        return SoldUnitsFebruary;
+        return soldUnitsFebruary;
     }
 
     public double getAmountFebruary() {
-        return AmountFebruary;
+        return amountFebruary;
     }
 
     public int getSoldUnitsMarch() {
-        return SoldUnitsMarch;
+        return soldUnitsMarch;
     }
 
     public double getAmountMarch() {
-        return AmountMarch;
+        return amountMarch;
     }
 
     public int getSoldUnitsApril() {
-        return SoldUnitsApril;
+        return soldUnitsApril;
     }
 
     public double getAmountApril() {
-        return AmountApril;
+        return amountApril;
     }
 
     public int getSoldUnitsMay() {
-        return SoldUnitsMay;
+        return soldUnitsMay;
     }
 
     public double getAmountMay() {
-        return AmountMay;
+        return amountMay;
     }
 
     public int getSoldUnitsJune() {
-        return SoldUnitsJune;
+        return soldUnitsJune;
     }
 
     public double getAmountJune() {
-        return AmountJune;
+        return amountJune;
     }
 
     public int getSoldUnitsJuly() {
-        return SoldUnitsJuly;
+        return soldUnitsJuly;
     }
 
     public double getAmountJuly() {
-        return AmountJuly;
+        return amountJuly;
     }
 
     public int getSoldUnitsAugust() {
-        return SoldUnitsAugust;
+        return soldUnitsAugust;
     }
 
     public double getAmountAugust() {
-        return AmountAugust;
+        return amountAugust;
     }
 
     public int getSoldUnitsSeptembre() {
-        return SoldUnitsSeptembre;
+        return soldUnitsSeptembre;
     }
 
     public double getAmountSeptembre() {
-        return AmountSeptembre;
+        return amountSeptembre;
     }
 
     public int getSoldUnitsOctobre() {
-        return SoldUnitsOctobre;
+        return soldUnitsOctobre;
     }
 
     public double getAmountOctobre() {
-        return AmountOctobre;
+        return amountOctobre;
     }
 
     public int getSoldUnitsNovember() {
-        return SoldUnitsNovember;
+        return soldUnitsNovember;
     }
 
     public double getAmountNovember() {
-        return AmountNovember;
+        return amountNovember;
     }
 
     public int getSoldUnitsDecember() {
-        return SoldUnitsDecember;
+        return soldUnitsDecember;
     }
 
     public double getAmountDecember() {
-        return AmountDecember;
+        return amountDecember;
     }
 
     public int getSoldUnitsTotal() {
-        return SoldUnitsTotal;
+        return soldUnitsTotal;
     }
 
     public double getAmountTotal() {
-        return AmountTotal;
+        return amountTotal;
     }
     //endregion
 
