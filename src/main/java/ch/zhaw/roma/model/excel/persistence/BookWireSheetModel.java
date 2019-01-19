@@ -1,20 +1,25 @@
 package ch.zhaw.roma.model.excel.persistence;
 
-import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.cfg.AccessType;
 
+import javax.persistence.Access;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.UUID;
 
 @Entity
+@Access()
 public class BookWireSheetModel extends SheetModel {
 
     //region Private Fields
-    private Long id;
-    @OneToMany(mappedBy = "sheet")
-    private ArrayList<BookWireRowModel> rows;
+    @Id
+    private UUID id;
+    @ElementCollection(targetClass = BookWireRowModel.class)
+    private Set<BookWireRowModel> rows = new HashSet<>();
     //endregion
 
 
@@ -26,22 +31,19 @@ public class BookWireSheetModel extends SheetModel {
 
 
     //region Getters and Setters
-    @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "increment", strategy = "increment")
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
-    public ArrayList<BookWireRowModel> getRows() {
+    public Set<BookWireRowModel> getRows() {
         return rows;
     }
 
-    public void setRows(ArrayList<BookWireRowModel> rows) {
+    public void setRows(Set<BookWireRowModel> rows) {
         this.rows = rows;
     }
     //endregion

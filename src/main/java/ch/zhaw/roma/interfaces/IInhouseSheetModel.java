@@ -2,9 +2,9 @@ package ch.zhaw.roma.interfaces;
 
 import ch.zhaw.roma.model.excel.persistence.InhouseRowModel;
 
-import java.util.Collection;
+import java.util.List;
 
 public interface IInhouseSheetModel {
-    Collection<InhouseRowModel> getRows();
-    void setRows(Collection<InhouseRowModel> rows);
+    List<InhouseRowModel> getRows();
+    void setRows(List<InhouseRowModel> rows);
 }

@@ -63,7 +63,7 @@ public class PostgresTest {
 		session = sessionFactory.openSession();
         session.beginTransaction();
 
-		List<BookModel> result = session.createQuery("createRowFrom BookModel").getResultList();
+		List<BookModel> result = session.createQuery("From BookModel").getResultList();
 		for(BookModel book : result) {
 			Assert.assertTrue(!book.getIsbnNumber().isEmpty());
 		}

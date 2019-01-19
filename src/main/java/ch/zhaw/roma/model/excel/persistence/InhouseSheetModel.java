@@ -1,47 +1,47 @@
 package ch.zhaw.roma.model.excel.persistence;
 
 import ch.zhaw.roma.interfaces.IInhouseSheetModel;
-import ch.zhaw.roma.model.excel.inhouse.InhouseSheet;
-import org.hibernate.annotations.GenericGenerator;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.util.Arrays;
-import java.util.Collection;
+import java.util.List;
+import java.util.UUID;
 
-@Entity
+//@Entity
 public class InhouseSheetModel extends SheetModel implements IInhouseSheetModel {
 
-    private Long id;
-    private InhouseRowModel[] rows;
+    //region Private Fields
+//    @Id
+    private UUID id;
 
+//    @ElementCollection(targetClass = InhouseRowModel.class)
+    private List<InhouseRowModel> rows;
+    //endregion
+
+    //region Construction
     public InhouseSheetModel() {
 
     }
+    //endregion
 
-    public static InhouseSheetModel createFrom(InhouseSheet asInhouse) {
-        return null;
-    }
-
-    @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "increment", strategy = "increment")
-    public Long getId() {
+    //region Setters and Getters
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
     @Override
-    public Collection<InhouseRowModel> getRows() {
-        return Arrays.asList(rows);
+    public List<InhouseRowModel> getRows() {
+        return rows;
     }
 
     @Override
-    public void setRows(Collection<InhouseRowModel> rows) {
-        this.rows = (InhouseRowModel[]) rows.toArray();
+    public void setRows(List<InhouseRowModel> rows) {
+        this.rows = rows;
     }
+    //endregion
 }

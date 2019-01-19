@@ -1,7 +1,7 @@
-/home/skull/code/IdeaProjects/RoMa/src/test/java/test/ch/zhaw/roma/helpers/TestRepoTest.java
 /home/skull/code/IdeaProjects/RoMa/src/test/java/ch/zhaw/roma/PostgresTest.java
 /home/skull/code/IdeaProjects/RoMa/src/test/java/ch/zhaw/roma/helpers/excel/ExcelImporterTest.java
 /home/skull/code/IdeaProjects/RoMa/src/test/java/ch/zhaw/roma/model/excel/persistence/ExcelToDbConverterTest.java
 /home/skull/code/IdeaProjects/RoMa/src/test/java/ch/zhaw/roma/model/BookModel.java
+/home/skull/code/IdeaProjects/RoMa/src/test/java/ch/zhaw/roma/helpers/TestRepoTest.java
 /home/skull/code/IdeaProjects/RoMa/src/test/java/ch/zhaw/roma/helpers/TestRepo.java
 /home/skull/code/IdeaProjects/RoMa/src/test/java/ch/zhaw/roma/XmlHelperTest.java

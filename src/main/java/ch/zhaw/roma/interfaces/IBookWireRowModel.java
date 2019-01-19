@@ -2,10 +2,12 @@ package ch.zhaw.roma.interfaces;
 
 import ch.zhaw.roma.model.excel.persistence.BookWireSheetModel;
 
-public interface IBookWireRowModel {
-     Long getId();
+import java.util.UUID;
 
-     void setId(Long id);
+public interface IBookWireRowModel {
+     UUID getId();
+
+     void setId(UUID id);
 
      String getIsbnNumber();
 
@@ -79,21 +81,21 @@ public interface IBookWireRowModel {
 
      void setAmountAugust(double amountAugust);
 
-     int getSoldUnitsSeptembre();
+     int getSoldUnitsSeptember();
 
-     void setSoldUnitsSeptembre(int soldUnitsSeptembre);
+     void setSoldUnitsSeptember(int soldUnitsSeptember);
 
-     double getAmountSeptembre();
+     double getAmountSeptember();
 
-     void setAmountSeptembre(double amountSeptembre);
+     void setAmountSeptember(double amountSeptember);
 
-     int getSoldUnitsOctobre();
+     int getSoldUnitsOctober();
 
-     void setSoldUnitsOctobre(int soldUnitsOctobre);
+     void setSoldUnitsOctober(int soldUnitsOctober);
 
-     double getAmountOctobre();
+     double getAmountOctober();
 
-     void setAmountOctobre(double amountOctobre);
+     void setAmountOctober(double amountOctober);
 
      int getSoldUnitsNovember();
 

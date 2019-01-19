@@ -1,16 +1,18 @@
 package ch.zhaw.roma.model.excel.persistence;
 import ch.zhaw.roma.interfaces.IBookWireRowModel;
-import org.hibernate.annotations.GenericGenerator;
+import ch.zhaw.roma.model.excel.bookwire.BookWireSheet;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.UUID;
 
 @Entity
 public class BookWireRowModel implements IBookWireRowModel {
 
     //region Private Fields
-    private Long id;
+    @Id
+    private UUID id;
     private BookWireSheetModel sheet;
 
     private String isbnNumber;
@@ -31,10 +33,10 @@ public class BookWireRowModel implements IBookWireRowModel {
     private double amountJuly;
     private int soldUnitsAugust;
     private double amountAugust;
-    private int soldUnitsSeptembre;
-    private double amountSeptembre;
-    private int soldUnitsOctobre;
-    private double amountOctobre;
+    private int soldUnitsSeptember;
+    private double amountSeptember;
+    private int soldUnitsOctober;
+    private double amountOctober;
     private int soldUnitsNovember;
     private double amountNovember;
     private int soldUnitsDecember;
@@ -47,17 +49,17 @@ public class BookWireRowModel implements IBookWireRowModel {
     public BookWireRowModel() {
 
     }
+    public BookWireRowModel(BookWireSheet sheet) {
+        sheet = sheet;
+    }
     //endregion
 
     //region Getters and Setters
-    @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "increment", strategy = "increment")
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
@@ -205,36 +207,36 @@ public class BookWireRowModel implements IBookWireRowModel {
         this.amountAugust = amountAugust;
     }
 
-    public int getSoldUnitsSeptembre() {
-        return soldUnitsSeptembre;
+    public int getSoldUnitsSeptember() {
+        return soldUnitsSeptember;
     }
 
-    public void setSoldUnitsSeptembre(int soldUnitsSeptembre) {
-        this.soldUnitsSeptembre = soldUnitsSeptembre;
+    public void setSoldUnitsSeptember(int soldUnitsSeptember) {
+        this.soldUnitsSeptember = soldUnitsSeptember;
     }
 
-    public double getAmountSeptembre() {
-        return amountSeptembre;
+    public double getAmountSeptember() {
+        return amountSeptember;
     }
 
-    public void setAmountSeptembre(double amountSeptembre) {
-        this.amountSeptembre = amountSeptembre;
+    public void setAmountSeptember(double amountSeptember) {
+        this.amountSeptember = amountSeptember;
     }
 
-    public int getSoldUnitsOctobre() {
-        return soldUnitsOctobre;
+    public int getSoldUnitsOctober() {
+        return soldUnitsOctober;
     }
 
-    public void setSoldUnitsOctobre(int soldUnitsOctobre) {
-        this.soldUnitsOctobre = soldUnitsOctobre;
+    public void setSoldUnitsOctober(int soldUnitsOctober) {
+        this.soldUnitsOctober = soldUnitsOctober;
     }
 
-    public double getAmountOctobre() {
-        return amountOctobre;
+    public double getAmountOctober() {
+        return amountOctober;
     }
 
-    public void setAmountOctobre(double amountOctobre) {
-        this.amountOctobre = amountOctobre;
+    public void setAmountOctober(double amountOctober) {
+        this.amountOctober = amountOctober;
     }
 
     public int getSoldUnitsNovember() {

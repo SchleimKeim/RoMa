@@ -1,15 +1,13 @@
 package ch.zhaw.roma.model.excel.persistence;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.UUID;
 
-@Entity
+//@Entity
 public class InhouseRowModel {
     //region Private Fields
-    private Long id;
+    private UUID id;
     private InhouseSheetModel sheet;
     private String articleNr;
     private String title;
@@ -26,15 +24,21 @@ public class InhouseRowModel {
     private Integer amazonInventory;
     private Integer publisherInventory;
     private Integer totalInventory;
+    //endregion
 
-    @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "increment", strategy = "increment")
-    public Long getId() {
+    //region Construction
+    public InhouseRowModel() {
+
+    }
+    //endregion
+
+    //region Getters and Setters
+//    @Id
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
@@ -164,13 +168,6 @@ public class InhouseRowModel {
 
     public void setTotalInventory(Integer totalInventory) {
         this.totalInventory = totalInventory;
-    }
-//endregion
-
-
-    //region Construction
-    public InhouseRowModel() {
-
     }
     //endregion
 }

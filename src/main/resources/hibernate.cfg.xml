@@ -37,10 +37,10 @@
         <property name="show_sql">true</property>
 
         <!-- MAPPINGS -->
-        <mapping class="ch.zhaw.roma.model.excel.persistence.BookWireRowModel"/>
-        <mapping class="ch.zhaw.roma.model.excel.persistence.BookWireSheetModel"/>
-        <mapping class="ch.zhaw.roma.model.excel.persistence.InhouseRowModel"/>
-        <mapping class="ch.zhaw.roma.model.excel.persistence.InhouseSheetModel"/>
+        <!--<mapping class="ch.zhaw.roma.model.excel.persistence.BookWireRowModel"/>-->
+        <!--<mapping class="ch.zhaw.roma.model.excel.persistence.BookWireSheetModel"/>-->
+        <!--<mapping class="ch.zhaw.roma.model.excel.persistence.InhouseRowModel"/>-->
+        <!--<mapping class="ch.zhaw.roma.model.excel.persistence.InhouseSheetModel"/>-->
     </session-factory>
 
 </hibernate-configuration>

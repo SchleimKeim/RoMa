@@ -5,8 +5,8 @@ import ch.zhaw.roma.model.excel.bookwire.BookWireSheet;
 import ch.zhaw.roma.model.excel.inhouse.InhouseRow;
 import ch.zhaw.roma.model.excel.inhouse.InhouseSheet;
 
-import java.util.*;
-import java.util.stream.Stream;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ExcelToDbConverter {
 
@@ -35,7 +35,7 @@ public class ExcelToDbConverter {
             .toArray(BookWireRowModel[]::new);
 
         BookWireSheetModel bws = new BookWireSheetModel();
-        bws.setRows((ArrayList<BookWireRowModel>) Arrays.asList(rows));
+        bws.setRows(Arrays.asList(rows));
         return bws;
     }
     //endregion
@@ -98,11 +98,11 @@ public class ExcelToDbConverter {
         r.setAmountAugust(bookWireRow.getAmountAugust());
         r.setSoldUnitsAugust(bookWireRow.getSoldUnitsAugust());
 
-        r.setAmountSeptembre(bookWireRow.getAmountSeptember());
-        r.setSoldUnitsSeptembre(bookWireRow.getSoldUnitsSeptember());
+        r.setAmountSeptember(bookWireRow.getAmountSeptember());
+        r.setSoldUnitsSeptember(bookWireRow.getSoldUnitsSeptember());
 
-        r.setAmountOctobre(bookWireRow.getAmountOctober());
-        r.setSoldUnitsOctobre(bookWireRow.getSoldUnitsOctober());
+        r.setAmountOctober(bookWireRow.getAmountOctober());
+        r.setSoldUnitsOctober(bookWireRow.getSoldUnitsOctober());
 
         r.setAmountNovember(bookWireRow.getAmountNovember());
         r.setSoldUnitsNovember(bookWireRow.getSoldUnitsNovember());
