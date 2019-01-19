@@ -37,8 +37,8 @@
         <property name="show_sql">true</property>
 
         <!-- MAPPINGS -->
-        <!-- <mapping class="ch.zhaw.roma.model.BookModel"/> -->
-
+        <mapping class="ch.zhaw.roma.model.excel.persistence.BookWireRowModel"/>
+        <mapping class="ch.zhaw.roma.model.excel.persistence.BookWireSheetModel"/>
     </session-factory>
 
 </hibernate-configuration>
