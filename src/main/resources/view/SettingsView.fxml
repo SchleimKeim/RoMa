@@ -110,17 +110,17 @@
                <children>
                   <HBox alignment="CENTER" GridPane.columnIndex="1">
                      <children>
-                        <Button fx:id="cancelButton" cancelButton="true" mnemonicParsing="false" onAction="#onCancelAction" text="Cancel" textAlignment="CENTER">
+                        <Button fx:bookId="cancelButton" cancelButton="true" mnemonicParsing="false" onAction="#onCancelAction" text="Cancel" textAlignment="CENTER">
                            <HBox.margin>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Button fx:id="loadButton" mnemonicParsing="false" onAction="#onLoadAction" text="Load..." textAlignment="CENTER">
+                        <Button fx:bookId="loadButton" mnemonicParsing="false" onAction="#onLoadAction" text="Load..." textAlignment="CENTER">
                            <HBox.margin>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Button fx:id="saveButton" defaultButton="true" mnemonicParsing="false" onAction="#onSaveAction" text="Save" textAlignment="CENTER">
+                        <Button fx:bookId="saveButton" defaultButton="true" mnemonicParsing="false" onAction="#onSaveAction" text="Save" textAlignment="CENTER">
                            <HBox.margin>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </HBox.margin>

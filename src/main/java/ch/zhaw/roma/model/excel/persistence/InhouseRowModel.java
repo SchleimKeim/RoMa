@@ -1,12 +1,10 @@
 package ch.zhaw.roma.model.excel.persistence;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-@Access(AccessType.FIELD)
+//@Access(AccessType.FIELD)
 public class InhouseRowModel {
     //region Private Fields
     @Id

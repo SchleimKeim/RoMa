@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f906399-5107-4d57-a6bb-7c6613b29bfb" name="Default Changelist" comment="">
+    <list default="true" bookId="2f906399-5107-4d57-a6bb-7c6613b29bfb" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/RoMa.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RoMa.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
@@ -92,16 +92,16 @@
     <option name="height" value="865" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="2" bookId="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
+      <pane bookId="Scope" />
+      <pane bookId="PackagesPane" />
+      <pane bookId="ProjectPane">
         <subPane>
           <expand>
             <path>
@@ -270,8 +270,8 @@
     </recent_temporary>
   </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="2f906399-5107-4d57-a6bb-7c6613b29bfb" name="Default Changelist" comment="" />
+    <task active="true" bookId="Default" summary="Default task">
+      <changelist bookId="2f906399-5107-4d57-a6bb-7c6613b29bfb" name="Default Changelist" comment="" />
       <created>1547490071277</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -314,62 +314,62 @@
   <component name="ToolWindowManager">
     <frame x="-1" y="-1" width="1442" height="875" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49912128" weight="0.6506456" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="UI Designer" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="Favorites" order="5" sideWeight="0.50087875" side_tool="true" weight="0.24930556" />
-      <window_info id="Image Layers" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50071734" side_tool="true" weight="0.39008042" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928263" weight="0.38739946" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39678285" />
-      <window_info anchor="bottom" id="Messages" order="4" weight="0.32707775" />
-      <window_info anchor="bottom" id="Version Control" order="5" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Find" order="7" weight="0.36828965" />
-      <window_info anchor="bottom" id="Message" order="8" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="Dependency Viewer" order="11" visible="true" weight="0.3297587" />
-      <window_info anchor="right" id="Theme Preview" order="0" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" id="Capture Analysis" order="2" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.024390243" />
-      <window_info anchor="right" id="Palette" order="5" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
+      <window_info content_ui="combo" bookId="Project" order="0" sideWeight="0.49912128" weight="0.6506456" />
+      <window_info bookId="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info bookId="Designer" order="2" />
+      <window_info bookId="UI Designer" order="3" />
+      <window_info bookId="Capture Tool" order="4" />
+      <window_info bookId="Favorites" order="5" sideWeight="0.50087875" side_tool="true" weight="0.24930556" />
+      <window_info bookId="Image Layers" order="6" />
+      <window_info anchor="bottom" bookId="Terminal" order="0" />
+      <window_info anchor="bottom" bookId="Event Log" order="1" sideWeight="0.50071734" side_tool="true" weight="0.39008042" />
+      <window_info anchor="bottom" bookId="Run" order="2" sideWeight="0.49928263" weight="0.38739946" />
+      <window_info anchor="bottom" bookId="Debug" order="3" weight="0.39678285" />
+      <window_info anchor="bottom" bookId="Messages" order="4" weight="0.32707775" />
+      <window_info anchor="bottom" bookId="Version Control" order="5" />
+      <window_info anchor="bottom" bookId="TODO" order="6" />
+      <window_info anchor="bottom" bookId="Find" order="7" weight="0.36828965" />
+      <window_info anchor="bottom" bookId="Message" order="8" />
+      <window_info anchor="bottom" bookId="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" bookId="Inspection" order="10" weight="0.4" />
+      <window_info active="true" anchor="bottom" bookId="Dependency Viewer" order="11" visible="true" weight="0.3297587" />
+      <window_info anchor="right" bookId="Theme Preview" order="0" />
+      <window_info anchor="right" bookId="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" bookId="Capture Analysis" order="2" />
+      <window_info anchor="right" bookId="Palette&#9;" order="3" />
+      <window_info anchor="right" bookId="Maven" order="4" visible="true" weight="0.024390243" />
+      <window_info anchor="right" bookId="Palette" order="5" />
+      <window_info anchor="right" bookId="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" bookId="Hierarchy" order="7" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49912128" visible="true" weight="0.625" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="UI Designer" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="Favorites" order="5" sideWeight="0.50087875" side_tool="true" weight="0.24930556" />
-      <window_info id="Image Layers" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50071734" side_tool="true" weight="0.39008042" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928263" weight="0.39008042" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39740258" />
-      <window_info anchor="bottom" id="Messages" order="4" weight="0.32833958" />
-      <window_info anchor="bottom" id="Version Control" order="5" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Find" order="7" weight="0.36828965" />
-      <window_info anchor="bottom" id="Message" order="8" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="Dependency Viewer" order="11" visible="true" weight="0.3297587" />
-      <window_info anchor="right" id="Theme Preview" order="0" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" id="Capture Analysis" order="2" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.32886904" />
-      <window_info anchor="right" id="Palette" order="5" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
+      <window_info active="true" content_ui="combo" bookId="Project" order="0" sideWeight="0.49912128" visible="true" weight="0.625" />
+      <window_info bookId="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info bookId="Designer" order="2" />
+      <window_info bookId="UI Designer" order="3" />
+      <window_info bookId="Capture Tool" order="4" />
+      <window_info bookId="Favorites" order="5" sideWeight="0.50087875" side_tool="true" weight="0.24930556" />
+      <window_info bookId="Image Layers" order="6" />
+      <window_info anchor="bottom" bookId="Terminal" order="0" />
+      <window_info anchor="bottom" bookId="Event Log" order="1" sideWeight="0.50071734" side_tool="true" weight="0.39008042" />
+      <window_info anchor="bottom" bookId="Run" order="2" sideWeight="0.49928263" weight="0.39008042" />
+      <window_info anchor="bottom" bookId="Debug" order="3" weight="0.39740258" />
+      <window_info anchor="bottom" bookId="Messages" order="4" weight="0.32833958" />
+      <window_info anchor="bottom" bookId="Version Control" order="5" />
+      <window_info anchor="bottom" bookId="TODO" order="6" />
+      <window_info anchor="bottom" bookId="Find" order="7" weight="0.36828965" />
+      <window_info anchor="bottom" bookId="Message" order="8" />
+      <window_info anchor="bottom" bookId="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" bookId="Inspection" order="10" weight="0.4" />
+      <window_info active="true" anchor="bottom" bookId="Dependency Viewer" order="11" visible="true" weight="0.3297587" />
+      <window_info anchor="right" bookId="Theme Preview" order="0" />
+      <window_info anchor="right" bookId="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" bookId="Capture Analysis" order="2" />
+      <window_info anchor="right" bookId="Palette&#9;" order="3" />
+      <window_info anchor="right" bookId="Maven" order="4" visible="true" weight="0.32886904" />
+      <window_info anchor="right" bookId="Palette" order="5" />
+      <window_info anchor="right" bookId="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" bookId="Hierarchy" order="7" weight="0.25" />
     </layout-to-restore>
   </component>
   <component name="XDebuggerManager">
@@ -386,21 +386,21 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="jar:///usr/lib/jvm/jdk1.8.0_192/src.zip!/java/util/stream/Stream.java">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-bookId="text-editor">
         <state relative-caret-position="432">
           <caret line="555" column="12" selection-start-line="555" selection-start-column="12" selection-end-line="555" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi/4.0.1/poi-4.0.1-sources.jar!/org/apache/poi/ss/usermodel/CellType.java">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-bookId="text-editor">
         <state relative-caret-position="162">
           <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/EmptyCell.java">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-bookId="text-editor">
         <state relative-caret-position="126">
           <caret line="41" column="11" selection-start-line="41" selection-start-column="11" selection-end-line="41" selection-end-column="11" />
           <folding>
@@ -410,7 +410,7 @@
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi/4.0.1/poi-4.0.1-sources.jar!/org/apache/poi/ss/usermodel/Cell.java">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-bookId="text-editor">
         <state relative-caret-position="282">
           <caret line="225" column="11" selection-start-line="225" selection-start-column="11" selection-end-line="225" selection-end-column="11" />
           <folding>
@@ -420,7 +420,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/bookwire/BookWireRow.java">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-bookId="text-editor">
         <state relative-caret-position="156">
           <caret line="43" column="11" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
           <folding>
@@ -432,71 +432,71 @@
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi/4.0.1/poi-4.0.1-sources.jar!/org/apache/poi/ss/usermodel/Sheet.java">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-bookId="text-editor">
         <state relative-caret-position="490">
           <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/helpers/excel/ExcelImporter.java">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-bookId="text-editor">
         <state relative-caret-position="792">
           <caret line="59" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi/4.0.1/poi-4.0.1-sources.jar!/org/apache/poi/ss/usermodel/Row.java">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-bookId="text-editor">
         <state relative-caret-position="1566">
           <caret line="102" selection-start-line="102" selection-end-line="102" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/inhouse/InhouseSheet.java">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-bookId="text-editor">
         <state relative-caret-position="216">
           <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-bookId="text-editor">
         <state relative-caret-position="234">
           <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
     <entry file="jar:///usr/lib/jvm/jdk1.8.0_192/jre/lib/rt.jar!/sun/reflect/NativeMethodAccessorImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-bookId="text-editor">
         <state relative-caret-position="262">
           <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/ExcelSheet.java">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-bookId="text-editor">
         <state relative-caret-position="365">
           <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/excel/bookwire/BookWireSheet.java">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-bookId="text-editor">
         <state relative-caret-position="144">
           <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/controller/IntroViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-bookId="text-editor">
         <state relative-caret-position="72">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/view/IntroView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
+      <provider editor-type-bookId="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-bookId="text-editor">
         <state relative-caret-position="396">
           <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
         </state>
@@ -504,14 +504,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml.old" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-bookId="text-editor">
         <state relative-caret-position="360">
           <caret line="27" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ch/zhaw/roma/XmlHelperTest.java">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-bookId="text-editor">
         <state>
           <folding>
             <element signature="imports" expanded="true" />
@@ -521,21 +521,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/view/NewRoMaNoteController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/zhaw/roma/model/viewClasses/Book.java">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-bookId="text-editor">
         <state relative-caret-position="270">
           <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/doc/hibernate.xml">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-bookId="text-editor">
         <state relative-caret-position="108">
           <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ch/zhaw/roma/helpers/excel/ExcelImporterTest.java">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-bookId="text-editor">
         <state>
           <caret line="13" selection-start-line="13" selection-end-line="13" />
           <folding>
@@ -545,21 +545,21 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-bookId="text-editor">
         <state relative-caret-position="320">
           <caret line="23" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-bookId="text-editor">
         <state relative-caret-position="162">
           <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ch/zhaw/roma/PostgresTest.java">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-bookId="text-editor">
         <state relative-caret-position="360">
           <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
           <folding>
@@ -569,14 +569,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-bookId="text-editor">
         <state relative-caret-position="450">
           <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$MAVEN_REPOSITORY$/org/hibernate/hibernate-entitymanager/5.4.0.Final/hibernate-entitymanager-5.4.0.Final.pom">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-bookId="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">

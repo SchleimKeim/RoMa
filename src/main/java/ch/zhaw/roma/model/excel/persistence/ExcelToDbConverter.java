@@ -6,36 +6,21 @@ import ch.zhaw.roma.model.excel.inhouse.InhouseRow;
 import ch.zhaw.roma.model.excel.inhouse.InhouseSheet;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class ExcelToDbConverter {
 
     //region Public Members
     public static InhouseSheetModel createFrom(InhouseSheet inhouseSheet) {
-        InhouseSheet sheet = inhouseSheet;
-        if (sheet == null)
-            return null;
-
-        InhouseRowModel[] rows = Arrays.stream(sheet.getRows())
-            .map(ExcelToDbConverter::createRowFrom)
-            .toArray(InhouseRowModel[]::new);
-
-        InhouseSheetModel bws = new InhouseSheetModel();
-        bws.setRows(Arrays.asList(rows));
-        return bws;
+        return (inhouseSheet != null)
+                   ? new InhouseSheetModel(inhouseSheet, getRows(inhouseSheet))
+                   : null;
     }
 
     public static BookWireSheetModel createFrom(BookWireSheet bookWireSheet) {
-        BookWireSheet sheet = bookWireSheet;
-        if (sheet == null)
-            return null;
-
-        BookWireRowModel[] rows = Arrays.stream(sheet.getRows())
-            .map(ExcelToDbConverter::createRowFrom)
-            .toArray(BookWireRowModel[]::new);
-
-        BookWireSheetModel bws = new BookWireSheetModel();
-        bws.setRows(Arrays.asList(rows));
-        return bws;
+        return (bookWireSheet != null)
+                   ? new BookWireSheetModel(bookWireSheet, getRows(bookWireSheet))
+                   : null;
     }
     //endregion
 
@@ -48,6 +33,8 @@ public class ExcelToDbConverter {
 
         m.setAvaSales(inhouseRow.getAvaSales());
         m.setAvaInventory(inhouseRow.getAvaInventory());
+
+        m.setAmazonInventory(inhouseRow.getAmazonInventory());
 
         m.setCumulatedDisposition(inhouseRow.getCumulatedDisposition());
         m.setCumulatedSales(inhouseRow.getCumulatedSales());
@@ -114,5 +101,20 @@ public class ExcelToDbConverter {
 
         return r;
     }
+
+    private static List<BookWireRowModel> getRows(BookWireSheet sheet) {
+        return Arrays
+                   .asList(Arrays.stream(sheet.getRows())
+                               .map(ExcelToDbConverter::createRowFrom)
+                               .toArray(BookWireRowModel[]::new));
+    }
+
+    private static List<InhouseRowModel> getRows(InhouseSheet sheet) {
+        return Arrays
+                   .asList(Arrays.stream(sheet.getRows())
+                               .map(ExcelToDbConverter::createRowFrom)
+                               .toArray(InhouseRowModel[]::new));
+    }
+
     //endregion
 }

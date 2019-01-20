@@ -12,6 +12,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class PostgresTest {
@@ -37,39 +38,35 @@ public class PostgresTest {
 
 	@After
 	public void after() throws Exception {
-		if ( sessionFactory != null ) {
-			sessionFactory.close();
+		try {
+            if (sessionFactory != null && !sessionFactory.isClosed())
+                sessionFactory.close();
+		}catch (Exception ex) {
+			Assert.fail(ex.getMessage());
 		}
 	}
 
-	@SuppressWarnings({ "unchecked" })
 	@Test
 	public void testBasicUsage() {
-		// create a couple of events...
-		if(sessionFactory == null)
+		if(sessionFactory == null) {
 			Assert.fail();
-
-		BookModel[] books = getTestModels();
-
-		Session session = sessionFactory.openSession();
-		session.beginTransaction();
-		for(BookModel book: books) {
-			session.save(book);
-		}
-		session.getTransaction().commit();
-		session.close();
-
-		// now lets pull events createRowFrom the database and list them
-		session = sessionFactory.openSession();
-        session.beginTransaction();
-
-		List<BookModel> result = session.createQuery("From BookModel").getResultList();
-		for(BookModel book : result) {
-			Assert.assertTrue(!book.getIsbnNumber().isEmpty());
+			return;
 		}
 
-      	session.getTransaction().commit();
-        session.close();
+		final Session save = sessionFactory.openSession();
+		save.beginTransaction();
+		Arrays.stream(getTestModels()).forEach(b -> save.save(b));
+		save.getTransaction().commit();
+		save.close();
+
+		final Session load = sessionFactory.openSession();
+        load.beginTransaction();
+		List<BookModel> result = load.createQuery("From BookModel").getResultList();
+
+		Assert.assertTrue(result.stream().allMatch(r -> (r != null) && !r.getTitle().isEmpty()));
+
+      	load.getTransaction().commit();
+        load.close();
 
         Assert.assertTrue(true);
 	}

@@ -36,8 +36,8 @@
                           </rowConstraints>
                            <children>
                               <Label text="Dateipfad:" />
-                              <TextField fx:id="path" prefWidth="300.0" GridPane.rowIndex="1" />
-                              <Button fx:id="chooseFile" minWidth="-Infinity" mnemonicParsing="false" onAction="#onChooseFile" text="Auswählen..." GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <TextField fx:bookId="path" prefWidth="300.0" GridPane.rowIndex="1" />
+                              <Button fx:bookId="chooseFile" minWidth="-Infinity" mnemonicParsing="false" onAction="#onChooseFile" text="Auswählen..." GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                  </GridPane.margin>
@@ -61,16 +61,16 @@
                      <children>
                         <TitledPane animated="false" collapsible="false" text="Dateityp">
                           <content>
-                              <Group fx:id="fileTypeGroup">
+                              <Group fx:bookId="fileTypeGroup">
                                  <children>
                                     <VBox>
                                        <children>
-                                          <RadioButton fx:id="documentTypeVerlag" mnemonicParsing="false" text="Verlag" >
+                                          <RadioButton fx:bookId="documentTypeVerlag" mnemonicParsing="false" text="Verlag" >
                                              <VBox.margin>
                                                 <Insets bottom="5.0" top="5.0" />
                                              </VBox.margin>
                                           </RadioButton>
-                                          <RadioButton fx:id="documentTypeBookwire" mnemonicParsing="false" text="Bookwire">
+                                          <RadioButton fx:bookId="documentTypeBookwire" mnemonicParsing="false" text="Bookwire">
                                              <VBox.margin>
                                                 <Insets bottom="5.0" top="5.0" />
                                              </VBox.margin>
@@ -87,7 +87,7 @@
                               <Insets />
                            </opaqueInsets>
                         </TitledPane>
-                        <Button defaultButton="true" fx:id="startImport" mnemonicParsing="false" text="Importieren" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                        <Button defaultButton="true" fx:bookId="startImport" mnemonicParsing="false" text="Importieren" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
                            <GridPane.margin>
                               <Insets right="10.0" />
                            </GridPane.margin>

@@ -1,11 +1,16 @@
 package ch.zhaw.roma.model.excel.persistence;
 
+import ch.zhaw.roma.interfaces.IBookWireRowModel;
+import ch.zhaw.roma.interfaces.IBookWireSheetModel;
+import ch.zhaw.roma.model.excel.bookwire.BookWireSheet;
+
 import javax.persistence.*;
 import java.util.*;
 
 @Entity
 @Access(AccessType.FIELD)
-public class BookWireSheetModel extends SheetModel {
+@Table(name = "BOOK_WIRE_SHEETS")
+public class BookWireSheetModel implements IBookWireSheetModel {
 
     //region Private Fields
     @Id
@@ -20,6 +25,10 @@ public class BookWireSheetModel extends SheetModel {
     //region Construction
     public BookWireSheetModel() {
 
+    }
+
+    public BookWireSheetModel(BookWireSheet bookWireSheet, List<BookWireRowModel> rows) {
+        this.rows = rows;
     }
     //endregion
 

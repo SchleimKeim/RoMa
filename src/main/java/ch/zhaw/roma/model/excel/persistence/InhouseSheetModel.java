@@ -1,6 +1,7 @@
 package ch.zhaw.roma.model.excel.persistence;
 
 import ch.zhaw.roma.interfaces.IInhouseSheetModel;
+import ch.zhaw.roma.model.excel.inhouse.InhouseSheet;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -8,7 +9,7 @@ import java.util.HashSet;
 
 @Entity
 @Access(AccessType.FIELD)
-public class InhouseSheetModel extends SheetModel implements IInhouseSheetModel {
+public class InhouseSheetModel implements IInhouseSheetModel {
 
     //region Private Fields
     @Id
@@ -22,6 +23,11 @@ public class InhouseSheetModel extends SheetModel implements IInhouseSheetModel 
     public InhouseSheetModel() {
 
     }
+
+    public InhouseSheetModel(InhouseSheet sheet, Collection<InhouseRowModel> rows) {
+
+
+    }
     //endregion
 
     //region Setters and Getters
@@ -33,12 +39,10 @@ public class InhouseSheetModel extends SheetModel implements IInhouseSheetModel 
         this.id = id;
     }
 
-    @Override
     public Collection<InhouseRowModel> getRows() {
         return rows;
     }
 
-    @Override
     public void setRows(Collection<InhouseRowModel> rows) {
         this.rows = rows;
     }

@@ -32,7 +32,7 @@
                <font>
                   <Font size="29.0" />
                </font></Label>
-                <Button fx:id="startNewRoyaltyCalculation" contentDisplay="TOP" onAction="#openNewCalculation" text="Honorarabrechnung erfassen..." GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                <Button fx:bookId="startNewRoyaltyCalculation" contentDisplay="TOP" onAction="#openNewCalculation" text="Honorarabrechnung erfassen..." GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                     <graphic>
                         <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -41,7 +41,7 @@
                         </ImageView>
                     </graphic>
                 </Button>
-                <Button fx:id="importExcel" contentDisplay="TOP" onAction="#openExcelFileImporter" text="Excel Importieren..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                <Button fx:bookId="importExcel" contentDisplay="TOP" onAction="#openExcelFileImporter" text="Excel Importieren..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                     <graphic>
                         <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -50,7 +50,7 @@
                         </ImageView>
                     </graphic>
                 </Button>
-                <Button fx:id="editData" contentDisplay="TOP" onAction="#openDataEditor" text="Stammdaten bearbeiten..." GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                <Button fx:bookId="editData" contentDisplay="TOP" onAction="#openDataEditor" text="Stammdaten bearbeiten..." GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                     <graphic>
                         <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -59,7 +59,7 @@
                         </ImageView>
                     </graphic>
                 </Button>
-                <Button fx:id="openSettings" contentDisplay="TOP" onAction="#openSettings" text="Einstellungen..." GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                <Button fx:bookId="openSettings" contentDisplay="TOP" onAction="#openSettings" text="Einstellungen..." GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                     <graphic>
                         <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                             <image>

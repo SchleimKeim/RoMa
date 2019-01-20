@@ -1,17 +1,22 @@
 package ch.zhaw.roma.model.excel.persistence;
-import ch.zhaw.roma.interfaces.IBookWireRowModel;
-import ch.zhaw.roma.model.excel.bookwire.BookWireSheet;
+
+import org.hibernate.annotations.TypeDef;
 
 import javax.persistence.*;
 
 @Entity
 @Access(AccessType.FIELD)
-public class BookWireRowModel implements IBookWireRowModel {
+@Table(name = "BOOK_WIRE_ROWS")
+@TypeDef(typeClass = BookWireSheetModel.class, name = "sheet", defaultForType = BookWireRowModel.class)
+public class BookWireRowModel {
+
 
     //region Private Fields
     @Id
     private Long id;
+
     private BookWireSheetModel sheet;
+
     private String isbnNumber;
     private String authorAndTitle;
     private int soldUnitsJanuary;
@@ -45,9 +50,6 @@ public class BookWireRowModel implements IBookWireRowModel {
     //region Construction
     public BookWireRowModel() {
 
-    }
-    public BookWireRowModel(BookWireSheet sheet) {
-        sheet = sheet;
     }
     //endregion
 
