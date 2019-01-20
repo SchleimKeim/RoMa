@@ -6,7 +6,6 @@ import javax.persistence.*;
 
 @Entity
 @Access(AccessType.FIELD)
-@Table(name = "BOOK_WIRE_ROWS")
 @TypeDef(typeClass = BookWireSheetModel.class, name = "sheet", defaultForType = BookWireRowModel.class)
 public class BookWireRowModel {
 

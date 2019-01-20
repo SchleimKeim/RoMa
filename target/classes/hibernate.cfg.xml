@@ -28,7 +28,7 @@
         <property name="hibernate.hbm2ddl.auto">create-drop</property>
 
         <!-- JDBC connection pool (use the built-in) -->
-        <property name="connection.pool_size">2</property>
+        <property name="connection.pool_size">1</property>
 
         <!-- Disable the second-level cache -->
         <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
@@ -38,8 +38,8 @@
 
         <!-- MAPPINGS -->
         <mapping class="ch.zhaw.roma.model.BookModel"/>
-        <!--<mapping class="ch.zhaw.roma.model.AuthorModel"/>--<
 
+        <!--<mapping class="ch.zhaw.roma.model.AuthorModel"/>--<
         <!--<mapping class="ch.zhaw.roma.model.excel.persistence.BookWireRowModel"/>-->
         <!--<mapping class="ch.zhaw.roma.model.excel.persistence.BookWireSheetModel"/>-->
         <!--<mapping class="ch.zhaw.roma.model.excel.persistence.InhouseRowModel"/>-->

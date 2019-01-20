@@ -9,7 +9,6 @@ import java.util.*;
 
 @Entity
 @Access(AccessType.FIELD)
-@Table(name = "BOOK_WIRE_SHEETS")
 public class BookWireSheetModel implements IBookWireSheetModel {
 
     //region Private Fields

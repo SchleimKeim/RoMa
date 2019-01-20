@@ -4,7 +4,6 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "AUTHORS")
 @Access(AccessType.FIELD)
 public class AuthorModel {
     @Id
@@ -15,7 +14,7 @@ public class AuthorModel {
     @Column(name = "FIRST_NAME")
     private String firstName;
     @Column(name = "LAST_NAME")
-    private String lastnName;
+    private String lastName;
     @Column(name = "MIDDLE_NAME")
     private String middleName;
     @Column(name = "BIRTHDAY")

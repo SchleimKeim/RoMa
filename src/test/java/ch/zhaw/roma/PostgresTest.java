@@ -3,7 +3,6 @@ package ch.zhaw.roma;
 import ch.zhaw.roma.model.BookModel;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -12,29 +11,49 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Arrays;
+import javax.persistence.criteria.CriteriaQuery;
 import java.util.List;
 
 public class PostgresTest {
 
-    private SessionFactory sessionFactory;
+    private static SessionFactory sessionFactory;
 
     @Before
-    public void before() throws Exception {
-        // A SessionFactory is set up once for an application!
+    public void before() {
         final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
-                                                     .configure("hibernate.cfg.xml") // configures settings createRowFrom hibernate.cfg.xml
+                                                     .configure("hibernate.cfg.xml")
                                                      .build();
         try {
-            sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
+            sessionFactory = new MetadataSources(registry)
+                                 .addAnnotatedClass(BookModel.class)
+                                 .buildMetadata()
+                                 .buildSessionFactory();
+
+            fillTables();
+
         } catch (Exception e) {
             Assert.fail(e.getMessage());
             StandardServiceRegistryBuilder.destroy(registry);
         }
     }
 
+    private void fillTables() {
+        try {
+            Session s = sessionFactory.openSession();
+            s.beginTransaction();
+            for (BookModel b : getTestModels())
+                s.save(b);
+
+            s.getTransaction().commit();
+            s.flush();
+        }
+        catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+        }
+    }
+
     @After
-    public void after() throws Exception {
+    public void after() {
         try {
             if (sessionFactory != null && !sessionFactory.isClosed())
                 sessionFactory.close();
@@ -43,45 +62,58 @@ public class PostgresTest {
         }
     }
 
-    @Test
+    @Test()
     public void testLoad() {
         final Session s = sessionFactory.openSession();
-        s.beginTransaction();
-        List existing = s.createQuery("FROM BOOKS", BookModel.class).getResultList();
-        Assert.assertNotNull(existing);
+        try {
 
-        s.getTransaction().commit();
-        s.flush();
-        s.close();
+            CriteriaQuery<BookModel> crit = sessionFactory.getCriteriaBuilder().createQuery(BookModel.class);
+            List<BookModel> existing = s.createQuery(crit).list();
+
+            s.flush();
+            s.close();
+
+        } catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+            if (s != null) {
+                s.flush();
+                s.disconnect();
+            }
+        }
     }
 
     @Test
     public void testSave() throws NoSuchFieldException {
 
         final Session s = sessionFactory.openSession();
-        s.beginTransaction();
-        List existing = s.createQuery(BookModel.class.toString()).getResultList();
+        boolean testPassed = false;
+        try {
+            List<BookModel> existing = s.createCriteria(BookModel.class).list();
+            Assert.assertNotNull(existing);
+            BookModel newEntry = new BookModel("XXXXXwwQ", "Der Wind in den Hosen");
+            s.save(newEntry);
+            s.getTransaction().commit();
 
-        existing.addAll(Arrays.asList(getTestModels()));
+            List<BookModel> updated = s.createCriteria(BookModel.class).list();
 
-        Transaction transaction = s.getTransaction();
-        transaction.commit();
-        //s.getTransaction().commit();
-        s.close();
+            Assert.assertNotNull(updated);
+            Assert.assertTrue(updated.stream().anyMatch(b -> b.getTitle().contains("Hose")));
 
-//        final Session load = sessionFactory.openSession();
-//        load.beginTransaction();
-//        List<BookModel> result = load.createQuery("FROM BOOKS", BookModel.class).getResultList();
-//
-//        Assert.assertTrue(result.stream().allMatch(r -> (r != null) && !r.getTitle().isEmpty()));
-//
-//        load.getTransaction().commit();
-//        load.close();
-//
-//        Assert.assertTrue(true);
+            s.close();
+            testPassed = true;
+        } catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+            testPassed = false;
+            if (s != null) {
+                s.flush();
+                s.disconnect();
+            }
+        }
+
+        Assert.assertTrue(testPassed);
     }
 
-    private BookModel[] getTestModels() {
+    private final BookModel[] getTestModels() {
         return new BookModel[]{
             new BookModel("xxxxxxx", "The Dark Tower"),
             new BookModel("xxxxxxx", "The King in Yellow"),

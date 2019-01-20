@@ -4,7 +4,6 @@ import javax.persistence.*;
 
 @Entity
 @Access(AccessType.FIELD)
-@Table(name = "BOOKS")
 public class BookModel {
 
     //region Private Fields

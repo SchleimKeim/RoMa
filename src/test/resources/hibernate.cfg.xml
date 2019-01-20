@@ -26,7 +26,8 @@
         <!-- Print executed SQL to stdout -->
         <property name="show_sql">true</property>
 
-        <!-- Drop and re-create the database schema on startup -->
+         <!-- Drop and re-create all database on startup -->
+        <property name="hibernate.hbm2ddl.auto">create-drop</property>
 
         <!-- MAPPINGS -->
         <mapping class="ch.zhaw.roma.model.BookModel"/>
