@@ -410,5 +410,3 @@ public class PdfExportData {
     }
 
     }
-
-}

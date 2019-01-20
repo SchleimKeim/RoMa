@@ -32,13 +32,12 @@ public class PdfExporter {
     private DecimalFormat formatter;
     
     
-    public PdfExporter(String path, PdfExportData data) throws IOException, MalformedURLException, FileNotFoundException {
+    public PdfExporter(String path, PdfExportData data) throws IOException, java.io.IOException {
         
         this.path = path;
         this.data = data;
+        formatter = new DecimalFormat("#0.00"); //formatter.format(d));
 
-        DecimalFormat formatter = new DecimalFormat("#0.00"); //formatter.format(d));
-        
         setFonts();
         createPdf();
 
@@ -51,22 +50,23 @@ public class PdfExporter {
             PdfDocument pdf = new PdfDocument(writer);
             Document document = new Document(pdf);
 
-            document.add(createHeader());
-            document.add(createAddress());
-            document.add(new Paragraph(data.getPlaceAndDate()));
-            document.add(new Paragraph("HONORARABRECHNUNG").setFont(bold)); //TODO: Font-Size needs to be bigger
-            document.add(createOverview());
+            document.add(createHeader().setFont(bold).setFontSize(12));
+            document.add(createAddress().setFont(normal).setFontSize(8));
+            document.add(new Paragraph(data.getPlaceAndDate()).setFontSize(8));
+            document.add(new Paragraph("HONORARABRECHNUNG").setFont(bold).setFontSize(14)); //TODO: Font-Size needs to be bigger
+            document.add(createOverview().setFontSize(8));
             //TODO: Insert Line-Break
-            document.add(new Paragraph("Bereits abgerechnet").setFont(bold));
-            document.add(createLegacy());
-            document.add(new Paragraph("1. Honorare aus Verkäufen").setFont(bold));
-            document.add(createBookSales());
-            document.add(new Paragraph("2. Honorare aus Nebenverkäufen").setFont(bold));
-            document.add(createAuxiliary());
-            document.add(new Paragraph("3. Honorare eBook-Verkäufe (inkl. Skoobe)").setFont(bold));
-            document.add(createEbooks());
-            document.add(createTotal());
-            document.add(createAccountOverview());
+            document.add(new Paragraph("Bereits abgerechnet").setFont(bold).setFontSize(10));
+            document.add(createLegacy().setFontSize(8));
+            document.add(new Paragraph("1. Honorare aus Verkäufen").setFont(bold).setFontSize(10));
+            document.add(createBookSales().setFontSize(8));
+            document.add(new Paragraph("2. Honorare aus Nebenverkäufen").setFont(bold).setFontSize(10));
+            document.add(createAuxiliary().setFontSize(8));
+            document.add(new Paragraph("3. Honorare eBook-Verkäufe (inkl. Skoobe)").setFont(bold).setFontSize(10));
+            document.add(createEbooks().setFontSize(8));
+            document.add(createTotal().setFontSize(8));
+            document.add(new Paragraph("Kontoübersicht").setFont(boldItalic).setFontSize(10));
+            document.add(createAccountOverview().setFontSize(8));
 
 
             document.close();
@@ -75,8 +75,6 @@ public class PdfExporter {
     private Table createAccountOverview() {
         Table table = new Table(new float[] {1,1});
         table.setWidth(UnitValue.createPercentValue(33));
-        table.addCell(new Cell().add(new Paragraph("Kontoübersicht:").setFont(bold)));
-        setEmptyCells(table, 1);
         for(AccountEntry entry : data.getEntries()) {
             table.addCell(new Cell().add(new Paragraph(entry.getTitle()).setFont(normal)));
             table.addCell(new Cell().add(new Paragraph("€ " + formatter.format(entry.getAmount())).setFont(normal)));
@@ -181,7 +179,6 @@ public class PdfExporter {
         table.addCell(new Cell().add(new Paragraph(Integer.toString(data.getSoldCh() + data.getSoldDeAu())).setFont(normal)));
         setEmptyCells(table, 5);
         table.addCell(new Cell().add(new Paragraph(formatter.format(data.getSumChEur() + data.getSumDeAuEur()))));
-
         return table;
     }
 
@@ -221,7 +218,7 @@ public class PdfExporter {
 
         table.addCell(new Cell().add(new Paragraph("Buch Hardcover").setFont(bold)));
 
-        table.addCell(new Cell().add(new Paragraph("ebook").setFont(bold)));
+        table.addCell(new Cell().add(new Paragraph("eBook").setFont(bold)));
 
         table.addCell(new Cell().add(new Paragraph("ISBN").setFont(normal)));
 
@@ -235,9 +232,9 @@ public class PdfExporter {
 
         table.addCell(new Cell().add(new Paragraph(data.getPeriodStart() + " - " + data.getPeriodEnd()).setFont(normal)));
 
-        table.addCell(new Cell().add(new Paragraph("LP D €" + formatter.format(data.getPriceHardCoverEur())).setFont(normal)));
+        table.addCell(new Cell().add(new Paragraph("LP D € " + formatter.format(data.getPriceHardCoverEur())).setFont(normal)));
 
-        table.addCell(new Cell().add(new Paragraph("LP D €" + formatter.format(data.getPriceEbookEur())).setFont(normal)));
+        table.addCell(new Cell().add(new Paragraph("LP D € " + formatter.format(data.getPriceEbookEur())).setFont(normal)));
 
         return table;
     }
@@ -245,20 +242,20 @@ public class PdfExporter {
     private Paragraph createHeader() throws MalformedURLException {
         //TODO: Change font
         Image logo = new Image(ImageDataFactory.create(data.getLogoPath()));
-        return new Paragraph(logo + data.getHeader()).setFont(normal);
+        return new Paragraph(logo + data.getHeader());
     }
 
     private Paragraph createAddress() {
     String address = new String();
 
-    if(data.getGreeting() != null) address += data.getGreeting() + "%n";
-    if(data.getFirstName() != null) address += data.getFirstName() + "%n";
-    if(data.getLastName()!= null) address += data.getLastName() + "%n";
-    if(data.getStreet1() != null) address += data.getStreet1() + "%n";
-    if(data.getStreet2() != null) address += data.getStreet2() + "%n";
-    if(data.getStreet3() != null) address += data.getStreet3() + "%n";
+    if(data.getGreeting() != null) address += data.getGreeting() + "\n";
+    if(data.getFirstName() != null) address += data.getFirstName() + " ";
+    if(data.getLastName()!= null) address += data.getLastName() + "\n";
+    if(data.getStreet1() != null) address += data.getStreet1() + "\n";
+    if(data.getStreet2() != null) address += data.getStreet2() + "\n";
+    if(data.getStreet3() != null) address += data.getStreet3() + "\n";
     if(data.getZipCode() != null) address += data.getZipCode() + " ";
-    if(data.getCity() != null) address += data.getCity() + "%n";
+    if(data.getCity() != null) address += data.getCity() + "\n";
 
     if(data.getCountry() != null) address += data.getCountry();
 
@@ -266,15 +263,17 @@ public class PdfExporter {
     }
 
 
-    private void setFonts() {
-        try {
-            normal = PdfFontFactory.createFont(FontConstants.TIMES_ROMAN);
+    private void setFonts() throws java.io.IOException {
+
+
+
+            normal = PdfFontFactory.createFont(FontConstants.HELVETICA);
             bold = PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD);
             italic = PdfFontFactory.createFont(FontConstants.HELVETICA_OBLIQUE);
             boldItalic = PdfFontFactory.createFont(FontConstants.HELVETICA_BOLDOBLIQUE);
 
-        } catch (java.io.IOException e) {
-            e.printStackTrace();
-        }
+
+
+
     }
 }

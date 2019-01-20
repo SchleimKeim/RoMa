@@ -36,11 +36,16 @@ public class helloworld {
 
             Paragraph p1 = new Paragraph();
             p1.add("ramba-zamba");
-            p1.add("zamba-ramba").setFont(font1);
+            p1.add("zamba-RAMBA").setFont(font1);
             document.add(p1);
 
         document.add(new Paragraph("John Geilo was here..."));
             document.add(new Paragraph("different font").setFont(font1));
+
+            double db = 23.45;
+
+
+
             document.close();
 
 

@@ -3,6 +3,12 @@ package ch.zhaw.roma.model.royaltycalculation;
 public class AccountEntry {
 
     private String title;
+
+    public AccountEntry(String title, double amount) {
+        this.title = title;
+        this.amount = amount;
+    }
+
     private double amount;
 
     public AccountEntry() {
