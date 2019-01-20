@@ -3,6 +3,7 @@ ch/zhaw/roma/model/royaltycalculation/LegacyEntry.class
 ch/zhaw/roma/interfaces/IRepositority.class
 ch/zhaw/roma/model/excel/ExcelSheet.class
 ch/zhaw/roma/helpers/excel/ExcelImporter$1.class
+ch/zhaw/roma/interfaces/IInhouseRowModel.class
 ch/zhaw/roma/model/excel/inhouse/InhouseSheet.class
 ch/zhaw/roma/model/excel/ExcelSheetType.class
 ch/zhaw/roma/model/excel/SheetType.class

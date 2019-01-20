@@ -1,7 +1,6 @@
 package ch.zhaw.roma.model;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Access(AccessType.FIELD)
@@ -13,11 +12,14 @@ public class BookModel {
     @Column(name = "BOOK_ID", updatable = false, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long bookId;
+
+    @Column(name = "ISBN")
     private String isbnNumber;
+    @Column(name = "BOOK_TITLE")
     private String title;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = AuthorModel.class)
-    private Set<AuthorModel> authors;
+    //@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = AuthorModel.class)
+    //private Set<AuthorModel> authors;
     //endregion
 
     //region Construction

@@ -4,6 +4,7 @@
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/bookwire/BookWireIndexes.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/AuthorModel.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/SheetType.java
+/home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/interfaces/IInhouseRowModel.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/royaltycalculation/Author.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/interfaces/IInhouseSheetModel.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/inhouse/InhouseRow.java

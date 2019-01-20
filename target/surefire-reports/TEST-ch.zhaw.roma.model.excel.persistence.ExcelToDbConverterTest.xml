@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="ch.zhaw.roma.model.excel.persistence.ExcelToDbConverterTest" time="1.254" errors="0" skipped="0">
+<testsuite tests="2" failures="0" name="ch.zhaw.roma.model.excel.persistence.ExcelToDbConverterTest" time="1.155" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2018.3.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -60,6 +60,6 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="ch.zhaw.roma.model.excel.persistence.ExcelToDbConverterTest" name="createFromInhouse" time="0.613"/>
-  <testcase classname="ch.zhaw.roma.model.excel.persistence.ExcelToDbConverterTest" name="createFromBookWire" time="0.641"/>
+  <testcase classname="ch.zhaw.roma.model.excel.persistence.ExcelToDbConverterTest" name="createFromInhouse" time="0.611"/>
+  <testcase classname="ch.zhaw.roma.model.excel.persistence.ExcelToDbConverterTest" name="createFromBookWire" time="0.544"/>
 </testsuite>
