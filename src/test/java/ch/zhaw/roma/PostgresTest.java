@@ -47,7 +47,7 @@ public class PostgresTest {
     public void testLoad() {
         final Session s = sessionFactory.openSession();
         s.beginTransaction();
-        List existing = s.createQuery("FROM BOOKS").getResultList();
+        List existing = s.createQuery("FROM BOOKS", BookModel.class).getResultList();
         Assert.assertNotNull(existing);
 
         s.getTransaction().commit();
@@ -60,7 +60,7 @@ public class PostgresTest {
 
         final Session s = sessionFactory.openSession();
         s.beginTransaction();
-        List existing = s.createQuery("FROM BOOKS", BookModel.class).getResultList();
+        List existing = s.createQuery(BookModel.class.toString()).getResultList();
 
         existing.addAll(Arrays.asList(getTestModels()));
 

@@ -14,10 +14,7 @@
     <session-factory>
 
         <!-- SQL dialect -->
-        <!-- <property name="dialect">org.hibernate.dialect.H2Dialect</property> -->
-
         <!-- Database connection settings -->
-
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
         <property name="connection.url">jdbc:postgresql://localhost:5432/romatest</property>
         <property name="connection.username">romatest</property>
@@ -30,6 +27,7 @@
         <property name="show_sql">true</property>
 
         <!-- Drop and re-create the database schema on startup -->
+
         <!-- MAPPINGS -->
         <mapping class="ch.zhaw.roma.model.BookModel"/>
         <!--<mapping class="ch.zhaw.roma.model.AuthorModel"/>-->
