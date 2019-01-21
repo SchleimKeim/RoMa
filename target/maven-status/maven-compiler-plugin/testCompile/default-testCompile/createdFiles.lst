@@ -1,4 +1,4 @@
-ch/zhaw/roma/model/excel/persistence/ExcelToDbConverterTest.class
-ch/zhaw/roma/PostgresTest.class
-ch/zhaw/roma/XmlHelperTest.class
-ch/zhaw/roma/helpers/excel/ExcelImporterTest.class
+ch\zhaw\roma\helpers\excel\ExcelImporterTest.class
+ch\zhaw\roma\model\excel\persistence\ExcelToDbConverterTest.class
+ch\zhaw\roma\PostgresTest.class
+ch\zhaw\roma\XmlHelperTest.class

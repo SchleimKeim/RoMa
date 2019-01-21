@@ -3,6 +3,7 @@ package ch.zhaw.roma;
 import ch.zhaw.roma.model.BookModel;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -25,11 +26,12 @@ public class PostgresTest {
                                                      .build();
         try {
             sessionFactory = new MetadataSources(registry)
-                                 .addAnnotatedClass(BookModel.class)
+                                 //.addAnnotatedClass(BookModel.class)
                                  .buildMetadata()
                                  .buildSessionFactory();
 
             fillTables();
+            Assert.assertTrue(true);
 
         } catch (Exception e) {
             Assert.fail(e.getMessage());
@@ -38,6 +40,7 @@ public class PostgresTest {
     }
 
     private void fillTables() {
+        boolean testPassed = false;
         try {
             Session s = sessionFactory.openSession();
             s.beginTransaction();
@@ -45,10 +48,12 @@ public class PostgresTest {
                 s.save(b);
 
             s.getTransaction().commit();
-            s.flush();
+            testPassed = true;
+            Assert.assertTrue(testPassed );
         }
         catch (Exception ex) {
             Assert.fail(ex.getMessage());
+            Assert.assertTrue(testPassed);
         }
     }
 
@@ -66,12 +71,12 @@ public class PostgresTest {
     public void testLoad() {
         final Session s = sessionFactory.openSession();
         try {
+            s.beginTransaction();
+            List<BookModel> existing = s.createQuery("FROM BookModel").list();
+            s.getTransaction().commit();
+            Assert.assertTrue(existing != null);
 
-            CriteriaQuery<BookModel> crit = sessionFactory.getCriteriaBuilder().createQuery(BookModel.class);
-            List<BookModel> existing = s.createQuery(crit).list();
 
-            s.flush();
-            s.close();
 
         } catch (Exception ex) {
             Assert.fail(ex.getMessage());
@@ -88,13 +93,17 @@ public class PostgresTest {
         final Session s = sessionFactory.openSession();
         boolean testPassed = false;
         try {
-            List<BookModel> existing = s.createCriteria(BookModel.class).list();
+            s.beginTransaction();
+            List<BookModel> existing = s.createQuery("FROM BookModel").list();
             Assert.assertNotNull(existing);
             BookModel newEntry = new BookModel("XXXXXwwQ", "Der Wind in den Hosen");
             s.save(newEntry);
             s.getTransaction().commit();
 
-            List<BookModel> updated = s.createCriteria(BookModel.class).list();
+
+            s.beginTransaction();
+            List<BookModel> updated = s.createQuery("FROM BookModel").list();
+            s.getTransaction().commit();;
 
             Assert.assertNotNull(updated);
             Assert.assertTrue(updated.stream().anyMatch(b -> b.getTitle().contains("Hose")));
