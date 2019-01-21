@@ -13,13 +13,13 @@ public class ExcelToDbConverter {
     //region Public Members
     public static InhouseSheetModel createFrom(InhouseSheet inhouseSheet) {
         return (inhouseSheet != null)
-                   ? new InhouseSheetModel(inhouseSheet, getRows(inhouseSheet))
+                   ? new InhouseSheetModel(getRows(inhouseSheet))
                    : null;
     }
 
     public static BookWireSheetModel createFrom(BookWireSheet bookWireSheet) {
         return (bookWireSheet != null)
-                   ? new BookWireSheetModel(bookWireSheet, getRows(bookWireSheet))
+                   ? new BookWireSheetModel(getRows(bookWireSheet))
                    : null;
     }
     //endregion

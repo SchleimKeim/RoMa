@@ -1,10 +1,9 @@
 package ch.zhaw.roma.model.excel.persistence;
 
-import ch.zhaw.roma.interfaces.IBookWireRowModel;
 import ch.zhaw.roma.interfaces.IBookWireSheetModel;
-import ch.zhaw.roma.model.excel.bookwire.BookWireSheet;
 
 import javax.persistence.*;
+import java.time.Instant;
 import java.util.*;
 
 @Entity
@@ -13,10 +12,14 @@ public class BookWireSheetModel implements IBookWireSheetModel {
 
     //region Private Fields
     @Id
+    @Column(name = "SHEET_ID")
     private Long id;
+    private String fileName;
+    private Date created = new Date();
+    private Date begin;
+    private Date end;
 
-
-    @ElementCollection(targetClass = BookWireRowModel.class)
+    @OneToMany(mappedBy = "sheet")
     private Collection<BookWireRowModel> rows = new HashSet<>();
     //endregion
 
@@ -26,7 +29,7 @@ public class BookWireSheetModel implements IBookWireSheetModel {
 
     }
 
-    public BookWireSheetModel(BookWireSheet bookWireSheet, List<BookWireRowModel> rows) {
+    public BookWireSheetModel(List<BookWireRowModel> rows) {
         this.rows = rows;
     }
     //endregion
@@ -48,5 +51,37 @@ public class BookWireSheetModel implements IBookWireSheetModel {
     public void setRows(Collection<BookWireRowModel> rows) {
         this.rows = rows;
     }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    public Date getBegin() {
+        return begin;
+    }
+
+    public void setBegin(Date begin) {
+        this.begin = begin;
+    }
+
+    public Date getEnd() {
+        return end;
+    }
+    public void setEnd(Date end) {
+        this.end = end;
+    }
+
     //endregion
 }

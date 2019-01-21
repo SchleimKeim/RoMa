@@ -14,6 +14,8 @@ public class BookWireRowModel {
     @Id
     private Long id;
 
+    @ManyToOne
+    @JoinColumn(name = "SHEET_ID", nullable = false)
     private BookWireSheetModel sheet;
 
     private String isbnNumber;

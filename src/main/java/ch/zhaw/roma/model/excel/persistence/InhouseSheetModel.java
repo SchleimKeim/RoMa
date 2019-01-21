@@ -24,9 +24,8 @@ public class InhouseSheetModel implements IInhouseSheetModel {
 
     }
 
-    public InhouseSheetModel(InhouseSheet sheet, Collection<InhouseRowModel> rows) {
-
-
+    public InhouseSheetModel(Collection<InhouseRowModel> rows) {
+        this.rows = rows;
     }
     //endregion
 

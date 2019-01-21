@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="ch.zhaw.roma.helpers.excel.ExcelImporterTest" time="1.046" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="ch.zhaw.roma.helpers.excel.ExcelImporterTest" time="1.023" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2018.2.7"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -62,7 +62,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="ch.zhaw.roma.helpers.excel.ExcelImporterTest" name="loadInhouseSheetTest" time="0.828"/>
+  <testcase classname="ch.zhaw.roma.helpers.excel.ExcelImporterTest" name="loadInhouseSheetTest" time="0.851"/>
   <testcase classname="ch.zhaw.roma.helpers.excel.ExcelImporterTest" name="getFile" time="0"/>
-  <testcase classname="ch.zhaw.roma.helpers.excel.ExcelImporterTest" name="basicLoadBookWireSheetTest" time="0.218"/>
+  <testcase classname="ch.zhaw.roma.helpers.excel.ExcelImporterTest" name="basicLoadBookWireSheetTest" time="0.172"/>
 </testsuite>
