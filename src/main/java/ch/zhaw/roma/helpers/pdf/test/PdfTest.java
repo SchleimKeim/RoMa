@@ -1,4 +1,4 @@
-package ch.zhaw.roma.helpers.test;
+package ch.zhaw.roma.helpers.pdf.test;
 
 import ch.zhaw.roma.helpers.pdf.PdfExportData;
 import ch.zhaw.roma.helpers.pdf.PdfExporter;
@@ -6,7 +6,6 @@ import ch.zhaw.roma.model.royaltycalculation.AccountEntry;
 import ch.zhaw.roma.model.royaltycalculation.AuxRight;
 import ch.zhaw.roma.model.royaltycalculation.LegacyEntry;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
