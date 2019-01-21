@@ -11,7 +11,9 @@ import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
+import com.itextpdf.layout.border.Border;
 import com.itextpdf.layout.element.*;
+import com.itextpdf.layout.property.TextAlignment;
 import com.itextpdf.layout.property.UnitValue;
 
 import java.io.FileNotFoundException;
@@ -204,37 +206,41 @@ public class PdfExporter {
         return table;
     }
 
+    private Cell newCellNoBorderNormal(String text) {
+        return new Cell().add(new Paragraph(text)).setBorder(Border.NO_BORDER).setFont(normal);
+    }
+
+    private Cell newCellNoBorderBold(String text) {
+        return new Cell().add(new Paragraph(text)).setBorder(Border.NO_BORDER).setFont(bold);
+    }
+
+    private Cell newCellNoBorderNoFont(String text) {
+        return new Cell().add(new Paragraph(text)).setBorder(Border.NO_BORDER);
+    }
+
 
 
     private Table createOverview() {
         Table table = new Table(new float[]{1,4,2,2});
         table.setWidth((UnitValue.createPercentValue(100)));
 
-        table.addCell(new Cell().add(new Paragraph("Titel").setFont(normal)));
-
+        table.addCell(newCellNoBorderNormal("Titel"));
+        //TODO: FIX Cell --> Text
         Text author = new Text(data.getAuthor()).setFont(bold);
         Text title = new Text(data.getTitle()).setFont(boldItalic);
-        table.addCell(new Cell().add(new Paragraph(author + ", " + title)));
+        table.addCell(new Cell().add(new Paragraph(author + ", " + title)).setBorder(Border.NO_BORDER));
 
-        table.addCell(new Cell().add(new Paragraph("Buch Hardcover").setFont(bold)));
+        table.addCell(newCellNoBorderBold("Buch Hardcover").setTextAlignment(TextAlignment.RIGHT));
+        table.addCell(newCellNoBorderBold("eBook").setTextAlignment(TextAlignment.RIGHT));
+        table.addCell(newCellNoBorderNormal("ISBN"));
+        table.addCell(newCellNoBorderNormal(data.getISBN()));
+        table.addCell(newCellNoBorderNormal("LP CHF " + formatter.format(data.getPriceHardCoverChf())).setTextAlignment(TextAlignment.RIGHT));
+        table.addCell(newCellNoBorderNoFont("")); // no CHF Price for eBook
+        table.addCell(newCellNoBorderNormal("Periode"));
+        table.addCell(newCellNoBorderNormal(data.getPeriodStart() + " - " + data.getPeriodEnd()));
+        table.addCell(newCellNoBorderNormal("LP D € " + formatter.format(data.getPriceHardCoverEur())).setTextAlignment(TextAlignment.RIGHT));
+        table.addCell(newCellNoBorderNormal("LP D € " + formatter.format(data.getPriceEbookEur())).setTextAlignment(TextAlignment.RIGHT));
 
-        table.addCell(new Cell().add(new Paragraph("eBook").setFont(bold)));
-
-        table.addCell(new Cell().add(new Paragraph("ISBN").setFont(normal)));
-
-        table.addCell(new Cell().add(new Paragraph(data.getISBN()).setFont(normal)));
-
-        table.addCell(new Cell().add(new Paragraph("LP CHF " + formatter.format(data.getPriceHardCoverChf()))).setFont(normal));
-
-        table.addCell(new Cell().add(new Paragraph(""))); // no CHF Price for eBook
-
-        table.addCell(new Cell().add(new Paragraph("Periode").setFont(normal)));
-
-        table.addCell(new Cell().add(new Paragraph(data.getPeriodStart() + " - " + data.getPeriodEnd()).setFont(normal)));
-
-        table.addCell(new Cell().add(new Paragraph("LP D € " + formatter.format(data.getPriceHardCoverEur())).setFont(normal)));
-
-        table.addCell(new Cell().add(new Paragraph("LP D € " + formatter.format(data.getPriceEbookEur())).setFont(normal)));
 
         return table;
     }
