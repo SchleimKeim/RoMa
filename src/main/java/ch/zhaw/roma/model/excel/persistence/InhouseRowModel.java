@@ -2,17 +2,22 @@ package ch.zhaw.roma.model.excel.persistence;
 
 import ch.zhaw.roma.interfaces.IInhouseRowModel;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Access(AccessType.FIELD)
+@Table(name = "INHOUSE_ROWS")
 public class InhouseRowModel implements IInhouseRowModel {
+
     //region Private Fields
     @Id
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ROW_ID", nullable = false)
+    private Long rowId;
+
+
+    @ManyToOne
+    @JoinColumn(name = "SHEET_ID", nullable = false)
     private InhouseSheetModel sheet;
     private String articleNr;
     private String title;
@@ -38,12 +43,12 @@ public class InhouseRowModel implements IInhouseRowModel {
     //endregion
 
     //region Getters and Setters
-    public Long getId() {
-        return id;
+    public Long getRowId() {
+        return rowId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setRowId(Long rowId) {
+        this.rowId = rowId;
     }
 
     public InhouseSheetModel getSheet() {

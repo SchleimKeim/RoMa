@@ -3,24 +3,28 @@ package ch.zhaw.roma.model.excel.persistence;
 import ch.zhaw.roma.interfaces.IBookWireSheetModel;
 
 import javax.persistence.*;
-import java.time.Instant;
-import java.util.*;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Access(AccessType.FIELD)
+@Table(name = "BOOKWIRE_SHEETS")
 public class BookWireSheetModel implements IBookWireSheetModel {
 
     //region Private Fields
     @Id
-    @Column(name = "SHEET_ID")
-    private Long id;
-    private String fileName;
-    private Date created = new Date();
-    private Date begin;
-    private Date end;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "SHEET_ID", nullable = false)
+    private Long sheetId;
+    private String fileName = "";
+    private Date created = Calendar.getInstance().getTime();
+    private Date begin = Calendar.getInstance().getTime();      // TODO: !!
+    private Date end = Calendar.getInstance().getTime();        // TODO: !!
 
-    @OneToMany(mappedBy = "sheet")
-    private Collection<BookWireRowModel> rows = new HashSet<>();
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "sheet")
+    private Set<BookWireRowModel> rows;
     //endregion
 
 
@@ -29,27 +33,33 @@ public class BookWireSheetModel implements IBookWireSheetModel {
 
     }
 
-    public BookWireSheetModel(List<BookWireRowModel> rows) {
+    public BookWireSheetModel(Set<BookWireRowModel> rows) {
+
         this.rows = rows;
+
+        for(BookWireRowModel r : this.rows)
+            r.setSheet(this);
     }
     //endregion
 
 
     //region Getters and Setters
-    public Long getId() {
-        return id;
+    public Long getSheetId() {
+        return sheetId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setSheetId(Long sheetId) {
+        this.sheetId = sheetId;
     }
 
-    public Collection<BookWireRowModel> getRows() {
+    public Set<BookWireRowModel> getRows() {
         return rows;
     }
 
-    public void setRows(Collection<BookWireRowModel> rows) {
+    public void setRows(Set<BookWireRowModel> rows) {
         this.rows = rows;
+        for(BookWireRowModel r : this.rows)
+            r.setSheet(this);
     }
 
     public String getFileName() {

@@ -3,7 +3,6 @@ package ch.zhaw.roma;
 import ch.zhaw.roma.model.BookModel;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -12,7 +11,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import javax.persistence.criteria.CriteriaQuery;
 import java.util.List;
 
 public class PostgresTest {
@@ -88,7 +86,7 @@ public class PostgresTest {
     }
 
     @Test
-    public void testSave() throws NoSuchFieldException {
+    public void testSave() {
 
         final Session s = sessionFactory.openSession();
         boolean testPassed = false;

@@ -1,22 +1,24 @@
 package ch.zhaw.roma.model.excel.persistence;
 
 import ch.zhaw.roma.interfaces.IInhouseSheetModel;
-import ch.zhaw.roma.model.excel.inhouse.InhouseSheet;
 
 import javax.persistence.*;
-import java.util.Collection;
-import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Access(AccessType.FIELD)
+@Table(name = "INHOUSE_SHEETS")
 public class InhouseSheetModel implements IInhouseSheetModel {
 
     //region Private Fields
-    @Id
-    private Long id;
 
-    @ElementCollection(targetClass = InhouseRowModel.class)
-    private Collection<InhouseRowModel> rows = new HashSet<>();
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "SHEET_ID", nullable = false)
+    private Long sheetId;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "sheet", cascade = CascadeType.ALL)
+    private Set<InhouseRowModel> rows;
     //endregion
 
     //region Construction
@@ -24,26 +26,34 @@ public class InhouseSheetModel implements IInhouseSheetModel {
 
     }
 
-    public InhouseSheetModel(Collection<InhouseRowModel> rows) {
+    public InhouseSheetModel(Set<InhouseRowModel> rows) {
         this.rows = rows;
+
+        for(InhouseRowModel r : this.rows)
+            r.setSheet(this);
     }
     //endregion
 
     //region Setters and Getters
-    public Long getId() {
-        return id;
+    public Long getSheetId() {
+        return sheetId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setSheetId(Long sheetId) {
+        this.sheetId = sheetId;
     }
 
-    public Collection<InhouseRowModel> getRows() {
+    public Set<InhouseRowModel> getRows() {
         return rows;
     }
 
-    public void setRows(Collection<InhouseRowModel> rows) {
+    public void setRows(Set<InhouseRowModel> rows) {
+        if(rows == null)
+            return;
+
         this.rows = rows;
+        for(InhouseRowModel row : this.rows)
+            row.setSheet(this);
     }
     //endregion
 }

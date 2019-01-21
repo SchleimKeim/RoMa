@@ -17,7 +17,7 @@ public class BookWireSheetModelTest {
     public void BookWireSheetModelTest (){
         BookWireSheet sheet = new ExcelImporter(bookWireFile.toString(), SheetType.Bookwire).Import().asBookwire();
         Assert.assertNotNull(sheet);
-        BookWireSheetModel modelsheet = ExcelToDbConverter.createFrom(sheet);
+        BookWireSheetModel modelsheet = ExcelToEntityConverter.createFrom(sheet);
         Assert.assertNotNull(modelsheet);
     }
 }

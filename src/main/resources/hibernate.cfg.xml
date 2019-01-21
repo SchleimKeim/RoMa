@@ -25,7 +25,7 @@
         <property name="show_sql">true</property>
 
         <!-- Drop and re-create all database on startup -->
-        <property name="hibernate.hbm2ddl.auto">create-drop</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
 
         <!-- JDBC connection pool (use the built-in) -->
         <property name="connection.pool_size">1</property>
@@ -38,6 +38,10 @@
 
         <!-- MAPPINGS -->
         <mapping class="ch.zhaw.roma.model.BookModel"/>
+        <mapping class="ch.zhaw.roma.model.excel.persistence.InhouseSheetModel"/>
+        <mapping class="ch.zhaw.roma.model.excel.persistence.InhouseRowModel"/>
+        <mapping class="ch.zhaw.roma.model.excel.persistence.BookWireSheetModel"/>
+        <mapping class="ch.zhaw.roma.model.excel.persistence.BookWireRowModel"/>
     </session-factory>
 
 </hibernate-configuration>

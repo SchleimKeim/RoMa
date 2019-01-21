@@ -10,7 +10,8 @@ import org.junit.Test;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class ExcelToDbConverterTest {
+public class ExcelToEntityConverterTest {
+
 
     //region Private Fields
     private final Path inhouseFile = Paths.get("src/test/resources/inhouse.xlsx");
@@ -29,7 +30,7 @@ public class ExcelToDbConverterTest {
         int rowCount = sheet.getRows().length;
 
         try {
-            InhouseSheetModel modelSheet = ExcelToDbConverter.createFrom(sheet);
+            InhouseSheetModel modelSheet = ExcelToEntityConverter.createFrom(sheet);
             Assert.assertNotNull(modelSheet);
             Assert.assertTrue(modelSheet.getRows().size() == rowCount);
         } catch (Exception ex) {
@@ -47,7 +48,7 @@ public class ExcelToDbConverterTest {
             ).Import()
             .asBookwire();
 
-            BookWireSheetModel modelSheet = ExcelToDbConverter.createFrom(sheet);
+            BookWireSheetModel modelSheet = ExcelToEntityConverter.createFrom(sheet);
             Assert.assertNotNull(modelSheet);
             Assert.assertTrue(modelSheet.getRows().size() == sheet.getRowCount());
         } catch (Exception ex) {

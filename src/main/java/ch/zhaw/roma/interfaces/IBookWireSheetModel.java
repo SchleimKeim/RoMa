@@ -2,9 +2,9 @@ package ch.zhaw.roma.interfaces;
 
 import ch.zhaw.roma.model.excel.persistence.BookWireRowModel;
 
-import java.util.Collection;
+import java.util.Set;
 
 public interface IBookWireSheetModel {
-    Collection<BookWireRowModel> getRows();
-    void setRows(Collection<BookWireRowModel> rows);
+    Set<BookWireRowModel> getRows();
+    void setRows(Set<BookWireRowModel> rows);
 }

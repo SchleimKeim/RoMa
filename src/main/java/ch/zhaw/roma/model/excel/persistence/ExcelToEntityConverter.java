@@ -6,9 +6,11 @@ import ch.zhaw.roma.model.excel.inhouse.InhouseRow;
 import ch.zhaw.roma.model.excel.inhouse.InhouseSheet;
 
 import java.util.Arrays;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
 
-public class ExcelToDbConverter {
+public class ExcelToEntityConverter {
 
     //region Public Members
     public static InhouseSheetModel createFrom(InhouseSheet inhouseSheet) {
@@ -102,18 +104,16 @@ public class ExcelToDbConverter {
         return r;
     }
 
-    private static List<BookWireRowModel> getRows(BookWireSheet sheet) {
-        return Arrays
-                   .asList(Arrays.stream(sheet.getRows())
-                               .map(ExcelToDbConverter::createRowFrom)
-                               .toArray(BookWireRowModel[]::new));
+    private static Set<BookWireRowModel> getRows(BookWireSheet sheet) {
+        return Arrays.stream(sheet.getRows())
+            .map(ExcelToEntityConverter::createRowFrom)
+            .collect(Collectors.toCollection(HashSet::new));
     }
 
-    private static List<InhouseRowModel> getRows(InhouseSheet sheet) {
-        return Arrays
-                   .asList(Arrays.stream(sheet.getRows())
-                               .map(ExcelToDbConverter::createRowFrom)
-                               .toArray(InhouseRowModel[]::new));
+    private static Set<InhouseRowModel> getRows(InhouseSheet sheet) {
+        return Arrays.stream(sheet.getRows())
+                   .map(ExcelToEntityConverter::createRowFrom)
+                   .collect(Collectors.toCollection(HashSet::new));
     }
 
     //endregion

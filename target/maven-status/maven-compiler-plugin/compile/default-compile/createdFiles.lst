@@ -15,11 +15,11 @@ ch/zhaw/roma/model/excel/bookwire/BookWireRow.class
 ch/zhaw/roma/model/royaltycalculation/Author.class
 ch/zhaw/roma/model/BookModel.class
 ch/zhaw/roma/controller/ImportExcelViewController.class
+ch/zhaw/roma/model/excel/persistence/ExcelToEntityConverter.class
 ch/zhaw/roma/model/royaltycalculation/SoldBooksYearly.class
 ch/zhaw/roma/helpers/ApplicationRepo.class
 ch/zhaw/roma/model/settings/RoMaSettings.class
 ch/zhaw/roma/interfaces/IInhouseSheetModel.class
-ch/zhaw/roma/model/excel/persistence/ExcelToDbConverter.class
 ch/zhaw/roma/controller/EditRoMaNoteController.class
 ch/zhaw/roma/model/excel/persistence/InhouseRowModel.class
 ch/zhaw/roma/model/AuthorModel.class

@@ -1,18 +1,18 @@
 package ch.zhaw.roma.model.excel.persistence;
 
-import org.hibernate.annotations.TypeDef;
-
 import javax.persistence.*;
 
 @Entity
 @Access(AccessType.FIELD)
-@TypeDef(typeClass = BookWireSheetModel.class, name = "sheet", defaultForType = BookWireRowModel.class)
+@Table(name = "BOOKWIRE_ROWS")
 public class BookWireRowModel {
 
 
     //region Private Fields
     @Id
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ROW_ID", nullable = false)
+    private Long rowId;
 
     @ManyToOne
     @JoinColumn(name = "SHEET_ID", nullable = false)
@@ -55,12 +55,12 @@ public class BookWireRowModel {
     //endregion
 
     //region Getters and Setters
-    public Long getId() {
-        return id;
+    public Long getRowId() {
+        return rowId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setRowId(Long rowId) {
+        this.rowId = rowId;
     }
 
     public String getIsbnNumber() {

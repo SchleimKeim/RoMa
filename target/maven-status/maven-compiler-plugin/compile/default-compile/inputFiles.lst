@@ -11,7 +11,6 @@
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/controller/IntroViewController.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/royaltycalculation/Settlement.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/helpers/excel/ExcelImporter.java
-/home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/persistence/ExcelToDbConverter.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/helpers/XmlHelper.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/ExcelSheet.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/inhouse/RowIndexes.java
@@ -27,6 +26,7 @@
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/royaltycalculation/LegacyEntry.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/controller/EditRoMaNoteController.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/royaltycalculation/Book.java
+/home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/persistence/ExcelToEntityConverter.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/EmptyCell.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/settings/RoMaSettings.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/Main.java

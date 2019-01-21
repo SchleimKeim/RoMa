@@ -26,13 +26,15 @@
         <!-- Print executed SQL to stdout -->
         <property name="show_sql">true</property>
 
-         <!-- Drop and re-create all database on startup -->
-        <property name="hibernate.hbm2ddl.auto">create-drop</property>
+        <!-- Drop and re-create all database on startup -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
 
         <!-- MAPPINGS -->
         <mapping class="ch.zhaw.roma.model.BookModel"/>
-        <!--<mapping class="ch.zhaw.roma.model.excel.persistence.BookWireSheetModel"/>-->
-        <!--<mapping class="ch.zhaw.roma.model.excel.persistence.BookWireRowModel"/>-->
+        <mapping class="ch.zhaw.roma.model.excel.persistence.InhouseSheetModel"/>
+        <mapping class="ch.zhaw.roma.model.excel.persistence.InhouseRowModel"/>
+        <mapping class="ch.zhaw.roma.model.excel.persistence.BookWireSheetModel"/>
+        <mapping class="ch.zhaw.roma.model.excel.persistence.BookWireRowModel"/>
     </session-factory>
 
 </hibernate-configuration>

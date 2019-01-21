@@ -21,7 +21,7 @@ public class InhouseSheetModelTest {
                 .asInhouse();
 
         Assert.assertNotNull(sheet);
-        InhouseSheetModel modelsheet = ExcelToDbConverter.createFrom(sheet);
+        InhouseSheetModel modelsheet = ExcelToEntityConverter.createFrom(sheet);
         Assert.assertNotNull(modelsheet);
     }
 }
