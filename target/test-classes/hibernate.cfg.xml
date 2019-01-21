@@ -31,8 +31,8 @@
 
         <!-- MAPPINGS -->
         <mapping class="ch.zhaw.roma.model.BookModel"/>
-        <mapping class="ch.zhaw.roma.model.excel.persistence.BookWireSheetModel"/>
-        <mapping class="ch.zhaw.roma.model.excel.persistence.BookWireRowModel"/>
+        <!--<mapping class="ch.zhaw.roma.model.excel.persistence.BookWireSheetModel"/>-->
+        <!--<mapping class="ch.zhaw.roma.model.excel.persistence.BookWireRowModel"/>-->
     </session-factory>
 
 </hibernate-configuration>
