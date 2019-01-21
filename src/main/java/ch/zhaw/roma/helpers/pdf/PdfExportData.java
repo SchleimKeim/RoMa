@@ -62,12 +62,13 @@ public class PdfExportData {
 
     private ArrayList<AccountEntry> entries;
 
-
-
     private double royalityCalculationTotal; // could also be calculated: sumChEur + sumDeAuEur + sumEbooksEur + auxRightsTotal
     private double accountTotal;  //could also be calculated from entries + royalityCalculationTotal
 
     private double exRateEurChf;
+
+    private String contactDetails;
+
 
     public PdfExportData() {
 
@@ -407,6 +408,14 @@ public class PdfExportData {
 
     public void setPeriodEnd(String periodEnd) {
         this.periodEnd = periodEnd;
+    }
+
+    public String getContactDetails() {
+        return contactDetails;
+    }
+
+    public void setContactDetails(String contactDetails) {
+        this.contactDetails = contactDetails;
     }
 
     }

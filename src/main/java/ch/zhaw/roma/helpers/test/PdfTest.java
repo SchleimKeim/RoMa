@@ -27,7 +27,7 @@ public class PdfTest {
         data.setCountry("Schweiz");
 
         data.setISBN("978-3-86894-9117");
-        data.setTitle("Meine grosse Liebe PDF - Wild und hemmungslos");
+        data.setTitle("Meine grosse Liebe PDF");
         data.setAuthor("Paul Pedeef");
 
         data.setPriceHardCoverChf(29.55);
@@ -92,6 +92,8 @@ public class PdfTest {
             accountEntryTotal += entry.getAmount();
         }
         data.setAccountTotal(accountEntryTotal + data.getRoyalityCalculationTotal());
+
+        data.setContactDetails("Tel +41 44 444 44 44\nFax +41 44 999 99 99\nwww.mb-verlag.ch\nverlag@mb-verlag.ch");
 
         try {
             PdfExporter exporter = new PdfExporter("output/TestPDF.pdf", data);

@@ -12,10 +12,15 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.border.Border;
+import com.itextpdf.layout.border.DoubleBorder;
+import com.itextpdf.layout.border.SolidBorder;
 import com.itextpdf.layout.element.*;
+import com.itextpdf.layout.property.HorizontalAlignment;
 import com.itextpdf.layout.property.TextAlignment;
 import com.itextpdf.layout.property.UnitValue;
+import com.itextpdf.layout.property.VerticalAlignment;
 
+import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.net.MalformedURLException;
 import java.text.DecimalFormat;
@@ -29,116 +34,166 @@ public class PdfExporter {
     private PdfFont bold;
     private PdfFont italic;
     private PdfFont boldItalic;
-
-
     private DecimalFormat formatter;
     
     
     public PdfExporter(String path, PdfExportData data) throws IOException, java.io.IOException {
-        
         this.path = path;
         this.data = data;
         formatter = new DecimalFormat("#0.00"); //formatter.format(d));
-
         setFonts();
         createPdf();
-
-
     }
 
     private void createPdf() throws MalformedURLException, FileNotFoundException {
+        PdfWriter writer = new PdfWriter(path);
+        PdfDocument pdf = new PdfDocument(writer);
+        Document document = new Document(pdf);
+        document.add(createDocHeader().setFont(bold).setFontSize(12));
+        document.add(createAddress().setFont(normal).setFontSize(8));
+        document.add(new Paragraph("\n"));
 
-            PdfWriter writer = new PdfWriter(path);
-            PdfDocument pdf = new PdfDocument(writer);
-            Document document = new Document(pdf);
-
-            document.add(createHeader().setFont(bold).setFontSize(12));
-            document.add(createAddress().setFont(normal).setFontSize(8));
-            document.add(new Paragraph(data.getPlaceAndDate()).setFontSize(8));
-            document.add(new Paragraph("HONORARABRECHNUNG").setFont(bold).setFontSize(14)); //TODO: Font-Size needs to be bigger
-            document.add(createOverview().setFontSize(8));
-            //TODO: Insert Line-Break
-            document.add(new Paragraph("Bereits abgerechnet").setFont(bold).setFontSize(10));
-            document.add(createLegacy().setFontSize(8));
-            document.add(new Paragraph("1. Honorare aus Verkäufen").setFont(bold).setFontSize(10));
-            document.add(createBookSales().setFontSize(8));
-            document.add(new Paragraph("2. Honorare aus Nebenverkäufen").setFont(bold).setFontSize(10));
-            document.add(createAuxiliary().setFontSize(8));
-            document.add(new Paragraph("3. Honorare eBook-Verkäufe (inkl. Skoobe)").setFont(bold).setFontSize(10));
-            document.add(createEbooks().setFontSize(8));
-            document.add(createTotal().setFontSize(8));
-            document.add(new Paragraph("Kontoübersicht").setFont(boldItalic).setFontSize(10));
-            document.add(createAccountOverview().setFontSize(8));
-
-
-            document.close();
+        document.add(new Paragraph(data.getPlaceAndDate()).setFontSize(8));
+        document.add(new Paragraph(" "));
+        document.add(new Paragraph("HONORARABRECHNUNG").setFont(bold).setFontSize(12).setCharacterSpacing(3));
+        document.add(new Paragraph("\n"));
+        document.add(createOverview().setFontSize(8));
+        document.add(new Paragraph(""));
+        document.add(createLegacy().setFontSize(8));
+        document.add(new Paragraph(" "));
+        //document.add(new Paragraph("1. Honorare aus Verkäufen").setFont(bold).setFontSize(8));
+        document.add(new Table(new float[]{1}).setWidth(UnitValue.createPercentValue(100)).addCell(newCellNoBorderBold("1. Honorare aus Verkäufen")).setFontSize(8));
+        document.add(createBookSales().setFontSize(8));
+        document.add(new Paragraph(" "));
+        //document.add(new Paragraph("2. Honorare aus Nebenverkäufen").setFont(bold).setFontSize(8));
+        document.add(new Table(new float[]{1}).setWidth(UnitValue.createPercentValue(100)).addCell(newCellNoBorderBold("2. Honorare aus Nebenverkäufen")).setFontSize(8));
+        document.add(createAuxiliary().setFontSize(8));
+        document.add(new Paragraph(" "));
+        //document.add(new Paragraph("3. Honorare eBook-Verkäufe (inkl. Skoobe)").setFont(bold).setFontSize(8));
+        document.add(new Table(new float[]{1}).setWidth(UnitValue.createPercentValue(100)).addCell(newCellNoBorderBold("3. Honorare eBook-Verkäufe (inkl. Skoobe)")).setFontSize(8));
+        document.add(createEbooks().setFontSize(8));
+        document.add(new Paragraph(" "));
+        document.add(createTotal().setFontSize(8));
+        document.add(new Paragraph(" "));
+        document.add(createAccountOverview().setFontSize(8));
+        document.add(createExRateEurCHF().setFontSize(8).setHorizontalAlignment(HorizontalAlignment.RIGHT));
+        document.add(new Paragraph("\n\n"));
+        document.add(new Paragraph(data.getContactDetails()).setFontSize(8));
+        document.close();
     }
 
-    private Table createAccountOverview() {
-        Table table = new Table(new float[] {1,1});
-        table.setWidth(UnitValue.createPercentValue(33));
-        for(AccountEntry entry : data.getEntries()) {
-            table.addCell(new Cell().add(new Paragraph(entry.getTitle()).setFont(normal)));
-            table.addCell(new Cell().add(new Paragraph("€ " + formatter.format(entry.getAmount())).setFont(normal)));
-        }
-        table.addCell(new Cell().add(new Paragraph("Abrechnung per " + data.getPeriodEnd()).setFont(bold)));
-        table.addCell(new Cell().add(new Paragraph("€ " + formatter.format(data.getRoyalityCalculationTotal())).setFont(bold)));
-        table.addCell(new Cell().add(new Paragraph("Total zu Ihren Gunsten").setFont(bold)));
-        table.addCell(new Cell().add(new Paragraph("€ " + formatter.format(data.getAccountTotal())).setFont(bold)));
-        return table;
+    private void setFonts() throws java.io.IOException {
+        normal = PdfFontFactory.createFont(FontConstants.HELVETICA);
+        bold = PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD);
+        italic = PdfFontFactory.createFont(FontConstants.HELVETICA_OBLIQUE);
+        boldItalic = PdfFontFactory.createFont(FontConstants.HELVETICA_BOLDOBLIQUE);
     }
 
-    private Table createTotal() {
-        //TODO: Format Boarders
-        Table table = createTable();
-        table.addCell(new Cell().add(new Paragraph("Ihr Guthaben").setFont(bold)));
-        setEmptyCells(table, 5);
-        table.addCell(new Cell().add(new Paragraph("€").setFont(bold)));
-        table.addCell(new Cell().add(new Paragraph(formatter.format(data.getRoyalityCalculationTotal())).setFont(bold)));
-        return table;
+    //New cell with no boarder and normal font
+    private Cell newCellNoBorderNormal(String text) {
+        return new Cell().add(new Paragraph(text)).setBorder(Border.NO_BORDER).setFont(normal);
+    }
+    //New cell with no boarder and bold font
+    private Cell newCellNoBorderBold(String text) {
+        return new Cell().add(new Paragraph(text)).setBorder(Border.NO_BORDER).setFont(bold);
+    }
+    //New cell with no boarder and italic font
+    private Cell newCellNoBorderItalic(String text) {
+        return new Cell().add(new Paragraph(text)).setBorder(Border.NO_BORDER).setFont(italic);
+    }
+    //New cell with no boarder and italic font
+    private Cell newCellNoBorderBoldItalic(String text) {
+        return new Cell().add(new Paragraph(text)).setBorder(Border.NO_BORDER).setFont(boldItalic);
+    }
+
+    //New cell with no boarder and no font set
+    private Cell newCellNoBorderNoFont(String text) {
+        return new Cell().add(new Paragraph(text)).setBorder(Border.NO_BORDER);
     }
 
     private Table createTable() {
-        Table table = new Table((new float[] {4,1,3,3,3,1,2,2}));
+        Table table = new Table(new float[] {4,1,3,3,3,1,2,2});
         table.setWidth(UnitValue.createPercentValue(100));
         return table;
     }
 
-    private Table createEbooks() {
+    public void createEmptyCellNoBorder(Table table, int columns) {
+        for (int i = 0; i < columns; i++) {
+            table.addCell(new Cell().setBorder(Border.NO_BORDER));
+        }
+    }
 
-        Table table = createTable();
-        //1. Line
-        table.addCell(new Cell().add(new Paragraph("D/A/CH").setFont(bold)));
-        setEmptyCells(table, 2);
-        table.addCell(new Cell().add(new Paragraph("% v. Nettoerlös").setFont(normal)));
-        setEmptyCells(table, 2);
-        table.addCell(new Cell().add(new Paragraph("Nettoerlös").setFont(normal)));
-        setEmptyCells(table, 1);
-        //2. Line
-        table.addCell(new Cell().add(new Paragraph("Exemplare").setFont(normal)));
-        table.addCell(new Cell().add(new Paragraph(Integer.toString(data.getSoldEbooks())).setFont(normal)));
-        setEmptyCells(table, 1);
-        table.addCell(new Cell().add(new Paragraph(formatter.format(data.getPercentageNetRevEbook())).setFont(normal)));
-        setEmptyCells(table, 2);
-        table.addCell(new Cell().add(new Paragraph(formatter.format(data.getNetRevEbooks())).setFont(normal)));
-        table.addCell(new Cell().add(new Paragraph(formatter.format(data.getSumEbooksEur())).setFont(normal)));
+    public void createEmptyCellWithBorder(Table table, int columns) {
+        for (int i = 0; i < columns; i++) {
+            table.addCell(new Cell());
+        }
+    }
+
+    private Paragraph createDocHeader() throws MalformedURLException {
+        Image logo = new Image(ImageDataFactory.create(data.getLogoPath()));
+        Paragraph p = new Paragraph()
+                .add(logo)
+                .addTabStops(new TabStop(100))
+                .add(data.getHeader())
+                .setFont(normal)
+                .setFontSize(10);
+        return p;
+    }
+
+    private Paragraph createAddress() {
+        String address = new String();
+        if(data.getGreeting() != null) address += data.getGreeting() + "\n";
+        if(data.getFirstName() != null) address += data.getFirstName() + " ";
+        if(data.getLastName()!= null) address += data.getLastName() + "\n";
+        if(data.getStreet1() != null) address += data.getStreet1() + "\n";
+        if(data.getStreet2() != null) address += data.getStreet2() + "\n";
+        if(data.getStreet3() != null) address += data.getStreet3() + "\n";
+        if(data.getZipCode() != null) address += data.getZipCode() + " ";
+        if(data.getCity() != null) address += data.getCity() + "\n";
+        if(data.getCountry() != null) address += data.getCountry();
+        return(new Paragraph(address));
+    }
+
+    private Table createOverview() {
+        Table table = new Table(new float[]{1,5,2,2});
+        table.setWidth((UnitValue.createPercentValue(100)));
+        table.addCell(newCellNoBorderNormal("Titel"));
+        Text author = new Text(data.getAuthor()).setFont(bold);
+        Text bookTitle = new Text(data.getTitle()).setFont(boldItalic);
+        table.addCell(new Cell().add(new Paragraph().add(author).add(", ").add(bookTitle)).setBorder(Border.NO_BORDER));
+        table.addCell(newCellNoBorderBold("Buch Hardcover"));
+        table.addCell(newCellNoBorderBold("eBook"));
+        table.addCell(newCellNoBorderNormal("ISBN"));
+        table.addCell(newCellNoBorderNormal(data.getISBN()));
+        table.addCell(newCellNoBorderNormal("LP CHF " + formatter.format(data.getPriceHardCoverChf())));
+        table.addCell(newCellNoBorderNoFont("")); // no CHF Price for eBook
+        table.addCell(newCellNoBorderNormal("Periode"));
+        table.addCell(newCellNoBorderNormal(data.getPeriodStart() + " - " + data.getPeriodEnd()));
+        table.addCell(newCellNoBorderNormal("LP D € " + formatter.format(data.getPriceHardCoverEur())));
+        table.addCell(newCellNoBorderNormal("LP D € " + formatter.format(data.getPriceEbookEur())));
+        createEmptyCellNoBorder(table, 4);
+        table.setBorderBottom(new SolidBorder(1));
 
         return table;
     }
 
-    private Table createAuxiliary() {
-        Table table = createTable();
+    private Table createLegacy() {
+        //TODO: create TreeMap for sorting entries from ArrayList
+        int legacyTotal = 0;
+        for(LegacyEntry lEntry : data.getLegacyEntries()) {
+            legacyTotal += lEntry.getAmount();
+        }
+        Table table = new Table(new float[] {3,1,2});
+        table.setWidth(UnitValue.createPercentValue(35));
 
-        ArrayList<AuxRight> auxRights = data.getAuxRights();
-        for(AuxRight a : auxRights) {
-            table.addCell(new Cell().add(new Paragraph(a.getTitle())));
-            setEmptyCells(table, 1);
-            table.addCell(new Cell().add(new Paragraph(formatter.format(a.getAmountExMwSt())).setFont(normal)));
-            table.addCell(new Cell().add(new Paragraph(formatter.format(a.getHonoraryRate())).setFont(normal)));
-            setEmptyCells(table, 1);
-            table.addCell(new Cell().add(new Paragraph("€").setFont(normal)));
-            table.addCell(new Cell().add(new Paragraph(formatter.format(a.getSumEur())).setFont(normal)));
-            table.addCell(new Cell().add(new Paragraph(formatter.format(a.getSumEur())).setFont(normal)));
+        table.addCell(newCellNoBorderBold("Bereits abgerechnet:"));
+        table.addCell(newCellNoBorderBold(Integer.toString(legacyTotal)).setTextAlignment(TextAlignment.RIGHT));
+        table.addCell(newCellNoBorderBold("Exemplare"));
+        ArrayList<LegacyEntry> legacyEntries = data.getLegacyEntries();
+        for(LegacyEntry i: legacyEntries) {
+            table.addCell(newCellNoBorderNormal(Integer.toString(i.getYear())));
+            table.addCell(newCellNoBorderNormal(Integer.toString(i.getAmount())).setTextAlignment(TextAlignment.RIGHT));
+            createEmptyCellNoBorder(table, 1);
         }
         return table;
     }
@@ -146,140 +201,114 @@ public class PdfExporter {
     private Table createBookSales() {
         Table table = createTable();
         //1. Line
-        table.addCell(new Cell().add(new Paragraph("CH").setFont(bold)));
-        table.addCell(new Cell()); //empty cell
-        table.addCell(new Cell().add(new Paragraph("LP exkl. MwSt.").setFont(normal)));
-        table.addCell(new Cell().add(new Paragraph("Honorar-Satz").setFont(normal)));
-        table.addCell(new Cell().add(new Paragraph("Honorar/Ex.").setFont(normal)));
-        table.addCell(new Cell()); //empty cell
-        table.addCell(new Cell().add(new Paragraph("Summe").setFont(normal)));
-        table.addCell(new Cell().add(new Paragraph("Summe in €").setFont(normal)));
+        table.addCell(newCellNoBorderBold("CH"));
+        createEmptyCellNoBorder(table, 1); //empty cell
+        table.addCell(newCellNoBorderNormal("LP exkl. MwSt.").setTextAlignment(TextAlignment.RIGHT));
+        table.addCell(newCellNoBorderNormal("Honorar-Satz").setTextAlignment(TextAlignment.RIGHT));
+        table.addCell(newCellNoBorderNormal("Honorar/Ex.").setTextAlignment(TextAlignment.RIGHT));
+        createEmptyCellNoBorder(table, 1); //empty cell
+        table.addCell(newCellNoBorderNormal("Summe").setTextAlignment(TextAlignment.RIGHT));
+        table.addCell(newCellNoBorderNormal("Summe in €").setTextAlignment(TextAlignment.RIGHT));
         //2. Line
-        table.addCell(new Cell().add(new Paragraph("Exemplare").setFont(normal)));
-        table.addCell(new Cell().add(new Paragraph(Integer.toString(data.getSoldCh()))));
-        table.addCell(new Cell().add(new Paragraph(formatter.format(data.getPriceHardCoverChfExMwSt())).setFont(normal)));
-        table.addCell(new Cell().add(new Paragraph(formatter.format(data.getHonoraryRate()) + "%").setFont(normal)));
-        table.addCell(new Cell().add(new Paragraph(formatter.format(data.getHonoraryPerCopyCH())).setFont(normal)));
-        table.addCell(new Cell().add(new Paragraph("CHF").setFont(normal)));
-        table.addCell(new Cell().add(new Paragraph(formatter.format(data.getSumChChf())).setFont(normal)));
-        table.addCell(new Cell().add(new Paragraph(formatter.format(data.getSumChEur())).setFont(normal)));
+        table.addCell(newCellNoBorderNormal("Exemplare"));
+        table.addCell(newCellNoBorderNormal(Integer.toString(data.getSoldCh())).setTextAlignment(TextAlignment.RIGHT));
+        table.addCell(newCellNoBorderNormal(formatter.format(data.getPriceHardCoverChfExMwSt())).setTextAlignment(TextAlignment.RIGHT));
+        table.addCell(newCellNoBorderNormal(formatter.format(data.getHonoraryRate()) + "%").setTextAlignment(TextAlignment.RIGHT));
+        table.addCell(newCellNoBorderNormal(formatter.format(data.getHonoraryPerCopyCH())).setTextAlignment(TextAlignment.RIGHT));
+        table.addCell(newCellNoBorderNormal("CHF").setTextAlignment(TextAlignment.RIGHT));
+        table.addCell(newCellNoBorderNormal(formatter.format(data.getSumChChf())).setTextAlignment(TextAlignment.RIGHT));
+        table.addCell(newCellNoBorderNormal(formatter.format(data.getSumChEur())).setTextAlignment(TextAlignment.RIGHT));
         //3. Line
-        table.addCell(new Cell().add(new Paragraph("D/A").setFont(bold)));
-        setEmptyCells(table, 7);
-
+        table.addCell(newCellNoBorderBold("D/A"));
+        createEmptyCellNoBorder(table, 7);
         //4. Line
-        table.addCell(new Cell().add(new Paragraph("Exemplare").setFont(normal)));
-        table.addCell(new Cell().add(new Paragraph(Integer.toString(data.getSoldDeAu()))));
-        table.addCell(new Cell().add(new Paragraph(formatter.format(data.getPriceHardCoverEurExMwSt())).setFont(normal)));
-        table.addCell(new Cell().add(new Paragraph(formatter.format(data.getHonoraryRate()) + "%").setFont(normal)));
-        table.addCell(new Cell().add(new Paragraph(formatter.format(data.getHonoraryPerCopyDeAu())).setFont(normal)));
-        table.addCell(new Cell().add(new Paragraph("€").setFont(normal)));
-        table.addCell(new Cell().add(new Paragraph(formatter.format(data.getSumDeAuEur())).setFont(normal)));
-        table.addCell(new Cell().add(new Paragraph(formatter.format(data.getSumDeAuEur())).setFont(normal)));
+        table.addCell(newCellNoBorderNormal("Exemplare"));
+        table.addCell(newCellNoBorderNormal(Integer.toString(data.getSoldDeAu())).setTextAlignment(TextAlignment.RIGHT));
+        table.addCell(newCellNoBorderNormal(formatter.format(data.getPriceHardCoverEurExMwSt())).setTextAlignment(TextAlignment.RIGHT));
+        table.addCell(newCellNoBorderNormal(formatter.format(data.getHonoraryRate()) + "%").setTextAlignment(TextAlignment.RIGHT));
+        table.addCell(newCellNoBorderNormal(formatter.format(data.getHonoraryPerCopyDeAu())).setTextAlignment(TextAlignment.RIGHT));
+        table.addCell(newCellNoBorderNormal("€").setTextAlignment(TextAlignment.RIGHT));
+        table.addCell(newCellNoBorderNormal(formatter.format(data.getSumDeAuEur())).setTextAlignment(TextAlignment.RIGHT));
+        table.addCell(newCellNoBorderNormal(formatter.format(data.getSumDeAuEur())).setTextAlignment(TextAlignment.RIGHT));
         //5. Line
-        table.addCell(new Cell().add(new Paragraph("Total").setFont(normal)));
-        table.addCell(new Cell().add(new Paragraph(Integer.toString(data.getSoldCh() + data.getSoldDeAu())).setFont(normal)));
-        setEmptyCells(table, 5);
-        table.addCell(new Cell().add(new Paragraph(formatter.format(data.getSumChEur() + data.getSumDeAuEur()))));
+        table.addCell(newCellNoBorderNormal("Total"));
+        table.addCell(newCellNoBorderNormal(Integer.toString(data.getSoldCh() + data.getSoldDeAu())).setTextAlignment(TextAlignment.RIGHT));
+        createEmptyCellNoBorder(table, 5);
+        table.addCell(newCellNoBorderNormal(formatter.format(data.getSumChEur() + data.getSumDeAuEur())).setTextAlignment(TextAlignment.RIGHT));
         return table;
     }
 
-
-    public void setEmptyCells(Table table, int columns) {
-        for (int i = 0; i < columns; i++) {
-            table.addCell(new Cell());
-        }
-    }
-
-    private Table createLegacy() {
-        //TODO: create TreeMap for sorting entries from ArrayList
-
-        Table table = new Table(new float[] {1, 1});
-        table.setWidth(UnitValue.createPercentValue(20));
-
-        ArrayList<LegacyEntry> legacyEntries = data.getLegacyEntries();
-
-        for(LegacyEntry i: legacyEntries) {
-            table.addCell(new Cell().add(new Paragraph(Integer.toString(i.getYear()))));
-            table.addCell(new Cell().add((new Paragraph(Integer.toString(i.getAmount())))));
+    private Table createAuxiliary() {
+        Table table = createTable();
+        ArrayList<AuxRight> auxRights = data.getAuxRights();
+        for(AuxRight a : auxRights) {
+            table.addCell(newCellNoBorderNormal(a.getTitle()));
+            createEmptyCellNoBorder(table, 1);
+            table.addCell(newCellNoBorderNormal(formatter.format(a.getAmountExMwSt())).setTextAlignment(TextAlignment.RIGHT));
+            table.addCell(newCellNoBorderNormal(formatter.format(a.getHonoraryRate())).setTextAlignment(TextAlignment.RIGHT));
+            createEmptyCellNoBorder(table, 1);
+            table.addCell(newCellNoBorderNormal("€").setTextAlignment(TextAlignment.RIGHT));
+            table.addCell(newCellNoBorderNormal(formatter.format(a.getSumEur())).setTextAlignment(TextAlignment.RIGHT));
+            table.addCell(newCellNoBorderNormal(formatter.format(a.getSumEur())).setTextAlignment(TextAlignment.RIGHT));
         }
         return table;
     }
 
-    private Cell newCellNoBorderNormal(String text) {
-        return new Cell().add(new Paragraph(text)).setBorder(Border.NO_BORDER).setFont(normal);
-    }
+    private Table createEbooks() {
 
-    private Cell newCellNoBorderBold(String text) {
-        return new Cell().add(new Paragraph(text)).setBorder(Border.NO_BORDER).setFont(bold);
-    }
-
-    private Cell newCellNoBorderNoFont(String text) {
-        return new Cell().add(new Paragraph(text)).setBorder(Border.NO_BORDER);
-    }
-
-
-
-    private Table createOverview() {
-        Table table = new Table(new float[]{1,4,2,2});
-        table.setWidth((UnitValue.createPercentValue(100)));
-
-        table.addCell(newCellNoBorderNormal("Titel"));
-        //TODO: FIX Cell --> Text
-        Text author = new Text(data.getAuthor()).setFont(bold);
-        Text title = new Text(data.getTitle()).setFont(boldItalic);
-        table.addCell(new Cell().add(new Paragraph(author + ", " + title)).setBorder(Border.NO_BORDER));
-
-        table.addCell(newCellNoBorderBold("Buch Hardcover").setTextAlignment(TextAlignment.RIGHT));
-        table.addCell(newCellNoBorderBold("eBook").setTextAlignment(TextAlignment.RIGHT));
-        table.addCell(newCellNoBorderNormal("ISBN"));
-        table.addCell(newCellNoBorderNormal(data.getISBN()));
-        table.addCell(newCellNoBorderNormal("LP CHF " + formatter.format(data.getPriceHardCoverChf())).setTextAlignment(TextAlignment.RIGHT));
-        table.addCell(newCellNoBorderNoFont("")); // no CHF Price for eBook
-        table.addCell(newCellNoBorderNormal("Periode"));
-        table.addCell(newCellNoBorderNormal(data.getPeriodStart() + " - " + data.getPeriodEnd()));
-        table.addCell(newCellNoBorderNormal("LP D € " + formatter.format(data.getPriceHardCoverEur())).setTextAlignment(TextAlignment.RIGHT));
-        table.addCell(newCellNoBorderNormal("LP D € " + formatter.format(data.getPriceEbookEur())).setTextAlignment(TextAlignment.RIGHT));
-
-
+        Table table = createTable();
+        //1. Line
+        table.addCell(newCellNoBorderBold("D/A/CH"));
+        createEmptyCellNoBorder(table, 2);
+        table.addCell(newCellNoBorderNormal("% v. Nettoerlös").setTextAlignment(TextAlignment.RIGHT));
+        createEmptyCellNoBorder(table, 2);
+        table.addCell(newCellNoBorderNormal("Nettoerlös").setTextAlignment(TextAlignment.RIGHT));
+        createEmptyCellNoBorder(table, 1);
+        //2. Line
+        table.addCell(newCellNoBorderBold("Exemplare"));
+        table.addCell(newCellNoBorderNormal(Integer.toString(data.getSoldEbooks())).setTextAlignment(TextAlignment.RIGHT));
+        createEmptyCellNoBorder(table, 1);
+        table.addCell(newCellNoBorderNormal(formatter.format(data.getPercentageNetRevEbook())).setTextAlignment(TextAlignment.RIGHT));
+        createEmptyCellNoBorder(table, 2);
+        table.addCell(newCellNoBorderNormal(formatter.format(data.getNetRevEbooks())).setTextAlignment(TextAlignment.RIGHT));
+        table.addCell(newCellNoBorderNormal(formatter.format(data.getSumEbooksEur())).setTextAlignment(TextAlignment.RIGHT));
         return table;
     }
 
-    private Paragraph createHeader() throws MalformedURLException {
-        //TODO: Change font
-        Image logo = new Image(ImageDataFactory.create(data.getLogoPath()));
-        return new Paragraph(logo + data.getHeader());
+    private Table createTotal() {
+        Table table = createTable();
+        table.addCell(newCellNoBorderBold("Ihr Guthaben"));
+        for(int i = 0; i < 5; i++) {
+            table.addCell(newCellNoBorderBold(""));
+        }
+        table.addCell(newCellNoBorderBold("€").setTextAlignment(TextAlignment.RIGHT));
+        table.addCell(newCellNoBorderBold(formatter.format(data.getRoyalityCalculationTotal())).setTextAlignment(TextAlignment.RIGHT));
+        table.setBorderTop(new SolidBorder(1)).setBorderBottom(new DoubleBorder(2));
+        return table;
     }
 
-    private Paragraph createAddress() {
-    String address = new String();
-
-    if(data.getGreeting() != null) address += data.getGreeting() + "\n";
-    if(data.getFirstName() != null) address += data.getFirstName() + " ";
-    if(data.getLastName()!= null) address += data.getLastName() + "\n";
-    if(data.getStreet1() != null) address += data.getStreet1() + "\n";
-    if(data.getStreet2() != null) address += data.getStreet2() + "\n";
-    if(data.getStreet3() != null) address += data.getStreet3() + "\n";
-    if(data.getZipCode() != null) address += data.getZipCode() + " ";
-    if(data.getCity() != null) address += data.getCity() + "\n";
-
-    if(data.getCountry() != null) address += data.getCountry();
-
-    return(new Paragraph(address));
+    private Table createAccountOverview() {
+        Table table = new Table(new float[] {2,1});
+        table.setWidth(UnitValue.createPercentValue(40));
+        table.addCell(newCellNoBorderBoldItalic("Kontoübersicht:"));
+        createEmptyCellNoBorder(table, 1);
+        for(AccountEntry entry : data.getEntries()) {
+            table.addCell(newCellNoBorderItalic(entry.getTitle()));
+            table.addCell(newCellNoBorderItalic("€ " + formatter.format(entry.getAmount())).setTextAlignment(TextAlignment.RIGHT));
+        }
+        table.addCell(newCellNoBorderItalic("Abrechnung per " + data.getPeriodEnd()));
+        table.addCell(newCellNoBorderItalic("€ " + formatter.format(data.getRoyalityCalculationTotal())).setTextAlignment(TextAlignment.RIGHT));
+        table.addCell(newCellNoBorderBoldItalic("Total zu Ihren Gunsten").setBorderTop(new SolidBorder(1)).setBorderBottom(new DoubleBorder(2)));
+        table.addCell(newCellNoBorderBoldItalic("€ " + formatter.format(data.getAccountTotal())).setTextAlignment(TextAlignment.RIGHT).setBorderTop(new SolidBorder(1)).setBorderBottom(new DoubleBorder(2)));
+        return table;
     }
 
-
-    private void setFonts() throws java.io.IOException {
-
-
-
-            normal = PdfFontFactory.createFont(FontConstants.HELVETICA);
-            bold = PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD);
-            italic = PdfFontFactory.createFont(FontConstants.HELVETICA_OBLIQUE);
-            boldItalic = PdfFontFactory.createFont(FontConstants.HELVETICA_BOLDOBLIQUE);
-
-
-
-
+    private Table createExRateEurCHF() {
+        Table table = new Table(new float[] {3,1});
+        table.setWidth(UnitValue.createPercentValue(25));
+        table.addCell(newCellNoBorderNormal("Umrechnungskurs €/CHF"));
+        table.addCell(newCellNoBorderNormal(formatter.format(data.getExRateEurChf())).setTextAlignment(TextAlignment.RIGHT));
+        return table;
     }
+
 }
