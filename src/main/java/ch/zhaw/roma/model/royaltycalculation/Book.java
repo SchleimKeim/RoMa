@@ -17,6 +17,7 @@ public class Book {
     private FloatProperty priceEbookEUR;
     private FloatProperty royalityQuote;
 
+
     private ObservableList<Settlement> settlementOverview = FXCollections.observableArrayList();
     private ObservableList<SoldBooksYearly> soldBooksOverview = FXCollections.observableArrayList();
 
