@@ -18,9 +18,6 @@ import com.itextpdf.layout.element.*;
 import com.itextpdf.layout.property.HorizontalAlignment;
 import com.itextpdf.layout.property.TextAlignment;
 import com.itextpdf.layout.property.UnitValue;
-import com.itextpdf.layout.property.VerticalAlignment;
-
-import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.net.MalformedURLException;
 import java.text.DecimalFormat;
@@ -310,5 +307,4 @@ public class PdfExporter {
         table.addCell(newCellNoBorderNormal(formatter.format(data.getExRateEurChf())).setTextAlignment(TextAlignment.RIGHT));
         return table;
     }
-
 }
