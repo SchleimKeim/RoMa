@@ -1,41 +1,40 @@
 package ch.zhaw.roma;
 
-import ch.zhaw.roma.interfaces.IRepositority;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
 
-public class TestRepository implements IRepositority {
+public class TestRepository  {
+    protected static SessionFactory sessionFactory;
 
-    private static SessionFactory sessionFactory;
-    private static StandardServiceRegistry registry;
-
-    @Override
-    public SessionFactory getSessionFactory() {
-        if (registry == null)
-            registry = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
-        if (sessionFactory == null)
-            sessionFactory = loadSessionFactory();
-
-        return sessionFactory;
-    }
-
-    private SessionFactory loadSessionFactory() {
-
+    @Before
+    public void before() {
+        final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
+                                                     .configure("hibernate.cfg.xml")
+                                                     .build();
         try {
-            return (registry != null)
-                       ? new MetadataSources(registry)
-                             .buildMetadata()
-                             .buildSessionFactory()
-                       : null;
-
+            sessionFactory = new MetadataSources(registry)
+                                 .buildMetadata()
+                                 .buildSessionFactory();
         } catch (Exception e) {
-            if(registry != null)
-                StandardServiceRegistryBuilder.destroy(registry);
-            if((sessionFactory != null) && !sessionFactory.isClosed())
-                sessionFactory.close();
+            Assert.fail(e.getMessage());
+            StandardServiceRegistryBuilder.destroy(registry);
         }
-        return null;
     }
+
+
+    @After
+    public void after() {
+        try {
+            if (sessionFactory != null && !sessionFactory.isClosed())
+                sessionFactory.close();
+        } catch (Exception ex) {
+            Assert.fail(ex.getMessage());
+        }
+    }
+
 }

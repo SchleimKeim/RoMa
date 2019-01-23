@@ -37,5 +37,4 @@
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/Main.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/controller/SettingsViewController.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/controller/ImportExcelViewController.java
-/home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/interfaces/IBookWireRowModel.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/persistence/BookWireSheetModel.java

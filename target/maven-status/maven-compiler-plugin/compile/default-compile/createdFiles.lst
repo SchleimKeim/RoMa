@@ -9,7 +9,6 @@ ch/zhaw/roma/model/excel/ExcelSheetType.class
 ch/zhaw/roma/controller/EditAuthorViewController.class
 ch/zhaw/roma/model/excel/SheetType.class
 ch/zhaw/roma/helpers/excel/ExcelImporter.class
-ch/zhaw/roma/interfaces/IBookWireRowModel.class
 ch/zhaw/roma/helpers/pdf/PdfExporter.class
 ch/zhaw/roma/controller/SettingsViewController.class
 ch/zhaw/roma/model/royaltycalculation/AuxRight.class
