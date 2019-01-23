@@ -26,7 +26,7 @@ public class BookWireSheetModelTest extends TestRepository {
     }
 
     @Test
-    public void saveSheetModelTest() {
+    public void saveBookWireSheetModelTest() {
         if(bookWireSheetModel == null)
             BookWireSheetModelTest();
 
@@ -45,7 +45,7 @@ public class BookWireSheetModelTest extends TestRepository {
     }
 
     @Test
-    public void loadSheetTest() {
+    public void loadBookWireSheetTest() {
         try {
             Session s = sessionFactory.openSession();
             s.beginTransaction();
