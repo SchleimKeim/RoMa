@@ -28,6 +28,7 @@
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/royaltycalculation/LegacyEntry.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/controller/EditRoMaNoteController.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/royaltycalculation/Book.java
+/home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/controller/EditAuthorViewController.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/persistence/ExcelToEntityConverter.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/excel/EmptyCell.java
 /home/skull/code/IdeaProjects/RoMa/src/main/java/ch/zhaw/roma/model/royaltycalculation/AuxRight.java

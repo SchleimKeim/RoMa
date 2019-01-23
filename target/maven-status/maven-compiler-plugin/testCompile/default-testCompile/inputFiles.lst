@@ -1,10 +1,8 @@
-/home/skull/code/IdeaProjects/RoMa/src/test/java/test/ch/zhaw/roma/model/excel/persistence/EntityTestsTest.java
 /home/skull/code/IdeaProjects/RoMa/src/test/java/ch/zhaw/roma/PostgresTest.java
 /home/skull/code/IdeaProjects/RoMa/src/test/java/ch/zhaw/roma/model/excel/persistence/ExcelToEntityConverterTest.java
 /home/skull/code/IdeaProjects/RoMa/src/test/java/ch/zhaw/roma/helpers/pdf/PdfExporterTest.java
 /home/skull/code/IdeaProjects/RoMa/src/test/java/ch/zhaw/roma/helpers/excel/ExcelImporterTest.java
 /home/skull/code/IdeaProjects/RoMa/src/test/java/ch/zhaw/roma/model/excel/persistence/BookWireSheetModelTest.java
 /home/skull/code/IdeaProjects/RoMa/src/test/java/ch/zhaw/roma/TestRepository.java
-/home/skull/code/IdeaProjects/RoMa/src/test/java/ch/zhaw/roma/model/excel/persistence/EntityTests.java
 /home/skull/code/IdeaProjects/RoMa/src/test/java/ch/zhaw/roma/XmlHelperTest.java
 /home/skull/code/IdeaProjects/RoMa/src/test/java/ch/zhaw/roma/model/excel/persistence/InhouseSheetModelTest.java
