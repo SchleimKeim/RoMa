@@ -60,8 +60,8 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="test.ch.zhaw.roma.model.excel.persistence.EntityTestsTest" name="loadInhouseTest" time="1.657"/>
-  <testcase classname="test.ch.zhaw.roma.model.excel.persistence.EntityTestsTest" name="loadBookwireTest" time="0.33">
+  <testcase classname="test.ch.zhaw.roma.model.excel.persistence.EntityTestsTest" name="loadInhouseTest" time="1.528"/>
+  <testcase classname="test.ch.zhaw.roma.model.excel.persistence.EntityTestsTest" name="loadBookwireTest" time="0.312">
     <failure message="org.hibernate.exception.SQLGrammarException: could not extract ResultSet" type="java.lang.AssertionError">java.lang.AssertionError: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
 	at org.junit.Assert.fail(Assert.java:88)
 	at test.ch.zhaw.roma.model.excel.persistence.EntityTestsTest.loadBookwireTest(EntityTestsTest.java:85)
@@ -98,15 +98,9 @@
 </failure>
     <system-out>Hibernate: SELECT * FROM BOOKWIRE_SHEETS
 </system-out>
-    <system-err>Jan 21, 2019 11:04:14 PM org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
-WARN: SQL Error: 0, SQLState: 42P01
-Jan 21, 2019 11:04:14 PM org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
-ERROR: ERROR: relation &quot;bookwire_sheets&quot; does not exist
-  Position: 15
-</system-err>
   </testcase>
-  <testcase classname="test.ch.zhaw.roma.model.excel.persistence.EntityTestsTest" name="saveInhouseSheetTest" time="0.486"/>
-  <testcase classname="test.ch.zhaw.roma.model.excel.persistence.EntityTestsTest" name="saveBookwireSheetTest" time="0.204">
+  <testcase classname="test.ch.zhaw.roma.model.excel.persistence.EntityTestsTest" name="saveInhouseSheetTest" time="0.628"/>
+  <testcase classname="test.ch.zhaw.roma.model.excel.persistence.EntityTestsTest" name="saveBookwireSheetTest" time="0.209">
     <failure message="could not execute statement" type="java.lang.AssertionError">java.lang.AssertionError: could not execute statement
 	at org.junit.Assert.fail(Assert.java:88)
 	at test.ch.zhaw.roma.model.excel.persistence.EntityTestsTest.saveBookwireSheetTest(EntityTestsTest.java:72)
@@ -143,11 +137,10 @@ ERROR: ERROR: relation &quot;bookwire_sheets&quot; does not exist
 </failure>
     <system-out>Hibernate: insert into BOOKWIRE_SHEETS (begin, created, end, fileName) values (?, ?, ?, ?)
 </system-out>
-    <system-err>Jan 21, 2019 11:04:15 PM org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
-WARN: SQL Error: 0, SQLState: 42601
-Jan 21, 2019 11:04:15 PM org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
-ERROR: ERROR: syntax error at or near &quot;end&quot;
-  Position: 46
+    <system-err>Cleaning up unclosed ZipFile for archive /home/skull/code/IdeaProjects/RoMa/src/test/resources/inhouse.xlsx
+Cleaning up unclosed ZipFile for archive /home/skull/code/IdeaProjects/RoMa/src/test/resources/bookwire.xlsx
+Cleaning up unclosed ZipFile for archive /home/skull/code/IdeaProjects/RoMa/src/test/resources/inhouse.xlsx
+Cleaning up unclosed ZipFile for archive /home/skull/code/IdeaProjects/RoMa/src/test/resources/bookwire.xlsx
 </system-err>
   </testcase>
 </testsuite>

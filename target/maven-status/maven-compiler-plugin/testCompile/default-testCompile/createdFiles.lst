@@ -3,6 +3,7 @@ ch/zhaw/roma/model/excel/persistence/InhouseSheetModelTest.class
 ch/zhaw/roma/XmlHelperTest.class
 ch/zhaw/roma/helpers/excel/ExcelImporterTest.class
 test/ch/zhaw/roma/model/excel/persistence/EntityTestsTest.class
+ch/zhaw/roma/helpers/pdf/PdfExporterTest.class
 ch/zhaw/roma/TestRepository.class
 ch/zhaw/roma/model/excel/persistence/EntityTests.class
 ch/zhaw/roma/model/excel/persistence/BookWireSheetModelTest.class
