@@ -1,13 +1,20 @@
 package ch.zhaw.roma.model.royaltycalculation;
 
+import ch.zhaw.roma.model.form.Country;
+import ch.zhaw.roma.model.form.Greeting;
 import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.ObservableList;
 
 public class Author {
 
     private IntegerProperty id;
-    private StringProperty greeting;
+
+
+
+
+    private ObjectProperty<Greeting> greeting;
     private StringProperty firstName;
     private StringProperty lastName;
     private StringProperty street1;
@@ -15,13 +22,17 @@ public class Author {
     private StringProperty street3;
     private IntegerProperty zipCode;
     private StringProperty city;
-    private StringProperty country;
+
+
+    private ObjectProperty<Country> country;
+
     private StringProperty countryISO;
     private StringProperty website;
     private StringProperty email;
     private StringProperty phoneHome;
     private StringProperty phoneWork;
     private StringProperty phoneMobile;
+
 
     private ObservableList<Book> books;
 
@@ -39,15 +50,15 @@ public class Author {
         this.id.set(id);
     }
 
-    public String getGreeting() {
+    public Greeting getGreeting() {
         return greeting.get();
     }
 
-    public StringProperty greetingProperty() {
+    public ObjectProperty greetingProperty() {
         return greeting;
     }
 
-    public void setGreeting(String greeting) {
+    public void setGreeting(Greeting greeting) {
         this.greeting.set(greeting);
     }
 
@@ -135,17 +146,18 @@ public class Author {
         this.city.set(city);
     }
 
-    public String getCountry() {
+    public Country getCountry() {
         return country.get();
     }
 
-    public StringProperty countryProperty() {
+    public ObjectProperty<Country> countryProperty() {
         return country;
     }
 
-    public void setCountry(String country) {
+    public void setCountry(Country country) {
         this.country.set(country);
     }
+
 
     public String getCountryISO() {
         return countryISO.get();

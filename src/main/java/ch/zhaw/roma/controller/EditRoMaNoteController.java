@@ -32,7 +32,6 @@ public class EditRoMaNoteController {
     @FXML
     private TableColumn<SoldBooksYearly, Integer> amountColumnSB;
 
-
     //Table for overview of past settlements
     @FXML
     private TableView<Settlement> settlementOverview;
