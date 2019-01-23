@@ -17,7 +17,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("view/IntroView.fxml.fxml"));
+            loader.setLocation(Main.class.getResource("view/IntroView.fxml"));
             rootLayout = (BorderPane) loader.load();
             this.primaryStage = primaryStage;
             this.primaryStage.setTitle("RoHo - Royalty Management System");
