@@ -65,7 +65,10 @@ public class Main extends Application {
     }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
     //public void loadAuthorAndBooks() {
     //  authorCollection = new ArrayList<>();
     //TODO: Load authors in list
@@ -79,6 +82,9 @@ public class Main extends Application {
         return authorCollection;
     }
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     public void setAuthorCollection(AuthorCollection authorCollection) {
         this.authorCollection = authorCollection;
