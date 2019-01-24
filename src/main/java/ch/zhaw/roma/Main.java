@@ -14,14 +14,13 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main extends Application {
 
+
     private Stage primaryStage;
     private BorderPane rootLayout;
-    private AuthorCollection authorList;
+    private AuthorCollection authorCollection;
 
     public static void main(String[] args) {
         launch(args);
@@ -56,10 +55,25 @@ public class Main extends Application {
     }
 <<<<<<< HEAD
 
-    public void loadAuthorAndBooks() {
-        authorList = new ArrayList<>();
-        //TODO: Load authors in list
+    //public void loadAuthorAndBooks() {
+    //  authorCollection = new ArrayList<>();
+    //TODO: Load authors in list
+    //}
 
+    public Stage getPrimaryStage() {
+        return primaryStage;
+    }
+
+    public AuthorCollection getAuthorCollection() {
+        return authorCollection;
+    }
+
+    public void setAuthorCollection(AuthorCollection authorCollection) {
+        this.authorCollection = authorCollection;
+    }
+
+    public void addToAuthorList(Author author) {
+        authorCollection.addAuthor(author);
     }
 
 

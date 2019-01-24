@@ -156,9 +156,9 @@
                         </GridPane>
                         <ButtonBar prefHeight="40.0" prefWidth="200.0">
                           <buttons>
-                            <Button fx:id="newButton" mnemonicParsing="false" text="Neu" />
-                              <Button fx:id="editButton" mnemonicParsing="false" text="Bearbeiten" />
-                              <Button fx:id="deleteButton" mnemonicParsing="false" text="Löschen" />
+                            <Button fx:id="newButton" mnemonicParsing="false" onAction="#handleNew" text="Neu" />
+                              <Button fx:id="editButton" mnemonicParsing="false" onAction="#handleEdit" text="Bearbeiten" />
+                              <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#handleDelete" text="Löschen" />
                           </buttons>
                            <VBox.margin>
                               <Insets bottom="5.0" right="5.0" top="20.0" />
