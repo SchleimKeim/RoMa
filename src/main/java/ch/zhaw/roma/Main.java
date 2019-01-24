@@ -22,10 +22,6 @@ public class Main extends Application {
     private BorderPane rootLayout;
     private AuthorCollection authorCollection;
 
-    public static void main(String[] args) {
-        launch(args);
-    }
-
     @Override
     public void start(Stage primaryStage) throws Exception {
         try {
@@ -68,6 +64,22 @@ public class Main extends Application {
         return authorCollection;
     }
 
+<<<<<<< Updated upstream
+=======
+    //public void loadAuthorAndBooks() {
+    //  authorCollection = new ArrayList<>();
+    //TODO: Load authors in list
+    //}
+
+    public Stage getPrimaryStage() {
+        return primaryStage;
+    }
+
+    public AuthorCollection getAuthorCollection() {
+        return authorCollection;
+    }
+
+>>>>>>> Stashed changes
     public void setAuthorCollection(AuthorCollection authorCollection) {
         this.authorCollection = authorCollection;
     }
