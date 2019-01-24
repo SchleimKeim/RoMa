@@ -43,8 +43,8 @@ public class Main extends Application {
             loader.setLocation(Main.class.getResource("view/ManageAuthorsView.fxml"));
             AnchorPane manageAuthors = (AnchorPane) loader.load();
             this.rootLayout.setCenter((manageAuthors));
-            //ManageAuthorsController controller = (ManageAuthorsController) loader.getController();
-            //controller.setMain(this);
+            ManageAuthorsController controller = (ManageAuthorsController) loader.getController();
+            controller.setMain(this);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -66,7 +66,10 @@ public class Main extends Application {
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     //public void loadAuthorAndBooks() {
@@ -83,6 +86,9 @@ public class Main extends Application {
     }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
