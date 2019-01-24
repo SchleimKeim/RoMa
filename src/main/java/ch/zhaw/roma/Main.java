@@ -1,8 +1,10 @@
 package ch.zhaw.roma;
 
+import ch.zhaw.roma.controller.ManageAuthorsController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -27,6 +29,22 @@ public class Main extends Application {
             e.printStackTrace();
         }
     }
+
+
+    public void manageAuthors() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("view/ManageAuthorsView.fxml"));
+            AnchorPane manageAuthors = (AnchorPane) loader.load();
+            this.rootLayout.setCenter((manageAuthors));
+            ManageAuthorsController controller = (ManageAuthorsController) loader.getController();
+            controller.setMain(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
 
     public static void main(String[] args) {
