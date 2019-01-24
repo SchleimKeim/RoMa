@@ -1,6 +1,8 @@
 package ch.zhaw.roma;
 
 import ch.zhaw.roma.controller.ManageAuthorsController;
+import ch.zhaw.roma.helpers.AuthorCollection;
+import ch.zhaw.roma.model.royaltycalculation.Author;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,11 +11,14 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main extends Application {
 
     private Stage primaryStage;
     private BorderPane rootLayout;
+    private AuthorCollection authorList;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -42,6 +47,12 @@ public class Main extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void loadAuthorAndBooks() {
+        authorList = new ArrayList<>();
+        //TODO: Load authors in list
+
     }
 
 

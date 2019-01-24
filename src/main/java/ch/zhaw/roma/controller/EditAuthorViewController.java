@@ -1,5 +1,6 @@
 package ch.zhaw.roma.controller;
 
+import ch.zhaw.roma.helpers.AuthorCollection;
 import ch.zhaw.roma.model.form.Country;
 import ch.zhaw.roma.model.form.Greeting;
 import ch.zhaw.roma.model.royaltycalculation.Author;
@@ -10,9 +11,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import java.util.ArrayList;
-import java.util.List;
 
 public class EditAuthorViewController {
 
@@ -53,10 +51,27 @@ public class EditAuthorViewController {
     private Author author;
     private Boolean safeClicked = false;
     private Boolean isNewAuthor = false;
+    private AuthorCollection authorCollection;
+
+    //Default construction without parameter for creation of new author
+    public EditAuthorViewController() {
+        this.author = new Author();
+        isNewAuthor = true;
+    }
+
+    //Construction with Author as parameter for editing
+    public EditAuthorViewController(Author author){
+        this.author = author;
+        isNewAuthor = false;
+    }
+
+    public void setAuthorCollection(AuthorCollection collection) {
+        this.authorCollection = collection;
+    }
 
     @FXML
     private void initialize() {
-
+        setDataFields();
     }
 
     //Set stage for edit Author
@@ -64,53 +79,53 @@ public class EditAuthorViewController {
         this.dialogStage = dialogStage;
     }
 
-    public void setAuthor(Author author) {
+    public void setDataFields() {
+
         //Combobox needs observable List
         greeting = new ComboBox(FXCollections.observableList(new Greeting().GREETINGS));
         country = new ComboBox((FXCollections.observableList(new Country().COUNTRIES)));
 
-        if(author != null) {
-            this.author = author;
+        if (isNewAuthor = false) {
             if (author.getGreeting().getGreetingString() != null) {
                 greeting.setValue(author.getGreeting().getGreetingString());
             } else {
                 greeting.setValue(null);
-
-                firstName.setText(author.getFirstName());
-                lastName.setText(author.getLastName());
-                street1.setText(author.getStreet1());
-                street2.setText(author.getStreet2());
-                street3.setText(author.getStreet3());
-                zipCode.setText(Integer.toString(author.getZipCode()));
-                city.setText(author.getCity());
-
-                if (author.getCountry().getCountryString() != null) {
-                    country.setValue(author.getCountry().getCountryString());
-                } else {
-                    greeting.setValue(null);
-                }
-                email.setText(author.getEmail());
-                website.setText(author.getWebsite());
-                mobileNr.setText(author.getPhoneMobile());
-                officeNr.setText(author.getPhoneWork());
-                privateNr.setText(author.getPhoneHome());
-            } else {
-                author = new Author();
-                isNewAuthor = true;
-                greeting.setValue(null);
-                firstName.setText("");
-                lastName.setText("");
-                street1.setText("");
-                street2.setText("");
-                street3.setText("");
-                zipCode.setText("");
-                city.setText("");
-                email.setText("");
-                website.setText("");
-                mobileNr.setText("";
-                officeNr.setText("";
-                privateNr.setText("");
             }
+            firstName.setText(author.getFirstName());
+            lastName.setText(author.getLastName());
+            street1.setText(author.getStreet1());
+            street2.setText(author.getStreet2());
+            street3.setText(author.getStreet3());
+            zipCode.setText(Integer.toString(author.getZipCode()));
+            city.setText(author.getCity());
+            if (author.getCountry().getCountryString() != null) {
+                country.setValue(author.getCountry().getCountryString());
+            } else {
+                greeting.setValue(null);
+            }
+            email.setText(author.getEmail());
+            website.setText(author.getWebsite());
+            mobileNr.setText(author.getPhoneMobile());
+            officeNr.setText(author.getPhoneWork());
+            privateNr.setText(author.getPhoneHome());
+
+            //if new author
+        } else {
+            author = new Author();
+            isNewAuthor = true;
+            greeting.setValue(null);
+            firstName.setText("");
+            lastName.setText("");
+            street1.setText("");
+            street2.setText("");
+            street3.setText("");
+            zipCode.setText("");
+            city.setText("");
+            email.setText("");
+            website.setText("");
+            mobileNr.setText("");
+            officeNr.setText("");
+            privateNr.setText("");
         }
     }
 
@@ -133,15 +148,17 @@ public class EditAuthorViewController {
         author.setCountry((new Country(country.getValue().toString())));
 
         safeClicked = true;
+
+        if(isNewAuthor) {
+            authorCollection.addAuthor(author);
+        }
+
         dialogStage.close();
     }
-
 
     public boolean isSafeClicked() {
         return safeClicked;
     }
-
-
 
     @FXML
     private void handleCancel() {
@@ -149,6 +166,5 @@ public class EditAuthorViewController {
     }
 
     //TODO: input validation
-
 }
 
