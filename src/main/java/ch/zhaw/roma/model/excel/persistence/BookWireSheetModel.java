@@ -16,9 +16,13 @@ public class BookWireSheetModel implements IBookWireSheetModel {
     @Column(name = "SHEET_ID", nullable = false)
     private Long sheetId;
     private String fileName = "";
-//    private Date created = Calendar.getInstance().getTime();
-//    private Date begin = Calendar.getInstance().getTime();      // TODO: !!
-//    private Date end = Calendar.getInstance().getTime();        // TODO: !!
+
+//    @Temporal(TemporalType.DATE)
+//    private Date created;
+//    @Temporal(TemporalType.DATE)
+//    private Date begin;
+//    @Temporal(TemporalType.DATE)
+//    private Date end;
 
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "sheet")
@@ -61,12 +65,12 @@ public class BookWireSheetModel implements IBookWireSheetModel {
     }
 
     public String getFileName() {
-        return fileName;
-    }
+                                      return fileName;
+                                                      }
 
     public void setFileName(String fileName) {
-        this.fileName = fileName;
-    }
+                                                   this.fileName = fileName;
+                                                                            }
 
 //    public Date getCreated() {
 //        return created;

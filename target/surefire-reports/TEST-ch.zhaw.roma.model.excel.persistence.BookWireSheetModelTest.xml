@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="ch.zhaw.roma.model.excel.persistence.BookWireSheetModelTest" time="1.839" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="ch.zhaw.roma.model.excel.persistence.BookWireSheetModelTest" time="1.928" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2018.3.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -60,7 +60,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="ch.zhaw.roma.model.excel.persistence.BookWireSheetModelTest" name="BookWireSheetModelTest" time="0.608"/>
-  <testcase classname="ch.zhaw.roma.model.excel.persistence.BookWireSheetModelTest" name="loadBookWireSheetTest" time="0.488"/>
-  <testcase classname="ch.zhaw.roma.model.excel.persistence.BookWireSheetModelTest" name="saveBookWireSheetModelTest" time="0.743"/>
+  <testcase classname="ch.zhaw.roma.model.excel.persistence.BookWireSheetModelTest" name="BookWireSheetModelTest" time="0.77"/>
+  <testcase classname="ch.zhaw.roma.model.excel.persistence.BookWireSheetModelTest" name="loadBookWireSheetTest" time="0.439"/>
+  <testcase classname="ch.zhaw.roma.model.excel.persistence.BookWireSheetModelTest" name="saveBookWireSheetModelTest" time="0.719"/>
 </testsuite>
