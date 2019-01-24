@@ -115,14 +115,15 @@ public class EditAuthorViewController {
     }
 
     @FXML
-    private void handleSafe() {
+    public void handleSafe() {
+        //TODO: Input validation
         author.setGreeting(new Greeting(greeting.getValue().toString()));
         author.setFirstName(firstName.getText());
         author.setLastName(lastName.getText());
         author.setStreet1(street1.getText());
         author.setStreet2(street2.getText());
         author.setStreet3(street3.getText());
-     // String to int author.setZipCode(          zipCode.getText());
+        author.setZipCode(Integer.parseInt(zipCode.getText()));
         author.setCity(city.getText());
         author.setEmail(email.getText());
         author.setWebsite(website.getText());
@@ -130,21 +131,24 @@ public class EditAuthorViewController {
         author.setPhoneHome(privateNr.getText());
         author.setPhoneWork(officeNr.getText());
         author.setCountry((new Country(country.getValue().toString())));
+
+        safeClicked = true;
+        dialogStage.close();
+    }
+
+
+    public boolean isSafeClicked() {
+        return safeClicked;
     }
 
 
 
-
-
-    }
     @FXML
     private void handleCancel() {
         dialogStage.close();
     }
 
+    //TODO: input validation
 
-        }
-
-
-    }
 }
+

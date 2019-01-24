@@ -15,10 +15,10 @@ public class InhouseRowModel implements IInhouseRowModel {
     @Column(name = "ROW_ID", nullable = false)
     private Long rowId;
 
-
     @ManyToOne
     @JoinColumn(name = "SHEET_ID", nullable = false)
     private InhouseSheetModel sheet;
+
     private String articleNr;
     private String title;
     private Integer prolitSales;

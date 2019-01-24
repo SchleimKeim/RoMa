@@ -17,7 +17,7 @@ public class InhouseSheetModel implements IInhouseSheetModel {
     @Column(name = "SHEET_ID", nullable = false)
     private Long sheetId;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "sheet", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "sheet")
     private Set<InhouseRowModel> rows;
     //endregion
 

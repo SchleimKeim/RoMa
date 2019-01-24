@@ -38,7 +38,6 @@ public class PostgresTest {
     }
 
     private void fillTables() {
-        boolean testPassed = false;
         try {
             Session s = sessionFactory.openSession();
             s.beginTransaction();
@@ -46,12 +45,11 @@ public class PostgresTest {
                 s.save(b);
 
             s.getTransaction().commit();
-            testPassed = true;
-            Assert.assertTrue(testPassed );
+            Assert.assertTrue(true);
         }
         catch (Exception ex) {
             Assert.fail(ex.getMessage());
-            Assert.assertTrue(testPassed);
+            Assert.assertTrue(false);
         }
     }
 
@@ -73,9 +71,6 @@ public class PostgresTest {
             List<BookModel> existing = s.createQuery("FROM BookModel").list();
             s.getTransaction().commit();
             Assert.assertTrue(existing != null);
-
-
-
         } catch (Exception ex) {
             Assert.fail(ex.getMessage());
             if (s != null) {
@@ -89,7 +84,6 @@ public class PostgresTest {
     public void testSave() {
 
         final Session s = sessionFactory.openSession();
-        boolean testPassed = false;
         try {
             s.beginTransaction();
             List<BookModel> existing = s.createQuery("FROM BookModel").list();
@@ -101,23 +95,22 @@ public class PostgresTest {
 
             s.beginTransaction();
             List<BookModel> updated = s.createQuery("FROM BookModel").list();
-            s.getTransaction().commit();;
+            s.getTransaction().commit();
 
             Assert.assertNotNull(updated);
             Assert.assertTrue(updated.stream().anyMatch(b -> b.getTitle().contains("Hose")));
 
             s.close();
-            testPassed = true;
         } catch (Exception ex) {
             Assert.fail(ex.getMessage());
-            testPassed = false;
             if (s != null) {
                 s.flush();
                 s.disconnect();
             }
+            return;
         }
 
-        Assert.assertTrue(testPassed);
+        Assert.assertTrue(true);
     }
 
     private final BookModel[] getTestModels() {

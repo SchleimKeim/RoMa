@@ -7,7 +7,6 @@ import javax.persistence.*;
 @Table(name = "BOOKWIRE_ROWS")
 public class BookWireRowModel {
 
-
     //region Private Fields
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

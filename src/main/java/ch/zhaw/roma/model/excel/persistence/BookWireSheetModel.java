@@ -3,8 +3,6 @@ package ch.zhaw.roma.model.excel.persistence;
 import ch.zhaw.roma.interfaces.IBookWireSheetModel;
 
 import javax.persistence.*;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -18,9 +16,9 @@ public class BookWireSheetModel implements IBookWireSheetModel {
     @Column(name = "SHEET_ID", nullable = false)
     private Long sheetId;
     private String fileName = "";
-    private Date created = Calendar.getInstance().getTime();
-    private Date begin = Calendar.getInstance().getTime();      // TODO: !!
-    private Date end = Calendar.getInstance().getTime();        // TODO: !!
+//    private Date created = Calendar.getInstance().getTime();
+//    private Date begin = Calendar.getInstance().getTime();      // TODO: !!
+//    private Date end = Calendar.getInstance().getTime();        // TODO: !!
 
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "sheet")
@@ -56,7 +54,7 @@ public class BookWireSheetModel implements IBookWireSheetModel {
         return rows;
     }
 
-    public void setRows(Set<BookWireRowModel> rows) {
+   public void setRows(Set<BookWireRowModel> rows) {
         this.rows = rows;
         for(BookWireRowModel r : this.rows)
             r.setSheet(this);
@@ -70,28 +68,28 @@ public class BookWireSheetModel implements IBookWireSheetModel {
         this.fileName = fileName;
     }
 
-    public Date getCreated() {
-        return created;
-    }
-
-    public void setCreated(Date created) {
-        this.created = created;
-    }
-
-    public Date getBegin() {
-        return begin;
-    }
-
-    public void setBegin(Date begin) {
-        this.begin = begin;
-    }
-
-    public Date getEnd() {
-        return end;
-    }
-    public void setEnd(Date end) {
-        this.end = end;
-    }
+//    public Date getCreated() {
+//        return created;
+//    }
+//
+//    public void setCreated(Date created) {
+//        this.created = created;
+//    }
+//
+//    public Date getBegin() {
+//        return begin;
+//    }
+//
+//    public void setBegin(Date begin) {
+//        this.begin = begin;
+//    }
+//
+//    public Date getEnd() {
+//        return end;
+//    }
+//    public void setEnd(Date end) {
+//        this.end = end;
+//    }
 
     //endregion
 }
