@@ -1,5 +1,6 @@
-package ch.zhaw.roma.controller;
+ppackage ch.zhaw.roma.controller;
 
+import ch.zhaw.roma.helpers.AuthorCollection;
 import ch.zhaw.roma.model.form.Country;
 import ch.zhaw.roma.model.form.Greeting;
 import ch.zhaw.roma.model.royaltycalculation.Author;
@@ -10,10 +11,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-<<<<<<< HEAD
 
-=======
->>>>>>> db6f11875fec7e9639f1f03d915da197256ed90b
 public class EditAuthorViewController {
 
     @FXML
@@ -50,9 +48,26 @@ public class EditAuthorViewController {
     private Button cancelButton;
 
     private Stage dialogStage;
-
     private Author author;
     private Boolean safeClicked = false;
+    private Boolean isNewAuthor = false;
+    private AuthorCollection authorCollection;
+
+    //Default construction without parameter for creation of new author
+    public EditAuthorViewController() {
+        this.author = new Author();
+        isNewAuthor = true;
+    }
+
+    //Construction with Author as parameter for editing
+    public EditAuthorViewController(Author author){
+        this.author = author;
+        isNewAuthor = false;
+    }
+
+    public void setAuthorCollection(AuthorCollection collection) {
+        this.authorCollection = collection;
+    }
 
     @FXML
     private void initialize() {
@@ -70,13 +85,11 @@ public class EditAuthorViewController {
         greeting = new ComboBox(FXCollections.observableList(new Greeting().GREETINGS));
         country = new ComboBox((FXCollections.observableList(new Country().COUNTRIES)));
 
-
-        if (author.getGreeting().getGreetingString() != null) {
+        if (isNewAuthor = false) {
+            if (author.getGreeting().getGreetingString() != null) {
                 greeting.setValue(author.getGreeting().getGreetingString());
-<<<<<<< Updated upstream
             } else {
                 greeting.setValue(null);
-<<<<<<< HEAD
             }
             firstName.setText(author.getFirstName());
             lastName.setText(author.getLastName());
@@ -89,42 +102,6 @@ public class EditAuthorViewController {
                 country.setValue(author.getCountry().getCountryString());
             } else {
                 greeting.setValue(null);
-=======
-
-                firstName.setText(author.getFirstName());
-                lastName.setText(author.getLastName());
-                street1.setText(author.getStreet1());
-                street2.setText(author.getStreet2());
-                street3.setText(author.getStreet3());
-                zipCode.setText(Integer.toString(author.getZipCode()));
-                city.setText(author.getCity());
-
-                if (author.getCountry().getCountryString() != null) {
-                    country.setValue(author.getCountry().getCountryString());
-                } else {
-                    greeting.setValue(null);
-                }
-                email.setText(author.getEmail());
-                website.setText(author.getWebsite());
-                mobileNr.setText(author.getPhoneMobile());
-                officeNr.setText(author.getPhoneWork());
-                privateNr.setText(author.getPhoneHome());
-                author = new Author();
-                isNewAuthor = true;
-                greeting.setValue(null);
-                firstName.setText("");
-                lastName.setText("");
-                street1.setText("");
-                street2.setText("");
-                street3.setText("");
-                zipCode.setText("");
-                city.setText("");
-                email.setText("");
-                website.setText("");
-                mobileNr.setText("");
-                officeNr.setText("");
-                privateNr.setText("");
->>>>>>> db6f11875fec7e9639f1f03d915da197256ed90b
             }
             email.setText(author.getEmail());
             website.setText(author.getWebsite());
@@ -133,28 +110,23 @@ public class EditAuthorViewController {
             privateNr.setText(author.getPhoneHome());
 
             //if new author
-=======
->>>>>>> Stashed changes
         } else {
+            author = new Author();
+            isNewAuthor = true;
             greeting.setValue(null);
+            firstName.setText("");
+            lastName.setText("");
+            street1.setText("");
+            street2.setText("");
+            street3.setText("");
+            zipCode.setText("");
+            city.setText("");
+            email.setText("");
+            website.setText("");
+            mobileNr.setText("");
+            officeNr.setText("");
+            privateNr.setText("");
         }
-        firstName.setText(author.getFirstName());
-        lastName.setText(author.getLastName());
-        street1.setText(author.getStreet1());
-        street2.setText(author.getStreet2());
-        street3.setText(author.getStreet3());
-        zipCode.setText(Integer.toString(author.getZipCode()));
-        city.setText(author.getCity());
-        if (author.getCountry().getCountryString() != null) {
-            country.setValue(author.getCountry().getCountryString());
-        } else {
-            greeting.setValue(null);
-        }
-        email.setText(author.getEmail());
-        website.setText(author.getWebsite());
-        mobileNr.setText(author.getPhoneMobile());
-        officeNr.setText(author.getPhoneWork());
-        privateNr.setText(author.getPhoneHome());
     }
 
     @FXML
@@ -176,8 +148,12 @@ public class EditAuthorViewController {
         author.setCountry((new Country(country.getValue().toString())));
 
         safeClicked = true;
-        dialogStage.close();
 
+        if(isNewAuthor) {
+            authorCollection.addAuthor(author);
+        }
+
+        dialogStage.close();
     }
 
     public boolean isSafeClicked() {
@@ -189,14 +165,5 @@ public class EditAuthorViewController {
         dialogStage.close();
     }
 
-    public Author getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(Author author) {
-        this.author = author;
-    }
-
     //TODO: input validation
 }
-
