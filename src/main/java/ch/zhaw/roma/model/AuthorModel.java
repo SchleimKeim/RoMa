@@ -1,6 +1,7 @@
 package ch.zhaw.roma.model;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Access(AccessType.FIELD)
@@ -18,6 +19,14 @@ public class AuthorModel {
     @OneToOne(fetch = FetchType.LAZY)
     @PrimaryKeyJoinColumn
     private AddressModel address;
+
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+        name = "AUTHOR_BOOK",
+        joinColumns = { @JoinColumn(name = "BOOK_ID") },
+        inverseJoinColumns = { @JoinColumn(name = "ADDRESS_ID") }
+    )
+    private Set<BookModel> books;
 
     public Long getAuthorId() {
         return authorId;
@@ -57,5 +66,13 @@ public class AuthorModel {
 
     public void setAddress(AddressModel address) {
         this.address = address;
+    }
+
+    public Set<BookModel> getBooks() {
+        return books;
+    }
+
+    public void setBooks(Set<BookModel> books) {
+        this.books = books;
     }
 }
