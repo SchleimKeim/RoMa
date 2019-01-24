@@ -1,6 +1,5 @@
 package ch.zhaw.roma;
 
-import ch.zhaw.roma.controller.ManageAuthorsController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -15,8 +14,12 @@ public class Main extends Application {
     private Stage primaryStage;
     private BorderPane rootLayout;
 
+    public static void main(String[] args) {
+        launch(args);
+    }
+
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("view/IntroView.fxml"));
@@ -30,24 +33,16 @@ public class Main extends Application {
         }
     }
 
-
     public void manageAuthors() {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("view/ManageAuthorsView.fxml"));
             AnchorPane manageAuthors = (AnchorPane) loader.load();
             this.rootLayout.setCenter((manageAuthors));
-            ManageAuthorsController controller = (ManageAuthorsController) loader.getController();
-            controller.setMain(this);
+            //ManageAuthorsController controller = (ManageAuthorsController) loader.getController();
+            //controller.setMain(this);
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-
-
-
-    public static void main(String[] args) {
-        launch(args);
     }
 }

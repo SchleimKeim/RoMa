@@ -10,10 +10,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import java.util.ArrayList;
-import java.util.List;
-
 public class EditAuthorViewController {
 
     @FXML
@@ -94,7 +90,6 @@ public class EditAuthorViewController {
                 mobileNr.setText(author.getPhoneMobile());
                 officeNr.setText(author.getPhoneWork());
                 privateNr.setText(author.getPhoneHome());
-            } else {
                 author = new Author();
                 isNewAuthor = true;
                 greeting.setValue(null);
@@ -107,8 +102,8 @@ public class EditAuthorViewController {
                 city.setText("");
                 email.setText("");
                 website.setText("");
-                mobileNr.setText("";
-                officeNr.setText("";
+                mobileNr.setText("");
+                officeNr.setText("");
                 privateNr.setText("");
             }
         }
