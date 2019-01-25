@@ -16,12 +16,9 @@ public class Main extends Application {
             primaryStage.setScene(new Scene(root));
             primaryStage.show();
         }
-        catch (Exception ex)
-        {
-            Exception foo = ex;
-
+        catch(Exception ex) {
+            System.out.print(ex);
         }
-
     }
 
     public static void main(String[] args) {
