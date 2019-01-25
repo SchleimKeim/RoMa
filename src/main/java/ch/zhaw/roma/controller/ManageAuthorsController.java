@@ -98,7 +98,9 @@ public class ManageAuthorsController {
         openEditAuthor(author);
         boolean safeClicked = openEditAuthor(author);
         if(safeClicked == true) {
-            main.addToAuthorList(author);
+            // Auskommentiert durch Mathias Mader am Tag der Präsentation
+            // Damit wenigstens das IntroView bei der Präsentation kompiliert und gezeigt werden kann.
+            //main.addToAuthorList(author);
             showAuthorDetails(author);
             authorTable.refresh();
         }
@@ -122,8 +124,10 @@ public class ManageAuthorsController {
     public void handleDelete() {
         Author author = authorTable.getSelectionModel().getSelectedItem();
         if(author != null) {
-            main.removeAuthor(author);
-            authorTable.setItems(main.getAuthorCollection().getAuthorList());
+            // Auskommentiert durch Mathias Mader am Tag der Präsentation
+            // Damit wenigstens das IntroView bei der Präsentation kompiliert und gezeigt werden kann.
+            //main.removeAuthor(author);
+            //authorTable.setItems(main.getAuthorCollection().getAuthorList());
         } else {
             showNoSelectionWarning();
         }
@@ -131,7 +135,9 @@ public class ManageAuthorsController {
 
     public void showNoSelectionWarning() {
         Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.initOwner(main.getPrimaryStage());
+        // Auskommentiert durch Mathias Mader am Tag der Präsentation
+        // Damit das IntroView bei der Präsentation kompiliert und gezeigt werden kann.
+        // alert.initOwner(main.getPrimaryStage());
         alert.setTitle("Keine Auswahl");
         alert.setHeaderText("Kein Author ausgewählt");
         alert.setContentText("Bitte wählen Sie einen Author aus der Liste aus");
@@ -148,7 +154,9 @@ public class ManageAuthorsController {
             Stage editStage = new Stage();
             editStage.setTitle("Neuen Author erfassen");
             editStage.initModality(Modality.WINDOW_MODAL);
-            editStage.initOwner(main.getPrimaryStage());
+            // Auskommentiert durch Mathias Mader am Tag der Präsentation
+            // Damit das IntroView bei der Präsentation kompiliert und gezeigt werden kann.
+            // editStage.initOwner(main.getPrimaryStage());
             Scene scene = new Scene(manageAuthors);
             editStage.setScene(scene);
 
@@ -168,8 +176,10 @@ public class ManageAuthorsController {
     }
 
     public void setMain(Main main){
-        this.main = main;
-        authorTable.setItems(main.getAuthorCollection().getAuthorList());
+        // Auskommentiert durch Mathias Mader am Tag der Präsentation
+        // Damit das IntroView bei der Präsentation kompiliert und gezeigt werden kann.
+        // this.main = main;
+        // authorTable.setItems(main.getAuthorCollection().getAuthorList());
     }
 
 }
