@@ -22,6 +22,8 @@ public class Book {
     private ObservableList<SoldBooksYearly> soldBooksOverview = FXCollections.observableArrayList();
 
     public Book() {
+        title = new SimpleStringProperty();
+
     }
 
 

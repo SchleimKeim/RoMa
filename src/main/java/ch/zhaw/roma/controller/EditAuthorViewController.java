@@ -1,4 +1,4 @@
-ppackage ch.zhaw.roma.controller;
+package ch.zhaw.roma.controller;
 
 import ch.zhaw.roma.model.form.Country;
 import ch.zhaw.roma.model.form.Greeting;
@@ -10,37 +10,37 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-
 public class EditAuthorViewController {
 
     @FXML
-    public ComboBox greeting;
+    private ComboBox greetingBox = new ComboBox();
     @FXML
-    private TextField firstName;
+    private TextField firstName = new TextField();
     @FXML
-    private TextField lastName;
+    private TextField lastName = new TextField();
     @FXML
-    private TextField street1;
+    private TextField street1 = new TextField();
     @FXML
-    private TextField street2;
+    private TextField street2 = new TextField();
     @FXML
-    private TextField street3;
+    private TextField street3 = new TextField();
     @FXML
-    private TextField zipCode;
+    private TextField zipCode = new TextField();
     @FXML
-    private TextField city;
+    private TextField city = new TextField();
     @FXML
-    private ComboBox country;
+    private ComboBox countryBox = new ComboBox();
     @FXML
-    private TextField email;
+    private TextField email = new TextField();
     @FXML
-    private TextField website;
+    private TextField website = new TextField();
     @FXML
-    private TextField mobileNr;
+    private TextField mobileNr = new TextField();
     @FXML
-    private TextField officeNr;
+    private TextField officeNr = new TextField();
     @FXML
-    private TextField privateNr;
+    private TextField privateNr = new TextField();
+
     @FXML
     private Button safeButton;
     @FXML
@@ -51,28 +51,29 @@ public class EditAuthorViewController {
     private Author author;
     private Boolean safeClicked = false;
 
+
     @FXML
     private void initialize() {
-        setDataFields();
-    }
+        greetingBox.getItems().removeAll(greetingBox.getItems());
+        for(String greets: Greeting.getGREETINGS()) {
+            greetingBox.getItems().add(greets);
+        }
+        countryBox.getItems().removeAll(countryBox.getItems());
+        for(String country : Country.getCOUNTRIES()) {
+            countryBox.getItems().add(country);
+        }
+            }
 
     //Set stage for edit Author
     public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
     }
 
-    public void setDataFields() {
+    public void setDataFields(Author author) {
 
-        //Combobox needs observable List
-        greeting = new ComboBox(FXCollections.observableList(new Greeting().GREETINGS));
-        country = new ComboBox((FXCollections.observableList(new Country().COUNTRIES)));
+        greetingBox.getSelectionModel().select(author.getGreeting().getGreetingString());
+        countryBox.getSelectionModel().select(author.getCountry().getCountryString());
 
-
-        if (author.getGreeting().getGreetingString() != null) {
-                greeting.setValue(author.getGreeting().getGreetingString());
-        } else {
-            greeting.setValue(null);
-        }
         firstName.setText(author.getFirstName());
         lastName.setText(author.getLastName());
         street1.setText(author.getStreet1());
@@ -80,22 +81,19 @@ public class EditAuthorViewController {
         street3.setText(author.getStreet3());
         zipCode.setText(Integer.toString(author.getZipCode()));
         city.setText(author.getCity());
-        if (author.getCountry().getCountryString() != null) {
-            country.setValue(author.getCountry().getCountryString());
-        } else {
-            greeting.setValue(null);
-        }
         email.setText(author.getEmail());
         website.setText(author.getWebsite());
         mobileNr.setText(author.getPhoneMobile());
         officeNr.setText(author.getPhoneWork());
         privateNr.setText(author.getPhoneHome());
+
+        this.author = author;
     }
 
     @FXML
     public void handleSafe() {
         //TODO: Input validation
-        author.setGreeting(new Greeting(greeting.getValue().toString()));
+        author.setGreeting(new Greeting(greetingBox.getSelectionModel().getSelectedItem().toString()));
         author.setFirstName(firstName.getText());
         author.setLastName(lastName.getText());
         author.setStreet1(street1.getText());
@@ -103,12 +101,13 @@ public class EditAuthorViewController {
         author.setStreet3(street3.getText());
         author.setZipCode(Integer.parseInt(zipCode.getText()));
         author.setCity(city.getText());
+        author.setCountry(new Country(countryBox.getSelectionModel().getSelectedItem().toString()));
         author.setEmail(email.getText());
         author.setWebsite(website.getText());
         author.setPhoneMobile(mobileNr.getText());
         author.setPhoneHome(privateNr.getText());
         author.setPhoneWork(officeNr.getText());
-        author.setCountry((new Country(country.getValue().toString())));
+        author.setCountry((new Country(countryBox.getValue().toString())));
 
         safeClicked = true;
         dialogStage.close();

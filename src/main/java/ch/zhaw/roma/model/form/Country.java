@@ -7,6 +7,10 @@ public class Country {
 
     private String CountryString;
 
+    public static List<String> getCOUNTRIES() {
+        return COUNTRIES;
+    }
+
     public static final List<String> COUNTRIES = new ArrayList<String>() {{
         add("Oceania");
         add("Eurasien");

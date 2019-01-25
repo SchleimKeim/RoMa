@@ -6,6 +6,9 @@ import java.util.List;
 public class Greeting {
 
 
+    public static List<String> getGREETINGS() {
+        return GREETINGS;
+    }
 
     public static final List<String> GREETINGS = new ArrayList<String>() {{
         add("Herr");
@@ -15,7 +18,7 @@ public class Greeting {
     }};
 
 
-    private String greetingString;
+    private String greetingString = "";
 
 
     public Greeting(String greeting) {

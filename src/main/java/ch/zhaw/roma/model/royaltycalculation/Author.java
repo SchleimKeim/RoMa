@@ -2,41 +2,61 @@ package ch.zhaw.roma.model.royaltycalculation;
 
 import ch.zhaw.roma.model.form.Country;
 import ch.zhaw.roma.model.form.Greeting;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class Author {
 
-    private IntegerProperty id;
+    private IntegerProperty id = new SimpleIntegerProperty();
+
+    private ObjectProperty<Greeting> greeting = new SimpleObjectProperty<>();
+    private StringProperty firstName = new SimpleStringProperty();
+    private StringProperty lastName = new SimpleStringProperty();
+    private StringProperty street1 = new SimpleStringProperty();
+    private StringProperty street2 = new SimpleStringProperty();
+    private StringProperty street3 = new SimpleStringProperty();
+    private IntegerProperty zipCode = new SimpleIntegerProperty();
+    private StringProperty city = new SimpleStringProperty();
+    private ObjectProperty<Country> country = new SimpleObjectProperty<>();
+    private StringProperty countryISO = new SimpleStringProperty();
+    private StringProperty website = new SimpleStringProperty();
+    private StringProperty email = new SimpleStringProperty();
+    private StringProperty phoneHome = new SimpleStringProperty();
+    private StringProperty phoneWork = new SimpleStringProperty();
+    private StringProperty phoneMobile = new SimpleStringProperty();
+
+    private ObservableList<Book> books = FXCollections.observableArrayList();
+
+    public Author() {
+        Greeting greet = new Greeting("");
+        greeting.setValue(greet);
+        firstName.set("");
+        lastName.set("");
+        street1.set("");
+        street2.set("");
+        street3.set("");
+        zipCode.set(0);
+        city.set("");
+        Country count = new Country("");
+        country.setValue(count);
+        website.set("");
+        email.set("");
+        phoneHome.set("");
+        phoneMobile.set("");
+        phoneWork.set("");
 
 
 
+    }
 
-    private ObjectProperty<Greeting> greeting;
-    private StringProperty firstName;
-    private StringProperty lastName;
-    private StringProperty street1;
-    private StringProperty street2;
-    private StringProperty street3;
-    private IntegerProperty zipCode;
-    private StringProperty city;
+    public ObservableList<Book> getBooks() {
+        return books;
+    }
 
-
-    private ObjectProperty<Country> country;
-
-    private StringProperty countryISO;
-    private StringProperty website;
-    private StringProperty email;
-    private StringProperty phoneHome;
-    private StringProperty phoneWork;
-    private StringProperty phoneMobile;
-
-
-    private ObservableList<Book> books;
-
-
+    public void setBooks(ObservableList<Book> books) {
+        this.books = books;
+    }
 
     public int getId() {
         return id.get();
@@ -231,6 +251,25 @@ public class Author {
         this.phoneMobile.set(phoneMobile);
     }
 
+    public Author(int id, Greeting greeting, String firstName, String lastName, String street1, String street2, String street3, int zipCode, String city, Country country, String website, String email, String phoneHome, String phoneWork, String phoneMobile, ObservableList<Book> books) {
 
+        this.id.set(id);
+
+        this.greeting.setValue(greeting);
+        this.firstName.set(firstName);
+        this.lastName.set(lastName);
+        this.street1.set(street1);
+        this.street2.set(street2);
+        this.street3.set(street3);
+        this.zipCode.set(zipCode);
+        this.city.set(city);
+        this.country.setValue(country);
+        this.website.set(website);
+        this.email.set(email);
+        this.phoneHome.set(phoneHome);
+        this.phoneWork.set(phoneWork);
+        this.phoneMobile.set(phoneMobile);
+        this.books = books;
+    }
 
 }

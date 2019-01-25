@@ -1,7 +1,6 @@
 package ch.zhaw.roma.controller;
 
 import ch.zhaw.roma.Main;
-import ch.zhaw.roma.helpers.AuthorCollection;
 import ch.zhaw.roma.model.royaltycalculation.Author;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -59,22 +58,12 @@ public class ManageAuthorsController {
 
     private Main main;
 
-
-    private ManageAuthorsController() {
-
-    }
-
     @FXML
     private void initialize() {
         //initialization of the author table with two columns.
         firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
         lastNameColumn.setCellValueFactory((cellData -> cellData.getValue().lastNameProperty()));
-        showAuthorDetails(null);
-
         authorTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> showAuthorDetails(newValue));
-
-
-
     }
 
     public void showAuthorDetails(Author author) {
@@ -110,7 +99,8 @@ public class ManageAuthorsController {
         boolean safeClicked = openEditAuthor(author);
         if(safeClicked == true) {
             main.addToAuthorList(author);
-
+            showAuthorDetails(author);
+            authorTable.refresh();
         }
     }
 
@@ -119,32 +109,40 @@ public class ManageAuthorsController {
         Author author = authorTable.getSelectionModel().getSelectedItem();
         if(author != null) {
             boolean safeClicked = openEditAuthor(author);
-            if(safeClicked) {
-
+            if (safeClicked == true) {
+                showAuthorDetails(author);
+                authorTable.refresh();
             }
         } else {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.initOwner(main.getPrimaryStage());
-            alert.setTitle("Keine Auswahl");
-            alert.setHeaderText("Kein Author ausgewählt");
-            alert.setContentText("Bitte wählen Sie einen Author aus der Liste aus");
-            alert.showAndWait();
+            showNoSelectionWarning();
         }
     }
 
     @FXML
     public void handleDelete() {
         Author author = authorTable.getSelectionModel().getSelectedItem();
-        AuthorCollection collection = main.getAuthorCollection();
-        collection.removeAuthor(author);
+        if(author != null) {
+            main.removeAuthor(author);
+            authorTable.setItems(main.getAuthorCollection().getAuthorList());
+        } else {
+            showNoSelectionWarning();
+        }
+    }
 
+    public void showNoSelectionWarning() {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.initOwner(main.getPrimaryStage());
+        alert.setTitle("Keine Auswahl");
+        alert.setHeaderText("Kein Author ausgewählt");
+        alert.setContentText("Bitte wählen Sie einen Author aus der Liste aus");
+        alert.showAndWait();
     }
 
 
     public boolean openEditAuthor(Author author) {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("view/EditAuthorView.fxml"));
+            loader.setLocation(Main.class.getResource("/view/EditAuthorView.fxml"));
             AnchorPane manageAuthors = (AnchorPane) loader.load();
 
             Stage editStage = new Stage();
@@ -154,11 +152,12 @@ public class ManageAuthorsController {
             Scene scene = new Scene(manageAuthors);
             editStage.setScene(scene);
 
-            EditAuthorViewController controller = loader.getController();
-            controller.setDialogStage(editStage);
-            controller.setAuthor(author);
 
+            EditAuthorViewController controller = loader.getController();
+            controller.setDataFields(author);
+            controller.setDialogStage(editStage);
             editStage.showAndWait();
+
             return controller.isSafeClicked();
 
         } catch (IOException e) {

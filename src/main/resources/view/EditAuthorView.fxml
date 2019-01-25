@@ -109,19 +109,19 @@
                             </GridPane.margin>
                         </Label>
                         <TextField fx:id="firstName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                        <ComboBox prefHeight="26.0" prefWidth="234.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="10" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="11" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="12" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="13" />
-                        <ComboBox fx:id="greeting" prefHeight="26.0" prefWidth="119.0" GridPane.columnIndex="1" />
+                        <TextField fx:id="lastName" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="street1" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="street2" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="street3" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="zipCode" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <TextField fx:id="city" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <ComboBox fx:id="countryBox" prefHeight="26.0" prefWidth="234.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <TextField fx:id="email" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <TextField fx:id="website" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                        <TextField fx:id="mobileNr" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                        <TextField fx:id="officeNr" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                        <TextField fx:id="privateNr" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                        <ComboBox fx:id="greetingBox" prefHeight="26.0" prefWidth="119.0" GridPane.columnIndex="1" />
                     </children>
                     <VBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -129,8 +129,8 @@
                 </GridPane>
                 <ButtonBar prefHeight="40.0" prefWidth="200.0">
                     <buttons>
-                        <Button mnemonicParsing="false" text="Speichern" />
-                        <Button mnemonicParsing="false" text="Abbrechen" />
+                        <Button mnemonicParsing="false" onAction="#handleSafe" text="Speichern" />
+                        <Button mnemonicParsing="false" onAction="#handleCancel" text="Abbrechen" />
                     </buttons>
                     <VBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
