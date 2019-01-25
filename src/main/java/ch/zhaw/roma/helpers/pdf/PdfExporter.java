@@ -5,7 +5,6 @@ import ch.zhaw.roma.model.royaltycalculation.AuxRight;
 import ch.zhaw.roma.model.royaltycalculation.LegacyEntry;
 import com.itextpdf.io.IOException;
 import com.itextpdf.io.font.FontConstants;
-import com.itextpdf.io.image.ImageDataFactory;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
