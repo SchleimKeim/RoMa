@@ -32,6 +32,7 @@ public class PdfExportData {
     private String author;
     private double priceHardCoverEurExMwSt;
     private double priceHardCoverChfExMwSt;
+
     private double priceEbookEurExMwSt;
     private double priceHardCoverEur;
     private double priceHardCoverChf;
@@ -418,4 +419,4 @@ public class PdfExportData {
         this.contactDetails = contactDetails;
     }
 
-    }
+}

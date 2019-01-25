@@ -127,10 +127,10 @@ public class PdfExporter {
     }
 
     private Paragraph createDocHeader() throws MalformedURLException {
-        Image logo = new Image(ImageDataFactory.create(data.getLogoPath()));
+        //Image logo = new Image(ImageDataFactory.create(data.getLogoPath()));
         Paragraph p = new Paragraph()
-                .add(logo)
-                .addTabStops(new TabStop(100))
+                //.add(logo)
+                //.addTabStops(new TabStop(100))
                 .add(data.getHeader())
                 .setFont(normal)
                 .setFontSize(10);
