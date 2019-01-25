@@ -3,7 +3,6 @@ package ch.zhaw.roma.controller;
 import ch.zhaw.roma.model.form.Country;
 import ch.zhaw.roma.model.form.Greeting;
 import ch.zhaw.roma.model.royaltycalculation.Author;
-import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -62,7 +61,7 @@ public class EditAuthorViewController {
         for(String country : Country.getCOUNTRIES()) {
             countryBox.getItems().add(country);
         }
-            }
+    }
 
     //Set stage for edit Author
     public void setDialogStage(Stage dialogStage) {

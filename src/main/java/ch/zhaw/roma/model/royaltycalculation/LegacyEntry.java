@@ -2,8 +2,6 @@ package ch.zhaw.roma.model.royaltycalculation;
 
 public class LegacyEntry {
 
-
-
     private int year;
     private int amount;
 
