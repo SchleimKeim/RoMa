@@ -16,33 +16,34 @@ public class IntroViewController implements Initializable {
     public Button startNewRoyaltyCalculation;
     public Button openSettings;
     public Button importExcel;
-    private Stage settingsViewStage = new Stage();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        settingsViewStage.setTitle("Einstellungen...");
-        try {
-            settingsViewStage.setScene(
-                new Scene(
-                    FXMLLoader.load(getClass().getResource("/view/SettingsView.fxml"))
-                )
-            );
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     public void openNewCalculation(ActionEvent actionEvent) {
     }
 
     public void openExcelFileImporter(ActionEvent actionEvent) {
+        openWindow("/view/ImportExcelView.fxml", "Excel Datei Importieren...");
     }
 
     public void openDataEditor(ActionEvent actionEvent) {
     }
 
     public void openSettings(ActionEvent actionEvent) {
+        openWindow("/view/SettingsView.fxml", "Einstellungen...");
+    }
+
+    private void openWindow(String path, String title) {
+        Stage settingsViewStage = new Stage();
+        try {
+            settingsViewStage.setScene(new Scene(FXMLLoader.load(getClass().getResource(path))));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        settingsViewStage.setTitle(title);
         settingsViewStage.show();
     }
 }

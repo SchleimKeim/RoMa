@@ -1,8 +1,8 @@
-ch/zhaw/roma/PostgresTest.class
-ch/zhaw/roma/model/excel/persistence/InhouseSheetModelTest.class
-ch/zhaw/roma/helpers/pdf/PdfExporterTest.class
-ch/zhaw/roma/TestRepository.class
-ch/zhaw/roma/XmlHelperTest.class
-ch/zhaw/roma/helpers/excel/ExcelImporterTest.class
-ch/zhaw/roma/model/excel/persistence/BookWireSheetModelTest.class
-ch/zhaw/roma/model/excel/persistence/ExcelToEntityConverterTest.class
+ch\zhaw\roma\helpers\excel\ExcelImporterTest.class
+ch\zhaw\roma\helpers\pdf\PdfExporterTest.class
+ch\zhaw\roma\model\excel\persistence\ExcelToEntityConverterTest.class
+ch\zhaw\roma\model\excel\persistence\BookWireSheetModelTest.class
+ch\zhaw\roma\PostgresTest.class
+ch\zhaw\roma\model\excel\persistence\InhouseSheetModelTest.class
+ch\zhaw\roma\TestRepository.class
+ch\zhaw\roma\XmlHelperTest.class

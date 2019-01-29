@@ -1,13 +1,11 @@
 package ch.zhaw.roma.model.excel.persistence;
 
-import ch.zhaw.roma.interfaces.IInhouseRowModel;
-
 import javax.persistence.*;
 
 @Entity
 @Access(AccessType.FIELD)
 @Table(name = "INHOUSE_ROWS")
-public class InhouseRowModel implements IInhouseRowModel {
+public class InhouseRowModel {
 
     //region Private Fields
     @Id

@@ -1,0 +1,21 @@
+TODO:
+ExcelImportView
+- ExcelImportView
+- ExcelImportResultView
+
+BaseDataEditorView
+	- zwei subview
+		EditAuthor
+		EditBook
+	- suchfeld
+
+
+ CreateRoyaltyCalculationView
+	- Autor auswählen
+	- Buch auswählen
+		-> Daten laden für den pdfexporter -> Export.
+
+
+
+Wenn noch Zeit:
+ - Settings korrigieren...

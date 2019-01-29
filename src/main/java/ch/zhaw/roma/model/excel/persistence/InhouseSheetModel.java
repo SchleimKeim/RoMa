@@ -1,6 +1,6 @@
 package ch.zhaw.roma.model.excel.persistence;
 
-import ch.zhaw.roma.interfaces.IInhouseSheetModel;
+import org.hibernate.Session;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -8,7 +8,7 @@ import java.util.Set;
 @Entity
 @Access(AccessType.FIELD)
 @Table(name = "INHOUSE_SHEETS")
-public class InhouseSheetModel implements IInhouseSheetModel {
+public class InhouseSheetModel {
 
     //region Private Fields
 
@@ -54,6 +54,20 @@ public class InhouseSheetModel implements IInhouseSheetModel {
         this.rows = rows;
         for(InhouseRowModel row : this.rows)
             row.setSheet(this);
+    }
+
+    public boolean save(Session session) {
+        try {
+            session.beginTransaction();
+            session.save(this);
+            for (InhouseRowModel row : getRows())
+                session.save(row);
+
+            session.getTransaction().commit();
+            return true;
+        } catch (Exception ex) {
+            return false;
+        }
     }
     //endregion
 }

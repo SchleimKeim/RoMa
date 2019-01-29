@@ -36,7 +36,6 @@ public class InhouseSheetModelTest extends TestRepository {
         try {
             Session s = sessionFactory.openSession();
             s.beginTransaction();
-
             s.save(inhouseSheetModel);
             for (InhouseRowModel row : inhouseSheetModel.getRows())
                 s.save(row);

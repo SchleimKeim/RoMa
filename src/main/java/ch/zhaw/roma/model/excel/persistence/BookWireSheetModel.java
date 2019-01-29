@@ -1,6 +1,6 @@
 package ch.zhaw.roma.model.excel.persistence;
 
-import ch.zhaw.roma.interfaces.IBookWireSheetModel;
+import org.hibernate.Session;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -8,7 +8,7 @@ import java.util.Set;
 @Entity
 @Access(AccessType.FIELD)
 @Table(name = "BOOKWIRE_SHEETS")
-public class BookWireSheetModel implements IBookWireSheetModel {
+public class BookWireSheetModel {
 
     //region Private Fields
     @Id
@@ -71,6 +71,20 @@ public class BookWireSheetModel implements IBookWireSheetModel {
     public void setFileName(String fileName) {
                                                    this.fileName = fileName;
                                                                             }
+
+    public boolean save(Session session) {
+         try {
+            session.beginTransaction();
+            session.save(this);
+            for (BookWireRowModel row : getRows())
+                session.save(row);
+
+            session.getTransaction().commit();
+            return true;
+        } catch (Exception ex) {
+            return false;
+        }
+    }
 
 //    public Date getCreated() {
 //        return created;
