@@ -2,10 +2,13 @@ package ch.zhaw.roma;
 
 
 import ch.zhaw.roma.controller.ManageAuthorsController;
-import ch.zhaw.roma.helpers.AuthorCollection;
+import ch.zhaw.roma.model.royaltycalculation.AuthorCollection;
 import ch.zhaw.roma.model.form.CreateData;
 import ch.zhaw.roma.model.royaltycalculation.Author;
+import ch.zhaw.roma.model.royaltycalculation.Book;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -20,6 +23,29 @@ public class Main extends Application {
     private Stage primaryStage;
     private BorderPane rootLayout;
     private AuthorCollection authorCollection;
+    private AnchorPane manageAuthors;
+
+    public ObservableList<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(ObservableList<Book> books) {
+        this.books = books;
+    }
+
+    public ObservableList<Author> getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(ObservableList<Author> authors) {
+        this.authors = authors;
+    }
+
+    private ObservableList<Book> books = FXCollections.observableArrayList();
+    private ObservableList<Author> authors = FXCollections.observableArrayList();
+
+
+
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -29,7 +55,26 @@ public class Main extends Application {
 
         createTestData();
         initRootLayOut();
+        //arsch();
         manageAuthors();
+
+
+    }
+
+    public void arsch() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("/view/Test2.fxml"));
+            arsch = (AnchorPane) loader.load();
+
+            this.rootLayout.setCenter(arsch);
+
+            //this.primaryStage.setScene(new Scene(arsch));
+            //this.primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
 
 
     }
@@ -51,9 +96,13 @@ public class Main extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("/view/ManageAuthorsView.fxml"));
-            AnchorPane manageAuthors = (AnchorPane) loader.load();
-            this.rootLayout.setCenter((manageAuthors));
+            manageAuthors = (AnchorPane) loader.load();
+
+            this.rootLayout.setCenter(manageAuthors);
+
             ManageAuthorsController controller = (ManageAuthorsController) loader.getController();
+
+
             controller.setMain(this);
         } catch (IOException e) {
             e.printStackTrace();
@@ -78,7 +127,6 @@ public class Main extends Application {
     //  authorCollection = new ArrayList<>();
     //TODO: Load authors in list
     //}
-
 
 
     public void setAuthorCollection(AuthorCollection authorCollection) {

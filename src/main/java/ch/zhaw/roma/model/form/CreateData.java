@@ -1,6 +1,6 @@
 package ch.zhaw.roma.model.form;
 
-import ch.zhaw.roma.helpers.AuthorCollection;
+import ch.zhaw.roma.model.royaltycalculation.AuthorCollection;
 import ch.zhaw.roma.model.royaltycalculation.Author;
 import ch.zhaw.roma.model.royaltycalculation.Book;
 import javafx.collections.FXCollections;
@@ -34,6 +34,16 @@ public class CreateData {
 
         authorCollection.addAuthor(author1);
         authorCollection.addAuthor(author2);
+    }
+
+    public void createBooks( ) {
+        Author author = new Author();
+        Book book1 = new Book(1, "1234556978", "Coolio",author, 12.32, 14.45, 9.09, 7);
+
+
+
+    }
+            public Book(IntegerProperty id, StringProperty ISBN, StringProperty title, ObjectProperty<Author> author, FloatProperty priceHardcoverEUR, FloatProperty priceHardcoverCHF, FloatProperty priceEbookEUR, FloatProperty royalityQuote) {
     }
 
     public AuthorCollection getAuthorCollection() {

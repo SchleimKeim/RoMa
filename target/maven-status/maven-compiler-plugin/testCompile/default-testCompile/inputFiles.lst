@@ -1,0 +1,8 @@
+/home/rackham/RoMa/src/test/java/ch/zhaw/roma/PostgresTest.java
+/home/rackham/RoMa/src/test/java/ch/zhaw/roma/model/excel/persistence/BookWireSheetModelTest.java
+/home/rackham/RoMa/src/test/java/ch/zhaw/roma/TestRepository.java
+/home/rackham/RoMa/src/test/java/ch/zhaw/roma/model/excel/persistence/ExcelToEntityConverterTest.java
+/home/rackham/RoMa/src/test/java/ch/zhaw/roma/helpers/pdf/PdfExporterTest.java
+/home/rackham/RoMa/src/test/java/ch/zhaw/roma/model/excel/persistence/InhouseSheetModelTest.java
+/home/rackham/RoMa/src/test/java/ch/zhaw/roma/XmlHelperTest.java
+/home/rackham/RoMa/src/test/java/ch/zhaw/roma/helpers/excel/ExcelImporterTest.java

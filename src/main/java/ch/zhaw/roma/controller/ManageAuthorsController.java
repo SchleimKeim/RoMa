@@ -166,10 +166,10 @@ public class ManageAuthorsController {
         }
 
     }
-
+    //access to main and authors-list
     public void setMain(Main main){
         this.main = main;
-        authorTable.setItems(main.getAuthorCollection().getAuthorList());
+        authorTable.setItems(main.getAuthors());
     }
 
 }

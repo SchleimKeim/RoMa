@@ -2,7 +2,7 @@ package ch.zhaw.roma;
 
 <<<<<<< HEAD
 import ch.zhaw.roma.controller.ManageAuthorsController;
-import ch.zhaw.roma.helpers.AuthorCollection;
+import ch.zhaw.roma.model.royaltycalculation.AuthorCollection;
 import ch.zhaw.roma.model.royaltycalculation.Author;
 =======
 >>>>>>> db6f11875fec7e9639f1f03d915da197256ed90b

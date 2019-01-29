@@ -51,6 +51,14 @@ public class ManageBooksController {
     private TableColumn<Settlement, Float> settlementAmountColumn;
 
     @FXML
+    private TableView<Author> authors;
+    @FXML
+    private TableColumn<Author, String> firstNameColumn;
+    @FXML
+    private TableColumn<Author, String>  lastNameColumn;
+
+
+    @FXML
     private Label priceHardChfLabel;
     @FXML
     private Label priceHardEurLabel;
@@ -59,20 +67,19 @@ public class ManageBooksController {
     @FXML
     private Label ISBNLabel;
     @FXML
-    private Label authorLabel;
-    @FXML
     private Label titleLabel;
     @FXML
     private Label royalityQuoteLabel;
 
     private Main main;
+    private
 
     @FXML
     private void initialize() {
         //initialization of the author table with two columns.
         titleColumn.setCellValueFactory(cellData -> cellData.getValue().titleProperty());
         authorColumn.setCellValueFactory((cellData -> {
-            String fullName = (StringProperty) cellData.getValue().getAuthor().firstNameProperty() + ", " + cellData.getValue().getAuthor().firstNameProperty();
+            String fullName = (StringProperty) cellData.getValue().getAuthorsString();
             StringProperty authorFullName = new SimpleStringProperty(fullName);
             return authorFullName;
         }));
@@ -119,13 +126,12 @@ public class ManageBooksController {
     public void handleDelete() {
     }
 
-
-
-
+    //access to main and the books-list
     public void setMain(Main main){
         this.main = main;
-
+        bookTable.setItems(main.getBooks());
     }
+
 
     public void setTables(Author author) {
         bookTable.setItems(author.getBooks());

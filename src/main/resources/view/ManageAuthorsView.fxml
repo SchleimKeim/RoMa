@@ -10,17 +10,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.zhaw.roma.controller.ManageBookController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.zhaw.roma.controller.ManageAuthorsController">
    <children>
-      <SplitPane dividerPositions="0.4595959595959596" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <SplitPane dividerPositions="0.25542570951585974" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TableView fx:id="authorTable" prefHeight="398.0" prefWidth="271.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="authorTable" prefHeight="798.0" prefWidth="435.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
                       <TableColumn fx:id="firstNameColumn" prefWidth="75.0" text="Vorname" />
                       <TableColumn fx:id="lastNameColumn" prefWidth="75.0" text="Nachname" />
@@ -33,139 +35,191 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <Label text="Details:">
-                           <VBox.margin>
-                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                           </VBox.margin>
-                           <font>
-                              <Font name="System Bold" size="13.0" />
-                           </font>
-                        </Label>
-                        <GridPane>
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="299.0" minWidth="10.0" prefWidth="111.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="451.0" minWidth="10.0" prefWidth="211.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
+                  <SplitPane dividerPositions="0.635678391959799" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                            <children>
-                              <Label text="Anrede" GridPane.halignment="LEFT">
-                                 <GridPane.margin>
-                                    <Insets right="5.0" />
-                                 </GridPane.margin>
-                              </Label>
-                              <Label text="Vorname" GridPane.halignment="LEFT" GridPane.rowIndex="1">
-                                 <GridPane.margin>
-                                    <Insets right="5.0" />
-                                 </GridPane.margin>
-                              </Label>
-                              <Label text="Nachname" GridPane.halignment="LEFT" GridPane.rowIndex="2">
-                                 <GridPane.margin>
-                                    <Insets right="5.0" />
-                                 </GridPane.margin>
-                              </Label>
-                              <Label text="Strasse / Nr." GridPane.halignment="LEFT" GridPane.rowIndex="3">
-                                 <GridPane.margin>
-                                    <Insets right="5.0" />
-                                 </GridPane.margin>
-                              </Label>
-                              <Label text="Adresszusatz 1" GridPane.halignment="LEFT" GridPane.rowIndex="4">
-                                 <GridPane.margin>
-                                    <Insets right="5.0" />
-                                 </GridPane.margin>
-                              </Label>
-                              <Label text="Adresszusatz 2" GridPane.halignment="LEFT" GridPane.rowIndex="5">
-                                 <GridPane.margin>
-                                    <Insets right="5.0" />
-                                 </GridPane.margin>
-                              </Label>
-                              <Label text="Postleitzahl" GridPane.halignment="LEFT" GridPane.rowIndex="6">
-                                 <GridPane.margin>
-                                    <Insets right="5.0" />
-                                 </GridPane.margin>
-                              </Label>
-                              <Label text="Stadt" GridPane.halignment="LEFT" GridPane.rowIndex="7">
-                                 <GridPane.margin>
-                                    <Insets right="5.0" />
-                                 </GridPane.margin>
-                              </Label>
-                              <Label text="Land" GridPane.halignment="LEFT" GridPane.rowIndex="8">
-                                 <GridPane.margin>
-                                    <Insets right="5.0" />
-                                 </GridPane.margin>
-                              </Label>
-                              <Label text="E-Mail" GridPane.halignment="LEFT" GridPane.rowIndex="9">
-                                 <GridPane.margin>
-                                    <Insets right="5.0" />
-                                 </GridPane.margin>
-                              </Label>
-                              <Label text="Webseite" GridPane.halignment="LEFT" GridPane.rowIndex="10">
-                                 <GridPane.margin>
-                                    <Insets right="5.0" />
-                                 </GridPane.margin>
-                              </Label>
-                              <Label text="Tel. Mobil" GridPane.halignment="LEFT" GridPane.rowIndex="11">
-                                 <GridPane.margin>
-                                    <Insets right="5.0" />
-                                 </GridPane.margin>
-                              </Label>
-                              <Label text="Tel Geschäftlich" GridPane.halignment="LEFT" GridPane.rowIndex="12">
-                                 <GridPane.margin>
-                                    <Insets right="5.0" />
-                                 </GridPane.margin>
-                              </Label>
-                              <Label text="Tel.privat" GridPane.halignment="LEFT" GridPane.rowIndex="13">
-                                 <GridPane.margin>
-                                    <Insets right="5.0" />
-                                 </GridPane.margin>
-                              </Label>
-                              <Label fx:id="greeting" text="Label" GridPane.columnIndex="1" />
-                              <Label fx:id="firstName" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Label fx:id="lastName" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <Label fx:id="street1" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <Label fx:id="street2" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <Label fx:id="street3" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                              <Label fx:id="zipCode" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                              <Label fx:id="city" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                              <Label fx:id="country" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                              <Label fx:id="email" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                              <Label fx:id="website" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-                              <Label fx:id="mobileNr" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="11" />
-                              <Label fx:id="officeNr" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="12" />
-                              <Label fx:id="privateNr" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                              <HBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="526.0" prefWidth="886.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label text="Details:">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <GridPane>
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="299.0" minWidth="10.0" prefWidth="125.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="451.0" minWidth="10.0" prefWidth="197.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label text="Anrede" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+                                             <GridPane.margin>
+                                                <Insets right="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label text="Vorname" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                             <GridPane.margin>
+                                                <Insets right="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label text="Nachname" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                             <GridPane.margin>
+                                                <Insets right="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label text="Strasse / Nr." GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                             <GridPane.margin>
+                                                <Insets right="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label text="Adresszusatz 1" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                             <GridPane.margin>
+                                                <Insets right="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label text="Adresszusatz 2" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                                             <GridPane.margin>
+                                                <Insets right="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label text="Postleitzahl" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="TOP">
+                                             <GridPane.margin>
+                                                <Insets right="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label text="Stadt" GridPane.halignment="LEFT" GridPane.rowIndex="7" GridPane.valignment="TOP">
+                                             <GridPane.margin>
+                                                <Insets right="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label text="Land" GridPane.halignment="LEFT" GridPane.rowIndex="8" GridPane.valignment="TOP">
+                                             <GridPane.margin>
+                                                <Insets right="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label text="E-Mail" GridPane.halignment="LEFT" GridPane.rowIndex="9" GridPane.valignment="TOP">
+                                             <GridPane.margin>
+                                                <Insets right="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label text="Webseite" GridPane.halignment="LEFT" GridPane.rowIndex="10" GridPane.valignment="TOP">
+                                             <GridPane.margin>
+                                                <Insets right="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label text="Tel. Mobil" GridPane.halignment="LEFT" GridPane.rowIndex="11" GridPane.valignment="TOP">
+                                             <GridPane.margin>
+                                                <Insets right="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label text="Tel Geschäftlich" GridPane.halignment="LEFT" GridPane.rowIndex="12" GridPane.valignment="TOP">
+                                             <GridPane.margin>
+                                                <Insets right="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label text="Tel.privat" GridPane.halignment="LEFT" GridPane.rowIndex="13" GridPane.valignment="TOP">
+                                             <GridPane.margin>
+                                                <Insets right="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label fx:id="greeting" text="Label" GridPane.columnIndex="1" GridPane.valignment="TOP" />
+                                          <Label fx:id="firstName" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+                                          <Label fx:id="lastName" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+                                          <Label fx:id="street1" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="TOP" />
+                                          <Label fx:id="street2" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+                                          <Label fx:id="street3" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="TOP" />
+                                          <Label fx:id="zipCode" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" GridPane.valignment="TOP" />
+                                          <Label fx:id="city" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" GridPane.valignment="TOP" />
+                                          <Label fx:id="country" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8" GridPane.valignment="TOP" />
+                                          <Label fx:id="email" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="9" GridPane.valignment="TOP" />
+                                          <Label fx:id="website" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="10" GridPane.valignment="TOP" />
+                                          <Label fx:id="mobileNr" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="11" GridPane.valignment="TOP" />
+                                          <Label fx:id="officeNr" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="12" GridPane.valignment="TOP" />
+                                          <Label fx:id="privateNr" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="13" GridPane.valignment="TOP" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </GridPane>
+                                    <VBox prefHeight="440.0" prefWidth="318.0">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <children>
+                                          <Pane prefHeight="449.0" prefWidth="318.0" />
+                                          <ButtonBar prefHeight="40.0" prefWidth="275.0">
+                                            <buttons>
+                                              <Button fx:id="newButton" mnemonicParsing="false" onAction="#handleNew" text="Neu" />
+                                                <Button fx:id="editButton" mnemonicParsing="false" onAction="#handleEdit" text="Bearbeiten" />
+                                                <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#handleDelete" text="Löschen" />
+                                            </buttons>
+                                          </ButtonBar>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
                            </children>
-                           <VBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </VBox.margin>
-                        </GridPane>
-                        <ButtonBar prefHeight="40.0" prefWidth="200.0">
-                          <buttons>
-                            <Button fx:id="newButton" mnemonicParsing="false" onAction="#handleNew" text="Neu" />
-                              <Button fx:id="editButton" mnemonicParsing="false" onAction="#handleEdit" text="Bearbeiten" />
-                              <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#handleDelete" text="Löschen" />
-                          </buttons>
-                           <VBox.margin>
-                              <Insets bottom="5.0" right="5.0" top="20.0" />
-                           </VBox.margin>
-                        </ButtonBar>
-                     </children>
-                  </VBox>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="291.0" prefWidth="886.0">
+                           <children>
+                              <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <HBox prefHeight="152.0" prefWidth="888.0">
+                                       <children>
+                                          <Label text="Bücher:">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </Label>
+                                          <TableView prefHeight="132.0" prefWidth="723.0">
+                                            <columns>
+                                              <TableColumn prefWidth="173.0" text="Titel" />
+                                              <TableColumn minWidth="0.0" prefWidth="148.0" text="ISBN" />
+                                            </columns>
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </HBox.margin>
+                                          </TableView>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="37.0" prefWidth="888.0">
+                                       <children>
+                                          <Pane prefHeight="37.0" prefWidth="663.0" />
+                                          <ButtonBar prefHeight="37.0" prefWidth="147.0">
+                                            <buttons>
+                                              <Button mnemonicParsing="false" text="Bücher verwalten" />
+                                            </buttons>
+                                          </ButtonBar>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
                </children>
             </AnchorPane>
         </items>

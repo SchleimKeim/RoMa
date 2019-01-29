@@ -33,7 +33,7 @@ public class PdfExporterTest {
         data.setCity("Zürich");
         data.setCountry("Schweiz");
         data.setISBN("978-3-86894-9188");
-        data.setTitle("Meine grosse Liebe PDF");
+        data.setTitle("Hallo");
         data.setAuthor("Paul Pedeef");
         data.setPriceHardCoverChf(29.55);
         data.setPriceHardCoverChfExMwSt(26.45);

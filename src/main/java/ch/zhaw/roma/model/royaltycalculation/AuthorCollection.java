@@ -1,4 +1,4 @@
-package ch.zhaw.roma.helpers;
+package ch.zhaw.roma.model.royaltycalculation;
 
 import ch.zhaw.roma.model.royaltycalculation.Author;
 import javafx.collections.FXCollections;
