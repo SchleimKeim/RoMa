@@ -29,6 +29,7 @@ import java.util.ResourceBundle;
 
 public class ImportExcelViewController implements Initializable {
 
+    //region Fields
     @FXML
     private SimpleStringProperty filePath = new SimpleStringProperty(this, "filePath");
     @FXML
@@ -42,63 +43,9 @@ public class ImportExcelViewController implements Initializable {
     public TextArea statusTextArea;
     private SessionFactory sessionFactory;
     private StandardServiceRegistry registry;
+    //endregion
 
-    public ImportExcelViewController() {
-        setFilePath("Bitte Datei wählen...");
-        setStatusText("Bitte Datei wählen...");
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        registry = new StandardServiceRegistryBuilder()
-                .configure("hibernate.cfg.xml")
-                .build();
-        sessionFactory = new MetadataSources(registry)
-             .buildMetadata()
-             .buildSessionFactory();
-
-        documentTypeVerlag.getToggleGroup().selectToggle(documentTypeVerlag);
-    }
-
-    public void onImport(ActionEvent actionEvent) {
-        if(filePath == null)
-            return;
-
-        SheetType type = getSelectedType();
-
-        ExcelSheet sheet = new ExcelImporter(filePath.get(), type).importSheet();
-        if(sheet == null)
-            return;
-
-        if(sheet.isInhouseSheet())
-            saveInhouse(ExcelToEntityConverter.createFrom(sheet.asInhouse()));
-        else
-            saveBookWire(ExcelToEntityConverter.createFrom(sheet.asBookwire()));
-    }
-
-    private SheetType getSelectedType() {
-        return documentTypeBookwire.isSelected() ? SheetType.Bookwire : SheetType.Verlagsabrechnung;
-    }
-
-    private void saveBookWire(BookWireSheetModel bookWireSheetModel) {
-        changeStatusText(bookWireSheetModel.save(sessionFactory.openSession()));
-    }
-
-    private void saveInhouse(InhouseSheetModel inhouseSheetModel) {
-        changeStatusText(inhouseSheetModel.save(sessionFactory.openSession()));
-    }
-
-    public void onChooseFile(ActionEvent actionEvent) {
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        if (stage == null)
-            return;
-
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setInitialDirectory(Paths.get("./src/test/resources").toFile());
-        fileChooser.setTitle("Open Resource File");
-        setFilePath(fileChooser.showOpenDialog(stage).toString());
-    }
-
+    //region Getters and Setters
     public StringProperty filePathProperty() {
         return filePath;
     }
@@ -122,8 +69,79 @@ public class ImportExcelViewController implements Initializable {
     public void setStatusText(String statusText) {
         this.statusText.set(statusText);
     }
+    //endregion
 
+    //region Construction
+    public ImportExcelViewController() {
+        setFilePath("Bitte Datei wählen...");
+        setStatusText("Bitte Datei wählen...");
+    }
+    //endregion
+
+    //region Overrides
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+        setFilePath("call from initialize...");
+        setStatusText("call from initialize...");
+
+        registry = new StandardServiceRegistryBuilder()
+                .configure("hibernate.cfg.xml")
+                .build();
+        sessionFactory = new MetadataSources(registry)
+                .buildMetadata()
+                .buildSessionFactory();
+
+        documentTypeVerlag.getToggleGroup().selectToggle(documentTypeVerlag);
+    }
+    //endregion
+
+    //region Action Handler
+    public void onImport(ActionEvent actionEvent) {
+        if (filePath == null)
+            return;
+
+        SheetType type = getSelectedType();
+
+        ExcelSheet sheet = new ExcelImporter(filePath.get(), type).importSheet();
+        if (sheet == null)
+            return;
+
+        if (sheet.isInhouseSheet())
+            saveInhouse(ExcelToEntityConverter.createFrom(sheet.asInhouse()));
+        else
+            saveBookWire(ExcelToEntityConverter.createFrom(sheet.asBookwire()));
+    }
+
+    public void onChooseFile(ActionEvent actionEvent) {
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        if (stage == null)
+            return;
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setInitialDirectory(Paths.get("./src/test/resources").toFile());
+        fileChooser.setTitle("Open Resource File");
+        setFilePath(fileChooser.showOpenDialog(stage).toString());
+    }
+    //endregion
+
+
+    //region Private Helpers
     private void changeStatusText(boolean success) {
         setStatusText(success ? "Datei erfolgreich importiert" : "Datei konnte nicht importiert werden!");
     }
+
+    private SheetType getSelectedType() {
+        return documentTypeBookwire.isSelected() ? SheetType.Bookwire : SheetType.Verlagsabrechnung;
+    }
+
+    private void saveBookWire(BookWireSheetModel bookWireSheetModel) {
+        changeStatusText(bookWireSheetModel.save(sessionFactory.openSession()));
+    }
+
+    private void saveInhouse(InhouseSheetModel inhouseSheetModel) {
+        changeStatusText(inhouseSheetModel.save(sessionFactory.openSession()));
+    }
+    //endregion
+
 }

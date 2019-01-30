@@ -22,6 +22,7 @@ ch\zhaw\roma\helpers\pdf\PdfExportData.class
 ch\zhaw\roma\model\excel\persistence\BookWireSheetModel.class
 ch\zhaw\roma\helpers\excel\ExcelImporter.class
 ch\zhaw\roma\model\form\Country.class
+ch\zhaw\roma\controller\DataEditorViewController.class
 ch\zhaw\roma\model\form\Greeting$1.class
 ch\zhaw\roma\model\excel\inhouse\InhouseRow.class
 ch\zhaw\roma\model\royaltycalculation\AuxRight.class
@@ -34,7 +35,6 @@ ch\zhaw\roma\model\excel\ExcelSheet.class
 ch\zhaw\roma\model\royaltycalculation\SoldBooksYearly.class
 ch\zhaw\roma\helpers\XmlHelper.class
 ch\zhaw\roma\model\excel\persistence\BookWireRowModel.class
-ch\zhaw\roma\interfaces\IRepositority.class
 ch\zhaw\roma\model\AddressModel.class
 ch\zhaw\roma\model\form\Greeting.class
 ch\zhaw\roma\controller\IntroViewController.class

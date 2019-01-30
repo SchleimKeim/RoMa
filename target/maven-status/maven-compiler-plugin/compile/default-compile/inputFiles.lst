@@ -1,4 +1,5 @@
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\controller\EditRoMaNoteController.java
+D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\controller\DataEditorViewController.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\excel\bookwire\BookWireRow.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\Main.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\AuthorModel.java
@@ -6,7 +7,6 @@ D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\excel\inho
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\CompanyModel.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\BookModel.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\royaltycalculation\AccountEntry.java
-D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\interfaces\IRepositority.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\form\Country.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\controller\ImportExcelViewController.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\helpers\AuthorCollection.java
