@@ -1,6 +1,5 @@
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\controller\EditRoMaNoteController.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\excel\bookwire\BookWireRow.java
-D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\interfaces\IInhouseRowModel.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\Main.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\AuthorModel.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\excel\inhouse\RowIndexes.java
@@ -17,7 +16,6 @@ D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\excel\book
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\controller\SettingsViewController.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\excel\ExcelSheetType.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\royaltycalculation\Settlement.java
-D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\interfaces\IBookWireSheetModel.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\AddressModel.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\settings\RoMaSettings.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\helpers\pdf\PdfExporter.java
@@ -25,7 +23,6 @@ D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\form\Greet
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\controller\IntroViewController.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\controller\ManageAuthorsController.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\royaltycalculation\AuxRight.java
-D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\helpers\ApplicationRepo.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\royaltycalculation\Author.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\helpers\excel\ExcelImporter.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\royaltycalculation\SoldBooksYearly.java
@@ -39,7 +36,6 @@ D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\helpers\pdf\PdfE
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\excel\EmptyCell.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\excel\inhouse\InhouseRow.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\helpers\XmlHelper.java
-D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\interfaces\IInhouseSheetModel.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\excel\bookwire\BookWireSheet.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\excel\persistence\BookWireSheetModel.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\excel\SheetType.java

@@ -33,7 +33,7 @@ public class ExcelImporterTest {
 
     @Test
     public void loadInhouseSheetTest() {
-        ExcelSheet excelSheet = getInhouse().Import();
+        ExcelSheet excelSheet = getInhouse().importSheet();
         Assert.assertNotNull(excelSheet);
 
         InhouseSheet testSheet = excelSheet.asInhouse();
@@ -43,7 +43,7 @@ public class ExcelImporterTest {
 
     @Test
     public void basicLoadBookWireSheetTest() {
-        ExcelSheet excelSheet = getBookWire().Import();
+        ExcelSheet excelSheet = getBookWire().importSheet();
         Assert.assertNotNull(excelSheet);
         BookWireSheet testSheet = excelSheet.asBookwire();
         Assert.assertTrue(testSheet.getRowCount() == 98);

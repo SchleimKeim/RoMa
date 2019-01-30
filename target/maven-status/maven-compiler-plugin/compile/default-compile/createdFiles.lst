@@ -1,16 +1,13 @@
 ch\zhaw\roma\model\form\CreateData.class
-ch\zhaw\roma\interfaces\IInhouseSheetModel.class
 ch\zhaw\roma\model\BookModel.class
 ch\zhaw\roma\model\CompanyModel.class
 ch\zhaw\roma\model\excel\bookwire\BookWireSheet.class
 ch\zhaw\roma\model\royaltycalculation\Settlement.class
-ch\zhaw\roma\helpers\ApplicationRepo.class
 ch\zhaw\roma\model\excel\ExcelSheetType.class
 ch\zhaw\roma\model\excel\persistence\ExcelToEntityConverter.class
 ch\zhaw\roma\model\excel\persistence\InhouseRowModel.class
 ch\zhaw\roma\model\AuthorModel.class
 ch\zhaw\roma\helpers\AuthorCollection.class
-ch\zhaw\roma\interfaces\IInhouseRowModel.class
 ch\zhaw\roma\controller\ImportExcelViewController.class
 ch\zhaw\roma\model\excel\persistence\InhouseSheetModel.class
 ch\zhaw\roma\model\excel\inhouse\RowIndexes.class
@@ -38,7 +35,6 @@ ch\zhaw\roma\model\royaltycalculation\SoldBooksYearly.class
 ch\zhaw\roma\helpers\XmlHelper.class
 ch\zhaw\roma\model\excel\persistence\BookWireRowModel.class
 ch\zhaw\roma\interfaces\IRepositority.class
-ch\zhaw\roma\interfaces\IBookWireSheetModel.class
 ch\zhaw\roma\model\AddressModel.class
 ch\zhaw\roma\model\form\Greeting.class
 ch\zhaw\roma\controller\IntroViewController.class

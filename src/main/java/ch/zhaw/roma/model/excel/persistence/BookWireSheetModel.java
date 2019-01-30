@@ -15,35 +15,11 @@ public class BookWireSheetModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "SHEET_ID", nullable = false)
     private Long sheetId;
-    private String fileName = "";
-
-//    @Temporal(TemporalType.DATE)
-//    private Date created;
-//    @Temporal(TemporalType.DATE)
-//    private Date begin;
-//    @Temporal(TemporalType.DATE)
-//    private Date end;
-
-
+    @Column(name = "FILE_NAME")
+    private String fileName;
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "sheet")
     private Set<BookWireRowModel> rows;
     //endregion
-
-
-    //region Construction
-    public BookWireSheetModel() {
-
-    }
-
-    public BookWireSheetModel(Set<BookWireRowModel> rows) {
-
-        this.rows = rows;
-
-        for(BookWireRowModel r : this.rows)
-            r.setSheet(this);
-    }
-    //endregion
-
 
     //region Getters and Setters
     public Long getSheetId() {
@@ -58,22 +34,38 @@ public class BookWireSheetModel {
         return rows;
     }
 
-   public void setRows(Set<BookWireRowModel> rows) {
+    public void setRows(Set<BookWireRowModel> rows) {
         this.rows = rows;
-        for(BookWireRowModel r : this.rows)
+        for (BookWireRowModel r : this.rows)
             r.setSheet(this);
     }
 
     public String getFileName() {
-                                      return fileName;
-                                                      }
+        return fileName;
+    }
 
     public void setFileName(String fileName) {
-                                                   this.fileName = fileName;
-                                                                            }
+        this.fileName = fileName;
+    }
+    //endregion
 
+    //region Construction
+    public BookWireSheetModel() {
+
+    }
+
+    public BookWireSheetModel(Set<BookWireRowModel> rows, String fileName) {
+        this.fileName = fileName;
+        this.rows = rows;
+
+        for (BookWireRowModel r : this.rows)
+            r.setSheet(this);
+    }
+    //endregion
+
+    //region Public Members
     public boolean save(Session session) {
-         try {
+        try {
             session.beginTransaction();
             session.save(this);
             for (BookWireRowModel row : getRows())
@@ -85,29 +77,5 @@ public class BookWireSheetModel {
             return false;
         }
     }
-
-//    public Date getCreated() {
-//        return created;
-//    }
-//
-//    public void setCreated(Date created) {
-//        this.created = created;
-//    }
-//
-//    public Date getBegin() {
-//        return begin;
-//    }
-//
-//    public void setBegin(Date begin) {
-//        this.begin = begin;
-//    }
-//
-//    public Date getEnd() {
-//        return end;
-//    }
-//    public void setEnd(Date end) {
-//        this.end = end;
-//    }
-
     //endregion
 }

@@ -15,13 +15,13 @@ public class ExcelToEntityConverter {
     //region Public Members
     public static InhouseSheetModel createFrom(InhouseSheet inhouseSheet) {
         return (inhouseSheet != null)
-                   ? new InhouseSheetModel(getRows(inhouseSheet))
+                   ? new InhouseSheetModel(getRows(inhouseSheet), inhouseSheet.getFileName())
                    : null;
     }
 
     public static BookWireSheetModel createFrom(BookWireSheet bookWireSheet) {
         return (bookWireSheet != null)
-                   ? new BookWireSheetModel(getRows(bookWireSheet))
+                   ? new BookWireSheetModel(getRows(bookWireSheet), bookWireSheet.getFileName())
                    : null;
     }
     //endregion

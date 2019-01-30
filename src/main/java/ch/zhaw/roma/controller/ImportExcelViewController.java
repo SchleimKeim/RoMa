@@ -66,7 +66,7 @@ public class ImportExcelViewController implements Initializable {
 
         SheetType type = getSelectedType();
 
-        ExcelSheet sheet = new ExcelImporter(filePath.get(), type).Import();
+        ExcelSheet sheet = new ExcelImporter(filePath.get(), type).importSheet();
         if(sheet == null)
             return;
 

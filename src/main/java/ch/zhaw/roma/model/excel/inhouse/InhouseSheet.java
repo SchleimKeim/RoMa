@@ -18,8 +18,8 @@ public class InhouseSheet extends ExcelSheet {
     //endregion
 
     //region Construction
-    protected InhouseSheet(XSSFWorkbook workbook) {
-        super(workbook, InhouseSheet.class);
+    protected InhouseSheet(XSSFWorkbook workbook, String fileName) {
+        super(workbook, InhouseSheet.class, fileName);
         loadRows();
     }
     //endregion
@@ -30,7 +30,7 @@ public class InhouseSheet extends ExcelSheet {
         if(workbook == null)
             throw new Exception("Die Datei im parameter \'path\' konnte nicht geladen werden!");
 
-        return new InhouseSheet(workbook);
+        return new InhouseSheet(workbook, path);
     }
 
     public int getRowCount() {
@@ -66,7 +66,7 @@ public class InhouseSheet extends ExcelSheet {
     protected void loadRows() {
         int rowCounter = 0;
         ArrayList<InhouseRow> result = new ArrayList<>();
-        for (Sheet s : _workbook) {
+        for (Sheet s : workbook) {
             for (Row row : s) {
                 rowCounter++;
                 if (rowCounter >= FIRST_INHOUSE_SHEET_ROW) {

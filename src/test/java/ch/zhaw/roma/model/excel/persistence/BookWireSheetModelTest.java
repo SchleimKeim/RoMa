@@ -19,7 +19,7 @@ public class BookWireSheetModelTest extends TestRepository {
 
     @Test
     public void BookWireSheetModelTest(){
-        BookWireSheet bookWireSheet = new ExcelImporter(bookWireFile.toString(), SheetType.Bookwire).Import().asBookwire();
+        BookWireSheet bookWireSheet = new ExcelImporter(bookWireFile.toString(), SheetType.Bookwire).importSheet().asBookwire();
         Assert.assertNotNull(bookWireSheet);
         bookWireSheetModel = ExcelToEntityConverter.createFrom(bookWireSheet);
         Assert.assertNotNull(bookWireSheetModel);

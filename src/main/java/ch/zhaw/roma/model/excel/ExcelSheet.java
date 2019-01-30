@@ -9,15 +9,17 @@ import java.lang.reflect.Type;
 public abstract class ExcelSheet {
 
     //region Fields
-    protected Workbook _workbook;
-    protected Type _type;
+    protected Workbook workbook;
+    protected Type type;
+    private String fileName;
     //endregion
 
     //region Construction
-    public ExcelSheet(Workbook workbook, Type type)
+    public ExcelSheet(Workbook workbook, Type type, String fileName)
     {
-        _workbook = workbook;
-        _type = type;
+        this.workbook = workbook;
+        this.type = type;
+        this.fileName = fileName;
     }
     //endregion
 
@@ -39,11 +41,19 @@ public abstract class ExcelSheet {
     }
 
     public boolean isInhouseSheet() {
-        return (_type.getTypeName() == InhouseSheet.class.getTypeName());
+        return (type.getTypeName() == InhouseSheet.class.getTypeName());
     }
 
     public boolean isBookWireSheet() {
-        return (_type.getTypeName() == BookWireSheet.class.getTypeName());
+        return (type.getTypeName() == BookWireSheet.class.getTypeName());
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String _fileName) {
+        this.fileName = _fileName;
     }
     //endregion
 }

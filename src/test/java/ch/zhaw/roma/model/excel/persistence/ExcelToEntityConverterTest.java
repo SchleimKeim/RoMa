@@ -24,7 +24,7 @@ public class ExcelToEntityConverterTest {
             inhouseFile.toString(),
             SheetType.Verlagsabrechnung
         )
-        .Import()
+        .importSheet()
         .asInhouse();
         Assert.assertNotNull(sheet);
         int rowCount = sheet.getRows().length;
@@ -45,7 +45,7 @@ public class ExcelToEntityConverterTest {
             BookWireSheet sheet = new ExcelImporter(
                 bookWireFile.toString(),
                 SheetType.Bookwire
-            ).Import()
+            ).importSheet()
             .asBookwire();
 
             BookWireSheetModel modelSheet = ExcelToEntityConverter.createFrom(sheet);

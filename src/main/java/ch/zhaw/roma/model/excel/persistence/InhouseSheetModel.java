@@ -11,27 +11,15 @@ import java.util.Set;
 public class InhouseSheetModel {
 
     //region Private Fields
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "SHEET_ID", nullable = false)
     private Long sheetId;
+    @Column(name = "FILE_NAME")
+    private String fileName;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "sheet")
     private Set<InhouseRowModel> rows;
-    //endregion
-
-    //region Construction
-    public InhouseSheetModel() {
-
-    }
-
-    public InhouseSheetModel(Set<InhouseRowModel> rows) {
-        this.rows = rows;
-
-        for(InhouseRowModel r : this.rows)
-            r.setSheet(this);
-    }
     //endregion
 
     //region Setters and Getters
@@ -48,14 +36,29 @@ public class InhouseSheetModel {
     }
 
     public void setRows(Set<InhouseRowModel> rows) {
-        if(rows == null)
+        if (rows == null)
             return;
 
         this.rows = rows;
-        for(InhouseRowModel row : this.rows)
+        for (InhouseRowModel row : this.rows)
             row.setSheet(this);
     }
+    //endregion
 
+    //region Construction
+    public InhouseSheetModel() {
+
+    }
+
+    public InhouseSheetModel(Set<InhouseRowModel> rows, String fileName) {
+        this.rows = rows;
+        this.fileName = fileName;
+        for (InhouseRowModel r : this.rows)
+            r.setSheet(this);
+    }
+    //endregion
+
+    //region Public Members
     public boolean save(Session session) {
         try {
             session.beginTransaction();

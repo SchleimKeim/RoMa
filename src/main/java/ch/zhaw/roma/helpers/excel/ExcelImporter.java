@@ -46,20 +46,12 @@ public class ExcelImporter {
     //endregion
 
     //region Public Members
-    public static Workbook LoadWorkbook(String path, boolean isXssf) {
-        try {
-            return WorkbookFactory.create(Paths.get(path).toFile());
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-    public ExcelSheet Import() {
+    public ExcelSheet importSheet() {
         switch (type.getType()) {
             case Bookwire:
-                return LoadBookwire();
+                return loadBookwire();
             case Verlagsabrechnung:
-                return LoadInhouse();
+                return loadInhouse();
             default:
                 return null;
         }
@@ -69,20 +61,20 @@ public class ExcelImporter {
 
     //region Private Helpers
 
-    private InhouseSheet LoadInhouse() {
+    private InhouseSheet loadInhouse() {
         try {
             return InhouseSheet.load(file.getAbsolutePath());
         } catch (Exception e) {
-            e.printStackTrace(); // Typisierte exception schmeissen für korrekten error im UI;
+            e.printStackTrace();
             return null;
         }
     }
 
-    private BookWireSheet LoadBookwire() {
+    private BookWireSheet loadBookwire() {
         try {
             return BookWireSheet.load(file.getAbsolutePath());
         } catch (Exception e) {
-            e.printStackTrace(); // Typisierte exception schmeissen für korrekten error im UI;
+            e.printStackTrace();
             return null;
         }
     }

@@ -20,7 +20,7 @@ public class InhouseSheetModelTest extends TestRepository {
     @Test
     public void InhouseSheetModelTest() {
         InhouseSheet sheet = new ExcelImporter(inhouseFile.toString(), SheetType.Verlagsabrechnung)
-                .Import()
+                .importSheet()
                 .asInhouse();
 
         Assert.assertNotNull(sheet);

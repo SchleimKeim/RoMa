@@ -19,8 +19,8 @@ public class BookWireSheet extends ExcelSheet {
     //endregion
 
     //region Construction
-    public BookWireSheet(XSSFWorkbook workbook) {
-        super(workbook, BookWireSheet.class);
+    public BookWireSheet(XSSFWorkbook workbook, String fileName) {
+        super(workbook, BookWireSheet.class, fileName);
         parse(workbook);
     }
 
@@ -29,7 +29,7 @@ public class BookWireSheet extends ExcelSheet {
         if (workbook == null)
             throw new Exception("Die Datei im parameter \'path\' konnte nicht geladen werden!");
 
-        return new BookWireSheet(workbook);
+        return new BookWireSheet(workbook, path);
     }
     //endregion
 
