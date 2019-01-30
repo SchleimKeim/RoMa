@@ -1,11 +1,11 @@
-package ch.zhaw.roma.model;
+package ch.zhaw.roma.model.test;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "ADDRESSES")
 @Access(AccessType.FIELD)
-public class AddressModel {
+public class TestAddressModel {
     @Id
     @Column(name = "ADDRESS_ID", updatable = false, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)

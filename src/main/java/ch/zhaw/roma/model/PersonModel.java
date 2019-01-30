@@ -1,5 +1,8 @@
 package ch.zhaw.roma.model;
 
+import ch.zhaw.roma.model.test.TestBookModel;
+import org.hibernate.Session;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -13,19 +16,33 @@ public class PersonModel {
     @Column(name = "PERSON_ID", updatable = false, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long authorId;
+    @Column(name = "FIRST_NAME")
     private String firstName;
+    @Column(name = "LAST_NAME")
     private String lastName;
+    @Column(name = "STREET1")
     private String street1;
+    @Column(name = "STREET2")
     private String street2;
+    @Column(name = "STREET3")
     private String street3;
+    @Column(name = "ZIP_CODE")
     private String zipCode;
+    @Column(name = "CITY")
     private String city;
+    @Column(name = "COUNTRY")
     private String country;
+    @Column(name = "EMAIL")
     private String email;
+    @Column(name = "WEBSITE")
     private String website;
+    @Column(name = "MOBILE_PHON")
     private String mobilePhone;
+    @Column(name = "OFFICE_PHONE")
     private String officePhone;
+    @Column(name = "PRIVATE_PHONE")
     private String privatePhone;
+    @Column(name = "GREETING")
     private String greeting;
 
     @ManyToMany(cascade = { CascadeType.ALL })
@@ -34,11 +51,7 @@ public class PersonModel {
         joinColumns = { @JoinColumn(name = "BOOK_ID") },
         inverseJoinColumns = { @JoinColumn(name = "PERSON_ID") }
     )
-
     private Set<TestBookModel> books;
-    //endregion
-
-    //region Public Fields
     //endregion
 
     //region Getters And Setters
@@ -172,9 +185,26 @@ public class PersonModel {
     //endregion
 
     //region Construction
+    public PersonModel() {
+
+    }
     //endregion
 
     //region Public Members
+    public boolean save(Session session) {
+        if(session == null)
+            return false;
+
+        try {
+            session.beginTransaction();
+            session.save(this);
+            session.getTransaction().commit();
+            return true;
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+            return false;
+        }
+    }
     //endregion
 
     //region Private Helpers

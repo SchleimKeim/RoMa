@@ -1,10 +1,10 @@
-package ch.zhaw.roma.model;
+package ch.zhaw.roma.model.test;
 
 import javax.persistence.*;
 
 @Entity
 @Access(AccessType.FIELD)
-public class CompanyModel {
+public class TestCompanyModel {
     @Id
     @Column(name = "AUTHOR_ID", updatable = false, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,7 +12,7 @@ public class CompanyModel {
     private String companyName;
     @OneToOne(fetch = FetchType.LAZY)
     @PrimaryKeyJoinColumn
-    private AddressModel address;
+    private TestAddressModel address;
 
     public Long getCompanyId() {
         return companyId;
@@ -30,11 +30,11 @@ public class CompanyModel {
         this.companyName = companyName;
     }
 
-    public AddressModel getAddress() {
+    public TestAddressModel getAddress() {
         return address;
     }
 
-    public void setAddress(AddressModel address) {
+    public void setAddress(TestAddressModel address) {
         this.address = address;
     }
 }

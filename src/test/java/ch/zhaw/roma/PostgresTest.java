@@ -1,6 +1,6 @@
 package ch.zhaw.roma;
 
-import ch.zhaw.roma.model.TestBookModel;
+import ch.zhaw.roma.model.test.TestBookModel;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;

@@ -1,4 +1,4 @@
-package ch.zhaw.roma.model;
+package ch.zhaw.roma.model.test;
 
 import javax.persistence.*;
 import java.util.Set;

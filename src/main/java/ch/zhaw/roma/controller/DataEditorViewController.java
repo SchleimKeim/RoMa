@@ -23,10 +23,10 @@ public class DataEditorViewController implements Initializable {
     //endregion
 
     //region Action Handler
-    public void onShowBookView(ActionEvent actionEvent) {
+    public void onShowBooksView(ActionEvent actionEvent) {
     }
 
-    public void onShowPersonView(ActionEvent actionEvent) {
+    public void onShowPersonsView(ActionEvent actionEvent) {
     }
     //endregion
 }

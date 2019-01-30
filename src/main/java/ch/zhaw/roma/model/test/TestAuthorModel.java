@@ -1,4 +1,4 @@
-package ch.zhaw.roma.model;
+package ch.zhaw.roma.model.test;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -18,7 +18,7 @@ public class TestAuthorModel {
     private String lastName;
     @OneToOne(fetch = FetchType.LAZY)
     @PrimaryKeyJoinColumn
-    private AddressModel address;
+    private TestAddressModel address;
 
     @ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
@@ -60,11 +60,11 @@ public class TestAuthorModel {
         this.lastName = lastName;
     }
 
-    public AddressModel getAddress() {
+    public TestAddressModel getAddress() {
         return address;
     }
 
-    public void setAddress(AddressModel address) {
+    public void setAddress(TestAddressModel address) {
         this.address = address;
     }
 

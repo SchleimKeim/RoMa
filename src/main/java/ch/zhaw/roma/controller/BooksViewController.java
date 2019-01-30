@@ -1,12 +1,11 @@
 package ch.zhaw.roma.controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class BookViewController implements Initializable {
+public class BooksViewController implements Initializable {
     //region Private Fields
     //endregion
 
@@ -17,14 +16,6 @@ public class BookViewController implements Initializable {
     //endregion
 
     //region Construction
-    //endregion
-
-    //region Action Handler
-    public void onDeletePerson(ActionEvent actionEvent) {
-    }
-
-    public void onAddPerson(ActionEvent actionEvent) {
-    }
     //endregion
 
     //region Public Members
@@ -38,7 +29,5 @@ public class BookViewController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
     }
-
-
     //endregion
 }
