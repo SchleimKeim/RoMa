@@ -57,8 +57,8 @@
                 </AnchorPane>
             <AnchorPane prefHeight="400.0" prefWidth="600.0">
                <children>
-                  <fx:include fx:id="peronsView" source="PersonsView.fxml" />
-                  <fx:include fx:id="booksView" source="BooksView.fxml" />
+                  <fx:include fx:id="personsView" source="PersonsView.fxml" visible="${personsViewVisibility}"/>
+                  <fx:include fx:id="booksView" source="BooksView.fxml" visible="${booksViewVisibility}"/>
                </children>
             </AnchorPane>
             </items>

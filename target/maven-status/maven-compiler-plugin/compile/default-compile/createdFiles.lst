@@ -22,12 +22,14 @@ ch\zhaw\roma\model\form\Country$1.class
 ch\zhaw\roma\controller\obsolete\NewAuthorViewController.class
 ch\zhaw\roma\model\royaltycalculation\LegacyEntry.class
 ch\zhaw\roma\helpers\excel\ExcelImporter$1.class
+ch\zhaw\roma\helpers\InitDBService$1.class
 ch\zhaw\roma\model\test\TestCompanyModel.class
 ch\zhaw\roma\helpers\pdf\PdfExportData.class
 ch\zhaw\roma\model\excel\persistence\BookWireSheetModel.class
 ch\zhaw\roma\helpers\excel\ExcelImporter.class
 ch\zhaw\roma\model\form\Country.class
 ch\zhaw\roma\controller\DataEditorViewController.class
+ch\zhaw\roma\helpers\InitDBService.class
 ch\zhaw\roma\model\form\Greeting$1.class
 ch\zhaw\roma\controller\obsolete\ManageAuthorsController.class
 ch\zhaw\roma\model\excel\inhouse\InhouseRow.class
@@ -42,6 +44,7 @@ ch\zhaw\roma\model\royaltycalculation\SoldBooksYearly.class
 ch\zhaw\roma\helpers\XmlHelper.class
 ch\zhaw\roma\model\excel\persistence\BookWireRowModel.class
 ch\zhaw\roma\controller\BookViewController.class
+ch\zhaw\roma\helpers\InitDbResult.class
 ch\zhaw\roma\model\form\Greeting.class
 ch\zhaw\roma\controller\IntroViewController.class
 ch\zhaw\roma\controller\PersonsViewController.class

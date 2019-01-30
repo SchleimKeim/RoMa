@@ -37,7 +37,9 @@ D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\settings\R
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\form\Greeting.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\controller\IntroViewController.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\royaltycalculation\AuxRight.java
+D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\helpers\InitDBService.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\helpers\excel\ExcelImporter.java
+D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\helpers\InitDbResult.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\royaltycalculation\SoldBooksYearly.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\excel\persistence\ExcelToEntityConverter.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\test\TestAddressModel.java

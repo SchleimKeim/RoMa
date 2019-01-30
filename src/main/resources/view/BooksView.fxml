@@ -11,4 +11,10 @@
             fx:controller="ch.zhaw.roma.controller.BooksViewController"
             prefHeight="400.0" prefWidth="600.0">
 
+    <userData>
+        <fx:reference source="controller" />
+    </userData>
+    <properties>
+        <ctrl><fx:reference source="controller"/></ctrl>
+    </properties>
 </AnchorPane>

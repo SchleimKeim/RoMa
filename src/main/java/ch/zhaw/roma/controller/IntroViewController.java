@@ -30,6 +30,7 @@ public class IntroViewController implements Initializable {
     }
 
     public void openDataEditor(ActionEvent actionEvent) {
+        openWindow("/view/DataEditorView.fxml", "Stammdaten bearbeiten");
     }
 
     public void openSettings(ActionEvent actionEvent) {
@@ -40,7 +41,7 @@ public class IntroViewController implements Initializable {
         Stage settingsViewStage = new Stage();
         try {
             settingsViewStage.setScene(new Scene(FXMLLoader.load(getClass().getResource(path))));
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         settingsViewStage.setTitle(title);

@@ -2,6 +2,8 @@ package ch.zhaw.roma.controller;
 
 import ch.zhaw.roma.helpers.InitDBService;
 import ch.zhaw.roma.helpers.InitDbResult;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
@@ -18,11 +20,36 @@ public class DataEditorViewController implements Initializable {
     //endregion
 
     //region Public Fields
-    public AnchorPane peronsView;
+    public AnchorPane personsView;
     public AnchorPane booksView;
+    public SimpleBooleanProperty personsViewVisibility = new SimpleBooleanProperty(this, "personsViewVisibility");
+    public SimpleBooleanProperty booksViewVisibility = new SimpleBooleanProperty(this, "booksViewVisibility");
     //endregion
 
     //region Getters And Setters
+    public BooleanProperty booksViewVisibilityProperty() {
+        return booksViewVisibility;
+    }
+
+    public boolean getBooksViewVisibility() {
+        return booksViewVisibility.get();
+    }
+
+    public void setBooksViewVisibility(boolean value) {
+        this.booksViewVisibility.set(value);
+    }
+
+    public BooleanProperty personsViewVisibilityProperty() {
+        return personsViewVisibility;
+    }
+
+    public boolean getPersonsViewVisibility() {
+        return personsViewVisibility.get();
+    }
+
+    public void setPersonsViewVisibility(boolean value) {
+        this.personsViewVisibility.set(value);
+    }
     //endregion
 
     //region Construction
@@ -33,9 +60,11 @@ public class DataEditorViewController implements Initializable {
 
     //region Action Handler
     public void onShowBooksView(ActionEvent actionEvent) {
+        showBooksView();
     }
 
     public void onShowPersonsView(ActionEvent actionEvent) {
+        showPersonsView();
     }
     //endregion
 
@@ -55,6 +84,20 @@ public class DataEditorViewController implements Initializable {
             else
                 System.out.println("Datenbank NICHT geladen!");
         });
+    }
+
+    private void showPersonsView() {
+        setBooksViewVisibility(false);
+        setPersonsViewVisibility(true);
+//        PersonsViewController controller = (PersonsViewController)personsView.getProperties().get("ctrl");
+//        controller.setDbConnection(sessionFactory, serviceRegistry);
+    }
+
+    private void showBooksView() {
+        setPersonsViewVisibility(false);
+        setBooksViewVisibility(true);
+//        BooksViewController controller = (BooksViewController) booksView.getProperties().get("ctrl");
+//        controller.setDbConnection(sessionFactory, serviceRegistry);
     }
 
     //endregion
