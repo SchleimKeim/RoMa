@@ -1,11 +1,10 @@
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\controller\EditRoMaNoteController.java
+D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\controller\BookViewController.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\controller\DataEditorViewController.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\excel\bookwire\BookWireRow.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\Main.java
-D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\AuthorModel.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\excel\inhouse\RowIndexes.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\CompanyModel.java
-D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\BookModel.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\royaltycalculation\AccountEntry.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\form\Country.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\controller\ImportExcelViewController.java
@@ -14,6 +13,7 @@ D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\excel\inho
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\form\CreateData.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\controller\PersonViewController.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\excel\bookwire\BookWireIndexes.java
+D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\controller\obsolete\NewAuthorViewController.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\controller\SettingsViewController.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\excel\ExcelSheetType.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\royaltycalculation\Settlement.java
@@ -22,12 +22,10 @@ D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\settings\R
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\helpers\pdf\PdfExporter.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\form\Greeting.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\controller\IntroViewController.java
-D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\controller\ManageAuthorsController.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\royaltycalculation\AuxRight.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\royaltycalculation\Author.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\helpers\excel\ExcelImporter.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\royaltycalculation\SoldBooksYearly.java
-D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\controller\EditAuthorViewController.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\royaltycalculation\LegacyEntry.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\excel\ExcelSheet.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\excel\persistence\ExcelToEntityConverter.java
@@ -38,8 +36,12 @@ D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\excel\Empt
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\excel\inhouse\InhouseRow.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\helpers\XmlHelper.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\excel\bookwire\BookWireSheet.java
+D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\TestAuthorModel.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\excel\persistence\BookWireSheetModel.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\excel\SheetType.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\excel\persistence\InhouseRowModel.java
-D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\controller\NewAuthorViewController.java
+D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\PersonModel.java
+D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\TestBookModel.java
+D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\controller\obsolete\EditAuthorViewController.java
+D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\controller\obsolete\ManageAuthorsController.java
 D:\Coding\Projects\IdeaProjects\RoMa\src\main\java\ch\zhaw\roma\model\excel\persistence\BookWireRowModel.java

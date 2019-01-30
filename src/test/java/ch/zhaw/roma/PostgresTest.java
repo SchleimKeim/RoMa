@@ -1,6 +1,6 @@
 package ch.zhaw.roma;
 
-import ch.zhaw.roma.model.BookModel;
+import ch.zhaw.roma.model.TestBookModel;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
@@ -24,7 +24,7 @@ public class PostgresTest {
                                                      .build();
         try {
             sessionFactory = new MetadataSources(registry)
-                                 //.addAnnotatedClass(BookModel.class)
+                                 //.addAnnotatedClass(TestBookModel.class)
                                  .buildMetadata()
                                  .buildSessionFactory();
 
@@ -41,7 +41,7 @@ public class PostgresTest {
         try {
             Session s = sessionFactory.openSession();
             s.beginTransaction();
-            for (BookModel b : getTestModels())
+            for (TestBookModel b : getTestModels())
                 s.save(b);
 
             s.getTransaction().commit();
@@ -68,7 +68,7 @@ public class PostgresTest {
         final Session s = sessionFactory.openSession();
         try {
             s.beginTransaction();
-            List<BookModel> existing = s.createQuery("FROM BookModel").list();
+            List<TestBookModel> existing = s.createQuery("FROM TestBookModel").list();
             s.getTransaction().commit();
             Assert.assertTrue(existing != null);
         } catch (Exception ex) {
@@ -86,15 +86,15 @@ public class PostgresTest {
         final Session s = sessionFactory.openSession();
         try {
             s.beginTransaction();
-            List<BookModel> existing = s.createQuery("FROM BookModel").list();
+            List<TestBookModel> existing = s.createQuery("FROM TestBookModel").list();
             Assert.assertNotNull(existing);
-            BookModel newEntry = new BookModel("XXXXXwwQ", "Der Wind in den Hosen");
+            TestBookModel newEntry = new TestBookModel("XXXXXwwQ", "Der Wind in den Hosen");
             s.save(newEntry);
             s.getTransaction().commit();
 
 
             s.beginTransaction();
-            List<BookModel> updated = s.createQuery("FROM BookModel").list();
+            List<TestBookModel> updated = s.createQuery("FROM TestBookModel").list();
             s.getTransaction().commit();
 
             Assert.assertNotNull(updated);
@@ -113,11 +113,11 @@ public class PostgresTest {
         Assert.assertTrue(true);
     }
 
-    private final BookModel[] getTestModels() {
-        return new BookModel[]{
-            new BookModel("xxxxxxx", "The Dark Tower"),
-            new BookModel("xxxxxxx", "The King in Yellow"),
-            new BookModel("xxxxxxx", "Cthulu")
+    private final TestBookModel[] getTestModels() {
+        return new TestBookModel[]{
+            new TestBookModel("xxxxxxx", "The Dark Tower"),
+            new TestBookModel("xxxxxxx", "The King in Yellow"),
+            new TestBookModel("xxxxxxx", "Cthulu")
         };
     }
 }

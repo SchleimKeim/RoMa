@@ -5,7 +5,8 @@ import java.util.Set;
 
 @Entity
 @Access(AccessType.FIELD)
-public class BookModel {
+@Table(name = "TESTBOOKS")
+public class TestBookModel {
 
     //region Private Fields
     @Id
@@ -19,15 +20,15 @@ public class BookModel {
     private String title;
 
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "books")
-    private Set<AuthorModel> authors;
+    private Set<TestAuthorModel> authors;
     //endregion
 
     //region Construction
-    public BookModel() {
+    public TestBookModel() {
 
     }
 
-    public BookModel(String isbnNumber, String title) {
+    public TestBookModel(String isbnNumber, String title) {
         this.isbnNumber = isbnNumber;
         this.title = title;
     }
@@ -58,11 +59,11 @@ public class BookModel {
         this.isbnNumber = isbnNumber;
     }
 
-    public Set<AuthorModel> getAuthors() {
+    public Set<TestAuthorModel> getAuthors() {
         return authors;
     }
 
-    public void setAuthors(Set<AuthorModel> authors) {
+    public void setAuthors(Set<TestAuthorModel> authors) {
         this.authors = authors;
     }
     //endregion

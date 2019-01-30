@@ -5,7 +5,7 @@ import java.util.Set;
 
 @Entity
 @Access(AccessType.FIELD)
-public class AuthorModel {
+public class TestAuthorModel {
     @Id
     @Column(name = "AUTHOR_ID", updatable = false, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,7 +26,7 @@ public class AuthorModel {
         joinColumns = { @JoinColumn(name = "BOOK_ID") },
         inverseJoinColumns = { @JoinColumn(name = "ADDRESS_ID") }
     )
-    private Set<BookModel> books;
+    private Set<TestBookModel> books;
 
     public Long getAuthorId() {
         return authorId;
@@ -68,11 +68,11 @@ public class AuthorModel {
         this.address = address;
     }
 
-    public Set<BookModel> getBooks() {
+    public Set<TestBookModel> getBooks() {
         return books;
     }
 
-    public void setBooks(Set<BookModel> books) {
+    public void setBooks(Set<TestBookModel> books) {
         this.books = books;
     }
 }

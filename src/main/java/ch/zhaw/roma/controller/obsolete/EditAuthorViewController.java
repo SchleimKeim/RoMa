@@ -1,4 +1,4 @@
-package ch.zhaw.roma.controller;
+package ch.zhaw.roma.controller.obsolete;
 
 import ch.zhaw.roma.model.form.Country;
 import ch.zhaw.roma.model.form.Greeting;

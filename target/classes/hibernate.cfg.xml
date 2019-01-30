@@ -30,8 +30,8 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <!-- MAPPINGS -->
-        <mapping class="ch.zhaw.roma.model.BookModel"/>
-        <mapping class="ch.zhaw.roma.model.AuthorModel"/>
+        <mapping class="ch.zhaw.roma.model.TestBookModel"/>
+        <mapping class="ch.zhaw.roma.model.TestAuthorModel"/>
         <mapping class="ch.zhaw.roma.model.AddressModel"/>
         <mapping class="ch.zhaw.roma.model.excel.persistence.InhouseSheetModel"/>
         <mapping class="ch.zhaw.roma.model.excel.persistence.InhouseRowModel"/>

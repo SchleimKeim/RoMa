@@ -1,6 +1,7 @@
-package ch.zhaw.roma.controller;
+package ch.zhaw.roma.controller.obsolete;
 
 import ch.zhaw.roma.Main;
+import ch.zhaw.roma.controller.obsolete.EditAuthorViewController;
 import ch.zhaw.roma.model.royaltycalculation.Author;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
