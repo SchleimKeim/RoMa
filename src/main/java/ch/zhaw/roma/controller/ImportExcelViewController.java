@@ -12,9 +12,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -32,17 +32,14 @@ public class ImportExcelViewController implements Initializable {
     //region Fields
     @FXML
     private SimpleStringProperty filePath = new SimpleStringProperty(this, "filePath");
-    @FXML
-    private SimpleStringProperty statusText = new SimpleStringProperty(this, "statusText");
 
     public TextField path;
     public Button chooseFile;
     public Button startImport;
     public RadioButton documentTypeVerlag;
     public RadioButton documentTypeBookwire;
-    public TextArea statusTextArea;
     private SessionFactory sessionFactory;
-    private StandardServiceRegistry registry;
+    private StandardServiceRegistry serviceRegistry;
     //endregion
 
     //region Getters and Setters
@@ -57,24 +54,10 @@ public class ImportExcelViewController implements Initializable {
     public void setFilePath(String filePath) {
         this.filePath.set(filePath);
     }
-
-    public StringProperty statusTextProperty() {
-        return filePath;
-    }
-
-    public String getStatusText() {
-        return statusText.get();
-    }
-
-    public void setStatusText(String statusText) {
-        this.statusText.set(statusText);
-    }
     //endregion
 
     //region Construction
     public ImportExcelViewController() {
-        setFilePath("Bitte Datei wählen...");
-        setStatusText("Bitte Datei wählen...");
     }
     //endregion
 
@@ -82,13 +65,12 @@ public class ImportExcelViewController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        setFilePath("call from initialize...");
-        setStatusText("call from initialize...");
+        setFilePath("Bitte Datei Wählen...");
 
-        registry = new StandardServiceRegistryBuilder()
+        serviceRegistry = new StandardServiceRegistryBuilder()
                 .configure("hibernate.cfg.xml")
                 .build();
-        sessionFactory = new MetadataSources(registry)
+        sessionFactory = new MetadataSources(serviceRegistry)
                 .buildMetadata()
                 .buildSessionFactory();
 
@@ -127,8 +109,44 @@ public class ImportExcelViewController implements Initializable {
 
 
     //region Private Helpers
-    private void changeStatusText(boolean success) {
-        setStatusText(success ? "Datei erfolgreich importiert" : "Datei konnte nicht importiert werden!");
+    private void alert(boolean success) {
+        if(success)
+            showSuccess();
+        else
+            showError();
+
+        closeDBConnection();
+        closeWindow();
+    }
+
+    private void closeDBConnection() {
+        try {
+            sessionFactory.close();
+            serviceRegistry.close();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+    private void closeWindow() {
+        Stage stage = (Stage) startImport.getScene().getWindow();
+        if(stage != null)
+            stage.close();
+    }
+
+
+    private void showError() {
+        showAlert("Beim Import der Datei ist etwas schief gelaufen!.", Alert.AlertType.ERROR);
+    }
+
+    private void showAlert(String message, Alert.AlertType type) {
+        Alert alert = new Alert(type);
+        alert.setTitle(type == Alert.AlertType.ERROR ? "Fehler!" : "Erfolg");
+        alert.setHeaderText(message);
+        alert.showAndWait();
+    }
+
+    private void showSuccess() {
+        showAlert("Datei erfolgreich Importiert.", Alert.AlertType.INFORMATION);
     }
 
     private SheetType getSelectedType() {
@@ -136,11 +154,11 @@ public class ImportExcelViewController implements Initializable {
     }
 
     private void saveBookWire(BookWireSheetModel bookWireSheetModel) {
-        changeStatusText(bookWireSheetModel.save(sessionFactory.openSession()));
+        alert(bookWireSheetModel.save(sessionFactory.openSession()));
     }
 
     private void saveInhouse(InhouseSheetModel inhouseSheetModel) {
-        changeStatusText(inhouseSheetModel.save(sessionFactory.openSession()));
+        alert(inhouseSheetModel.save(sessionFactory.openSession()));
     }
     //endregion
 
