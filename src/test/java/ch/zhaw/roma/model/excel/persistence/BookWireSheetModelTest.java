@@ -16,6 +16,7 @@ public class BookWireSheetModelTest extends TestRepository {
 
     private final Path bookWireFile = Paths.get("src/test/resources/bookwire.xlsx");
     private BookWireSheetModel bookWireSheetModel;
+    private boolean somethingSaved = false;
 
     @Test
     public void BookWireSheetModelTest(){
@@ -40,6 +41,7 @@ public class BookWireSheetModelTest extends TestRepository {
                 s.save(row);
 
             s.getTransaction().commit();
+            somethingSaved = true;
         } catch (Exception ex) {
             Assert.fail(ex.getMessage());
         }
@@ -48,6 +50,9 @@ public class BookWireSheetModelTest extends TestRepository {
     @Test
     public void loadBookWireSheetTest() {
         try {
+            if(!somethingSaved)
+                saveBookWireSheetModelTest();
+
             Session s = sessionFactory.openSession();
             s.beginTransaction();
             List result = s.createSQLQuery("SELECT * FROM BOOKWIRE_SHEETS").list();

@@ -27,7 +27,7 @@
         <property name="show_sql">true</property>
 
         <!-- Drop and re-create all database on startup -->
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
 
         <!-- MAPPINGS -->
         <mapping class="ch.zhaw.roma.model.test.TestBookModel"/>

@@ -14,9 +14,13 @@ import java.util.List;
 
 public class InhouseSheetModelTest extends TestRepository {
 
+    //region Private Fields
     private final Path inhouseFile = Paths.get("src/test/resources/inhouse.xlsx");
     private InhouseSheetModel inhouseSheetModel;
+    private boolean somethingSaved = false;
+    //endregion
 
+    //region Test
     @Test
     public void InhouseSheetModelTest() {
         InhouseSheet sheet = new ExcelImporter(inhouseFile.toString(), SheetType.Verlagsabrechnung)
@@ -49,6 +53,9 @@ public class InhouseSheetModelTest extends TestRepository {
     @Test
     public void loadInhouseTest() {
         try {
+            if(!somethingSaved)
+                saveSheetModelTest();
+
             Session s = sessionFactory.openSession();
             s.beginTransaction();
             List result = s.createSQLQuery("SELECT * FROM INHOUSE_SHEETS").list();
@@ -58,4 +65,5 @@ public class InhouseSheetModelTest extends TestRepository {
             Assert.fail(ex.getMessage());
         }
     }
+    //endregion
 }

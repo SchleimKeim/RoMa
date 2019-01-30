@@ -36,13 +36,9 @@ public class ExcelImporterTest {
     public void loadInhouseSheetTest() {
         ExcelSheet excelSheet = getInhouse().importSheet();
         Assert.assertNotNull(excelSheet);
-
         InhouseSheet testSheet = excelSheet.asInhouse();
         Assert.assertTrue(testSheet.getRowCount() > 10);
-
-        InhouseRow[] rows = testSheet.getRows();
-        Assert.assertTrue(Arrays.stream(rows).noneMatch(r -> r.getAmazonInventory().toString().isEmpty()));
-        Assert.assertTrue(Arrays.stream(rows).noneMatch(r -> r.getArticleNr().isEmpty()));
+        Assert.assertTrue(Arrays.stream(testSheet.getRows()).noneMatch(r -> r.isEmpty()));
     }
 
     @Test
