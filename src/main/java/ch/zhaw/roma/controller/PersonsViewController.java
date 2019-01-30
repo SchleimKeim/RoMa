@@ -23,6 +23,12 @@ public class PersonsViewController implements Initializable {
     //endregion
 
     //region Public Members
+    public void setDbConnection(SessionFactory factory, StandardServiceRegistry registry) {
+        if(sessionFactory == null)
+            sessionFactory = factory;
+        if(registry == null)
+            serviceRegistry = registry;
+    }
     //endregion
 
     //region Private Helpers
@@ -32,13 +38,6 @@ public class PersonsViewController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-    }
-
-    public void setDbConnection(SessionFactory factory, StandardServiceRegistry registry) {
-        if(sessionFactory == null)
-            sessionFactory = factory;
-        if(registry == null)
-            serviceRegistry = registry;
     }
     //endregion
 }

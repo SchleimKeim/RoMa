@@ -5,7 +5,9 @@ import ch.zhaw.roma.helpers.InitDbResult;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
@@ -69,43 +71,40 @@ public class DataEditorViewController implements Initializable {
     //endregion
 
     //region Public Members
+    public void setDbConnection(StandardServiceRegistry registry, SessionFactory factory) {
+        serviceRegistry = registry;
+        sessionFactory = factory;
+    }
     //endregion
 
     //region Private Helpers
-    private void initDb() {
-        InitDBService service = new InitDBService();
-        service.setOnSucceeded(e -> {
-            InitDbResult result = (InitDbResult) e.getSource().getValue();
-            if(result.IsSuccess()) {
-                serviceRegistry = result.getServiceRegistry();
-                sessionFactory = result.getSessionFactory();
-                System.out.println("Datenbank geladen.");
-            }
-            else
-                System.out.println("Datenbank NICHT geladen!");
-        });
-    }
-
     private void showPersonsView() {
         setBooksViewVisibility(false);
         setPersonsViewVisibility(true);
-//        PersonsViewController controller = (PersonsViewController)personsView.getProperties().get("ctrl");
-//        controller.setDbConnection(sessionFactory, serviceRegistry);
+        //getPersonsViewController(personsView.getScene()).setDbConnection(sessionFactory, serviceRegistry);
     }
 
     private void showBooksView() {
         setPersonsViewVisibility(false);
         setBooksViewVisibility(true);
-//        BooksViewController controller = (BooksViewController) booksView.getProperties().get("ctrl");
-//        controller.setDbConnection(sessionFactory, serviceRegistry);
+        //getBooksViewController(booksView.getScene()).setDbConnection(sessionFactory, serviceRegistry);
     }
 
+    private BooksViewController getBooksViewController(Scene scene) {
+        FXMLLoader loader = (FXMLLoader)(scene.getUserData());
+        return loader.getController();
+    }
+
+    private PersonsViewController getPersonsViewController(Scene scene) {
+        FXMLLoader loader = (FXMLLoader)(scene.getUserData());
+        return loader.getController();
+    }
     //endregion
 
     //region Overrides
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        initDb();
+
     }
     //endregion
 }

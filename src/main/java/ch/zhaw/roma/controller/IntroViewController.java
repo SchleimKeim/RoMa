@@ -1,50 +1,104 @@
 package ch.zhaw.roma.controller;
 
+import ch.zhaw.roma.helpers.InitDBService;
+import ch.zhaw.roma.helpers.InitDbResult;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.registry.StandardServiceRegistry;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class IntroViewController implements Initializable {
+
+    //region Private Fields
+    private StandardServiceRegistry serviceRegistry;
+    private SessionFactory sessionFactory;
+    //endregion
+
+    //region Public Fields
     public Button editData;
     public Button startNewRoyaltyCalculation;
     public Button openSettings;
     public Button importExcel;
+    //endregion
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    //region Construction
+    public IntroViewController() {
 
     }
+    //endregion
 
-    public void openNewCalculation(ActionEvent actionEvent) {
+    //region Aciton Handler
+    public void onOpenNewCalculation(ActionEvent actionEvent) {
+        // TODO: ...
     }
 
-    public void openExcelFileImporter(ActionEvent actionEvent) {
+    public void onOpenExcelFileImporter(ActionEvent actionEvent) {
         openWindow("/view/ImportExcelView.fxml", "Excel Datei Importieren...");
     }
 
-    public void openDataEditor(ActionEvent actionEvent) {
-        openWindow("/view/DataEditorView.fxml", "Stammdaten bearbeiten");
+    public void onOpenDataEditor(ActionEvent actionEvent) {
+        try {
+            FXMLLoader localLoader = new FXMLLoader(getClass().getResource("/view/DataEditorView.fxml"));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(localLoader.load()));
+            DataEditorViewController controller = localLoader.getController();
+
+            if (controller != null) {
+                controller.setDbConnection(serviceRegistry, sessionFactory);
+                stage.show();
+            } else {
+                throw new Exception("Controller not loaded!");
+            }
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
-    public void openSettings(ActionEvent actionEvent) {
+    public void onOpenSettings(ActionEvent actionEvent) {
         openWindow("/view/SettingsView.fxml", "Einstellungen...");
+    }
+    //endregion
+
+    //region Private Helpers
+    private void initDb() {
+        InitDBService service = new InitDBService();
+        service.setOnSucceeded(e -> {
+            InitDbResult result = (InitDbResult) e.getSource().getValue();
+            if (result.IsSuccess()) {
+                serviceRegistry = result.getServiceRegistry();
+                sessionFactory = result.getSessionFactory();
+            } else
+                System.out.println("Datenbank NICHT geladen!");
+        });
+        service.start();
     }
 
     private void openWindow(String path, String title) {
-        Stage settingsViewStage = new Stage();
+        Stage stage = new Stage();
         try {
-            settingsViewStage.setScene(new Scene(FXMLLoader.load(getClass().getResource(path))));
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource(path))));
         } catch (Exception e) {
             e.printStackTrace();
         }
-        settingsViewStage.setTitle(title);
-        settingsViewStage.show();
+        stage.setTitle(title);
+        stage.show();
     }
+    //endregion
+
+    //region Overrides
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        initDb();
+    }
+    //endregion
 }

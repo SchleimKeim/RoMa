@@ -23,7 +23,14 @@ public class BooksViewController implements Initializable {
     //endregion
 
     //region Public Members
+    public void setDbConnection(SessionFactory factory, StandardServiceRegistry registry) {
+        if(sessionFactory == null)
+            sessionFactory = factory;
+        if(registry == null)
+            serviceRegistry = registry;
+    }
     //endregion
+
 
     //region Private Helpers
     //endregion
@@ -32,13 +39,6 @@ public class BooksViewController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-    }
-
-    public void setDbConnection(SessionFactory factory, StandardServiceRegistry registry) {
-        if(sessionFactory == null)
-            sessionFactory = factory;
-        if(serviceRegistry == null)
-            serviceRegistry = registry;
     }
     //endregion
 }
