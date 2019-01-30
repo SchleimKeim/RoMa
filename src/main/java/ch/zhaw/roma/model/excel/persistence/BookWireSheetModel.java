@@ -1,5 +1,6 @@
 package ch.zhaw.roma.model.excel.persistence;
 
+import ch.zhaw.roma.model.BookModel;
 import org.hibernate.Session;
 
 import javax.persistence.*;
@@ -76,6 +77,10 @@ public class BookWireSheetModel {
         } catch (Exception ex) {
             return false;
         }
+    }
+
+    public BookModel[] getBooks() {
+        return rows.stream().map(r -> r.generateBookModel()).toArray(BookModel[]::new);
     }
     //endregion
 }

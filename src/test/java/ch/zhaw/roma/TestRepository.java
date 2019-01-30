@@ -10,19 +10,20 @@ import org.junit.Before;
 
 public class TestRepository  {
     protected static SessionFactory sessionFactory;
+    protected StandardServiceRegistry serviceRegistry;
 
     @Before
     public void before() {
-        final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
+         serviceRegistry = new StandardServiceRegistryBuilder()
                                                      .configure("hibernate.cfg.xml")
                                                      .build();
         try {
-            sessionFactory = new MetadataSources(registry)
+            sessionFactory = new MetadataSources(serviceRegistry)
                                  .buildMetadata()
                                  .buildSessionFactory();
         } catch (Exception e) {
             Assert.fail(e.getMessage());
-            StandardServiceRegistryBuilder.destroy(registry);
+            StandardServiceRegistryBuilder.destroy(serviceRegistry);
         }
     }
 

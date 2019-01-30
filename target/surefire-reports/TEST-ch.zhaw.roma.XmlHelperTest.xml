@@ -62,6 +62,6 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="ch.zhaw.roma.XmlHelperTest" name="testSerialize" time="0.085"/>
-  <testcase classname="ch.zhaw.roma.XmlHelperTest" name="testDeserialize" time="0.01"/>
+  <testcase classname="ch.zhaw.roma.XmlHelperTest" name="testSerialize" time="0.084"/>
+  <testcase classname="ch.zhaw.roma.XmlHelperTest" name="testDeserialize" time="0.011"/>
 </testsuite>

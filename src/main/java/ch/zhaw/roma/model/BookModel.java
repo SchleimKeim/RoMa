@@ -4,6 +4,7 @@ import org.hibernate.Session;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -19,9 +20,10 @@ public class BookModel {
 
     @Column(name = "ISBN")
     private String isbnNumber;
+    @Column(name = "ARTICLE_NUMBER")
+    private String articleNumber;
     @Column(name = "BOOK_TITLE")
     private String title;
-
     @Column(name = "PRICE_CH")
     private BigDecimal priceCH;
     @Column(name = "PRICE_DE_AT")
@@ -36,6 +38,10 @@ public class BookModel {
 
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "books")
     private Set<PersonModel> persons;
+
+    public BookModel(String bookTitle) {
+        setTitle(bookTitle);
+    }
     //endregion
 
     //region Public Fields
@@ -117,6 +123,16 @@ public class BookModel {
 
     //region Construction
     public BookModel() {
+
+    }
+    public BookModel(String isbnNumber, String articleNumber, String title, String author) {
+        setIsbnNumber(isbnNumber);
+        setArticleNumber(articleNumber);
+        setTitle(title);
+        if(persons == null)
+            persons = new HashSet<>();
+
+        persons.add(new PersonModel(author, this));
     }
     //endregion
 
@@ -126,6 +142,9 @@ public class BookModel {
             return false;
         try {
             session.beginTransaction();
+            for(PersonModel p : persons)
+                p.save(session);
+
             session.save(this);
             session.getTransaction().commit();
             return true;
@@ -133,6 +152,14 @@ public class BookModel {
             System.out.println(ex.getMessage());
             return false;
         }
+    }
+
+    public String getArticleNumber() {
+        return articleNumber;
+    }
+
+    public void setArticleNumber(String articleNumber) {
+        this.articleNumber = articleNumber;
     }
     //endregion
 

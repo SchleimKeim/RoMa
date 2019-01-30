@@ -1,9 +1,9 @@
 package ch.zhaw.roma.model;
 
-import ch.zhaw.roma.model.test.TestBookModel;
 import org.hibernate.Session;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -51,7 +51,7 @@ public class PersonModel {
         joinColumns = { @JoinColumn(name = "BOOK_ID") },
         inverseJoinColumns = { @JoinColumn(name = "PERSON_ID") }
     )
-    private Set<TestBookModel> books;
+    private Set<BookModel> books;
     //endregion
 
     //region Getters And Setters
@@ -175,11 +175,11 @@ public class PersonModel {
         this.authorId = authorId;
     }
 
-    public Set<TestBookModel> getBooks() {
+    public Set<BookModel> getBooks() {
         return books;
     }
 
-    public void setBooks(Set<TestBookModel> books) {
+    public void setBooks(Set<BookModel> books) {
         this.books = books;
     }
     //endregion
@@ -187,6 +187,14 @@ public class PersonModel {
     //region Construction
     public PersonModel() {
 
+    }
+
+    public PersonModel(String author, BookModel bookModel) {
+        setLastName(author);
+        if(books == null)
+            books = new HashSet<>();
+
+        books.add(bookModel);
     }
     //endregion
 

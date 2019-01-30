@@ -1,5 +1,7 @@
 package ch.zhaw.roma.model.excel.persistence;
 
+import ch.zhaw.roma.model.BookModel;
+
 import javax.persistence.*;
 
 @Entity
@@ -19,10 +21,12 @@ public class InhouseRowModel {
 
     @Column(name = "ARTICLE_NR")
     private String articleNr;
-    @Column(name = "TITLE")
+    @Column(name = "ISBN_NUMBER")
+    private String isbnNumber;
+    @Column(name = "BOOK_TITLE")
     private String title;
-    @Column(name = "AUTHOR")
-    private String author;
+    @Column(name = "AUTHOR_LASTNAME")
+    private String authorLastName;
     @Column(name = "PROLIT_SALES")
     private Integer prolitSales;
     @Column(name = "AVA_SALES")
@@ -45,10 +49,8 @@ public class InhouseRowModel {
     private Integer avaInventory;
     @Column(name = "AMAZON_INVENTORY")
     private Integer amazonInventory;
-
     @Column(name = "PUBLISHER_INVENTORY")
     private Integer publisherInventory;
-
     @Column(name = "TOTAL_INVENTORY")
     private Integer totalInventory;
     //endregion
@@ -194,6 +196,28 @@ public class InhouseRowModel {
 
     public void setTotalInventory(Integer totalInventory) {
         this.totalInventory = totalInventory;
+    }
+
+    public String getIsbnNumber() {
+        return isbnNumber;
+    }
+
+    public void setIsbnNumber(String isbnNumber) {
+        this.isbnNumber = isbnNumber;
+    }
+
+    public String getAuthorLastName() {
+        return authorLastName;
+    }
+
+    public void setAuthorLastName(String authorLastName) {
+        this.authorLastName = authorLastName;
+    }
+    //endregion
+
+    //region Public Members
+    public BookModel generateBookModel() {
+        return new BookModel(getIsbnNumber(), getArticleNr(), getTitle(), getAuthorLastName());
     }
     //endregion
 }

@@ -41,7 +41,23 @@ public class IntroViewController implements Initializable {
     }
 
     public void onOpenExcelFileImporter(ActionEvent actionEvent) {
-        openWindow("/view/ImportExcelView.fxml", "Excel Datei Importieren...");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ImportExcelView.fxml"));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(loader.load()));
+            ImportExcelViewController controller = loader.getController();
+
+            if (controller != null) {
+                controller.setDbConnection(serviceRegistry, sessionFactory);
+                stage.show();
+            } else {
+                throw new Exception("Controller not loaded!");
+            }
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     public void onOpenDataEditor(ActionEvent actionEvent) {

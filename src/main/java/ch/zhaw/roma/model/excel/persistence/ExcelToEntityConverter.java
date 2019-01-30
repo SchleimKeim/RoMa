@@ -29,31 +29,22 @@ public class ExcelToEntityConverter {
     //region Private Helpers
     private static InhouseRowModel createRowFrom(InhouseRow inhouseRow) {
         InhouseRowModel m = new InhouseRowModel();
-
         m.setArticleNr(inhouseRow.getArticleNr());
+        m.setAuthorLastName(inhouseRow.getAuthor());
         m.setTitle(inhouseRow.getTitle());
-
         m.setAvaSales(inhouseRow.getAvaSales());
         m.setAvaInventory(inhouseRow.getAvaInventory());
-
         m.setAmazonInventory(inhouseRow.getAmazonInventory());
-
         m.setCumulatedDisposition(inhouseRow.getCumulatedDisposition());
         m.setCumulatedSales(inhouseRow.getCumulatedSales());
-
         m.setDisposition(inhouseRow.getDisposition());
-
         m.setLastYearSales(inhouseRow.getLastYearSales());
-
         m.setProlitInventory(inhouseRow.getProlitInventory());
         m.setProlitSales(inhouseRow.getProlitSales());
-
         m.setPublisherInventory(inhouseRow.getPublisherInventory());
         m.setPublisherSales(inhouseRow.getPublisherSales());
-
         m.setTotalInventory(inhouseRow.getTotalInventory());
         m.setTotalSales(inhouseRow.getTotalSales());
-
         return m;
     }
 
@@ -62,6 +53,18 @@ public class ExcelToEntityConverter {
         BookWireRowModel r = new BookWireRowModel();
         r.setIsbnNumber(bookWireRow.getIsbnNumber());
         r.setAuthorAndTitle(bookWireRow.getAuthorAndTitle());
+
+        String authorAndTitle = r.getAuthorAndTitle();
+
+        String[] split = (authorAndTitle != null) && !authorAndTitle.isEmpty()
+                ? r.getAuthorAndTitle().split(",")
+                : new String[0];
+
+        if(split.length == 2) {
+            r.setAuthorLastName(split[0]);
+            r.setBookTitle(split[1]);
+        }
+
         r.setAmountJanuary(bookWireRow.getAmountJanuary());
         r.setSoldUnitsJanuary(bookWireRow.getSoldUnitsJanuary());
 

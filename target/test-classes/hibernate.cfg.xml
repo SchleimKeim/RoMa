@@ -30,6 +30,8 @@
         <property name="hibernate.hbm2ddl.auto">create</property>
 
         <!-- MAPPINGS -->
+        <mapping class="ch.zhaw.roma.model.BookModel"/>
+        <mapping class="ch.zhaw.roma.model.PersonModel"/>
         <mapping class="ch.zhaw.roma.model.test.TestBookModel"/>
         <mapping class="ch.zhaw.roma.model.test.TestAuthorModel"/>
         <mapping class="ch.zhaw.roma.model.test.TestAddressModel"/>

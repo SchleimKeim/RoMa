@@ -1,5 +1,7 @@
 package ch.zhaw.roma.model.excel.persistence;
 
+import ch.zhaw.roma.model.BookModel;
+
 import javax.persistence.*;
 
 @Entity
@@ -18,6 +20,8 @@ public class BookWireRowModel {
     private BookWireSheetModel sheet;
     @Column(name = "ISBN_NUMBER")
     private String isbnNumber;
+    @Column(name = "ARTICLE_NUMBER")
+    private String articleNumber;
     @Column(name = "AUTHOR_LASTNAME")
     private String authorLastName;
     @Column(name = "BOOK_TITLE")
@@ -297,27 +301,58 @@ public class BookWireRowModel {
         this.amountDecember = amountDecember;
     }
 
-    public Double calculateAmountTotal() {
-        return (amountJanuary * soldUnitsJanuary)
-            + (amountFebruary * soldUnitsFebruary)
-            + (amountMarch * soldUnitsMarch)
-            + (amountApril * soldUnitsApril)
-            + (amountMay * soldUnitsMay)
-            + (amountJune * soldUnitsJune)
-            + (amountJuly * soldUnitsJuly)
-            + (amountAugust * soldUnitsAugust)
-            + (amountSeptember * soldUnitsSeptember)
-            + (amountOctober * soldUnitsOctober)
-            + (amountNovember * soldUnitsNovember)
-            + (amountDecember * soldUnitsDecember);
-    }
-
     public BookWireSheetModel getSheet() {
         return sheet;
     }
 
     public void setSheet(BookWireSheetModel sheet) {
         this.sheet = sheet;
+    }
+
+    public String getAuthorLastName() {
+        return authorLastName;
+    }
+
+    public void setAuthorLastName(String authorLastName) {
+        this.authorLastName = authorLastName;
+    }
+
+    public String getBookTitle() {
+        return bookTitle;
+    }
+
+    public void setBookTitle(String bookTitle) {
+        this.bookTitle = bookTitle;
+    }
+
+    public String getArticleNumber() {
+        return articleNumber;
+    }
+
+    public void setArticleNumber(String articleNumber) {
+        this.articleNumber = articleNumber;
+    }
+    //endregion
+
+
+    //region Public Memers
+    public Double calculateAmountTotal() {
+        return (amountJanuary * soldUnitsJanuary)
+                + (amountFebruary * soldUnitsFebruary)
+                + (amountMarch * soldUnitsMarch)
+                + (amountApril * soldUnitsApril)
+                + (amountMay * soldUnitsMay)
+                + (amountJune * soldUnitsJune)
+                + (amountJuly * soldUnitsJuly)
+                + (amountAugust * soldUnitsAugust)
+                + (amountSeptember * soldUnitsSeptember)
+                + (amountOctober * soldUnitsOctober)
+                + (amountNovember * soldUnitsNovember)
+                + (amountDecember * soldUnitsDecember);
+    }
+
+    public BookModel generateBookModel() {
+        return new BookModel(getIsbnNumber(), getArticleNumber(), getBookTitle(), getAuthorLastName());
     }
     //endregion
 }

@@ -78,13 +78,8 @@ public class ImportExcelViewController implements Initializable {
     }
     //endregion
 
-    //region Action Handler
-    public void onImport(ActionEvent actionEvent) {
-        if (filePath == null)
-            return;
-
-        SheetType type = getSelectedType();
-
+    //region Public Members
+    public void importSheet(SheetType type) {
         ExcelSheet sheet = new ExcelImporter(filePath.get(), type).importSheet();
         if (sheet == null)
             return;
@@ -93,6 +88,15 @@ public class ImportExcelViewController implements Initializable {
             saveInhouse(ExcelToEntityConverter.createFrom(sheet.asInhouse()));
         else
             saveBookWire(ExcelToEntityConverter.createFrom(sheet.asBookwire()));
+    }
+    //endregion
+
+    //region Action Handler
+    public void onImport(ActionEvent actionEvent) {
+        if (filePath == null)
+            return;
+
+        importSheet(getSelectedType());
     }
 
     public void onChooseFile(ActionEvent actionEvent) {
@@ -107,16 +111,15 @@ public class ImportExcelViewController implements Initializable {
     }
     //endregion
 
-
     //region Private Helpers
-    private void alert(boolean success) {
-        if(success)
+    private void showDialog(boolean success) {
+        if(success) {
             showSuccess();
+            closeDBConnection();
+            closeWindow();
+        }
         else
             showError();
-
-        closeDBConnection();
-        closeWindow();
     }
 
     private void closeDBConnection() {
@@ -127,12 +130,12 @@ public class ImportExcelViewController implements Initializable {
             System.out.println(ex.getMessage());
         }
     }
+
     private void closeWindow() {
         Stage stage = (Stage) startImport.getScene().getWindow();
         if(stage != null)
             stage.close();
     }
-
 
     private void showError() {
         showAlert("Beim Import der Datei ist etwas schief gelaufen!.", Alert.AlertType.ERROR);
@@ -154,24 +157,18 @@ public class ImportExcelViewController implements Initializable {
     }
 
     private void saveBookWire(BookWireSheetModel bookWireSheetModel) {
-        boolean sheetSaveOk = bookWireSheetModel.save(sessionFactory.openSession());
-        if(sheetSaveOk) {
-            // TODO: save books
-            alert(true);
-        }
-        else {
-            alert(sheetSaveOk);
-        }
+        showDialog(bookWireSheetModel.save(sessionFactory.openSession()));
     }
 
     private void saveInhouse(InhouseSheetModel inhouseSheetModel) {
-        boolean sheetSaveOk = inhouseSheetModel.save(sessionFactory.openSession());
-        if(sheetSaveOk) {
-            // TODO: save books
-            alert(true);
-        }
-        else
-            alert(sheetSaveOk);
+        showDialog(inhouseSheetModel.save(sessionFactory.openSession()));
+    }
+
+    public void setDbConnection(StandardServiceRegistry registry, SessionFactory factory) {
+        if(serviceRegistry == null)
+            serviceRegistry = registry;
+        if(sessionFactory == null)
+            sessionFactory = factory;
     }
     //endregion
 }
