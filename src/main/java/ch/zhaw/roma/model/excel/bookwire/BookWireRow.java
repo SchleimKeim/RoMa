@@ -12,6 +12,8 @@ public class BookWireRow {
     //region Private Fields
     private String isbnNumber;
     private String authorAndTitle;
+    private String authorLastName;
+    private String bookTitle;
     private int soldUnitsJanuary;
     private double amountJanuary;
     private int soldUnitsFebruary;
@@ -57,6 +59,7 @@ public class BookWireRow {
 
         isbnNumber = asString(cells[BookWireIndexes.ISBN]);
         authorAndTitle = asString(cells[BookWireIndexes.AUTHOR_AND_TITLE]);
+        setNameAndBookTitle(authorAndTitle);
 
         soldUnitsJanuary = asInt(cells[BookWireIndexes.SALES_JANUARY]);
         amountJanuary = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
@@ -93,6 +96,18 @@ public class BookWireRow {
 
         soldUnitsDecember = asInt(cells[BookWireIndexes.SALES_DECEMBER]);
         amountDecember = asDouble(cells[BookWireIndexes.AMOUNT_DECEMBER]);
+    }
+
+    private void setNameAndBookTitle(String authorAndTitle) {
+        if(authorAndTitle == null || authorAndTitle.isEmpty() || !authorAndTitle.contains(",")) {
+            setAuthorLastName("");
+            setBookTitle("");
+        }
+        else {
+            String[] split = authorAndTitle.split(",");
+            setAuthorLastName(split[0]);
+            setBookTitle(split[1]);
+        }
     }
 
     private String asString(Cell cell) {
@@ -238,6 +253,22 @@ public class BookWireRow {
 
     public double getAmountDecember() {
         return amountDecember;
+    }
+
+    public String getAuthorLastName() {
+        return authorLastName;
+    }
+
+    public void setAuthorLastName(String authorLastName) {
+        this.authorLastName = authorLastName;
+    }
+
+    public String getBookTitle() {
+        return bookTitle;
+    }
+
+    public void setBookTitle(String bookTitle) {
+        this.bookTitle = bookTitle;
     }
     //endregion
 }

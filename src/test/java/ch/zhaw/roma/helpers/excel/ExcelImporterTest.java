@@ -3,7 +3,6 @@ package ch.zhaw.roma.helpers.excel;
 import ch.zhaw.roma.model.excel.ExcelSheet;
 import ch.zhaw.roma.model.excel.SheetType;
 import ch.zhaw.roma.model.excel.bookwire.BookWireSheet;
-import ch.zhaw.roma.model.excel.inhouse.InhouseRow;
 import ch.zhaw.roma.model.excel.inhouse.InhouseSheet;
 import org.junit.Assert;
 import org.junit.Test;
@@ -42,7 +41,7 @@ public class ExcelImporterTest {
     }
 
     @Test
-    public void basicLoadBookWireSheetTest() {
+    public void loadBookWireSheetTest() {
         ExcelSheet excelSheet = getBookWire().importSheet();
         Assert.assertNotNull(excelSheet);
         BookWireSheet testSheet = excelSheet.asBookwire();

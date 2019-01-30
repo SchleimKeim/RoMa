@@ -154,11 +154,24 @@ public class ImportExcelViewController implements Initializable {
     }
 
     private void saveBookWire(BookWireSheetModel bookWireSheetModel) {
-        alert(bookWireSheetModel.save(sessionFactory.openSession()));
+        boolean sheetSaveOk = bookWireSheetModel.save(sessionFactory.openSession());
+        if(sheetSaveOk) {
+            // TODO: save books
+            alert(true);
+        }
+        else {
+            alert(sheetSaveOk);
+        }
     }
 
     private void saveInhouse(InhouseSheetModel inhouseSheetModel) {
-        alert(inhouseSheetModel.save(sessionFactory.openSession()));
+        boolean sheetSaveOk = inhouseSheetModel.save(sessionFactory.openSession());
+        if(sheetSaveOk) {
+            // TODO: save books
+            alert(true);
+        }
+        else
+            alert(sheetSaveOk);
     }
     //endregion
 }

@@ -18,6 +18,10 @@ public class BookWireRowModel {
     private BookWireSheetModel sheet;
     @Column(name = "ISBN_NUMBER")
     private String isbnNumber;
+    @Column(name = "AUTHOR_LASTNAME")
+    private String authorLastName;
+    @Column(name = "BOOK_TITLE")
+    private String bookTitle;
     @Column(name = "AUTHOR_AND_TITLE")
     private String authorAndTitle;
     @Column(name = "SOLDUNITS_JANUARY")
