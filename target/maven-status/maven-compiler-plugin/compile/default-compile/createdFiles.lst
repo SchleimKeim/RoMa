@@ -28,6 +28,7 @@ ch\zhaw\roma\model\excel\inhouse\InhouseRow.class
 ch\zhaw\roma\model\royaltycalculation\AuxRight.class
 ch\zhaw\roma\controller\EditAuthorViewController.class
 ch\zhaw\roma\model\excel\inhouse\InhouseSheet.class
+ch\zhaw\roma\controller\PersonViewController.class
 ch\zhaw\roma\model\excel\EmptyCell.class
 ch\zhaw\roma\model\excel\SheetType.class
 ch\zhaw\roma\model\excel\bookwire\BookWireRow.class

@@ -148,7 +148,7 @@ public class ManageAuthorsController {
     public boolean openEditAuthor(Author author) {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("/view/EditAuthorView.fxml"));
+            loader.setLocation(Main.class.getResource("/view/PersonView.fxml"));
             AnchorPane manageAuthors = (AnchorPane) loader.load();
 
             Stage editStage = new Stage();
