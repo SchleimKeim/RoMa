@@ -71,6 +71,8 @@ public class ExcelToEntityConverter {
         r.setAmountMarch(bookWireRow.getAmountMarch());
         r.setSoldUnitsMarch(bookWireRow.getSoldUnitsMarch());
 
+        double debug = bookWireRow.getAmountApril();
+
         r.setAmountApril(bookWireRow.getAmountApril());
         r.setSoldUnitsApril(bookWireRow.getSoldUnitsApril());
 
@@ -97,9 +99,6 @@ public class ExcelToEntityConverter {
 
         r.setAmountDecember(bookWireRow.getAmountDecember());
         r.setSoldUnitsDecember(bookWireRow.getSoldUnitsDecember());
-
-        r.setAmountTotal(bookWireRow.getAmountTotal());
-        r.setSoldUnitsTotal(bookWireRow.getSoldUnitsTotal());
 
         return r;
     }

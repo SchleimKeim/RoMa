@@ -16,35 +16,58 @@ public class BookWireRowModel {
     @ManyToOne
     @JoinColumn(name = "SHEET_ID", nullable = false)
     private BookWireSheetModel sheet;
-
+    @Column(name = "ISBN_NUMBER")
     private String isbnNumber;
+    @Column(name = "AUTHOR_AND_TITLE")
     private String authorAndTitle;
-    private int soldUnitsJanuary;
-    private double amountJanuary;
-    private int soldUnitsFebruary;
-    private double amountFebruary;
-    private int soldUnitsMarch;
-    private double amountMarch;
-    private int soldUnitsApril;
-    private double amountApril;
-    private int soldUnitsMay;
-    private double amountMay;
-    private int soldUnitsJune;
-    private double amountJune;
-    private int soldUnitsJuly;
-    private double amountJuly;
-    private int soldUnitsAugust;
-    private double amountAugust;
-    private int soldUnitsSeptember;
-    private double amountSeptember;
-    private int soldUnitsOctober;
-    private double amountOctober;
-    private int soldUnitsNovember;
-    private double amountNovember;
-    private int soldUnitsDecember;
-    private double amountDecember;
-    private int soldUnitsTotal;
-    private double amountTotal;
+    @Column(name = "SOLDUNITS_JANUARY")
+    private Integer soldUnitsJanuary;
+    @Column(name = "AMOUNT_JANUARY")
+    private Double amountJanuary;
+    @Column(name = "SOLDUNITS_FEBRUARY")
+    private Integer soldUnitsFebruary;
+    @Column(name = "AMOUNT_FEBRUARY")
+    private Double amountFebruary;
+    @Column(name = "SOLDUNITS_MARCH")
+    private Integer soldUnitsMarch;
+    @Column(name = "AMOUN_TMARCH")
+    private Double amountMarch;
+    @Column(name = "SOLDUNITS_APRIL")
+    private Integer soldUnitsApril;
+    @Column(name = "AMOUNT_APRIL")
+    private Double amountApril;
+    @Column(name = "SOLDUNITS_MAY")
+    private Integer soldUnitsMay;
+    @Column(name = "AMOUNT_MAY")
+    private Double amountMay;
+    @Column(name = "SOLDUNITS_JUNE")
+    private Integer soldUnitsJune;
+    @Column(name = "AMOUNT_JUNE")
+    private Double amountJune;
+    @Column(name = "SOLDUNITS_JULY")
+    private Integer soldUnitsJuly;
+    @Column(name = "AMOUNT_JULY")
+    private Double amountJuly;
+    @Column(name = "SOLDUNITS_AUGUST")
+    private Integer soldUnitsAugust;
+    @Column(name = "AMOUNT_AUGUST")
+    private Double amountAugust;
+    @Column(name = "SOLDUNITS_SEPTEMBER")
+    private Integer soldUnitsSeptember;
+    @Column(name = "AMOUNT_SEPTEMBER")
+    private Double amountSeptember;
+    @Column(name = "SOLDUNITS_OCTOBER")
+    private Integer soldUnitsOctober;
+    @Column(name = "AMOUNT_OCTOBER")
+    private Double amountOctober;
+    @Column(name = "SOLDUNITS_NOVEMBER")
+    private Integer soldUnitsNovember;
+    @Column(name = "AMOUNT_NOVEMBER")
+    private Double amountNovember;
+    @Column(name = "SOLDUNITS_DECEMBER")
+    private Integer soldUnitsDecember;
+    @Column(name = "AMOUNT_DECEMBER")
+    private Double amountDecember;
     //endregion
 
     //region Construction
@@ -78,212 +101,211 @@ public class BookWireRowModel {
         this.authorAndTitle = authorAndTitle;
     }
 
-    public int getSoldUnitsJanuary() {
+    public Integer getSoldUnitsJanuary() {
         return soldUnitsJanuary;
     }
 
-    public void setSoldUnitsJanuary(int soldUnitsJanuary) {
+    public void setSoldUnitsJanuary(Integer soldUnitsJanuary) {
         this.soldUnitsJanuary = soldUnitsJanuary;
     }
 
-    public double getAmountJanuary() {
+    public Double getAmountJanuary() {
         return amountJanuary;
     }
 
-    public void setAmountJanuary(double amountJanuary) {
+    public void setAmountJanuary(Double amountJanuary) {
         this.amountJanuary = amountJanuary;
     }
 
-    public int getSoldUnitsFebruary() {
+    public Integer getSoldUnitsFebruary() {
         return soldUnitsFebruary;
     }
 
-    public void setSoldUnitsFebruary(int soldUnitsFebruary) {
+    public void setSoldUnitsFebruary(Integer soldUnitsFebruary) {
         this.soldUnitsFebruary = soldUnitsFebruary;
     }
 
-    public double getAmountFebruary() {
+    public Double getAmountFebruary() {
         return amountFebruary;
     }
 
-    public void setAmountFebruary(double amountFebruary) {
+    public void setAmountFebruary(Double amountFebruary) {
         this.amountFebruary = amountFebruary;
     }
 
-    public int getSoldUnitsMarch() {
+    public Integer getSoldUnitsMarch() {
         return soldUnitsMarch;
     }
 
-    public void setSoldUnitsMarch(int soldUnitsMarch) {
+    public void setSoldUnitsMarch(Integer soldUnitsMarch) {
         this.soldUnitsMarch = soldUnitsMarch;
     }
 
-    public double getAmountMarch() {
+    public Double getAmountMarch() {
         return amountMarch;
     }
 
-    public void setAmountMarch(double amountMarch) {
+    public void setAmountMarch(Double amountMarch) {
         this.amountMarch = amountMarch;
     }
 
-    public int getSoldUnitsApril() {
+    public Integer getSoldUnitsApril() {
         return soldUnitsApril;
     }
 
-    public void setSoldUnitsApril(int soldUnitsApril) {
+    public void setSoldUnitsApril(Integer soldUnitsApril) {
         this.soldUnitsApril = soldUnitsApril;
     }
 
-    public double getAmountApril() {
+    public Double getAmountApril() {
         return amountApril;
     }
 
-    public void setAmountApril(double amountApril) {
+    public void setAmountApril(Double amountApril) {
         this.amountApril = amountApril;
     }
 
-    public int getSoldUnitsMay() {
+    public Integer getSoldUnitsMay() {
         return soldUnitsMay;
     }
 
-    public void setSoldUnitsMay(int soldUnitsMay) {
+    public void setSoldUnitsMay(Integer soldUnitsMay) {
         this.soldUnitsMay = soldUnitsMay;
     }
 
-    public double getAmountMay() {
+    public Double getAmountMay() {
         return amountMay;
     }
 
-    public void setAmountMay(double amountMay) {
+    public void setAmountMay(Double amountMay) {
         this.amountMay = amountMay;
     }
 
-    public int getSoldUnitsJune() {
+    public Integer getSoldUnitsJune() {
         return soldUnitsJune;
     }
 
-    public void setSoldUnitsJune(int soldUnitsJune) {
+    public void setSoldUnitsJune(Integer soldUnitsJune) {
         this.soldUnitsJune = soldUnitsJune;
     }
 
-    public double getAmountJune() {
+    public Double getAmountJune() {
         return amountJune;
     }
 
-    public void setAmountJune(double amountJune) {
+    public void setAmountJune(Double amountJune) {
         this.amountJune = amountJune;
     }
 
-    public int getSoldUnitsJuly() {
+    public Integer getSoldUnitsJuly() {
         return soldUnitsJuly;
     }
 
-    public void setSoldUnitsJuly(int soldUnitsJuly) {
+    public void setSoldUnitsJuly(Integer soldUnitsJuly) {
         this.soldUnitsJuly = soldUnitsJuly;
     }
 
-    public double getAmountJuly() {
+    public Double getAmountJuly() {
         return amountJuly;
     }
 
-    public void setAmountJuly(double amountJuly) {
+    public void setAmountJuly(Double amountJuly) {
         this.amountJuly = amountJuly;
     }
 
-    public int getSoldUnitsAugust() {
+    public Integer getSoldUnitsAugust() {
         return soldUnitsAugust;
     }
 
-    public void setSoldUnitsAugust(int soldUnitsAugust) {
+    public void setSoldUnitsAugust(Integer soldUnitsAugust) {
         this.soldUnitsAugust = soldUnitsAugust;
     }
 
-    public double getAmountAugust() {
+    public Double getAmountAugust() {
         return amountAugust;
     }
 
-    public void setAmountAugust(double amountAugust) {
+    public void setAmountAugust(Double amountAugust) {
         this.amountAugust = amountAugust;
     }
 
-    public int getSoldUnitsSeptember() {
+    public Integer getSoldUnitsSeptember() {
         return soldUnitsSeptember;
     }
 
-    public void setSoldUnitsSeptember(int soldUnitsSeptember) {
+    public void setSoldUnitsSeptember(Integer soldUnitsSeptember) {
         this.soldUnitsSeptember = soldUnitsSeptember;
     }
 
-    public double getAmountSeptember() {
+    public Double getAmountSeptember() {
         return amountSeptember;
     }
 
-    public void setAmountSeptember(double amountSeptember) {
+    public void setAmountSeptember(Double amountSeptember) {
         this.amountSeptember = amountSeptember;
     }
 
-    public int getSoldUnitsOctober() {
+    public Integer getSoldUnitsOctober() {
         return soldUnitsOctober;
     }
 
-    public void setSoldUnitsOctober(int soldUnitsOctober) {
+    public void setSoldUnitsOctober(Integer soldUnitsOctober) {
         this.soldUnitsOctober = soldUnitsOctober;
     }
 
-    public double getAmountOctober() {
+    public Double getAmountOctober() {
         return amountOctober;
     }
 
-    public void setAmountOctober(double amountOctober) {
+    public void setAmountOctober(Double amountOctober) {
         this.amountOctober = amountOctober;
     }
 
-    public int getSoldUnitsNovember() {
+    public Integer getSoldUnitsNovember() {
         return soldUnitsNovember;
     }
 
-    public void setSoldUnitsNovember(int soldUnitsNovember) {
+    public void setSoldUnitsNovember(Integer soldUnitsNovember) {
         this.soldUnitsNovember = soldUnitsNovember;
     }
 
-    public double getAmountNovember() {
+    public Double getAmountNovember() {
         return amountNovember;
     }
 
-    public void setAmountNovember(double amountNovember) {
+    public void setAmountNovember(Double amountNovember) {
         this.amountNovember = amountNovember;
     }
 
-    public int getSoldUnitsDecember() {
+    public Integer getSoldUnitsDecember() {
         return soldUnitsDecember;
     }
 
-    public void setSoldUnitsDecember(int soldUnitsDecember) {
+    public void setSoldUnitsDecember(Integer soldUnitsDecember) {
         this.soldUnitsDecember = soldUnitsDecember;
     }
 
-    public double getAmountDecember() {
+    public Double getAmountDecember() {
         return amountDecember;
     }
 
-    public void setAmountDecember(double amountDecember) {
+    public void setAmountDecember(Double amountDecember) {
         this.amountDecember = amountDecember;
     }
 
-    public int getSoldUnitsTotal() {
-        return soldUnitsTotal;
-    }
-
-    public void setSoldUnitsTotal(int soldUnitsTotal) {
-        this.soldUnitsTotal = soldUnitsTotal;
-    }
-
-    public double getAmountTotal() {
-        return amountTotal;
-    }
-
-    public void setAmountTotal(double amountTotal) {
-        this.amountTotal = amountTotal;
+    public Double calculateAmountTotal() {
+        return (amountJanuary * soldUnitsJanuary)
+            + (amountFebruary * soldUnitsFebruary)
+            + (amountMarch * soldUnitsMarch)
+            + (amountApril * soldUnitsApril)
+            + (amountMay * soldUnitsMay)
+            + (amountJune * soldUnitsJune)
+            + (amountJuly * soldUnitsJuly)
+            + (amountAugust * soldUnitsAugust)
+            + (amountSeptember * soldUnitsSeptember)
+            + (amountOctober * soldUnitsOctober)
+            + (amountNovember * soldUnitsNovember)
+            + (amountDecember * soldUnitsDecember);
     }
 
     public BookWireSheetModel getSheet() {

@@ -1,6 +1,7 @@
 package ch.zhaw.roma.model.excel.inhouse;
 
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 
 public class InhouseRow {
@@ -8,6 +9,7 @@ public class InhouseRow {
     //region Private Fields
     private String articleNr;
     private String title;
+    private String author;
     private Integer prolitSales;
     private Integer avaSales;
     private Integer publisherSales;
@@ -21,15 +23,17 @@ public class InhouseRow {
     private Integer amazonInventory;
     private Integer publisherInventory;
     private Integer totalInventory;
+    private String authorAndTitle;
     //endregion
 
     //region Construction
     public InhouseRow(Row row) {
-        if(row == null)
+        if (row == null)
             return;
 
         articleNr = toString(row.getCell(RowIndexes.ARTICLENR));
-        title = toString(row.getCell(RowIndexes.TITLE));
+        author = extractAuthor(loadAuthorAndTitle(row));
+        title = extractTitle(loadAuthorAndTitle(row));
         prolitSales = toInt(row.getCell(RowIndexes.PROLITSALES));
         avaSales = toInt(row.getCell(RowIndexes.AVASALES));
         publisherSales = toInt(row.getCell(RowIndexes.PUBLISHERSALES));
@@ -61,6 +65,14 @@ public class InhouseRow {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public Integer getProlitSales() {
@@ -168,16 +180,60 @@ public class InhouseRow {
     }
     //endregion
 
+    //region Private Helpers
+    private String loadAuthorAndTitle(Row row) {
+        if (authorAndTitle == null) {
+            Cell cell = row.getCell(RowIndexes.AUTHOR_AND_TITLE);
+            authorAndTitle = toString(cell);
+        }
+        return authorAndTitle;
+    }
 
-    //region private helpers
+    private String extractTitle(String authorAndTitle) {
+        if (authorAndTitle == null)
+            return "";
+        else if (!authorAndTitle.contains(","))
+            return authorAndTitle;
+
+        String bookTitle = authorAndTitle.split(",")[1];
+        if (bookTitle.endsWith("*"))
+            return bookTitle.substring(0, (bookTitle.length() - 1));
+
+        return bookTitle;
+    }
+
+    private String extractAuthor(String authorAndTitle) {
+        if (authorAndTitle == null)
+            return "";
+        else if (!authorAndTitle.contains(","))
+            return authorAndTitle;
+
+        return authorAndTitle.split(",")[0];
+    }
+
     private String toString(Cell cell) {
-        // TODO: toString(Cell cell)
-        return "";
+        if (cell != null)
+            return cell.getStringCellValue();
+        else
+            return "";
     }
 
     private Integer toInt(Cell cell) {
-        // TODO: toInt(Cell cell)
-        return -1;
+        return (cell != null) && (cell.getCellType() == CellType.NUMERIC)
+                ? ((Double) cell.getNumericCellValue()).intValue()
+                : 0;
+    }
+    //endregion
+
+    //region Public Members
+    public boolean isEmpty() {
+        if ((author == null || author.isEmpty())
+                || (title == null || title.isEmpty())
+                || (articleNr == null || articleNr.isEmpty())
+        )
+            return true;
+
+        return false;
     }
     //endregion
 }

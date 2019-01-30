@@ -17,20 +17,39 @@ public class InhouseRowModel {
     @JoinColumn(name = "SHEET_ID", nullable = false)
     private InhouseSheetModel sheet;
 
+    @Column(name = "ARTICLE_NR")
     private String articleNr;
+    @Column(name = "TITLE")
     private String title;
+    @Column(name = "AUTHOR")
+    private String author;
+    @Column(name = "PROLIT_SALES")
     private Integer prolitSales;
+    @Column(name = "AVA_SALES")
     private Integer avaSales;
+    @Column(name = "PUBLISHER_SALES")
     private Integer publisherSales;
+    @Column(name = "TOTAL_SALES")
     private Integer totalSales;
+    @Column(name = "DISPOSITION")
     private Integer disposition;
+    @Column(name = "LAST_YEAR_SALES")
     private Integer lastYearSales;
+    @Column(name = "CUMULATED_SALES")
     private Integer cumulatedSales;
+    @Column(name = "CUMULATED_DISPOSITION")
     private Integer cumulatedDisposition;
+    @Column(name = "PROLIT_INVENTORY")
     private Integer prolitInventory;
+    @Column(name = "AVA_INVENTORY")
     private Integer avaInventory;
+    @Column(name = "AMAZON_INVENTORY")
     private Integer amazonInventory;
+
+    @Column(name = "PUBLISHER_INVENTORY")
     private Integer publisherInventory;
+
+    @Column(name = "TOTAL_INVENTORY")
     private Integer totalInventory;
     //endregion
 

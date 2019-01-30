@@ -70,7 +70,9 @@ public class InhouseSheet extends ExcelSheet {
             for (Row row : s) {
                 rowCounter++;
                 if (rowCounter >= FIRST_INHOUSE_SHEET_ROW) {
-                    result.add(new InhouseRow(row));
+                    InhouseRow inhouseRow = new InhouseRow(row);
+                    if(!inhouseRow.isEmpty())
+                        result.add(inhouseRow);
                 }
             }
         }

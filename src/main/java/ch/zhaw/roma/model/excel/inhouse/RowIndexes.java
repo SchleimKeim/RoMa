@@ -3,7 +3,7 @@ package ch.zhaw.roma.model.excel.inhouse;
 // Warum hat Java keine anständigen enums??
 public final class RowIndexes {
     public final static int ARTICLENR = 0;
-    public final static int TITLE = 1;
+    public final static int AUTHOR_AND_TITLE = 1;
     public final static int PROLITSALES = 2;
     public final static int AVASALES = 3;
     public final static int PUBLISHERSALES = 4;

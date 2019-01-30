@@ -35,6 +35,7 @@ public class BookWireSheetModelTest extends TestRepository {
             s.beginTransaction();
 
             s.save(bookWireSheetModel);
+
             for (BookWireRowModel row : bookWireSheetModel.getRows())
                 s.save(row);
 

@@ -36,8 +36,6 @@ public class BookWireRow {
     private double amountNovember;
     private int soldUnitsDecember;
     private double amountDecember;
-    private int soldUnitsTotal;
-    private double amountTotal;
     //endregion
 
     //region Construction
@@ -52,46 +50,55 @@ public class BookWireRow {
         Cell[] cells = IntStream.range(0, row.getLastCellNum()).mapToObj(i -> {
             try {
                 return row.getCell(i);
-            }
-            catch (Exception ex) {
+            } catch (Exception ex) {
                 return new EmptyCell();
             }
         }).toArray(Cell[]::new);
 
         isbnNumber = asString(cells[BookWireIndexes.ISBN]);
         authorAndTitle = asString(cells[BookWireIndexes.AUTHOR_AND_TITLE]);
+
         soldUnitsJanuary = asInt(cells[BookWireIndexes.SALES_JANUARY]);
         amountJanuary = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
-        soldUnitsFebruary = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
-        amountFebruary = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
-        soldUnitsMarch = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
-        amountMarch = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
-        soldUnitsApril = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
-        amountApril = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
-        soldUnitsMay = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
-        amountMay = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
-        amountJune = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
-        soldUnitsJuly = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
-        amountJuly = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
-        soldUnitsAugust = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
-        amountAugust = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
-        soldUnitsSeptember = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
-        amountSeptember = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
-        soldUnitsOctober = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
-        amountOctober = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
-        soldUnitsNovember = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
-        amountNovember = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
-        soldUnitsDecember = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
-        amountDecember = asDouble(cells[BookWireIndexes.AMOUNT_JANUARY]);
 
-        soldUnitsTotal = calculateTotalUnitsSold();
-        amountTotal = calculateTotalAmount();
+        soldUnitsFebruary = asInt(cells[BookWireIndexes.SALES_FEBRUARY]);
+        amountFebruary = asDouble(cells[BookWireIndexes.AMOUNT_FEBRUARY]);
+
+        soldUnitsMarch = asInt(cells[BookWireIndexes.SALES_MARCH]);
+        amountMarch = asDouble(cells[BookWireIndexes.AMOUNT_MARCH]);
+
+        soldUnitsApril = asInt(cells[BookWireIndexes.SALES_APRIL]);
+        amountApril = asDouble(cells[BookWireIndexes.AMOUNT_APRIL]);
+
+        soldUnitsMay = asInt(cells[BookWireIndexes.SALES_MAY]);
+        amountMay = asDouble(cells[BookWireIndexes.AMOUNT_MAY]);
+
+        soldUnitsJune = asInt(cells[BookWireIndexes.SALES_JUNE]);
+        amountJune = asDouble(cells[BookWireIndexes.AMOUNT_JUNE]);
+
+        soldUnitsJuly = asInt(cells[BookWireIndexes.SALES_JULY]);
+        amountJuly = asDouble(cells[BookWireIndexes.AMOUNT_JULY]);
+
+        soldUnitsAugust = asInt(cells[BookWireIndexes.SALES_AUGUST]);
+        amountAugust = asDouble(cells[BookWireIndexes.AMOUNT_AUGUST]);
+
+        soldUnitsSeptember = asInt(cells[BookWireIndexes.SALES_SEPTEMBER]);
+        amountSeptember = asDouble(cells[BookWireIndexes.AMOUNT_SEPTEMBER]);
+
+        soldUnitsOctober = asInt(cells[BookWireIndexes.SALES_OCTOBER]);
+        amountOctober = asDouble(cells[BookWireIndexes.AMOUNT_OCTOBER]);
+
+        soldUnitsNovember = asInt(cells[BookWireIndexes.SALES_NOVEMBER]);
+        amountNovember = asDouble(cells[BookWireIndexes.AMOUNT_NOVEMBER]);
+
+        soldUnitsDecember = asInt(cells[BookWireIndexes.SALES_DECEMBER]);
+        amountDecember = asDouble(cells[BookWireIndexes.AMOUNT_DECEMBER]);
     }
 
     private String asString(Cell cell) {
         CellType type = cell.getCellType();
         return ((type != CellType.BLANK)
-            && (type == CellType.STRING))
+                && (type == CellType.STRING))
                 ? cell.getStringCellValue()
                 : "";
     }
@@ -100,61 +107,31 @@ public class BookWireRow {
     private double asDouble(Cell cell) {
         final double error = -1d;
         try {
-        CellType type = cell.getCellType();
-        return ((type != CellType.BLANK)
-            && (type == CellType.NUMERIC))
-                ? cell.getNumericCellValue()
-                : error;
-        }
-        catch (NumberFormatException ex) {
+            CellType type = cell.getCellType();
+            return ((type != CellType.BLANK)
+                    && (type == CellType.NUMERIC))
+                    ? cell.getNumericCellValue()
+                    : error;
+        } catch (NumberFormatException ex) {
             return error;
         }
     }
 
     private int asInt(Cell cell) {
-        final int error = -1;
+        final int zero = 0;
         try {
-        CellType type = cell.getCellType();
-        return ((type != CellType.BLANK)
-            && (type == CellType.NUMERIC))
-                ? Integer.parseInt(Double.toString(cell.getNumericCellValue()))
-                : error;
-        }
-        catch (NumberFormatException ex) {
-            return error;
-        }
-    }
-    //endregion
+            CellType type = cell.getCellType();
 
-    //region Public Members
-    public double calculateTotalAmount() {
-        return amountTotal = amountJanuary
-            + amountFebruary
-            + amountMarch
-            + amountApril
-            + amountMay
-            + amountJune
-            + amountJuly
-            + amountAugust
-            + amountSeptember
-            + amountOctober
-            + amountNovember
-            + amountDecember;
-    }
+            if (type == CellType.BLANK)
+                return zero;
 
-    public int calculateTotalUnitsSold() {
-        return soldUnitsTotal = soldUnitsJanuary
-            + soldUnitsFebruary
-            + soldUnitsMarch
-            + soldUnitsApril
-            + soldUnitsMay
-            + soldUnitsJune
-            + soldUnitsJuly
-            + soldUnitsAugust
-            + soldUnitsSeptember
-            + soldUnitsOctober
-            + soldUnitsNovember
-            + soldUnitsDecember;
+            if (type == CellType.NUMERIC)
+                return ((Double) cell.getNumericCellValue()).intValue();
+
+            return zero;
+        } catch (NumberFormatException ex) {
+            return zero;
+        }
     }
     //endregion
 
@@ -207,12 +184,12 @@ public class BookWireRow {
         return amountMay;
     }
 
-    public int getSoldUnitsJune() {
-        return soldUnitsJune;
-    }
-
     public double getAmountJune() {
         return amountJune;
+    }
+
+    public int getSoldUnitsJune() {
+        return soldUnitsJune;
     }
 
     public int getSoldUnitsJuly() {
@@ -262,18 +239,5 @@ public class BookWireRow {
     public double getAmountDecember() {
         return amountDecember;
     }
-
-    public int getSoldUnitsTotal() {
-        return soldUnitsTotal;
-    }
-
-    public double getAmountTotal() {
-        return amountTotal;
-    }
-
-    public void setSoldUnitsJune(int soldUnitsJune) {
-        this.soldUnitsJune = soldUnitsJune;
-    }
     //endregion
-
 }
