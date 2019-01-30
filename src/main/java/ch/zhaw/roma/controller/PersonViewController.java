@@ -1,4 +1,4 @@
-package ch.zhaw.roma.controller;
+package ch.zhaw.roma.controller.obsolete;
 
 import javafx.fxml.Initializable;
 
@@ -10,7 +10,10 @@ public class PersonViewController implements Initializable {
     //region Private Fields
     //endregion
 
-    //region Getters and Setters
+    //region Public Fields
+    //endregion
+
+    //region Getters And Setters
     //endregion
 
     //region Construction

@@ -12,36 +12,36 @@ import javafx.stage.Stage;
 public class EditAuthorViewController {
 
     @FXML
-    private ComboBox greetingBox = new ComboBox();
+    private TextField greetingBox;
     @FXML
-    private TextField firstName = new TextField();
+    private TextField firstName;
     @FXML
-    private TextField lastName = new TextField();
+    private TextField lastName;
     @FXML
-    private TextField street1 = new TextField();
+    private TextField street1;
     @FXML
-    private TextField street2 = new TextField();
+    private TextField street2;
     @FXML
-    private TextField street3 = new TextField();
+    private TextField street3;
     @FXML
-    private TextField zipCode = new TextField();
+    private TextField zipCode;
     @FXML
-    private TextField city = new TextField();
+    private TextField city;
     @FXML
-    private ComboBox countryBox = new ComboBox();
+    private ComboBox countryBox;
     @FXML
-    private TextField email = new TextField();
+    private TextField email;
     @FXML
-    private TextField website = new TextField();
+    private TextField website;
     @FXML
-    private TextField mobileNr = new TextField();
+    private TextField mobileNr;
     @FXML
-    private TextField officeNr = new TextField();
+    private TextField officeNr;
     @FXML
-    private TextField privateNr = new TextField();
+    private TextField privateNr;
 
     @FXML
-    private Button safeButton;
+    private Button saveButton;
     @FXML
     private Button cancelButton;
 
@@ -53,12 +53,9 @@ public class EditAuthorViewController {
 
     @FXML
     private void initialize() {
-        greetingBox.getItems().removeAll(greetingBox.getItems());
-        for(String greets: Greeting.getGREETINGS()) {
-            greetingBox.getItems().add(greets);
-        }
+
         countryBox.getItems().removeAll(countryBox.getItems());
-        for(String country : Country.getCOUNTRIES()) {
+        for (String country : Country.getCOUNTRIES()) {
             countryBox.getItems().add(country);
         }
     }
@@ -70,7 +67,6 @@ public class EditAuthorViewController {
 
     public void setDataFields(Author author) {
 
-        greetingBox.getSelectionModel().select(author.getGreeting().getGreetingString());
         countryBox.getSelectionModel().select(author.getCountry().getCountryString());
 
         firstName.setText(author.getFirstName());
@@ -91,8 +87,6 @@ public class EditAuthorViewController {
 
     @FXML
     public void handleSafe() {
-        //TODO: Input validation
-        author.setGreeting(new Greeting(greetingBox.getSelectionModel().getSelectedItem().toString()));
         author.setFirstName(firstName.getText());
         author.setLastName(lastName.getText());
         author.setStreet1(street1.getText());
