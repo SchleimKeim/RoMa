@@ -9,7 +9,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import org.hibernate.SessionFactory;
+import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 import java.io.IOException;
 import java.net.URL;
@@ -22,7 +24,6 @@ public class IntroViewController implements Initializable {
     private SessionFactory sessionFactory;
     //endregion
 
-    //region Public Fields
     public Button editData;
     public Button startNewRoyaltyCalculation;
     public Button openSettings;
@@ -62,17 +63,12 @@ public class IntroViewController implements Initializable {
 
     public void onOpenDataEditor(ActionEvent actionEvent) {
         try {
-            FXMLLoader localLoader = new FXMLLoader(getClass().getResource("/view/DataEditorView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/DataEditorView.fxml"));
             Stage stage = new Stage();
-            stage.setScene(new Scene(localLoader.load()));
-            DataEditorViewController controller = localLoader.getController();
-
-            if (controller != null) {
-                controller.setDbConnection(serviceRegistry, sessionFactory);
-                stage.show();
-            } else {
-                throw new Exception("Controller not loaded!");
-            }
+            stage.setScene(new Scene(loader.load()));
+            DataEditorViewController controller = loader.getController();
+            controller.setDbInformation(sessionFactory, serviceRegistry);
+            stage.show();
         } catch (IOException e1) {
             e1.printStackTrace();
         } catch (Exception ex) {
@@ -87,6 +83,15 @@ public class IntroViewController implements Initializable {
 
     //region Private Helpers
     private void initDb() {
+        serviceRegistry = new StandardServiceRegistryBuilder()
+                .configure("hibernate.cfg.xml")
+                .build();
+        sessionFactory = new MetadataSources(serviceRegistry)
+                .buildMetadata()
+                .buildSessionFactory();
+    }
+
+    private void initDbAsync() {
         InitDBService service = new InitDBService();
         service.setOnSucceeded(e -> {
             InitDbResult result = (InitDbResult) e.getSource().getValue();

@@ -6,6 +6,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
+<?import ch.zhaw.roma.customcontrols.PersonsView?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="600.0" prefWidth="800.0"
             xmlns="http://javafx.com/javafx/10.0.1" fx:controller="ch.zhaw.roma.controller.DataEditorViewController">
     <children>
@@ -57,11 +58,15 @@
                 </AnchorPane>
                 <AnchorPane prefHeight="400.0" prefWidth="600.0">
                     <children>
-                        <fx:include fx:id="personsView" source="PersonsView.fxml"
-                                    visible="${controller.personsViewVisibility}"/>
+                        <PersonsView visible="${controller.personsViewVisibility}"
+                                    serviceRegistry="${controller.serviceRegistry}"
+                                    sessionFactory="${controller.sessionFactory}"
+                                    persons="${controller.persons}"
+                        />
                         <BooksView visible="${controller.booksViewVisibility}"
                                    serviceRegistry="${controller.serviceRegistry}"
-                                   sessionFactory="${controller.sessionFactory}"/>
+                                   sessionFactory="${controller.sessionFactory}"
+                        books="${controller.books}"/>
                     </children>
                 </AnchorPane>
             </items>

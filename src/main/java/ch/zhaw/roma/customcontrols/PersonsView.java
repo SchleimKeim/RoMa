@@ -1,7 +1,7 @@
 package ch.zhaw.roma.customcontrols;
 
-import ch.zhaw.roma.controller.BooksViewController;
-import ch.zhaw.roma.model.BookModel;
+import ch.zhaw.roma.controller.PersonsViewController;
+import ch.zhaw.roma.model.PersonModel;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,22 +13,22 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BooksView extends AnchorPane {
-    //region Fields
-    private List<BookModel> list = new ArrayList<>();
-    private ObservableList<BookModel> books = FXCollections.observableList(list);
+public class PersonsView extends AnchorPane {
+    //region Private Fields
+    private List<PersonModel> list = new ArrayList<>();
+    private ObservableList<PersonModel> persons = FXCollections.observableList(list);
     private SimpleObjectProperty<SessionFactory> sessionFactory = new SimpleObjectProperty<>(this, "sessionFactory");
     private SimpleObjectProperty<StandardServiceRegistry> serviceRegistry = new SimpleObjectProperty<>(this, "serviceRegistry");
     //endregion
 
     //region Construction
-    public BooksView() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/BooksView.fxml"));
+    public PersonsView() {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/PersonsView.fxml"));
         fxmlLoader.setRoot(this);
         try {
             fxmlLoader.load();
 
-            BooksViewController controller = fxmlLoader.getController();
+            PersonsViewController controller = fxmlLoader.getController();
             if(controller != null)
                 controller.setDbConnection(getSessionFactory(), getServiceRegistry());
 
@@ -39,12 +39,12 @@ public class BooksView extends AnchorPane {
     //endregion
 
     //region Getters And Setters
-    public ObservableList<BookModel> getBooks() {
-        return books;
+    public ObservableList<PersonModel> getPersons() {
+        return persons;
     }
 
-    public void setBooks(ObservableList<BookModel> value) {
-        books = value;
+    public void setPersons(ObservableList<PersonModel> value) {
+         persons = value;
     }
 
     public SessionFactory getSessionFactory() {
