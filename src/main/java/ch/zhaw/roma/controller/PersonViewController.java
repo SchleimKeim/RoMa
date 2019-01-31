@@ -2,28 +2,17 @@ package ch.zhaw.roma.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TextField;
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.registry.StandardServiceRegistry;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class PersonViewController implements Initializable {
-    public TextField firstName;
-    public TextField lastName;
-    public TextField street1;
-    public TextField street2;
-    public TextField street3;
-    public TextField zipCode;
-    public TextField city;
-    public TextField country;
-    public TextField email;
-    public TextField website;
-    public TextField mobilePhone;
-    public TextField officePhone;
-    public TextField privatePhone;
-    public TextField greeting;
 
     //region Private Fields
+    private SessionFactory sessionFactory;
+    private StandardServiceRegistry serviceRegistry;
     //endregion
 
     //region Public Fields
@@ -47,6 +36,12 @@ public class PersonViewController implements Initializable {
     //endregion
 
     //region Public Members
+    public void setDbConnection(SessionFactory factory, StandardServiceRegistry registry) {
+        if(sessionFactory == null)
+            sessionFactory = factory;
+        if(serviceRegistry == null)
+            serviceRegistry = registry;
+    }
     //endregion
 
     //region Private Helpers

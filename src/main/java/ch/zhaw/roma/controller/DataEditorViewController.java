@@ -1,13 +1,9 @@
 package ch.zhaw.roma.controller;
 
-import ch.zhaw.roma.helpers.InitDBService;
-import ch.zhaw.roma.helpers.InitDbResult;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
@@ -81,23 +77,11 @@ public class DataEditorViewController implements Initializable {
     private void showPersonsView() {
         setBooksViewVisibility(false);
         setPersonsViewVisibility(true);
-        //getPersonsViewController(personsView.getScene()).setDbConnection(sessionFactory, serviceRegistry);
     }
 
     private void showBooksView() {
         setPersonsViewVisibility(false);
         setBooksViewVisibility(true);
-        //getBooksViewController(booksView.getScene()).setDbConnection(sessionFactory, serviceRegistry);
-    }
-
-    private BooksViewController getBooksViewController(Scene scene) {
-        FXMLLoader loader = (FXMLLoader)(scene.getUserData());
-        return loader.getController();
-    }
-
-    private PersonsViewController getPersonsViewController(Scene scene) {
-        FXMLLoader loader = (FXMLLoader)(scene.getUserData());
-        return loader.getController();
     }
     //endregion
 
@@ -106,5 +90,25 @@ public class DataEditorViewController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
     }
+
+    /*
+            try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ImportExcelView.fxml"));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(loader.load()));
+            ImportExcelViewController controller = loader.getController();
+
+            if (controller != null) {
+                controller.setDbConnection(serviceRegistry, sessionFactory);
+                stage.show();
+            } else {
+                throw new Exception("Controller not loaded!");
+            }
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+     */
     //endregion
 }

@@ -1,5 +1,6 @@
 package ch.zhaw.roma.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
@@ -38,6 +39,9 @@ public class PersonsViewController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+    }
+
+    public void onImportPersons(ActionEvent actionEvent) {
     }
     //endregion
 }
