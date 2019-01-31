@@ -8,8 +8,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
-<AnchorPane maxHeight="502.0" maxWidth="710.0" minHeight="502.0" minWidth="710.0" prefHeight="502.0" prefWidth="710.0"
-            xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="ch.zhaw.roma.controller.DataEditorViewController">
     <children>
         <SplitPane dividerPositions="0.5">

@@ -33,7 +33,7 @@
                                         <Font name="System Bold" size="13.0" />
                                     </font>
                                 </Label>
-                                <ListView items="${controller.books}" prefHeight="203.0" prefWidth="223.0" GridPane.rowIndex="1" />
+                                <ListView fx:id="bookList" items="${controller.books}" prefHeight="203.0" prefWidth="223.0" GridPane.rowIndex="1" />
                                 <StackPane alignment="BASELINE_LEFT" prefWidth="207.0" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" GridPane.vgrow="NEVER">
                                     <children>
                                         <HBox>
@@ -58,17 +58,17 @@
                 </AnchorPane>
                 <AnchorPane>
                     <children>
-                  <GridPane layoutY="10.0" prefHeight="500.0" prefWidth="310.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="ALWAYS" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
+                        <GridPane layoutY="10.0" prefHeight="500.0" prefWidth="310.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="ALWAYS" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
                                 <GridPane prefWidth="441.0">
                                     <columnConstraints>
                                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="299.0" percentWidth="0.0" />
@@ -77,6 +77,7 @@
                                     <rowConstraints>
                                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                     </rowConstraints>
                                     <children>
                                         <Label nodeOrientation="RIGHT_TO_LEFT" text="Titel:" GridPane.halignment="LEFT">
@@ -84,7 +85,7 @@
                                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                             </GridPane.margin>
                                             <font>
-                                                <Font name="System Bold" size="13.0" />
+                                                <Font name="System Bold Italic" size="13.0" />
                                             </font>
                                         </Label>
                                         <Label text="ISBN:" GridPane.halignment="LEFT" GridPane.rowIndex="1">
@@ -92,15 +93,28 @@
                                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                             </GridPane.margin>
                                             <font>
-                                                <Font name="System Bold" size="13.0" />
+                                                <Font name="System Bold Italic" size="13.0" />
                                             </font>
                                         </Label>
-                                        <TextField GridPane.columnIndex="1">
+                                        <TextField fx:id="titleTextField" GridPane.columnIndex="1" >
+                                            <GridPane.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                            </GridPane.margin>
+                                        </TextField>
+                                        <TextField fx:id="isbnTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" >
+                                            <GridPane.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                            </GridPane.margin>
+                                        </TextField>
+                              <Label text="ArtikelNr." GridPane.halignment="LEFT" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="System Bold Italic" size="13.0" />
+                                 </font>
                                  <GridPane.margin>
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                  </GridPane.margin>
-                              </TextField>
-                                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              </Label>
+                              <TextField fx:id="articleTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" >
                                  <GridPane.margin>
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                  </GridPane.margin>
@@ -136,21 +150,21 @@
                                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                             </GridPane.margin>
                                         </Label>
-                                        <TextField fx:id="priceCHtext" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                 <GridPane.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </GridPane.margin>
-                              </TextField>
-                                        <TextField fx:id="priceGerAndAuText" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                 <GridPane.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </GridPane.margin>
-                              </TextField>
-                                        <TextField fx:id="priceEbook" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                                 <GridPane.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </GridPane.margin>
-                              </TextField>
+                                        <TextField fx:id="priceCHtext" GridPane.columnIndex="1" GridPane.rowIndex="1" >
+                                            <GridPane.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                            </GridPane.margin>
+                                        </TextField>
+                                        <TextField fx:id="priceGerAndAuText" GridPane.columnIndex="1" GridPane.rowIndex="2" >
+                                            <GridPane.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                            </GridPane.margin>
+                                        </TextField>
+                                        <TextField fx:id="priceEbookText" GridPane.columnIndex="1" GridPane.rowIndex="3" >
+                                            <GridPane.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                            </GridPane.margin>
+                                        </TextField>
                                         <Label text="CHF" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                             <GridPane.margin>
                                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -170,24 +184,24 @@
                                             <font>
                                                 <Font name="System Bold" size="13.0" />
                                             </font>
-                                 <GridPane.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </GridPane.margin>
+                                            <GridPane.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                            </GridPane.margin>
                                         </Label>
                                     </children>
                                 </GridPane>
-                        <GridPane GridPane.rowIndex="2">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
+                                <GridPane GridPane.rowIndex="2">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
                                         <Label text="Honorarsatz Hardcover:" GridPane.halignment="LEFT" GridPane.rowIndex="1">
                                             <GridPane.margin>
                                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -202,20 +216,20 @@
                                             <font>
                                                 <Font name="System Bold" size="13.0" />
                                             </font>
-                                 <GridPane.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </GridPane.margin>
+                                            <GridPane.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                            </GridPane.margin>
                                         </Label>
-                                        <TextField fx:id="honoraryHardcoverText" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                 <GridPane.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </GridPane.margin>
-                              </TextField>
-                                        <TextField fx:id="honoryryEbookText" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                 <GridPane.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </GridPane.margin>
-                              </TextField>
+                                        <TextField fx:id="honoraryHardcoverText" GridPane.columnIndex="1" GridPane.rowIndex="1" >
+                                            <GridPane.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                            </GridPane.margin>
+                                        </TextField>
+                                        <TextField fx:id="honoraryEbookText" GridPane.columnIndex="1" GridPane.rowIndex="2" >
+                                            <GridPane.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                            </GridPane.margin>
+                                        </TextField>
                                         <Label text="\%" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                             <GridPane.margin>
                                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -226,16 +240,16 @@
                                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                             </GridPane.margin>
                                         </Label>
-                           </children>
+                                    </children>
+                                </GridPane>
+                                <AnchorPane GridPane.rowIndex="3">
+                                    <children>
+                                        <Button mnemonicParsing="false" onAction="#onSaveCurrent" text="Speichern" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="10.0" />
+                                        <Button mnemonicParsing="false" onAction="#onSaveAll" text="Alle Speichern" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="10.0" />
+                                    </children>
+                                </AnchorPane>
+                            </children>
                         </GridPane>
-                        <AnchorPane GridPane.rowIndex="3">
-                           <children>
-                                          <Button mnemonicParsing="false" text="Speichern" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="10.0" />
-                              <Button mnemonicParsing="false" text="Alle Speichern" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="10.0" />
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </GridPane>
                     </children>
                 </AnchorPane>
             </items>

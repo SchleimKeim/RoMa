@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="ch.zhaw.roma.model.excel.persistence.InhouseSheetModelTest" time="2.612" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="ch.zhaw.roma.model.excel.persistence.InhouseSheetModelTest" time="2.784" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2018.3.4"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -62,7 +62,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="ch.zhaw.roma.model.excel.persistence.InhouseSheetModelTest" name="saveSheetModelTest" time="0.94"/>
-  <testcase classname="ch.zhaw.roma.model.excel.persistence.InhouseSheetModelTest" name="loadInhouseTest" time="0.884"/>
-  <testcase classname="ch.zhaw.roma.model.excel.persistence.InhouseSheetModelTest" name="InhouseSheetModelTest" time="0.788"/>
+  <testcase classname="ch.zhaw.roma.model.excel.persistence.InhouseSheetModelTest" name="saveSheetModelTest" time="0.983"/>
+  <testcase classname="ch.zhaw.roma.model.excel.persistence.InhouseSheetModelTest" name="loadInhouseTest" time="0.922"/>
+  <testcase classname="ch.zhaw.roma.model.excel.persistence.InhouseSheetModelTest" name="InhouseSheetModelTest" time="0.879"/>
 </testsuite>

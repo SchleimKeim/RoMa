@@ -42,9 +42,18 @@ public class BookModel {
     public BookModel(String bookTitle) {
         setTitle(bookTitle);
     }
-    //endregion
 
-    //region Public Fields
+    public static BookModel empty() {
+        BookModel m = new BookModel();
+        m.setTitle("");
+        m.setIsbnNumber("");
+        m.setArticleNumber("");
+        m.setPriceCH(new BigDecimal(0));
+        m.setPriceDEandAT(new BigDecimal(0));
+        m.setHonoraryEbook(0d);
+        m.setHonoraryHardcover(0d);
+        return m;
+    }
     //endregion
 
     //region Getters And Setters
@@ -137,6 +146,12 @@ public class BookModel {
     //endregion
 
     //region Public Members
+    public boolean isEmpty() {
+        return (isbnNumber == null || isbnNumber.isEmpty())
+                && (articleNumber == null  || articleNumber.isEmpty())
+                && (title == null || title.isEmpty());
+    }
+
     public boolean save(Session session) {
         if(session == null)
             return false;
@@ -167,11 +182,9 @@ public class BookModel {
     //endregion
 
     //region Overrides
-
     @Override
     public String toString() {
         return getTitle();
     }
-
     //endregion
 }
