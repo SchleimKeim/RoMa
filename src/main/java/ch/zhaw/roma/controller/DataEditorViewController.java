@@ -2,6 +2,7 @@ package ch.zhaw.roma.controller;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
@@ -13,18 +14,42 @@ import java.util.ResourceBundle;
 
 public class DataEditorViewController implements Initializable {
     //region Private Fields
-    private SessionFactory sessionFactory;
-    private StandardServiceRegistry serviceRegistry;
     //endregion
 
     //region Public Fields
     public AnchorPane personsView;
-    public AnchorPane booksView;
     public SimpleBooleanProperty personsViewVisibility = new SimpleBooleanProperty(this, "personsViewVisibility");
     public SimpleBooleanProperty booksViewVisibility = new SimpleBooleanProperty(this, "booksViewVisibility");
+
+    private SimpleObjectProperty<StandardServiceRegistry> serviceRegistry = new SimpleObjectProperty<>(this, "serviceRegistry");
+    private SimpleObjectProperty<SessionFactory> sessionFactory = new SimpleObjectProperty<>(this, "sessionFactory");
     //endregion
 
     //region Getters And Setters
+    public StandardServiceRegistry getServiceRegistry() {
+        return serviceRegistry.get();
+    }
+
+    public void setServiceRegistry(StandardServiceRegistry serviceRegistry) {
+        this.serviceRegistry.set(serviceRegistry);
+    }
+
+    public SimpleObjectProperty<StandardServiceRegistry> serviceRegistrySimpleObjectProperty() {
+        return serviceRegistry;
+    }
+
+    public SessionFactory getSessionFactory() {
+        return sessionFactory.get();
+    }
+
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory.set(sessionFactory);
+    }
+
+    public SimpleObjectProperty<SessionFactory> sessionFactorySimpleObjectProperty() {
+        return sessionFactory;
+    }
+
     public BooleanProperty booksViewVisibilityProperty() {
         return booksViewVisibility;
     }
@@ -68,8 +93,8 @@ public class DataEditorViewController implements Initializable {
 
     //region Public Members
     public void setDbConnection(StandardServiceRegistry registry, SessionFactory factory) {
-        serviceRegistry = registry;
-        sessionFactory = factory;
+        setServiceRegistry(registry);
+        setSessionFactory(factory);
     }
     //endregion
 
@@ -88,27 +113,6 @@ public class DataEditorViewController implements Initializable {
     //region Overrides
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
     }
-
-    /*
-            try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ImportExcelView.fxml"));
-            Stage stage = new Stage();
-            stage.setScene(new Scene(loader.load()));
-            ImportExcelViewController controller = loader.getController();
-
-            if (controller != null) {
-                controller.setDbConnection(serviceRegistry, sessionFactory);
-                stage.show();
-            } else {
-                throw new Exception("Controller not loaded!");
-            }
-        } catch (IOException e1) {
-            e1.printStackTrace();
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-     */
     //endregion
 }
