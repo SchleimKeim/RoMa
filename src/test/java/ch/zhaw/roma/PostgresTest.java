@@ -24,7 +24,6 @@ public class PostgresTest {
                                                      .build();
         try {
             sessionFactory = new MetadataSources(registry)
-                                 //.addAnnotatedClass(TestBookModel.class)
                                  .buildMetadata()
                                  .buildSessionFactory();
 

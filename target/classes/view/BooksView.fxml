@@ -1,40 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-<fx:root type="AnchorPane" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1"
-         fx:controller="ch.zhaw.roma.controller.BooksViewController">
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<fx:root maxHeight="500.0" maxWidth="600.0" minHeight="500.0" minWidth="600.0" prefHeight="500.0" prefWidth="600.0" type="AnchorPane" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.zhaw.roma.controller.BooksViewController">
     <children>
-        <SplitPane dividerPositions="0.3123123123123123">
+        <SplitPane dividerPositions="0.3123123123123123" prefHeight="500.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <items>
                 <AnchorPane>
                     <children>
-                        <GridPane>
+                        <GridPane prefHeight="500.0" prefWidth="223.0">
                             <columnConstraints>
-                                <ColumnConstraints halignment="LEFT" hgrow="NEVER"/>
+                                <ColumnConstraints halignment="LEFT" />
                             </columnConstraints>
                             <children>
                                 <Label text="Bücher">
                                     <GridPane.margin>
-                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                     </GridPane.margin>
                                     <font>
-                                        <Font name="System Bold" size="13.0"/>
+                                        <Font name="System Bold" size="13.0" />
                                     </font>
                                 </Label>
-                                <ListView items="${controller.books}" prefHeight="203.0" prefWidth="223.0"
-                                          GridPane.rowIndex="1"/>
-                                <StackPane alignment="BOTTOM_CENTER" GridPane.rowIndex="2">
+                                <ListView items="${controller.books}" prefHeight="203.0" prefWidth="223.0" GridPane.rowIndex="1" />
+                                <StackPane alignment="BASELINE_LEFT" prefWidth="207.0" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" GridPane.vgrow="NEVER">
                                     <children>
                                         <HBox>
                                             <children>
-                                                <Button mnemonicParsing="false" onAction="#onImportBooks"
-                                                        text="Bücher aus Excel Tabellen Importieren"
-                                                        textAlignment="CENTER" wrapText="true">
+                                                <Button mnemonicParsing="false" onAction="#onImportBooks" text="Bücher aus Excel Tabellen Importieren" textAlignment="CENTER" wrapText="true">
                                                     <HBox.margin>
-                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                                     </HBox.margin>
                                                 </Button>
                                             </children>
@@ -43,168 +49,193 @@
                                 </StackPane>
                             </children>
                             <rowConstraints>
-                                <RowConstraints percentHeight="0.0"/>
-                                <RowConstraints/>
-                                <RowConstraints percentHeight="0.0" valignment="BOTTOM" vgrow="ALWAYS"/>
+                                <RowConstraints percentHeight="0.0" />
+                                <RowConstraints maxHeight="409.0" minHeight="208.0" percentHeight="0.0" prefHeight="395.0" />
+                                <RowConstraints maxHeight="253.0" minHeight="52.0" prefHeight="66.0" valignment="CENTER" vgrow="ALWAYS" />
                             </rowConstraints>
                         </GridPane>
                     </children>
                 </AnchorPane>
                 <AnchorPane>
                     <children>
-                        <VBox>
-                            <children>
-                                <GridPane>
+                  <GridPane layoutY="10.0" prefHeight="500.0" prefWidth="310.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                                <GridPane prefWidth="441.0">
                                     <columnConstraints>
-                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="299.0" percentWidth="0.0"/>
-                                        <ColumnConstraints hgrow="SOMETIMES"/>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="299.0" percentWidth="0.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" />
                                     </columnConstraints>
                                     <rowConstraints>
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                     </rowConstraints>
                                     <children>
                                         <Label nodeOrientation="RIGHT_TO_LEFT" text="Titel:" GridPane.halignment="LEFT">
                                             <GridPane.margin>
-                                                <Insets right="5.0"/>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                             </GridPane.margin>
                                             <font>
-                                                <Font name="System Bold" size="13.0"/>
+                                                <Font name="System Bold" size="13.0" />
                                             </font>
                                         </Label>
                                         <Label text="ISBN:" GridPane.halignment="LEFT" GridPane.rowIndex="1">
                                             <GridPane.margin>
-                                                <Insets right="5.0"/>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                             </GridPane.margin>
                                             <font>
-                                                <Font name="System Bold" size="13.0"/>
+                                                <Font name="System Bold" size="13.0" />
                                             </font>
                                         </Label>
-                                        <TextField GridPane.columnIndex="1"/>
-                                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                        <TextField GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
                                     </children>
-                                    <VBox.margin>
-                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
-                                    </VBox.margin>
                                 </GridPane>
-                                <GridPane>
+                                <GridPane GridPane.rowIndex="1">
                                     <columnConstraints>
-                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="299.0" minWidth="10.0"
-                                                           prefWidth="114.0"/>
-                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="451.0" minWidth="0.0"
-                                                           prefWidth="61.0"/>
-                                        <ColumnConstraints hgrow="SOMETIMES"/>
-                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="451.0" minWidth="10.0"
-                                                           prefWidth="165.0"/>
-                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="451.0" minWidth="10.0"
-                                                           prefWidth="42.0"/>
-                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="451.0" minWidth="10.0"
-                                                           prefWidth="26.0"/>
+                                        <ColumnConstraints hgrow="SOMETIMES" />
+                                        <ColumnConstraints hgrow="SOMETIMES" />
+                                        <ColumnConstraints hgrow="SOMETIMES" />
                                     </columnConstraints>
                                     <rowConstraints>
-                                        <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="30.0"
-                                                        vgrow="SOMETIMES"/>
-                                        <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="30.0"
-                                                        vgrow="SOMETIMES"/>
-                                        <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0"
-                                                        vgrow="SOMETIMES"/>
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                                        <RowConstraints vgrow="SOMETIMES"/>
+                                        <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints vgrow="SOMETIMES" />
                                     </rowConstraints>
                                     <children>
-                                        <Label nodeOrientation="RIGHT_TO_LEFT" text="Listenpreis CH:"
-                                               GridPane.halignment="LEFT" GridPane.rowIndex="1">
+                                        <Label nodeOrientation="RIGHT_TO_LEFT" text="Listenpreis CH:" GridPane.halignment="LEFT" GridPane.rowIndex="1">
                                             <GridPane.margin>
-                                                <Insets right="5.0"/>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                             </GridPane.margin>
                                         </Label>
                                         <Label text="Listenpreis D:" GridPane.halignment="LEFT" GridPane.rowIndex="2">
                                             <GridPane.margin>
-                                                <Insets right="5.0"/>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                             </GridPane.margin>
                                         </Label>
                                         <Label text="Preis eBook:" GridPane.halignment="LEFT" GridPane.rowIndex="3">
                                             <GridPane.margin>
-                                                <Insets right="5.0"/>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                             </GridPane.margin>
                                         </Label>
-                                        <Label text="Honorarsatz Hardcover:" GridPane.columnIndex="3"
-                                               GridPane.halignment="LEFT" GridPane.rowIndex="1">
-                                            <GridPane.margin>
-                                                <Insets right="5.0"/>
-                                            </GridPane.margin>
-                                        </Label>
-                                        <Label text="Honorarsatz eBook:" GridPane.columnIndex="3"
-                                               GridPane.halignment="LEFT" GridPane.rowIndex="2">
-                                            <GridPane.margin>
-                                                <Insets right="5.0"/>
-                                            </GridPane.margin>
-                                        </Label>
-                                        <TextField fx:id="priceCHtext" prefHeight="26.0" prefWidth="152.0"
-                                                   GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-                                        <TextField fx:id="priceGerAndAuText" GridPane.columnIndex="1"
-                                                   GridPane.rowIndex="2"/>
-                                        <TextField fx:id="priceEbook" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-                                        <TextField fx:id="honoraryHardcoverText" GridPane.columnIndex="4"
-                                                   GridPane.rowIndex="1"/>
-                                        <TextField fx:id="honoryryEbookText" GridPane.columnIndex="4"
-                                                   GridPane.rowIndex="2"/>
+                                        <TextField fx:id="priceCHtext" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                                        <TextField fx:id="priceGerAndAuText" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                                        <TextField fx:id="priceEbook" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
                                         <Label text="CHF" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                             <GridPane.margin>
-                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                             </GridPane.margin>
                                         </Label>
                                         <Label text="€" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                             <GridPane.margin>
-                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                             </GridPane.margin>
                                         </Label>
                                         <Label text="€" GridPane.columnIndex="2" GridPane.rowIndex="3">
                                             <GridPane.margin>
-                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
-                                            </GridPane.margin>
-                                        </Label>
-                                        <Label text="\%" GridPane.columnIndex="5" GridPane.rowIndex="1">
-                                            <GridPane.margin>
-                                                <Insets left="5.0"/>
-                                            </GridPane.margin>
-                                        </Label>
-                                        <Label text="\%" GridPane.columnIndex="5" GridPane.rowIndex="2">
-                                            <GridPane.margin>
-                                                <Insets left="5.0"/>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                             </GridPane.margin>
                                         </Label>
                                         <Label text="Preise:" GridPane.columnSpan="2">
                                             <font>
-                                                <Font name="System Bold" size="13.0"/>
+                                                <Font name="System Bold" size="13.0" />
                                             </font>
-                                        </Label>
-                                        <Label text="Honorarsätze:" GridPane.columnIndex="3">
-                                            <font>
-                                                <Font name="System Bold" size="13.0"/>
-                                            </font>
+                                 <GridPane.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </GridPane.margin>
                                         </Label>
                                     </children>
-                                    <VBox.margin>
-                                        <Insets bottom="10.0" left="10.0" right="10.0"/>
-                                    </VBox.margin>
                                 </GridPane>
-                                <BorderPane VBox.vgrow="ALWAYS">
-                                    <center>
-                                        <StackPane alignment="BOTTOM_CENTER" BorderPane.alignment="CENTER">
-                                            <children>
-                                                <Button mnemonicParsing="false" text="Speichern"
-                                                        StackPane.alignment="BOTTOM_RIGHT">
-                                                    <StackPane.margin>
-                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
-                                                    </StackPane.margin>
-                                                </Button>
-                                            </children>
-                                        </StackPane>
-                                    </center>
-                                </BorderPane>
-                            </children>
-                        </VBox>
+                        <GridPane GridPane.rowIndex="2">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                                        <Label text="Honorarsatz Hardcover:" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+                                            <GridPane.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                            </GridPane.margin>
+                                        </Label>
+                                        <Label text="Honorarsatz eBook:" GridPane.halignment="LEFT" GridPane.rowIndex="2">
+                                            <GridPane.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                            </GridPane.margin>
+                                        </Label>
+                                        <Label text="Honorarsätze:">
+                                            <font>
+                                                <Font name="System Bold" size="13.0" />
+                                            </font>
+                                 <GridPane.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </GridPane.margin>
+                                        </Label>
+                                        <TextField fx:id="honoraryHardcoverText" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                                        <TextField fx:id="honoryryEbookText" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                                        <Label text="\%" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                            <GridPane.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                            </GridPane.margin>
+                                        </Label>
+                                        <Label text="\%" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                            <GridPane.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                            </GridPane.margin>
+                                        </Label>
+                           </children>
+                        </GridPane>
+                        <AnchorPane GridPane.rowIndex="3">
+                           <children>
+                                          <Button mnemonicParsing="false" text="Speichern" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="10.0" />
+                              <Button mnemonicParsing="false" text="Alle Speichern" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="10.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
                     </children>
                 </AnchorPane>
             </items>
