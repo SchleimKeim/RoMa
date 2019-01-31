@@ -167,5 +167,11 @@ public class BookModel {
     //endregion
 
     //region Overrides
+
+    @Override
+    public String toString() {
+        return getTitle();
+    }
+
     //endregion
 }

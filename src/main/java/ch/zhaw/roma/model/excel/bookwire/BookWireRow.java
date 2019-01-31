@@ -118,17 +118,19 @@ public class BookWireRow {
                 : "";
     }
 
-
     private double asDouble(Cell cell) {
-        final double error = -1d;
+        final double zero = 0d;
         try {
             CellType type = cell.getCellType();
-            return ((type != CellType.BLANK)
-                    && (type == CellType.NUMERIC))
-                    ? cell.getNumericCellValue()
-                    : error;
+            if(type == CellType.BLANK)
+                return zero;
+
+            if(type == CellType.NUMERIC)
+                return cell.getNumericCellValue();
+
+            return zero;
         } catch (NumberFormatException ex) {
-            return error;
+            return zero;
         }
     }
 

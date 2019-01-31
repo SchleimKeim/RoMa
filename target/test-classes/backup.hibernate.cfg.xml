@@ -16,9 +16,9 @@
         <!-- SQL dialect -->
         <!-- Database connection settings -->
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <property name="connection.url">jdbc:postgresql://localhost:5432/roma</property>
-        <property name="connection.username">roma</property>
-        <property name="connection.password">roma</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/romatest</property>
+        <property name="connection.username">romatest</property>
+        <property name="connection.password">romatest</property>
 
         <!-- SQL dialect -->
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
@@ -27,11 +27,14 @@
         <property name="show_sql">true</property>
 
         <!-- Drop and re-create all database on startup -->
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
 
         <!-- MAPPINGS -->
         <mapping class="ch.zhaw.roma.model.BookModel"/>
         <mapping class="ch.zhaw.roma.model.PersonModel"/>
+        <mapping class="ch.zhaw.roma.model.test.TestBookModel"/>
+        <mapping class="ch.zhaw.roma.model.test.TestAuthorModel"/>
+        <mapping class="ch.zhaw.roma.model.test.TestAddressModel"/>
         <mapping class="ch.zhaw.roma.model.excel.persistence.InhouseSheetModel"/>
         <mapping class="ch.zhaw.roma.model.excel.persistence.InhouseRowModel"/>
         <mapping class="ch.zhaw.roma.model.excel.persistence.BookWireSheetModel"/>
@@ -39,3 +42,4 @@
     </session-factory>
 
 </hibernate-configuration>
+
