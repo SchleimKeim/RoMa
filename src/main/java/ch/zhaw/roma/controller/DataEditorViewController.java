@@ -4,14 +4,14 @@ import ch.zhaw.roma.model.BookModel;
 import ch.zhaw.roma.model.PersonModel;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -26,11 +26,9 @@ public class DataEditorViewController implements Initializable {
     private List<PersonModel> personList = new ArrayList<>();
     public ObservableList<PersonModel> persons = FXCollections.observableList(personList);
 
-    private SimpleObjectProperty<StandardServiceRegistry> serviceRegistry = new SimpleObjectProperty<>(this, "serviceRegistry");
-    private SimpleObjectProperty<SessionFactory> sessionFactory = new SimpleObjectProperty<>(this, "sessionFactory");
-
     public SimpleBooleanProperty personsViewVisibility = new SimpleBooleanProperty(this, "personsViewVisibility");
     public SimpleBooleanProperty booksViewVisibility = new SimpleBooleanProperty(this, "booksViewVisibility");
+    private StandardServiceRegistry serviceRegistry;
     //endregion
 
     //region Getters And Setters
@@ -48,30 +46,6 @@ public class DataEditorViewController implements Initializable {
 
     public void setBooks(ObservableList<BookModel> value) {
         books = value;
-    }
-
-    public StandardServiceRegistry getServiceRegistry() {
-        return serviceRegistry.get();
-    }
-
-    public void setServiceRegistry(StandardServiceRegistry serviceRegistry) {
-        this.serviceRegistry.set(serviceRegistry);
-    }
-
-    public SimpleObjectProperty<StandardServiceRegistry> serviceRegistrySimpleObjectProperty() {
-        return serviceRegistry;
-    }
-
-    public SessionFactory getSessionFactory() {
-        return sessionFactory.get();
-    }
-
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.sessionFactory.set(sessionFactory);
-    }
-
-    public SimpleObjectProperty<SessionFactory> sessionFactorySimpleObjectProperty() {
-        return sessionFactory;
     }
 
     public BooleanProperty booksViewVisibilityProperty() {
@@ -107,11 +81,6 @@ public class DataEditorViewController implements Initializable {
 
 
     //region Public Members
-    public void setDbInformation(SessionFactory factory, StandardServiceRegistry registry) {
-        setSessionFactory(factory);
-        setServiceRegistry(registry);
-    }
-
     //endregion
 
     //region Action Handler
@@ -134,23 +103,23 @@ public class DataEditorViewController implements Initializable {
         setPersonsViewVisibility(false);
         setBooksViewVisibility(true);
     }
-    private void loadData() {
-        SessionFactory factory = getSessionFactory();
-        if(factory != null) {
-            Session s = factory.openSession();
-            List<BookModel> list = s.createQuery("FROM BOOKS").list();
-            for(BookModel b : list)
-                books.add(b);
-        }
+
+    private void initDb() {
+        serviceRegistry = new StandardServiceRegistryBuilder()
+                .configure("hibernate.cfg.xml")
+                .build();
+        SessionFactory sessionFactory = new MetadataSources(serviceRegistry)
+                .buildMetadata()
+                .buildSessionFactory();
     }
+
     //endregion
 
     //region Overrides
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        initDb();
         showBooksView();
-        loadData();
     }
     //endregion
 }

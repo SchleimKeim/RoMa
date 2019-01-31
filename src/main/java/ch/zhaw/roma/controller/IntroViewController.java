@@ -32,7 +32,7 @@ public class IntroViewController implements Initializable {
 
     //region Construction
     public IntroViewController() {
-
+        initDb();
     }
     //endregion
 
@@ -66,8 +66,6 @@ public class IntroViewController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/DataEditorView.fxml"));
             Stage stage = new Stage();
             stage.setScene(new Scene(loader.load()));
-            DataEditorViewController controller = loader.getController();
-            controller.setDbInformation(sessionFactory, serviceRegistry);
             stage.show();
         } catch (IOException e1) {
             e1.printStackTrace();
@@ -119,7 +117,8 @@ public class IntroViewController implements Initializable {
     //region Overrides
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        initDb();
+        if(sessionFactory == null || serviceRegistry == null)
+            initDb();
     }
     //endregion
 }

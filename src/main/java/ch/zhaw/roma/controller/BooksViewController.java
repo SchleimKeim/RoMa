@@ -9,6 +9,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
@@ -22,12 +23,21 @@ import java.util.ResourceBundle;
 import java.util.Set;
 
 public class BooksViewController implements Initializable {
+
     //region Private Fields
     private SessionFactory sessionFactory;
     private StandardServiceRegistry serviceRegistry;
     private ArrayList<BookModel> list = new ArrayList<>();
     private ObservableList<BookModel> books = FXCollections.observableList(list);
     private BookModel currentBook;
+    //endregion
+
+    //region Public Fields
+    public TextField priceCHtext;
+    public TextField priceGerAndAuText;
+    public TextField priceEbook;
+    public TextField honoraryHardcoverText;
+    public TextField honoryryEbookText;
     //endregion
 
     //region Getters And Setters
