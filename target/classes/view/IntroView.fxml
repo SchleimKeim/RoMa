@@ -32,7 +32,7 @@
                <font>
                   <Font size="29.0" />
                </font></Label>
-                <Button fx:id="startNewRoyaltyCalculation" contentDisplay="TOP" onAction="#onOpenNewCalculation" text="Honorarabrechnung erfassen..." GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                <Button contentDisplay="TOP" onAction="#onOpenNewCalculation" text="Honorarabrechnung erfassen..." GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                     <graphic>
                         <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                             <image>

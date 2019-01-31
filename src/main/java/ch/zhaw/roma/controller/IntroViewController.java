@@ -25,7 +25,6 @@ public class IntroViewController implements Initializable {
     //endregion
 
     public Button editData;
-    public Button startNewRoyaltyCalculation;
     public Button openSettings;
     public Button importExcel;
     //endregion
@@ -38,7 +37,16 @@ public class IntroViewController implements Initializable {
 
     //region Aciton Handler
     public void onOpenNewCalculation(ActionEvent actionEvent) {
-        // TODO: ...
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/CreateCalculationView.fxml"));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(loader.load()));
+            stage.show();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     public void onOpenExcelFileImporter(ActionEvent actionEvent) {
@@ -87,19 +95,6 @@ public class IntroViewController implements Initializable {
         sessionFactory = new MetadataSources(serviceRegistry)
                 .buildMetadata()
                 .buildSessionFactory();
-    }
-
-    private void initDbAsync() {
-        InitDBService service = new InitDBService();
-        service.setOnSucceeded(e -> {
-            InitDbResult result = (InitDbResult) e.getSource().getValue();
-            if (result.IsSuccess()) {
-                serviceRegistry = result.getServiceRegistry();
-                sessionFactory = result.getSessionFactory();
-            } else
-                System.out.println("Datenbank NICHT geladen!");
-        });
-        service.start();
     }
 
     private void openWindow(String path, String title) {

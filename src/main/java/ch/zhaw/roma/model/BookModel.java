@@ -184,7 +184,11 @@ public class BookModel {
     //region Overrides
     @Override
     public String toString() {
-        return getTitle();
+        return new StringBuilder()
+                .append(getIsbnNumber())
+                .append(" ")
+                .append(getTitle())
+                .toString();
     }
     //endregion
 }

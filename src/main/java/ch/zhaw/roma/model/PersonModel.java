@@ -219,6 +219,14 @@ public class PersonModel {
     //endregion
 
     //region Overrides
+    @Override
+    public String toString() {
+        return new StringBuilder()
+                .append(getFirstName())
+                .append(" ")
+                .append(getLastName())
+                .toString();
+    }
     //endregion
 
 }
