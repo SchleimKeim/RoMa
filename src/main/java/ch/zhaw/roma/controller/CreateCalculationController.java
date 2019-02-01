@@ -8,7 +8,6 @@ import ch.zhaw.roma.model.royaltycalculation.AccountEntry;
 import ch.zhaw.roma.model.royaltycalculation.AuxRight;
 import ch.zhaw.roma.model.royaltycalculation.LegacyEntry;
 import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -22,9 +21,9 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -48,56 +47,33 @@ public class CreateCalculationController implements Initializable {
     private double mwstEbook = 1.07;
 
     private int soldCh = 82;
-    private int soldDeAu= 263;
+    private int soldDeAu = 263;
     private int soldEbooks = 61;
 
     private double eurChfRate = 1.11;
 
     private String path = "output/TestPDF.pdf";
+    private SimpleBooleanProperty isImportButtonDisabled = new SimpleBooleanProperty(true);
+    private PersonModel selectedPerson;
+    private BookModel selectedBook;
+    private StandardServiceRegistry serviceRegistry;
+    private SessionFactory sessionFactory;
+    private ArrayList<BookModel> bookModels = new ArrayList<>();
+    private ArrayList<PersonModel> personModels = new ArrayList<>();
+    private ObservableList<PersonModel> authors = FXCollections.observableArrayList(personModels);
+    private ObservableList<BookModel> books = FXCollections.observableList(bookModels);
 
     public boolean getIsImportButtonDisabled() {
         return isImportButtonDisabled.get();
-    }
-
-    public SimpleBooleanProperty isImportButtonDisabledProperty() {
-        return isImportButtonDisabled;
     }
 
     public void setIsImportButtonDisabled(boolean isImportButtonDisabled) {
         this.isImportButtonDisabled.set(isImportButtonDisabled);
     }
 
-    private SimpleBooleanProperty isImportButtonDisabled = new SimpleBooleanProperty(true);
-    public BookModel getSelectedBook() {
-        return selectedBook.get();
+    public SimpleBooleanProperty isImportButtonDisabledProperty() {
+        return isImportButtonDisabled;
     }
-
-    public SimpleObjectProperty<BookModel> selectedBookProperty() {
-        return selectedBook;
-    }
-
-    public void setSelectedBook(BookModel selectedBook) {
-        this.selectedBook.set(selectedBook);
-    }
-
-    public PersonModel getSelectedPerson() {
-        return selectedPerson.get();
-    }
-
-    public SimpleObjectProperty<PersonModel> selectedPersonProperty() {
-        return selectedPerson;
-    }
-
-    public void setSelectedPerson(PersonModel selectedPerson) {
-        this.selectedPerson.set(selectedPerson);
-    }
-
-    private SimpleObjectProperty<PersonModel> selectedPerson;
-    private SimpleObjectProperty<BookModel> selectedBook;
-    private StandardServiceRegistry serviceRegistry;
-    private SessionFactory sessionFactory;
-    private ArrayList<BookModel> bookModels = new ArrayList<>();
-    private ArrayList<PersonModel> personModels = new ArrayList<>();
 
     public ObservableList<PersonModel> getAuthors() {
         return authors;
@@ -107,8 +83,6 @@ public class CreateCalculationController implements Initializable {
         this.authors = authors;
     }
 
-    private ObservableList<PersonModel> authors = FXCollections.observableArrayList(personModels);
-
     public ObservableList<BookModel> getBooks() {
         return books;
     }
@@ -116,8 +90,6 @@ public class CreateCalculationController implements Initializable {
     public void setBooks(ObservableList<BookModel> books) {
         this.books = books;
     }
-
-    private ObservableList<BookModel> books = FXCollections.observableList(bookModels);
 
     private void initDb() {
         serviceRegistry = new StandardServiceRegistryBuilder()
@@ -134,14 +106,16 @@ public class CreateCalculationController implements Initializable {
         setIsImportButtonDisabled(true);
 
         bookList.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            if(oldValue != newValue) {
-                setSelectedBook((BookModel)newValue);
+            if (oldValue != newValue) {
+                if (newValue != null)
+                    selectedBook = (BookModel) newValue;
             }
         });
 
         authorList.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            if(oldValue != newValue) {
-                setSelectedPerson((PersonModel)newValue);
+            if (oldValue != newValue) {
+                if (newValue != null)
+                    selectedPerson = (PersonModel) newValue;
             }
         });
 
@@ -150,11 +124,11 @@ public class CreateCalculationController implements Initializable {
     }
 
     private void loadPeople() {
-     Session s = sessionFactory.openSession();
+        Session s = sessionFactory.openSession();
         s.beginTransaction();
 
         List<PersonModel> result = s.createQuery("FROM PersonModel").list();
-        for(PersonModel p: result) {
+        for (PersonModel p : result) {
             authors.add(p);
         }
     }
@@ -164,7 +138,7 @@ public class CreateCalculationController implements Initializable {
         s.beginTransaction();
 
         List<BookModel> result = s.createQuery("FROM BookModel").list();
-        for(BookModel b: result) {
+        for (BookModel b : result) {
             books.add(b);
         }
     }
@@ -172,8 +146,8 @@ public class CreateCalculationController implements Initializable {
     public void onCreatePdf(ActionEvent actionEvent) {
 
         PdfExportData data = new PdfExportData();
-        PersonModel person = getSelectedPerson();
-        BookModel book = getSelectedBook();
+        PersonModel person = selectedPerson;
+        BookModel book = selectedBook;
 
 
         data.setPlaceAndDate(date);
@@ -186,7 +160,7 @@ public class CreateCalculationController implements Initializable {
         data.setCountry(person.getCountry());
         data.setISBN(book.getIsbnNumber());
         data.setTitle(book.getTitle());
-        String fullname = person.getLastName() + ", " +person.getFirstName();
+        String fullname = person.getLastName() + ", " + person.getFirstName();
         data.setAuthor(fullname);
 
         data.setPriceHardCoverChf(book.getPriceCH().doubleValue());
@@ -198,7 +172,7 @@ public class CreateCalculationController implements Initializable {
         data.setPercentageNetRevEbook(25);
         data.setPeriodStart(periodStart);
         data.setPeriodEnd(periodEnd);
-        LegacyEntry l1 = new LegacyEntry(2015, 51 );
+        LegacyEntry l1 = new LegacyEntry(2015, 51);
         LegacyEntry l2 = new LegacyEntry(2016, 221);
         LegacyEntry l3 = new LegacyEntry(2017, 174);
         ArrayList<LegacyEntry> legacy = new ArrayList<>();
@@ -210,7 +184,7 @@ public class CreateCalculationController implements Initializable {
         data.setSoldDeAu(soldDeAu);
         data.setSoldEbooks(soldEbooks);
 
-        double honPerCopyCH = ((book.getPriceCH().doubleValue() / mwstCh) /100) * book.getHonoraryHardcover()  ;
+        double honPerCopyCH = ((book.getPriceCH().doubleValue() / mwstCh) / 100) * book.getHonoraryHardcover();
         double honPerCopyDeAu = ((book.getPriceDEandAT().doubleValue() / mwstDeAu) / 100 * book.getHonoraryHardcover());
         double sumCH = soldCh * honPerCopyDeAu / eurChfRate;
         double sumDeAu = soldDeAu * honPerCopyDeAu;
@@ -247,17 +221,18 @@ public class CreateCalculationController implements Initializable {
         data.setEntries(entries);
         data.setRoyalityCalculationTotal(data.getSumChEur() + data.getSumDeAuEur() + data.getSumEbooksEur() + data.getAuxRightsTotal());
 
-            double accountEntryTotal = 0;
-            for (AccountEntry entry : entries) {
-                accountEntryTotal += entry.getAmount();
-            }
-            data.setAccountTotal(accountEntryTotal + data.getRoyalityCalculationTotal());
-            data.setContactDetails("Tel +41 44 444 44 44\nFax +41 44 999 99 99\nwww.mb-verlag.ch\nverlag@mb-verlag.ch");
-            data.setExRateEurChf(eurChfRate);
+        double accountEntryTotal = 0;
+        for (AccountEntry entry : entries) {
+            accountEntryTotal += entry.getAmount();
+        }
+        data.setAccountTotal(accountEntryTotal + data.getRoyalityCalculationTotal());
+        data.setContactDetails("Tel +41 44 444 44 44\nFax +41 44 999 99 99\nwww.mb-verlag.ch\nverlag@mb-verlag.ch");
+        data.setExRateEurChf(eurChfRate);
 
 
         try {
             PdfExporter exporter = new PdfExporter(path, data);
+            Desktop.getDesktop().open(new File(path));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -270,9 +245,9 @@ public class CreateCalculationController implements Initializable {
         return false;
     }
 
-    public void onClose(){
+    public void onClose() {
         Stage stage = ((Stage) closeButton.getScene().getWindow());
-        if(stage != null)
+        if (stage != null)
             stage.close();
     }
 }

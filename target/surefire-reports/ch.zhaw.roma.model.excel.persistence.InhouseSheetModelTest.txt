@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: ch.zhaw.roma.model.excel.persistence.InhouseSheetModelTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.784 sec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.802 sec

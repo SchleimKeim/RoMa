@@ -50,6 +50,7 @@ ch\zhaw\roma\model\form\Greeting.class
 ch\zhaw\roma\controller\IntroViewController.class
 ch\zhaw\roma\controller\PersonsViewController.class
 ch\zhaw\roma\helpers\pdf\PdfExporter.class
+ch\zhaw\roma\controller\CreateCalculationController.class
 ch\zhaw\roma\customcontrols\BooksView.class
 ch\zhaw\roma\controller\SettingsViewController.class
 ch\zhaw\roma\model\royaltycalculation\AccountEntry.class
